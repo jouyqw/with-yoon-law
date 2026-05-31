@@ -625,6 +625,14 @@ body {
       <h3>⚙ 환경 설정</h3>
 
       <div class="field">
+        <label>Anthropic API 키</label>
+        <div class="token-wrap">
+          <input type="password" id="cfgAnthropicKey" placeholder="sk-ant-api03-xxxxxxxxxxxx">
+          <button class="token-toggle" onclick="toggleAnthropicKey()">표시</button>
+        </div>
+      </div>
+
+      <div class="field">
         <label>GitHub 토큰</label>
         <div class="token-wrap">
           <input type="password" id="cfgToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
@@ -658,10 +666,11 @@ body {
       <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
         <h3 style="margin-bottom:14px">📌 사용 방법</h3>
         <div style="font-size:12px;color:var(--muted);line-height:2">
-          <div>① 설정에서 GitHub 토큰 입력</div>
-          <div>② AI 주제 입력 → AI 작성 클릭</div>
-          <div>③ 내용 확인·수정 후 발행</div>
-          <div>④ Cloudflare 자동 배포 (~1분)</div>
+          <div>① Anthropic API 키 입력 후 저장</div>
+          <div>② GitHub 토큰 입력 후 저장</div>
+          <div>③ AI 주제 입력 → AI 작성 클릭</div>
+          <div>④ 내용 확인·수정 후 발행</div>
+          <div>⑤ Cloudflare 자동 배포 (~1분)</div>
           <div style="margin-top:12px;color:#556">
             토큰은 브라우저 로컬에만 저장되며<br>외부로 전송되지 않습니다
           </div>
@@ -727,6 +736,7 @@ if (localStorage.getItem('wy_admin_auth') === '1') {
 
 function loadSettings() {
   var cfg = getCfg();
+  if (cfg.anthropicKey) document.getElementById('cfgAnthropicKey').value = cfg.anthropicKey;
   if (cfg.token) document.getElementById('cfgToken').value = cfg.token;
   if (cfg.repo)  document.getElementById('cfgRepo').value  = cfg.repo  || 'jouyqw/with-yoon-law';
   if (cfg.branch)document.getElementById('cfgBranch').value= cfg.branch|| 'main';
@@ -735,6 +745,7 @@ function loadSettings() {
 
 function saveSettings() {
   var cfg = getCfg();
+  cfg.anthropicKey = document.getElementById('cfgAnthropicKey').value.trim();
   cfg.token  = document.getElementById('cfgToken').value.trim();
   cfg.repo   = document.getElementById('cfgRepo').value.trim()   || 'jouyqw/with-yoon-law';
   cfg.branch = document.getElementById('cfgBranch').value.trim() || 'main';
@@ -754,6 +765,13 @@ function toggleToken() {
   else { inp.type = 'password'; btn.textContent = '표시'; }
 }
 
+function toggleAnthropicKey() {
+  var inp = document.getElementById('cfgAnthropicKey');
+  var btn = inp.nextElementSibling;
+  if (inp.type === 'password') { inp.type = 'text'; btn.textContent = '숨김'; }
+  else { inp.type = 'password'; btn.textContent = '표시'; }
+}
+
 // ══════════════════════════════════════════════
 //  AI 칼럼 생성
 // ══════════════════════════════════════════════
@@ -762,6 +780,12 @@ function setTopic(t) { document.getElementById('topicInput').value = t; }
 async function generateAI() {
   var topic = document.getElementById('topicInput').value.trim();
   if (!topic) { alert('주제를 입력하세요.'); return; }
+
+  var cfg = getCfg();
+  if (!cfg.anthropicKey) {
+    alert('설정 패널에서 Anthropic API 키를 먼저 입력하고 저장하세요.\n(오른쪽 설정 패널 → Anthropic API 키)');
+    return;
+  }
 
   var aiBtn = document.getElementById('aiBtn');
   var spinner = document.getElementById('aiSpinner');
@@ -789,9 +813,14 @@ async function generateAI() {
   try {
     var res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': cfg.anthropicKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-haiku-4-5',
         max_tokens: 1500,
         messages: [{ role: 'user', content: prompt }]
       })
@@ -799,9 +828,8 @@ async function generateAI() {
 
     if (!res.ok) {
       var errData = await res.json().catch(function() { return {}; });
-      // API 키 없거나 인증 오류 → 안내 메시지
       if (res.status === 401 || res.status === 403) {
-        setStatus(statusEl, 'error', '❌ API 키가 없거나 올바르지 않습니다. 설정에서 Anthropic API 키를 입력해주세요.');
+        setStatus(statusEl, 'error', '❌ API 키가 올바르지 않습니다. 설정에서 Anthropic API 키를 다시 확인하세요.');
       } else {
         setStatus(statusEl, 'error', '❌ AI 생성 실패: ' + (errData.error && errData.error.message || res.status));
       }
@@ -820,8 +848,7 @@ async function generateAI() {
 
   } catch(e) {
     console.error(e);
-    // CORS or network error → API 키 입력 안내
-    setStatus(statusEl, 'error', '❌ API 연결 오류입니다. 설정 패널에서 Anthropic API 키가 입력되어 있는지 확인하세요.\n(키가 없으면 직접 작성 후 발행하실 수 있습니다)');
+    setStatus(statusEl, 'error', '❌ API 연결 오류입니다. API 키와 네트워크 상태를 확인하세요.');
   } finally {
     aiBtn.disabled = false;
     spinner.style.display = 'none';
