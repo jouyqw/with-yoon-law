@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>게시글 상세보기 | 법률사무소 위드윤</title>
+<meta name="description" content="법률사무소 위드윤의 법률칼럼, 성공사례, 언론보도 상세 페이지입니다.">
+<meta property="og:type" content="article">
+<meta name="google-site-verification" content="VF-duGfSKdOvPvPRuJFy3NtfiNpIY624KKv-TrE8eXo" />
+<meta name="naver-site-verification" content="43629ed13b27dd11130a50bd260cb6a4d633c441" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#111a2e;
+  --gold:#c9a84c;
+  --green:#03c75a;
+  --paper:#fff;
+  --bg:#f6f7f9;
+  --ink:#111827;
+  --mid:#475467;
+  --muted:#667085;
+  --line:#e4e7ec;
+  --shadow:0 18px 50px rgba(17,24,39,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.top-in{max-width:1120px;margin:0 auto;padding:0 22px;min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;}
+.mark{width:38px;height:38px;background:var(--navy);border:2px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:700;}
+.brand strong{display:block;font-family:'Playfair Display',serif;font-size:13px;letter-spacing:2px;color:var(--navy);}
+.brand span{display:block;font-size:12px;color:var(--muted);}
+.actions{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:#fff;color:var(--navy);padding:9px 14px;border-radius:6px;font-size:13px;font-weight:800;}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+.page{max-width:960px;margin:0 auto;padding:42px 22px 90px;}
+.crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:#98a2b3;font-size:13px;margin-bottom:20px;}
+.crumb span:last-child{color:var(--navy);font-weight:800;}
+.article{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);}
+.head{padding:46px 48px 34px;border-bottom:1px solid var(--line);}
+.cat{display:inline-flex;align-items:center;height:29px;padding:0 11px;border-radius:4px;background:rgba(201,168,76,.14);color:#7b5d1f;font-size:12px;font-weight:900;margin-bottom:18px;}
+.cat.case{background:rgba(127,29,29,.09);color:#7f1d1d;}
+.cat.press{background:rgba(3,199,90,.11);color:#047a39;}
+h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,42px);line-height:1.35;color:var(--navy);font-weight:700;word-break:keep-all;}
+.meta{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px;color:var(--muted);font-size:14px;}
+.meta strong{color:var(--mid);}
+.source-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:11px 14px;border:1px solid var(--line);border-radius:6px;color:var(--navy);font-size:13px;font-weight:800;background:#fff;}
+.source-link:hover{border-color:var(--gold);}
+.body{padding:46px 48px 56px;font-size:17px;color:#2f3744;font-weight:300;line-height:2.05;word-break:keep-all;overflow-wrap:break-word;}
+.body p{margin:0 0 22px;}
+.body p:last-child{margin-bottom:0;}
+.blank{height:10px;}
+.cta{margin:0 48px 48px;padding:28px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+.cta h2{font-family:'Noto Serif KR',serif;font-size:22px;line-height:1.4;}
+.cta p{color:rgba(255,255,255,.68);font-size:14px;margin-top:4px;}
+.cta-links{display:flex;gap:8px;flex-wrap:wrap;}
+.gold{background:var(--gold);color:#111;border-color:var(--gold);}
+.naver{background:var(--green);color:#fff;border-color:var(--green);}
+.related{margin-top:22px;background:#fff;border:1px solid var(--line);padding:24px 28px;}
+.related h2{font-family:'Noto Serif KR',serif;color:var(--navy);font-size:20px;margin-bottom:12px;}
+.related a{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid #f0f2f5;color:var(--mid);font-size:14px;}
+.related a span:last-child{white-space:nowrap;color:#98a2b3;font-size:13px;}
+.error{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);text-align:center;padding:78px 22px;}
+.error h1{font-size:28px;margin-bottom:12px;}
+.error p{color:var(--muted);margin-bottom:22px;}
+.foot{background:#0b0d10;color:rgba(255,255,255,.55);text-align:center;padding:26px 20px;font-size:12px;line-height:1.8;}
+.foot strong{color:#fff;}
+.foot a{color:#dfc06b;}
+@media(max-width:720px){
+  .top-in{padding:0 16px;min-height:64px;}
+  .brand strong{font-size:12px;}
+  .actions .btn:not(.primary){display:none;}
+  .page{padding:28px 16px 72px;}
+  .head{padding:32px 22px 26px;}
+  .body{padding:32px 22px 42px;font-size:16px;line-height:1.95;}
+  .cta{margin:0 22px 34px;padding:22px;}
+  .related{padding:22px;}
+  .related a{display:block;}
+  .related a span:last-child{display:block;margin-top:3px;}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html#top">
+      <div class="mark">WY</div>
+      <div><strong>WITH YOON LAW</strong><span>법률사무소 위드윤</span></div>
+    </a>
+    <div class="actions">
+      <a class="btn" id="listTop" href="board.html">목록 보기</a>
+      <a class="btn primary" href="tel:010-9491-1567">상담전화</a>
+    </div>
+  </div>
+</header>
+
+<main class="page" id="page">
+  <div class="error">
+    <h1>게시글을 불러오는 중입니다</h1>
+    <p>잠시만 기다려 주세요.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>
+  상담전화: <a href="tel:010-9491-1567">010-9491-1567</a> · <a href="mailto:withyoonlaw@naver.com">withyoonlaw@naver.com</a>
+</footer>
+
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var labels = { case:'성공사례', law:'법률칼럼', press:'언론' };
+  var type = params.get('type') || '';
+  var post = getPost();
+  var listUrl = 'board.html' + (labels[type] ? '?type=' + encodeURIComponent(type) : '');
+  document.getElementById('listTop').href = listUrl;
+  if(!post || !post.title){
+    renderError(listUrl);
+    return;
+  }
+  type = post.type || type;
+  var label = post.typeLabel || labels[type] || '게시글';
+  document.title = post.title + ' | 법률사무소 위드윤';
+  renderArticle({
+    type:type,
+    label:label,
+    title:post.title,
+    date:post.date || '',
+    content:post.content || '',
+    source:post.source || '',
+    externalUrl:post.externalUrl || ''
+  }, listUrl);
+  injectArticleSeo(post, label);
+
+  function getPost(){
+    var postKey = params.get('postKey');
+    if(postKey){
+      try{
+        var stored = JSON.parse(localStorage.getItem(postKey) || 'null');
+        if(stored) return stored;
+      }catch(e){}
+    }
+    var idx = params.get('idx');
+    if(type && idx !== null){
+      try{
+        var items = JSON.parse(localStorage.getItem('wyBoard_' + type) || '[]');
+        var item = items[Number(idx)];
+        if(item){
+          return {type:type,typeLabel:labels[type],title:item.title,date:item.date,content:item.content,source:item.source || '',externalUrl:item.externalUrl || ''};
+        }
+      }catch(e){}
+    }
+    var title = params.get('title');
+    if(title){
+      return {
+        type:type,
+        typeLabel:params.get('typeLabel') || labels[type] || '게시글',
+        title:title,
+        date:params.get('date') || '',
+        content:params.get('content') || '',
+        source:params.get('source') || '',
+        externalUrl:params.get('externalUrl') || ''
+      };
+    }
+    return null;
+  }
+  function esc(s){
+    return String(s || '').replace(/[&<>"']/g, function(ch){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+  function bodyHtml(content){
+    var text = String(content || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    if(!text.trim()) return '<p>내용이 없습니다.</p>';
+    return text.split('\n').map(function(line){
+      return line.trim() ? '<p>'+esc(line)+'</p>' : '<div class="blank" aria-hidden="true"></div>';
+    }).join('');
+  }
+  function injectArticleSeo(post, label){
+    var description = String(post.content || '').replace(/\s+/g, ' ').trim().slice(0, 150) || '법률사무소 위드윤 게시글입니다.';
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if(metaDesc) metaDesc.setAttribute('content', description);
+    var ogTitle = document.createElement('meta');
+    ogTitle.setAttribute('property', 'og:title');
+    ogTitle.setAttribute('content', post.title + ' | 법률사무소 위드윤');
+    document.head.appendChild(ogTitle);
+    var ogDesc = document.createElement('meta');
+    ogDesc.setAttribute('property', 'og:description');
+    ogDesc.setAttribute('content', description);
+    document.head.appendChild(ogDesc);
+    var schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.textContent = JSON.stringify({
+      '@context':'https://schema.org',
+      '@type':'Article',
+      headline:post.title,
+      description:description,
+      articleSection:label,
+      author:{'@type':'Organization', name:'법률사무소 위드윤'},
+      publisher:{'@type':'LegalService', name:'법률사무소 위드윤', telephone:'010-9491-1567', areaServed:'서울 서초구'},
+      datePublished:post.date || undefined,
+      mainEntityOfPage:location.href,
+      sameAs:post.externalUrl ? [post.externalUrl] : undefined
+    });
+    document.head.appendChild(schema);
+  }
+  function renderArticle(post, listUrl){
+    var catClass = post.type === 'press' ? 'press' : post.type === 'case' ? 'case' : '';
+    document.getElementById('page').innerHTML =
+      '<nav class="crumb" aria-label="현재 위치"><a href="index.html#top">홈</a><span>&gt;</span><a href="'+listUrl+'">칼럼</a><span>&gt;</span><span>'+esc(post.label)+'</span></nav>'
+      + '<article class="article">'
+      + '<header class="head"><div class="cat '+catClass+'">'+esc(post.label)+'</div><h1>'+esc(post.title)+'</h1>'
+      + '<div class="meta"><span><strong>작성자</strong> 법률사무소 위드윤</span>' + (post.date ? '<span><strong>작성일</strong> '+esc(post.date)+'</span>' : '') + (post.source ? '<span><strong>출처</strong> '+esc(post.source)+'</span>' : '') + '</div>'
+      + (post.externalUrl ? '<a class="source-link" href="'+esc(post.externalUrl)+'" target="_blank" rel="noopener">원문 기사 보기</a>' : '')
+      + '</header>'
+      + '<div class="body">'+bodyHtml(post.content)+'</div>'
+      + '<section class="cta"><div><h2>법률 상담이 필요하신가요?</h2><p>대표 변호사가 사건 방향을 직접 확인합니다.</p></div>'
+      + '<div class="cta-links"><a class="btn gold" href="tel:010-9491-1567">전화 상담</a><a class="btn naver" href="https://map.naver.com/p/entry/place/1750217153" target="_blank" rel="noopener">N 네이버 예약</a></div></section>'
+      + '</article>'
+      + '<section class="related"><h2>바로가기</h2><a href="'+listUrl+'"><span>'+esc(post.label)+' 목록</span><span>보기</span></a><a href="index.html#contact"><span>상담 안내 및 오시는 길</span><span>확인</span></a></section>';
+  }
+  function renderError(listUrl){
+    document.getElementById('page').innerHTML =
+      '<div class="error"><h1>게시글을 찾을 수 없습니다</h1><p>주소가 올바르지 않거나 게시글이 삭제되었습니다.</p><a class="btn primary" href="'+listUrl+'">목록으로 돌아가기</a></div>';
+  }
+})();
+</script>
+</body>
+</html>
