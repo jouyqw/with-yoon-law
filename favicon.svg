@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- 배경: Navy -->
+  <rect width="32" height="32" rx="7" fill="#111a2e"/>
+  <!-- 골드 테두리 인셋 -->
+  <rect x="2.5" y="2.5" width="27" height="27" rx="5.5" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
+  <!-- W 글자 -->
+  <path d="M7 10 L10.5 22 L16 14 L21.5 22 L25 10" fill="none" stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
