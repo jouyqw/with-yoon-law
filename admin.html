@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>위드윤 칼럼 자동화 관리자</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #111a2e;
+  --gold: #c9a84c;
+  --gold-light: rgba(201,168,76,.12);
+  --green: #03c75a;
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #21262d;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --danger: #f85149;
+  --success: #3fb950;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── 로그인 화면 ── */
+#loginScreen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.login-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+.login-logo {
+  width: 52px; height: 52px;
+  background: var(--navy);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.login-box h1 { font-size: 22px; margin-bottom: 6px; }
+.login-box p { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+.login-box input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  color: var(--text);
+  font-size: 16px;
+  font-family: inherit;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border-color .2s;
+}
+.login-box input:focus { border-color: var(--gold); }
+.login-btn {
+  width: 100%;
+  background: var(--gold);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 4px;
+  transition: opacity .2s;
+}
+.login-btn:hover { opacity: .88; }
+.login-err { color: var(--danger); font-size: 13px; margin-top: 10px; display: none; }
+
+/* ── 메인 앱 ── */
+#app { display: none; }
+
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.topbar-brand { display: flex; align-items: center; gap: 12px; }
+.topbar-logo {
+  width: 34px; height: 34px;
+  background: var(--navy);
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+.topbar-title { font-weight: 700; font-size: 15px; }
+.topbar-title span { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 8px; }
+.topbar-actions { display: flex; gap: 10px; align-items: center; }
+.btn-sm {
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  transition: all .18s;
+}
+.btn-sm:hover { border-color: var(--gold); }
+.btn-sm.danger { border-color: transparent; background: transparent; color: var(--muted); }
+.btn-sm.danger:hover { color: var(--danger); }
+
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+}
+
+/* ── 설정 패널 ── */
+.settings-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  height: fit-content;
+  position: sticky;
+  top: 80px;
+}
+.settings-panel h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.field { margin-bottom: 16px; }
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+.field textarea { min-height: 80px; resize: vertical; line-height: 1.6; }
+.field select option { background: var(--surface2); }
+
+.token-wrap { position: relative; }
+.token-wrap input { padding-right: 70px; font-family: monospace; font-size: 12px; }
+.token-toggle {
+  position: absolute;
+  right: 8px; top: 50%;
+  transform: translateY(-50%);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.save-settings {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .18s;
+}
+.save-settings:hover { border-color: var(--gold); color: var(--gold); }
+.save-ok { color: var(--success); font-size: 12px; text-align: center; margin-top: 8px; display: none; }
+
+/* ── 에디터 패널 ── */
+.editor-panel { display: flex; flex-direction: column; gap: 20px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-head {
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-head h2 { font-size: 15px; font-weight: 700; }
+.card-head p { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.card-body { padding: 22px; }
+
+/* AI 생성 섹션 */
+.ai-topics { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.topic-chip {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .18s;
+  font-family: inherit;
+}
+.topic-chip:hover { border-color: var(--gold); color: var(--gold); }
+
+.ai-input-row { display: flex; gap: 10px; margin-bottom: 16px; }
+.ai-input-row input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .2s;
+}
+.ai-input-row input:focus { border-color: var(--gold); }
+.btn-ai {
+  background: var(--gold);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: opacity .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-ai:hover { opacity: .88; }
+.btn-ai:disabled { opacity: .5; cursor: not-allowed; }
+
+/* 로딩 스피너 */
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(0,0,0,.2);
+  border-top-color: #111;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  display: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 에디터 */
+.editor-title {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Noto Serif KR', serif;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color .2s;
+}
+.editor-title:focus { border-color: var(--gold); }
+.editor-toolbar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.toolbar-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .15s;
+}
+.toolbar-btn:hover { color: var(--text); border-color: var(--gold); }
+.editor-body {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--text);
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  outline: none;
+  min-height: 320px;
+  resize: vertical;
+  line-height: 1.9;
+  transition: border-color .2s;
+}
+.editor-body:focus { border-color: var(--gold); }
+
+.editor-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* 미리보기 */
+.preview-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 120px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #c9d1d9;
+  display: none;
+}
+.preview-box.show { display: block; }
+.preview-box h3 {
+  font-family: 'Noto Serif KR', serif;
+  color: var(--text);
+  font-size: 18px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 발행 버튼 */
+.publish-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.char-count { font-size: 12px; color: var(--muted); }
+.btn-publish {
+  background: var(--success);
+  color: #0d1117;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-publish:hover { opacity: .88; }
+.btn-publish:disabled { opacity: .4; cursor: not-allowed; }
+.btn-preview {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .18s;
+}
+.btn-preview:hover { border-color: var(--gold); color: var(--gold); }
+
+/* 상태 메시지 */
+.status-bar {
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+.status-bar.show { display: flex; }
+.status-bar.loading { background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.3); color: var(--gold); }
+.status-bar.success { background: rgba(63,185,80,.1); border: 1px solid rgba(63,185,80,.3); color: var(--success); }
+.status-bar.error { background: rgba(248,81,73,.1); border: 1px solid rgba(248,81,73,.3); color: var(--danger); }
+
+/* 최근 발행 목록 */
+.post-list { display: flex; flex-direction: column; gap: 1px; }
+.post-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+.post-item:last-child { border-bottom: none; }
+.post-item-title { font-size: 14px; font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.post-item-meta { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.post-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.badge-law { background: rgba(201,168,76,.15); color: var(--gold); }
+.badge-case { background: rgba(127,29,29,.2); color: #f87171; }
+.badge-press { background: rgba(63,185,80,.15); color: var(--success); }
+.empty-list { color: var(--muted); font-size: 13px; text-align: center; padding: 24px 0; }
+
+@media(max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .settings-panel { position: static; order: 2; }
+  .editor-panel { order: 1; }
+  .editor-meta { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width: 600px) {
+  .topbar { padding: 0 16px; }
+  .layout { padding: 20px 16px 60px; }
+  .editor-meta { grid-template-columns: 1fr; }
+  .ai-input-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ 로그인 화면 ══════════════════ -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">WY</div>
+    <h1>위드윤 관리자</h1>
+    <p>칼럼 자동화 시스템 · 관리자 전용</p>
+    <input type="password" id="pwInput" placeholder="비밀번호 입력" autocomplete="current-password">
+    <button class="login-btn" onclick="doLogin()">로그인</button>
+    <p class="login-err" id="loginErr">비밀번호가 올바르지 않습니다</p>
+  </div>
+</div>
+
+<!-- ══════════════════ 메인 앱 ══════════════════ -->
+<div id="app">
+
+  <header class="topbar">
+    <div class="topbar-brand">
+      <div class="topbar-logo">WY</div>
+      <div class="topbar-title">위드윤 자동화 <span>칼럼 관리자</span></div>
+    </div>
+    <div class="topbar-actions">
+      <a href="board.html" target="_blank" class="btn-sm">게시판 보기</a>
+      <button class="btn-sm danger" onclick="doLogout()">로그아웃</button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- ── 에디터 (왼쪽) ── -->
+    <div class="editor-panel">
+
+      <!-- AI 칼럼 생성 -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h2>✦ AI 칼럼 자동 생성</h2>
+            <p>주제를 입력하면 SEO 최적화 칼럼을 자동으로 작성합니다</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="ai-topics">
+            <button class="topic-chip" onclick="setTopic('정당방위와 과잉방위 차이')">정당방위</button>
+            <button class="topic-chip" onclick="setTopic('이혼 재산분할 기여도 인정 방법')">재산분할</button>
+            <button class="topic-chip" onclick="setTopic('스토킹 처벌법 고소 방법')">스토킹 고소</button>
+            <button class="topic-chip" onclick="setTopic('성범죄 무고 대응 방법')">성범죄 무고</button>
+            <button class="topic-chip" onclick="setTopic('보이스피싱 피의자 대응')">보이스피싱</button>
+            <button class="topic-chip" onclick="setTopic('폭행죄 합의 방법과 주의사항')">폭행 합의</button>
+            <button class="topic-chip" onclick="setTopic('위자료 청구 방법과 입증 전략')">위자료 청구</button>
+            <button class="topic-chip" onclick="setTopic('고소장 작성 시 주의사항')">고소장 작성</button>
+          </div>
+          <div class="ai-input-row">
+            <input type="text" id="topicInput" placeholder="칼럼 주제를 입력하세요  예: 스토킹 피해자가 해야 할 첫 번째 법적 조치">
+            <button class="btn-ai" id="aiBtn" onclick="generateAI()">
+              <span class="spinner" id="aiSpinner"></span>
+              <span id="aiBtnText">AI 작성</span>
+            </button>
+          </div>
+          <div class="status-bar" id="aiStatus"></div>
+        </div>
+      </div>
+
+      <!-- 에디터 -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h2>✎ 칼럼 에디터</h2>
+            <p>AI 생성 결과를 수정하거나 직접 작성하세요</p>
+          </div>
+          <button class="btn-preview" onclick="togglePreview()">미리보기</button>
+        </div>
+        <div class="card-body">
+          <input class="editor-title" id="postTitle" type="text" placeholder="제목을 입력하세요">
+          <div class="editor-toolbar">
+            <button class="toolbar-btn" onclick="insertText('\n\n■ ', '')">소제목</button>
+            <button class="toolbar-btn" onclick="insertText('', '')">단락 추가</button>
+            <button class="toolbar-btn" onclick="insertSeoKeywords()">SEO 키워드 삽입</button>
+            <button class="toolbar-btn" onclick="insertCTA()">상담 안내 문구</button>
+            <button class="toolbar-btn" onclick="clearEditor()">초기화</button>
+          </div>
+          <textarea class="editor-body" id="postBody" placeholder="내용을 입력하세요..." oninput="updateCharCount()"></textarea>
+          <div class="editor-meta">
+            <div class="field">
+              <label>분류</label>
+              <select id="postType">
+                <option value="law">법률칼럼</option>
+                <option value="case">성공사례</option>
+                <option value="press">언론</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>작성일</label>
+              <input type="text" id="postDate" placeholder="2026.05.31">
+            </div>
+            <div class="field">
+              <label>출처</label>
+              <input type="text" id="postSource" placeholder="위드윤 법률칼럼">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 미리보기 -->
+      <div class="preview-box" id="previewBox"></div>
+
+      <!-- 발행 -->
+      <div class="card">
+        <div class="card-body">
+          <div class="status-bar" id="publishStatus"></div>
+          <div class="publish-row" style="margin-top:12px">
+            <span class="char-count" id="charCount">0자</span>
+            <div style="display:flex;gap:10px">
+              <button class="btn-preview" onclick="saveDraft()">임시저장</button>
+              <button class="btn-publish" id="publishBtn" onclick="publishPost()">
+                <span class="spinner" id="pubSpinner" style="border-top-color:#0d1117"></span>
+                <span id="pubBtnText">🚀 GitHub에 발행</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 최근 발행 -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h2>📋 최근 발행 목록</h2>
+            <p>이 브라우저에서 발행한 글</p>
+          </div>
+          <button class="btn-sm" onclick="renderPostList()">새로고침</button>
+        </div>
+        <div class="card-body">
+          <div class="post-list" id="postList"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── 설정 (오른쪽) ── -->
+    <div class="settings-panel">
+      <h3>⚙ 환경 설정</h3>
+
+      <div class="field">
+        <label>GitHub 토큰</label>
+        <div class="token-wrap">
+          <input type="password" id="cfgToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+          <button class="token-toggle" onclick="toggleToken()">표시</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>GitHub 저장소</label>
+        <input type="text" id="cfgRepo" placeholder="jouyqw/with-yoon-law">
+      </div>
+
+      <div class="field">
+        <label>브랜치</label>
+        <input type="text" id="cfgBranch" placeholder="main">
+      </div>
+
+      <div class="field">
+        <label>글 저장 경로</label>
+        <input type="text" id="cfgPath" placeholder="posts">
+      </div>
+
+      <div class="field">
+        <label>관리자 비밀번호 변경</label>
+        <input type="password" id="cfgPw" placeholder="새 비밀번호">
+      </div>
+
+      <button class="save-settings" onclick="saveSettings()">설정 저장</button>
+      <p class="save-ok" id="saveOk">✓ 저장되었습니다</p>
+
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
+        <h3 style="margin-bottom:14px">📌 사용 방법</h3>
+        <div style="font-size:12px;color:var(--muted);line-height:2">
+          <div>① 설정에서 GitHub 토큰 입력</div>
+          <div>② AI 주제 입력 → AI 작성 클릭</div>
+          <div>③ 내용 확인·수정 후 발행</div>
+          <div>④ Cloudflare 자동 배포 (~1분)</div>
+          <div style="margin-top:12px;color:#556">
+            토큰은 브라우저 로컬에만 저장되며<br>외부로 전송되지 않습니다
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
+        <h3 style="margin-bottom:14px">🔗 빠른 링크</h3>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="https://dash.cloudflare.com" target="_blank" class="btn-sm" style="text-align:center;text-decoration:none">Cloudflare 대시보드</a>
+          <a href="https://github.com/jouyqw/with-yoon-law" target="_blank" class="btn-sm" style="text-align:center;text-decoration:none">GitHub 저장소</a>
+          <a href="board.html" target="_blank" class="btn-sm" style="text-align:center;text-decoration:none">게시판 바로가기</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+//  설정 & 로그인
+// ══════════════════════════════════════════════
+var DEFAULT_PW = 'withyoon2024';
+
+function getCfg() {
+  try { return JSON.parse(localStorage.getItem('wy_admin_cfg') || '{}'); } catch(e) { return {}; }
+}
+function saveCfg(cfg) { localStorage.setItem('wy_admin_cfg', JSON.stringify(cfg)); }
+
+function doLogin() {
+  var pw = document.getElementById('pwInput').value;
+  var cfg = getCfg();
+  var stored = cfg.pw || DEFAULT_PW;
+  if (pw === stored) {
+    localStorage.setItem('wy_admin_auth', '1');
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    loadSettings();
+    setTodayDate();
+    renderPostList();
+  } else {
+    document.getElementById('loginErr').style.display = 'block';
+  }
+}
+document.getElementById('pwInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') doLogin();
+});
+
+function doLogout() {
+  localStorage.removeItem('wy_admin_auth');
+  location.reload();
+}
+
+// 자동 로그인 유지
+if (localStorage.getItem('wy_admin_auth') === '1') {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  loadSettings();
+  setTodayDate();
+  renderPostList();
+}
+
+function loadSettings() {
+  var cfg = getCfg();
+  if (cfg.token) document.getElementById('cfgToken').value = cfg.token;
+  if (cfg.repo)  document.getElementById('cfgRepo').value  = cfg.repo  || 'jouyqw/with-yoon-law';
+  if (cfg.branch)document.getElementById('cfgBranch').value= cfg.branch|| 'main';
+  if (cfg.path)  document.getElementById('cfgPath').value  = cfg.path  || 'posts';
+}
+
+function saveSettings() {
+  var cfg = getCfg();
+  cfg.token  = document.getElementById('cfgToken').value.trim();
+  cfg.repo   = document.getElementById('cfgRepo').value.trim()   || 'jouyqw/with-yoon-law';
+  cfg.branch = document.getElementById('cfgBranch').value.trim() || 'main';
+  cfg.path   = document.getElementById('cfgPath').value.trim()   || 'posts';
+  var newPw  = document.getElementById('cfgPw').value.trim();
+  if (newPw) cfg.pw = newPw;
+  saveCfg(cfg);
+  var ok = document.getElementById('saveOk');
+  ok.style.display = 'block';
+  setTimeout(function() { ok.style.display = 'none'; }, 2500);
+}
+
+function toggleToken() {
+  var inp = document.getElementById('cfgToken');
+  var btn = inp.nextElementSibling;
+  if (inp.type === 'password') { inp.type = 'text'; btn.textContent = '숨김'; }
+  else { inp.type = 'password'; btn.textContent = '표시'; }
+}
+
+// ══════════════════════════════════════════════
+//  AI 칼럼 생성
+// ══════════════════════════════════════════════
+function setTopic(t) { document.getElementById('topicInput').value = t; }
+
+async function generateAI() {
+  var topic = document.getElementById('topicInput').value.trim();
+  if (!topic) { alert('주제를 입력하세요.'); return; }
+
+  var aiBtn = document.getElementById('aiBtn');
+  var spinner = document.getElementById('aiSpinner');
+  var btnText = document.getElementById('aiBtnText');
+  var statusEl = document.getElementById('aiStatus');
+
+  aiBtn.disabled = true;
+  spinner.style.display = 'block';
+  btnText.textContent = '생성 중...';
+  setStatus(statusEl, 'loading', '⏳ AI가 SEO 칼럼을 작성하고 있습니다...');
+
+  var prompt = '당신은 법률사무소 위드윤(서울 서초구, 형사·이혼·성범죄 전문)의 SEO 법률 칼럼 작가입니다.\n\n'
+    + '다음 주제로 구글·네이버 검색 상위 노출에 최적화된 법률 칼럼을 작성해주세요.\n\n'
+    + '주제: ' + topic + '\n\n'
+    + '작성 규칙:\n'
+    + '1. 제목은 검색자가 실제로 검색할 만한 질문형 또는 핵심 키워드 포함 (40자 이내)\n'
+    + '2. 본문은 600~900자 분량\n'
+    + '3. 구조: 도입(문제 상황 공감) → 핵심 법률 설명(2~3가지) → 실무 조언 → 위드윤 상담 안내\n'
+    + '4. 한국어 구어체, 어렵지 않게, 실제 사례 느낌\n'
+    + '5. 키워드를 자연스럽게 반복 포함\n'
+    + '6. 마지막에 "법률사무소 위드윤(010-9491-1567)" 자연스럽게 언급\n\n'
+    + '출력 형식 (JSON만 출력, 다른 텍스트 없이):\n'
+    + '{"title":"제목","content":"본문 내용 (줄바꿈은 \\n 사용)"}';
+
+  try {
+    var res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1500,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!res.ok) {
+      var errData = await res.json().catch(function() { return {}; });
+      // API 키 없거나 인증 오류 → 안내 메시지
+      if (res.status === 401 || res.status === 403) {
+        setStatus(statusEl, 'error', '❌ API 키가 없거나 올바르지 않습니다. 설정에서 Anthropic API 키를 입력해주세요.');
+      } else {
+        setStatus(statusEl, 'error', '❌ AI 생성 실패: ' + (errData.error && errData.error.message || res.status));
+      }
+      return;
+    }
+
+    var data = await res.json();
+    var raw = data.content.map(function(b) { return b.text || ''; }).join('');
+    var clean = raw.replace(/```json|```/g, '').trim();
+    var parsed = JSON.parse(clean);
+
+    document.getElementById('postTitle').value = parsed.title || '';
+    document.getElementById('postBody').value  = parsed.content || '';
+    updateCharCount();
+    setStatus(statusEl, 'success', '✓ AI 칼럼 생성 완료! 내용을 확인하고 수정 후 발행하세요.');
+
+  } catch(e) {
+    console.error(e);
+    // CORS or network error → API 키 입력 안내
+    setStatus(statusEl, 'error', '❌ API 연결 오류입니다. 설정 패널에서 Anthropic API 키가 입력되어 있는지 확인하세요.\n(키가 없으면 직접 작성 후 발행하실 수 있습니다)');
+  } finally {
+    aiBtn.disabled = false;
+    spinner.style.display = 'none';
+    btnText.textContent = 'AI 작성';
+  }
+}
+
+// ══════════════════════════════════════════════
+//  에디터 도구
+// ══════════════════════════════════════════════
+function setTodayDate() {
+  var n = new Date();
+  var d = n.getFullYear()+'.'+String(n.getMonth()+1).padStart(2,'0')+'.'+String(n.getDate()).padStart(2,'0');
+  document.getElementById('postDate').value = d;
+  document.getElementById('postSource').value = '위드윤 법률칼럼';
+}
+
+function insertText(before, after) {
+  var ta = document.getElementById('postBody');
+  var start = ta.selectionStart, end = ta.selectionEnd;
+  var val = ta.value;
+  ta.value = val.slice(0, start) + before + val.slice(start, end) + after + val.slice(end);
+  ta.selectionStart = ta.selectionEnd = start + before.length;
+  ta.focus();
+  updateCharCount();
+}
+
+function insertSeoKeywords() {
+  var type = document.getElementById('postType').value;
+  var keywords = {
+    law: '\n\n관련 키워드: 법률상담, 형사사건, 서초 변호사, 법률사무소 위드윤',
+    case: '\n\n관련 키워드: 성공사례, 무혐의, 불기소, 서초 변호사',
+    press: '\n\n관련 키워드: 법률사무소 위드윤, 윤성호 변호사, 법률칼럼'
+  };
+  var ta = document.getElementById('postBody');
+  ta.value += (keywords[type] || '');
+  updateCharCount();
+}
+
+function insertCTA() {
+  var cta = '\n\n법률 문제로 어려움을 겪고 계신다면, 법률사무소 위드윤에서 무료 상담을 받아보세요. 경험 많은 변호사가 사건 방향을 직접 검토합니다.\n\n📞 상담전화: 010-9491-1567\n📍 서울 서초구 서초대로 270 서보빌딩 602호';
+  var ta = document.getElementById('postBody');
+  ta.value += cta;
+  updateCharCount();
+}
+
+function clearEditor() {
+  if (!confirm('에디터를 초기화하시겠습니까?')) return;
+  document.getElementById('postTitle').value = '';
+  document.getElementById('postBody').value = '';
+  updateCharCount();
+}
+
+function updateCharCount() {
+  var len = document.getElementById('postBody').value.length;
+  document.getElementById('charCount').textContent = len.toLocaleString() + '자';
+}
+
+function togglePreview() {
+  var box = document.getElementById('previewBox');
+  if (box.classList.contains('show')) {
+    box.classList.remove('show');
+    return;
+  }
+  var title = document.getElementById('postTitle').value || '(제목 없음)';
+  var body  = document.getElementById('postBody').value  || '(내용 없음)';
+  var html = '<h3>' + esc(title) + '</h3>' +
+    body.split('\n').map(function(l) {
+      return l.trim() ? '<p>' + esc(l) + '</p>' : '<br>';
+    }).join('');
+  box.innerHTML = html;
+  box.classList.add('show');
+}
+
+function esc(s) {
+  return String(s||'').replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+
+// ══════════════════════════════════════════════
+//  임시저장
+// ══════════════════════════════════════════════
+function saveDraft() {
+  var draft = {
+    title: document.getElementById('postTitle').value,
+    body:  document.getElementById('postBody').value,
+    type:  document.getElementById('postType').value,
+    date:  document.getElementById('postDate').value,
+    source:document.getElementById('postSource').value,
+    savedAt: new Date().toLocaleString('ko-KR')
+  };
+  localStorage.setItem('wy_draft', JSON.stringify(draft));
+  alert('임시저장 완료 (' + draft.savedAt + ')');
+}
+
+// 드래프트 복원
+(function() {
+  var d = localStorage.getItem('wy_draft');
+  if (!d) return;
+  try {
+    var draft = JSON.parse(d);
+    if (draft.title || draft.body) {
+      if (confirm('임시저장된 글이 있습니다. 불러올까요?\n제목: ' + (draft.title || '없음'))) {
+        if (draft.title)  document.getElementById('postTitle').value  = draft.title;
+        if (draft.body)   document.getElementById('postBody').value   = draft.body;
+        if (draft.type)   document.getElementById('postType').value   = draft.type;
+        if (draft.date)   document.getElementById('postDate').value   = draft.date;
+        if (draft.source) document.getElementById('postSource').value = draft.source;
+        updateCharCount();
+      }
+    }
+  } catch(e) {}
+})();
+
+// ══════════════════════════════════════════════
+//  GitHub 발행
+// ══════════════════════════════════════════════
+async function publishPost() {
+  var title  = document.getElementById('postTitle').value.trim();
+  var body   = document.getElementById('postBody').value.trim();
+  var type   = document.getElementById('postType').value;
+  var date   = document.getElementById('postDate').value.trim();
+  var source = document.getElementById('postSource').value.trim();
+
+  if (!title) { alert('제목을 입력하세요.'); return; }
+  if (!body)  { alert('내용을 입력하세요.'); return; }
+
+  var cfg = getCfg();
+  if (!cfg.token) {
+    alert('설정에서 GitHub 토큰을 먼저 입력해주세요.\n(오른쪽 설정 패널 → GitHub 토큰)');
+    return;
+  }
+
+  var statusEl  = document.getElementById('publishStatus');
+  var pubBtn    = document.getElementById('publishBtn');
+  var pubSpinner= document.getElementById('pubSpinner');
+  var pubText   = document.getElementById('pubBtnText');
+
+  pubBtn.disabled = true;
+  pubSpinner.style.display = 'block';
+  pubText.textContent = '발행 중...';
+  setStatus(statusEl, 'loading', '⏳ GitHub에 업로드하는 중...');
+
+  // 파일명: 날짜 + 제목 슬러그
+  var slug = date.replace(/\./g, '') + '_' + title.replace(/[^가-힣a-z0-9]/gi, '_').slice(0, 40);
+  var filePath = (cfg.path || 'posts') + '/' + slug + '.json';
+  var repo   = cfg.repo   || 'jouyqw/with-yoon-law';
+  var branch = cfg.branch || 'main';
+
+  var postData = {
+    title: title,
+    content: body,
+    date: date,
+    type: type,
+    source: source,
+    publishedAt: new Date().toISOString()
+  };
+
+  var content = btoa(unescape(encodeURIComponent(JSON.stringify(postData, null, 2))));
+
+  try {
+    // 기존 파일 SHA 확인 (덮어쓰기 방지)
+    var sha = null;
+    try {
+      var chk = await fetch('https://api.github.com/repos/' + repo + '/contents/' + filePath + '?ref=' + branch, {
+        headers: {
+          'Authorization': 'token ' + cfg.token,
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+      if (chk.ok) { var chkData = await chk.json(); sha = chkData.sha; }
+    } catch(e) {}
+
+    var body2 = { message: '칼럼 발행: ' + title, content: content, branch: branch };
+    if (sha) body2.sha = sha;
+
+    var res = await fetch('https://api.github.com/repos/' + repo + '/contents/' + filePath, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token ' + cfg.token,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body2)
+    });
+
+    if (res.ok) {
+      // 로컬 히스토리에도 저장
+      var history = JSON.parse(localStorage.getItem('wy_published') || '[]');
+      history.unshift({ title: title, type: type, date: date, file: filePath, publishedAt: new Date().toISOString() });
+      if (history.length > 50) history = history.slice(0, 50);
+      localStorage.setItem('wy_published', JSON.stringify(history));
+      localStorage.removeItem('wy_draft');
+
+      setStatus(statusEl, 'success', '🎉 발행 완료! GitHub에 저장되었습니다. Cloudflare가 약 1분 후 자동 배포합니다.');
+      renderPostList();
+
+      // 에디터 초기화
+      setTimeout(function() {
+        if (confirm('발행이 완료되었습니다!\n에디터를 초기화하시겠습니까?')) {
+          document.getElementById('postTitle').value = '';
+          document.getElementById('postBody').value = '';
+          updateCharCount();
+          setTodayDate();
+        }
+      }, 800);
+    } else {
+      var errData = await res.json().catch(function() { return {}; });
+      setStatus(statusEl, 'error', '❌ GitHub 업로드 실패: ' + (errData.message || res.status) + '\n토큰 권한(repo) 또는 저장소명을 확인하세요.');
+    }
+  } catch(e) {
+    setStatus(statusEl, 'error', '❌ 네트워크 오류: ' + e.message);
+  } finally {
+    pubBtn.disabled = false;
+    pubSpinner.style.display = 'none';
+    pubText.textContent = '🚀 GitHub에 발행';
+  }
+}
+
+// ══════════════════════════════════════════════
+//  최근 발행 목록
+// ══════════════════════════════════════════════
+function renderPostList() {
+  var list = document.getElementById('postList');
+  var history = [];
+  try { history = JSON.parse(localStorage.getItem('wy_published') || '[]'); } catch(e) {}
+
+  if (!history.length) {
+    list.innerHTML = '<div class="empty-list">아직 발행된 글이 없습니다</div>';
+    return;
+  }
+
+  var badges = { law:'badge-law 법률칼럼', case:'badge-case 성공사례', press:'badge-press 언론' };
+  list.innerHTML = history.slice(0, 10).map(function(p) {
+    var b = (badges[p.type] || 'badge-law 칼럼').split(' ');
+    return '<div class="post-item">'
+      + '<span class="post-badge ' + b[0] + '">' + b[1] + '</span>'
+      + '<span class="post-item-title">' + esc(p.title) + '</span>'
+      + '<span class="post-item-meta">' + (p.date || '') + '</span>'
+      + '</div>';
+  }).join('');
+}
+
+// ══════════════════════════════════════════════
+//  유틸
+// ══════════════════════════════════════════════
+function setStatus(el, type, msg) {
+  el.className = 'status-bar show ' + type;
+  el.textContent = msg;
+  if (type === 'success') {
+    setTimeout(function() { el.className = 'status-bar'; }, 6000);
+  }
+}
+</script>
+</body>
+</html>
