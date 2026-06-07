@@ -193,6 +193,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       {title:'CCTV가 본 진실, 지하철 폭행 누명 벗었지만…', date:'2026.03.12', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/PYI29IY6C8SN', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 지하철 폭행, CCTV 증거, 엄벌탄원서, 민사상 손해배상 및 배상명령.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'}
     ],
     law:[
+      {title:'억울한 성범죄 고소, 이렇게 대응하세요', date:'2026.06.07', source:'위드윤 법률칼럼', blogUrl:'/blog/sexual-crime-false-accusation', content:'억울하게 성범죄로 고소당했다면 초기 대응이 모든 것을 결정합니다. 직접 연락 금지, 알리바이 즉시 확보, 무고죄 역고소까지 형사전문 윤성호 변호사가 단계별로 안내합니다.'},
       {title:'고소장을 취하하지 않고 보완해야 하는 이유', date:'2026.05.31', source:'위드윤 법률칼럼', content:'고소장 내용이 부족하다고 느껴질 때 곧바로 취하 후 재고소를 선택하는 것은 위험할 수 있습니다.\n\n친고죄나 반의사불벌죄는 고소 취소 후 다시 고소하는 데 제한이 생길 수 있고, 비친고죄라도 수사 실무상 재고소가 제약될 수 있습니다.\n\n기존 사건을 유지한 채 추가고소장, 보충 의견서, 증거자료를 제출하는 방식이 더 안전한 대응이 될 수 있습니다.\n\n법률사무소 위드윤은 형사 고소 단계에서 사실관계 정리, 증거 구성, 의견서 작성 방향을 사건별로 검토합니다.'}
     ],
     case:[]
@@ -218,6 +219,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     });
   }
   function detailUrl(type, item){
+    // blogUrl 있으면 SEO 전용 페이지로 바로 이동
+    if(item.blogUrl) return item.blogUrl;
     var p = new URLSearchParams({
       type: type,
       id: item.id || '',
