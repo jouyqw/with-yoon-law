@@ -75,6 +75,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .secondary{border:1px solid var(--line);background:#fff;color:#344054;border-radius:6px;padding:10px 16px;font-family:inherit;font-weight:800;cursor:pointer;}
 .submit{border:0;background:var(--gold);color:#111;border-radius:6px;padding:10px 18px;font-family:inherit;font-weight:900;cursor:pointer;}
 .note{margin-top:18px;color:#98a2b3;font-size:12px;line-height:1.7;}
+.del{border:0;background:transparent;color:#d92d20;font-size:12px;font-weight:800;cursor:pointer;padding:4px 8px;border-radius:4px;margin-left:8px;vertical-align:middle;}
+.del:hover{background:#fff1f0;}
 .seo-copy{margin-top:18px;color:#667085;font-size:13px;line-height:1.8;word-break:keep-all;}
 .seo-copy strong{color:var(--navy);}
 @media(max-width:720px){
@@ -259,11 +261,15 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       return;
     }
     var html = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div>';
+    var seedCount = (seedData[current]||[]).length;
     items.slice().reverse().forEach(function(item, i){
       var realIdx = items.length - 1 - i;
+      var isSeed = realIdx < seedCount;
       html += '<a class="row" target="_blank" rel="noopener" href="'+esc(detailUrl(current, realIdx, item))+'">'
         + '<div class="cell">'+(items.length - i)+'</div>'
-        + '<div class="cell title">'+esc(item.title)+(item.source ? '<span class="source">'+esc(item.source)+'</span>' : '')+'</div>'
+        + '<div class="cell title">'+esc(item.title)+(item.source ? '<span class="source">'+esc(item.source)+'</span>' : '')
+        + (!isSeed ? ' <button class="del" onclick="event.preventDefault();event.stopPropagation();wyDelete(\''+current+'\','+realIdx+','+seedCount+')">삭제</button>' : '')
+        + '</div>'
         + '<div class="cell date">'+esc(item.date)+'</div>'
         + '</a>';
     });
@@ -321,6 +327,17 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     render();
   });
   render();
+
+  window.wyDelete = function(type, realIdx, seedCount){
+    if(!confirm('이 글을 삭제하시겠습니까?')) return;
+    var stored = loadStored(type);
+    // realIdx 는 seeds+stored 합산 인덱스이므로, stored 인덱스로 변환
+    var storedIdx = realIdx - seedCount;
+    if(storedIdx < 0 || storedIdx >= stored.length) return;
+    stored.splice(storedIdx, 1);
+    save(type, stored);
+    render();
+  };
 })();
 </script>
 </body>
