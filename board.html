@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>칼럼 게시판 | 법률사무소 위드윤</title>
 <meta name="description" content="법률사무소 위드윤의 성공사례, 법률칼럼, 언론보도 모음. 형사·성범죄·이혼·상속·손해배상 사건에 관한 실무형 법률 콘텐츠를 제공합니다.">
-<meta name="keywords" content="법률사무소 위드윤,윤성호 변호사,윤석만 변호사,서초 변호사,서울 형사 변호사,성범죄 변호사,이혼 변호사,법률칼럼,성공사례,언론보도">
+<meta name="keywords" content="법률사무소 위드윤,윤성호 변호사,서초 변호사,서울 형사 변호사,성범죄 변호사,이혼 변호사,법률칼럼,성공사례,언론보도">
 <meta property="og:title" content="칼럼 게시판 | 법률사무소 위드윤">
 <meta property="og:description" content="성공사례, 법률칼럼, 언론보도를 분류별로 확인할 수 있는 법률사무소 위드윤 게시판입니다.">
 <meta property="og:type" content="website">
@@ -18,15 +18,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.min.css" rel="stylesheet">
 <style>
 :root{
-  --ink:#111827;
-  --muted:#667085;
-  --line:#e4e7ec;
-  --paper:#fff;
-  --bg:#f6f7f9;
-  --navy:#111a2e;
-  --gold:#c9a84c;
-  --green:#03c75a;
-  --shadow:0 18px 50px rgba(17,24,39,.08);
+  --ink:#111827;--muted:#667085;--line:#e4e7ec;--paper:#fff;--bg:#f6f7f9;
+  --navy:#111a2e;--gold:#c9a84c;--green:#03c75a;--shadow:0 18px 50px rgba(17,24,39,.08);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
@@ -75,7 +68,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px;}
 .secondary{border:1px solid var(--line);background:#fff;color:#344054;border-radius:6px;padding:10px 16px;font-family:inherit;font-weight:800;cursor:pointer;}
 .submit{border:0;background:var(--gold);color:#111;border-radius:6px;padding:10px 18px;font-family:inherit;font-weight:900;cursor:pointer;}
-.note{margin-top:18px;color:#98a2b3;font-size:12px;line-height:1.7;}
 .seo-copy{margin-top:18px;color:#667085;font-size:13px;line-height:1.8;word-break:keep-all;}
 .seo-copy strong{color:var(--navy);}
 .del{border:0;background:transparent;color:#d92d20;font-size:12px;font-weight:800;cursor:pointer;padding:4px 8px;border-radius:4px;margin-left:8px;vertical-align:middle;}
@@ -85,9 +77,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .ql-toolbar.ql-snow{border:none;border-bottom:1px solid #e4e7ec;background:#f9fafb;padding:10px 12px;}
 .ql-container.ql-snow{border:none;font-family:'Noto Sans KR',sans-serif;font-size:15px;}
 .ql-editor{min-height:340px;padding:18px;line-height:1.85;color:#111827;}
-.ql-editor table{border-collapse:collapse;width:100%;margin:14px 0;}
-.ql-editor table td,.ql-editor table th{border:1px solid #d0d5dd;padding:10px 14px;font-size:14px;}
-.ql-editor table th{background:#f0f2f5;font-weight:700;text-align:center;}
 .char-count{text-align:right;font-size:12px;color:#98a2b3;margin-top:6px;}
 @media(max-width:720px){
   .top-in{min-height:64px;padding:0 16px;}
@@ -104,7 +93,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   .cell{padding:0 6px;}
   .cell:first-child{display:none;}
   .date{text-align:left;}
-  textarea{min-height:220px;}
 }
 </style>
 </head>
@@ -133,7 +121,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   </section>
 
   <section class="panel">
-    <div class="tabs" role="tablist" aria-label="게시판 분류">
+    <div class="tabs" role="tablist">
       <button class="tab" data-type="case" type="button">성공사례</button>
       <button class="tab" data-type="law" type="button">법률칼럼</button>
       <button class="tab" data-type="press" type="button">언론</button>
@@ -166,38 +154,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 <script>
 (function(){
   var labels = { case:'성공사례', law:'법률칼럼', press:'언론' };
-  var keys = { case:'wyBoard_case', law:'wyBoard_law', press:'wyBoard_press' };
-  var seedData = {
-    press:[
-      {title:'유령 상간남, 월급으로 위자료 받는 법', date:'2026', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/IJ3DZ9BHT4UA', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 상간자 위자료, 채권집행, 급여압류, 손해배상.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'법률사무소 위드윤 언론보도', date:'2025', source:'뉴스리포트', externalUrl:'https://www.news-report.co.kr/news/articleView.html?idxno=2293', content:'뉴스리포트에 게재된 법률사무소 위드윤 관련 언론보도입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'법률사무소 위드윤 언론보도', date:'2025', source:'뉴스리포트', externalUrl:'https://www.news-report.co.kr/news/articleView.html?idxno=2292', content:'뉴스리포트에 게재된 법률사무소 위드윤 관련 언론보도입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'맞벌이하지 않으면 이혼하겠다는 남편…이것이 이혼 사유가 될 수 있나?', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/8WD3L4AZ9KLN', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 이혼 사유, 혼인 파탄, 부부 갈등, 가사 사건 상담.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'로톡뉴스 언론보도 - 형사·가사 법률 쟁점 코멘트', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/MH344WD58XMF', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'10년 전에 도난당한 중고차…무단 방치로 경찰 출석요구서 받아', date:'2023.06.01', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/05ZLYD68RRFU', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 자동차 무단 방치, 자동차관리법 위반, 도난 사실 입증, 경찰 출석 대응.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'이혼 앞둔 배우자가 전세대출 받는데 필요하다며 신분증 사진 요청…제공해도 문제없나?', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/1VSVA835K4KB', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 이혼 전 신분증 제공, 전세대출, 명의도용 위험, 법적 대응.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'이혼하려고 아이 데리고 별거 중인데 남편이 면접 교섭 요구…거절하면 문제 되나?', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/9SG2692A3LYC', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 이혼 전 별거, 자녀 면접교섭, 양육 갈등, 가사 사건 대응.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'남편이 운영하는 학원에서 수입을 몰래 빼돌린 배우자…형사 처벌 안되나?', date:'2023.08.31', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/EOHB9PZTIPL0', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 배우자 횡령, 친족상도례, 법인 전환, 재산분할 및 손해배상.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'이혼 후 아이 데리고 이민 갈 계획인데, 면접교섭권 가진 상대방이 반대하면 어쩌지?', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/IYNRV8OPU7AW', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 이혼, 자녀 이민, 친권·양육권, 면접교섭권.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'결혼 후 남편이 세운 회사의 비상장주식, 이혼 때 현금으로 재산분할 받을 수 있나?', date:'2023.10.16', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/A37QCDHJ5K1Y', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 이혼 재산분할, 비상장주식, 현금 분할, 감정 절차.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'로톡뉴스 언론보도 - 형사·가사 법률 쟁점 코멘트', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/QK4BTYGH4FXT', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'경찰서에 제출한 고소장이 너무 부실해서 취하 후 재고소하고 싶은데, 가능한가?', date:'2023.05.12', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/GFSYPWTF74A9', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 고소장 보완, 고소 취하, 재고소 제한, 추가고소장 및 의견서 제출.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'사실혼 배우자 사망…주택 전세금, 주식 등 아내 명의 재산 처리 어떻게?', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/JD08IN2M5D2F', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 사실혼, 상속, 재산 처리, 전세금 및 주식 관련 법률 쟁점.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:"경찰 조사 결과 '도둑 누명' 씌운 사람으로 드러났는데도 무고죄 불송치된 이유는?", date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/3A0RU60AXV28', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 무고죄, 불송치, 형사고소, 경찰 조사 대응.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'부부가 공유한 남편의 네이버 MYBOX에서 자료 몇 개를 임의로 삭제했다가 고소당해', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/WT8J953SXWTW', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 전자정보 삭제, 부부 공동 사용 계정, 형사고소, 정보통신 관련 쟁점.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'남편 차에 위치추적기 부착…형사 고소하면 어떤 처벌 받게 되지?', date:'2024.03.07', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/QAEFTYZ2IF61', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 위치추적기 부착, 위치정보보호법, 형사고소, 정상참작 및 기소유예.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'남자친구 바람으로 결혼식 직전 파혼…법원이 인정하는 손해배상 범위는?', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/KDHLXMZL267I', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 파혼 손해배상, 결혼 준비 비용, 위자료, 사실관계 입증.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'로톡뉴스 언론보도 - 형사·가사 법률 쟁점 코멘트', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/D2N8UORB40MA', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'조정이혼 하려는데 배우자가 재산을 제대로 공개하지 않으면 어쩌지?', date:'2024.08.01', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/1H2FK8J9VDNO', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 조정이혼, 재산분할, 재산명시, 금융거래정보 조회.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'다가오지 마! 손바닥 뻗었을 뿐인데 폭행범 몰려…방어 목적 행동도 폭행죄?', date:'2026.01.26', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/E35EA6XRK80T', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 폭행죄, 방어행위, 정당방위, 형사사건 대응.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
-      {title:'CCTV가 본 진실, 지하철 폭행 누명 벗었지만…', date:'2026.03.12', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/PYI29IY6C8SN', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n핵심 주제: 지하철 폭행, CCTV 증거, 엄벌탄원서, 민사상 손해배상 및 배상명령.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'}
-    ],
-    law:[
-      {title:'억울한 성범죄 고소, 이렇게 대응하세요', date:'2026.06.07', source:'위드윤 법률칼럼', blogUrl:'/blog/sexual-crime-false-accusation', content:'억울하게 성범죄로 고소당했다면 초기 대응이 모든 것을 결정합니다. 직접 연락 금지, 알리바이 즉시 확보, 무고죄 역고소까지 형사전문 윤성호 변호사가 단계별로 안내합니다.'},
-      {title:'고소장을 취하하지 않고 보완해야 하는 이유', date:'2026.05.31', source:'위드윤 법률칼럼', content:'고소장 내용이 부족하다고 느껴질 때 곧바로 취하 후 재고소를 선택하는 것은 위험할 수 있습니다.\n\n친고죄나 반의사불벌죄는 고소 취소 후 다시 고소하는 데 제한이 생길 수 있고, 비친고죄라도 수사 실무상 재고소가 제약될 수 있습니다.\n\n기존 사건을 유지한 채 추가고소장, 보충 의견서, 증거자료를 제출하는 방식이 더 안전한 대응이 될 수 있습니다.\n\n법률사무소 위드윤은 형사 고소 단계에서 사실관계 정리, 증거 구성, 의견서 작성 방향을 사건별로 검토합니다.'}
-    ],
-    case:[]
-  };
   var API = 'https://with-yoon-api.omd0154.workers.dev';
   var params = new URLSearchParams(location.search);
   var current = labels[params.get('type')] ? params.get('type') : 'case';
@@ -206,74 +162,140 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   var count = document.getElementById('count');
   var form = document.getElementById('form');
   var titleInput = document.getElementById('subject');
-  var contentInput = document.getElementById('content');
   var formTitle = document.getElementById('formTitle');
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // 언론 고정 데이터 (변경 없음)
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  var pressData = [
+    {title:'유령 상간남, 월급으로 위자료 받는 법', date:'2026', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/IJ3DZ9BHT4UA', content:''},
+    {title:'법률사무소 위드윤 언론보도', date:'2025', source:'뉴스리포트', externalUrl:'https://www.news-report.co.kr/news/articleView.html?idxno=2293', content:''},
+    {title:'법률사무소 위드윤 언론보도', date:'2025', source:'뉴스리포트', externalUrl:'https://www.news-report.co.kr/news/articleView.html?idxno=2292', content:''},
+    {title:'맞벌이하지 않으면 이혼하겠다는 남편…이것이 이혼 사유가 될 수 있나?', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/8WD3L4AZ9KLN', content:''},
+    {title:'로톡뉴스 언론보도 - 형사·가사 법률 쟁점 코멘트', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/MH344WD58XMF', content:''},
+    {title:'10년 전에 도난당한 중고차…무단 방치로 경찰 출석요구서 받아', date:'2023.06.01', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/05ZLYD68RRFU', content:''},
+    {title:'이혼 앞둔 배우자가 전세대출 받는데 필요하다며 신분증 사진 요청…제공해도 문제없나?', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/1VSVA835K4KB', content:''},
+    {title:'이혼하려고 아이 데리고 별거 중인데 남편이 면접 교섭 요구…거절하면 문제 되나?', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/9SG2692A3LYC', content:''},
+    {title:'남편이 운영하는 학원에서 수입을 몰래 빼돌린 배우자…형사 처벌 안되나?', date:'2023.08.31', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/EOHB9PZTIPL0', content:''},
+    {title:'이혼 후 아이 데리고 이민 갈 계획인데, 면접교섭권 가진 상대방이 반대하면 어쩌지?', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/IYNRV8OPU7AW', content:''},
+    {title:'결혼 후 남편이 세운 회사의 비상장주식, 이혼 때 현금으로 재산분할 받을 수 있나?', date:'2023.10.16', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/A37QCDHJ5K1Y', content:''},
+    {title:'경찰서에 제출한 고소장이 너무 부실해서 취하 후 재고소하고 싶은데, 가능한가?', date:'2023.05.12', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/GFSYPWTF74A9', content:''},
+    {title:'사실혼 배우자 사망…주택 전세금, 주식 등 아내 명의 재산 처리 어떻게?', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/JD08IN2M5D2F', content:''},
+    {title:"경찰 조사 결과 '도둑 누명' 씌운 사람으로 드러났는데도 무고죄 불송치된 이유는?", date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/3A0RU60AXV28', content:''},
+    {title:'부부가 공유한 남편의 네이버 MYBOX에서 자료 몇 개를 임의로 삭제했다가 고소당해', date:'2023', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/WT8J953SXWTW', content:''},
+    {title:'남편 차에 위치추적기 부착…형사 고소하면 어떤 처벌 받게 되지?', date:'2024.03.07', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/QAEFTYZ2IF61', content:''},
+    {title:'남자친구 바람으로 결혼식 직전 파혼…법원이 인정하는 손해배상 범위는?', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/KDHLXMZL267I', content:''},
+    {title:'조정이혼 하려는데 배우자가 재산을 제대로 공개하지 않으면 어쩌지?', date:'2024.08.01', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/1H2FK8J9VDNO', content:''},
+    {title:'다가오지 마! 손바닥 뻗었을 뿐인데 폭행범 몰려…방어 목적 행동도 폭행죄?', date:'2026.01.26', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/E35EA6XRK80T', content:''},
+    {title:'CCTV가 본 진실, 지하철 폭행 누명 벗었지만…', date:'2026.03.12', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/PYI29IY6C8SN', content:''}
+  ];
 
   function today(){
     var n = new Date();
     return n.getFullYear()+'.'+String(n.getMonth()+1).padStart(2,'0')+'.'+String(n.getDate()).padStart(2,'0');
   }
   function esc(s){
-    return String(s || '').replace(/[&<>"']/g, function(ch){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
-    });
+    return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
   }
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // 법률칼럼: posts.json 에서 자동 로드
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  function loadLawPosts(callback){
+    fetch('/blog/posts.json?v=' + Date.now())
+      .then(function(r){ return r.json(); })
+      .then(function(posts){
+        var items = posts.map(function(p){
+          return {
+            title: p.title,
+            date: p.date,
+            source: '위드윤 법률칼럼',
+            blogUrl: '/blog/' + p.slug + '.html',
+            content: p.summary,
+            _seed: true
+          };
+        });
+        callback(items);
+      })
+      .catch(function(){ callback([]); });
+  }
+
   function detailUrl(type, item){
-    // blogUrl 있으면 SEO 전용 페이지로 바로 이동
     if(item.blogUrl) return item.blogUrl;
     var p = new URLSearchParams({
-      type: type,
-      id: item.id || '',
-      title: item.title || '',
-      date: item.date || '',
-      content: item.content || '',
-      is_html: item.is_html ? '1' : '0',
-      source: item.source || '',
-      externalUrl: item.external_url || item.externalUrl || ''
+      type:type, id:item.id||'', title:item.title||'', date:item.date||'',
+      content:item.content||'', is_html:item.is_html?'1':'0',
+      source:item.source||'', externalUrl:item.external_url||item.externalUrl||''
     });
-    return 'board_detail.html?' + p.toString();
+    return 'board_detail.html?'+p.toString();
   }
-  function render(items){
+
+  function render(seeds, apiItems){
     var titleMap = {case:'성공사례', law:'법률칼럼', press:'언론'};
-    var boardTitle = document.getElementById('boardTitle');
-    if(boardTitle) boardTitle.textContent = titleMap[current] || '칼럼';
-    tabs.forEach(function(tab){tab.classList.toggle('active', tab.dataset.type === current);});
-    formTitle.textContent = labels[current] + ' 글쓰기';
-    // seedData 합치기
-    var seeds = (seedData[current] || []).map(function(s){ return Object.assign({}, s, {_seed:true}); });
-    var all = seeds.concat(items || []);
-    count.textContent = '총 ' + all.length + '건';
+    document.getElementById('boardTitle').textContent = titleMap[current]||'칼럼';
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.type===current); });
+    formTitle.textContent = labels[current]+' 글쓰기';
+    var all = (seeds||[]).concat(apiItems||[]);
+    count.textContent = '총 '+all.length+'건';
     if(!all.length){
       list.innerHTML = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div><div class="empty">등록된 게시글이 없습니다.</div>';
       return;
     }
     var html = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div>';
     all.slice().reverse().forEach(function(item, i){
-      html += '<a class="row" target="_blank" rel="noopener" href="'+esc(detailUrl(current, item))+'">'
-        + '<div class="cell">'+(all.length - i)+'</div>'
-        + '<div class="cell title">'+esc(item.title)+(item.source ? '<span class="source">'+esc(item.source)+'</span>' : '')
-        + (!item._seed && item.id ? ' <button class="del" onclick="event.preventDefault();event.stopPropagation();wyDelete('+item.id+')">삭제</button>' : '')
-        + '</div>'
-        + '<div class="cell date">'+esc(item.date)+'</div>'
-        + '</a>';
+      var url = detailUrl(current, item);
+      html += '<a class="row" target="_blank" rel="noopener" href="'+esc(url)+'">'
+        +'<div class="cell">'+(all.length-i)+'</div>'
+        +'<div class="cell title">'+esc(item.title)
+        +(item.source?'<span class="source">'+esc(item.source)+'</span>':'')
+        +(!item._seed&&item.id?' <button class="del" onclick="event.preventDefault();event.stopPropagation();wyDelete('+item.id+')">삭제</button>':'')
+        +'</div>'
+        +'<div class="cell date">'+esc(item.date)+'</div>'
+        +'</a>';
     });
     list.innerHTML = html;
   }
-  function loadFromAPI(){
+
+  function load(){
     list.innerHTML = '<div class="empty">불러오는 중...</div>';
-    fetch(API + '/api/posts?type=' + current)
-      .then(function(r){ return r.json(); })
-      .then(function(data){ render(Array.isArray(data) ? data : []); })
-      .catch(function(){ render([]); });
+
+    if(current === 'law'){
+      // posts.json + API 병렬 로드
+      var lawSeeds = [];
+      var apiDone = false, seedDone = false;
+      var apiItems = [];
+
+      loadLawPosts(function(items){
+        lawSeeds = items;
+        seedDone = true;
+        if(apiDone) render(lawSeeds, apiItems);
+      });
+      fetch(API+'/api/posts?type=law')
+        .then(function(r){ return r.json(); })
+        .then(function(data){ apiItems = Array.isArray(data)?data:[]; apiDone=true; if(seedDone) render(lawSeeds, apiItems); })
+        .catch(function(){ apiDone=true; if(seedDone) render(lawSeeds, []); });
+
+    } else if(current === 'press'){
+      render(pressData, []);
+
+    } else {
+      // 성공사례: API만
+      fetch(API+'/api/posts?type='+current)
+        .then(function(r){ return r.json(); })
+        .then(function(data){ render([], Array.isArray(data)?data:[]); })
+        .catch(function(){ render([], []); });
+    }
   }
+
   tabs.forEach(function(tab){
     tab.addEventListener('click', function(){
       current = tab.dataset.type;
-      history.replaceState(null, '', '?type=' + current);
+      history.replaceState(null,'','?type='+current);
       form.classList.remove('open');
-      loadFromAPI();
+      load();
     });
   });
+
   document.getElementById('writeBtn').addEventListener('click', function(){
     titleInput.value = '';
     if(window._quill) window._quill.setText('');
@@ -286,45 +308,36 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var title = titleInput.value.trim();
-    var html = window._quill ? window._quill.root.innerHTML.trim() : '';
-    var text = window._quill ? window._quill.getText().trim() : '';
-    if(!title){alert('제목을 입력하세요.'); titleInput.focus(); return;}
-    if(!text){alert('내용을 입력하세요.'); return;}
-    fetch(API + '/api/posts', {
+    var html2 = window._quill?window._quill.root.innerHTML.trim():'';
+    var text = window._quill?window._quill.getText().trim():'';
+    if(!title){alert('제목을 입력하세요.');titleInput.focus();return;}
+    if(!text){alert('내용을 입력하세요.');return;}
+    fetch(API+'/api/posts',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({type:current, title:title, content:html, is_html:true, date:today()})
-    }).then(function(r){ return r.json(); })
-      .then(function(){ form.classList.remove('open'); loadFromAPI(); })
-      .catch(function(){ alert('저장 실패. 다시 시도해주세요.'); });
+      body:JSON.stringify({type:current,title:title,content:html2,is_html:true,date:today()})
+    }).then(function(r){return r.json();})
+      .then(function(){form.classList.remove('open');load();})
+      .catch(function(){alert('저장 실패. 다시 시도해주세요.');});
   });
   window.wyDelete = function(id){
     if(!confirm('이 글을 삭제하시겠습니까?')) return;
-    fetch(API + '/api/posts/' + id, {method:'DELETE'})
-      .then(function(){ loadFromAPI(); })
-      .catch(function(){ alert('삭제 실패.'); });
+    fetch(API+'/api/posts/'+id,{method:'DELETE'})
+      .then(function(){load();})
+      .catch(function(){alert('삭제 실패.');});
   };
-  // Quill 에디터 초기화
-  window._quill = new Quill('#editor', {
-    theme: 'snow',
-    placeholder: '내용을 입력하세요. 표, 굵게, 제목 등 자유롭게 작성하실 수 있습니다.',
-    modules: {
-      toolbar: [
-        [{ header: [2, 3, false] }],
-        ['bold', 'italic', 'underline'],
-        [{ color: [] }, { background: [] }],
-        [{ list: 'ordered' }, { list: 'bullet' }],
-        [{ align: [] }],
-        ['blockquote'],
-        ['clean']
-      ]
-    }
+
+  window._quill = new Quill('#editor',{
+    theme:'snow',
+    placeholder:'내용을 입력하세요.',
+    modules:{toolbar:[[{header:[2,3,false]}],['bold','italic','underline'],[{color:[]},{background:[]}],[{list:'ordered'},{list:'bullet'}],[{align:[]}],['blockquote'],['clean']]}
   });
-  window._quill.on('text-change', function(){
+  window._quill.on('text-change',function(){
     var len = window._quill.getText().replace(/\n/g,'').length;
-    document.getElementById('charCount').textContent = len.toLocaleString() + '자';
+    document.getElementById('charCount').textContent = len.toLocaleString()+'자';
   });
-  loadFromAPI();
+
+  load();
 })();
 </script>
 </body>
