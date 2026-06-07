@@ -80,7 +80,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .seo-copy strong{color:var(--navy);}
 .del{border:0;background:transparent;color:#d92d20;font-size:12px;font-weight:800;cursor:pointer;padding:4px 8px;border-radius:4px;margin-left:8px;vertical-align:middle;}
 .del:hover{background:#fff1f0;}
-/* Quill 에디터 */
 #editor-container{background:#fff;border:1px solid #d0d5dd;border-radius:6px;overflow:hidden;}
 #editor-container:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.16);}
 .ql-toolbar.ql-snow{border:none;border-bottom:1px solid #e4e7ec;background:#f9fafb;padding:10px 12px;}
@@ -198,6 +197,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     ],
     case:[]
   };
+  var API = 'https://with-yoon-api.omd0154.workers.dev';
   var params = new URLSearchParams(location.search);
   var current = labels[params.get('type')] ? params.get('type') : 'case';
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
@@ -208,26 +208,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   var contentInput = document.getElementById('content');
   var formTitle = document.getElementById('formTitle');
 
-  function load(type){
-    var stored = [];
-    try{stored = JSON.parse(localStorage.getItem(keys[type]) || '[]');}
-    catch(e){stored = [];}
-    var seeds = seedData[type] || [];
-    var seen = {};
-    return seeds.concat(stored).filter(function(item){
-      var key = item.externalUrl || item.title;
-      if(seen[key]) return false;
-      seen[key] = true;
-      return true;
-    });
-  }
-  function save(type, items){
-    localStorage.setItem(keys[type], JSON.stringify(items));
-  }
-  function loadStored(type){
-    try{return JSON.parse(localStorage.getItem(keys[type]) || '[]');}
-    catch(e){return [];}
-  }
   function today(){
     var n = new Date();
     return n.getFullYear()+'.'+String(n.getMonth()+1).padStart(2,'0')+'.'+String(n.getDate()).padStart(2,'0');
@@ -237,87 +217,92 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
     });
   }
-  function detailUrl(type, idx, item){
-    var postKey = 'wyBoardPost_' + type + '_' + idx + '_' + Date.now() + '_' + Math.random().toString(36).slice(2);
-    try{
-      localStorage.setItem(postKey, JSON.stringify({
-        type:type,
-        typeLabel:labels[type],
-        title:item.title,
-        date:item.date,
-        content:item.content,
-        source:item.source || '',
-        externalUrl:item.externalUrl || ''
-      }));
-    }catch(e){}
-    var params = new URLSearchParams({
-      postKey: postKey,
+  function detailUrl(type, item){
+    var p = new URLSearchParams({
       type: type,
-      idx: String(idx),
+      id: item.id || '',
       title: item.title || '',
       date: item.date || '',
       content: item.content || '',
+      is_html: item.is_html ? '1' : '0',
       source: item.source || '',
-      externalUrl: item.externalUrl || ''
+      externalUrl: item.external_url || item.externalUrl || ''
     });
-    return 'board_detail.html?' + params.toString();
+    return 'board_detail.html?' + p.toString();
   }
-  function render(){
+  function render(items){
     var titleMap = {case:'성공사례', law:'법률칼럼', press:'언론'};
     var boardTitle = document.getElementById('boardTitle');
     if(boardTitle) boardTitle.textContent = titleMap[current] || '칼럼';
     tabs.forEach(function(tab){tab.classList.toggle('active', tab.dataset.type === current);});
-    var items = load(current);
-    count.textContent = '총 ' + items.length + '건';
     formTitle.textContent = labels[current] + ' 글쓰기';
-    if(!items.length){
+    // seedData 합치기
+    var seeds = (seedData[current] || []).map(function(s){ return Object.assign({}, s, {_seed:true}); });
+    var all = seeds.concat(items || []);
+    count.textContent = '총 ' + all.length + '건';
+    if(!all.length){
       list.innerHTML = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div><div class="empty">등록된 게시글이 없습니다.</div>';
       return;
     }
     var html = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div>';
-    items.slice().reverse().forEach(function(item, i){
-      var realIdx = items.length - 1 - i;
-      html += '<a class="row" target="_blank" rel="noopener" href="'+esc(detailUrl(current, realIdx, item))+'">'
-        + '<div class="cell">'+(items.length - i)+'</div>'
-        + '<div class="cell title">'+esc(item.title)+(item.source ? '<span class="source">'+esc(item.source)+'</span>' : '')+'</div>'
+    all.slice().reverse().forEach(function(item, i){
+      html += '<a class="row" target="_blank" rel="noopener" href="'+esc(detailUrl(current, item))+'">'
+        + '<div class="cell">'+(all.length - i)+'</div>'
+        + '<div class="cell title">'+esc(item.title)+(item.source ? '<span class="source">'+esc(item.source)+'</span>' : '')
+        + (!item._seed && item.id ? ' <button class="del" onclick="event.preventDefault();event.stopPropagation();wyDelete('+item.id+')">삭제</button>' : '')
+        + '</div>'
         + '<div class="cell date">'+esc(item.date)+'</div>'
         + '</a>';
     });
     list.innerHTML = html;
-    injectListSeo(items);
   }
-  function injectListSeo(items){
-    var old = document.getElementById('boardItemListSchema');
-    if(old) old.remove();
-    var schema = document.createElement('script');
-    schema.type = 'application/ld+json';
-    schema.id = 'boardItemListSchema';
-    schema.textContent = JSON.stringify({
-      '@context':'https://schema.org',
-      '@type':'ItemList',
-      name:'법률사무소 위드윤 ' + labels[current],
-      itemListElement:items.map(function(item, i){
-        return {
-          '@type':'ListItem',
-          position:i + 1,
-          name:item.title,
-          url:item.externalUrl || new URL(detailUrl(current, i, item), location.href).href
-        };
-      })
-    });
-    document.head.appendChild(schema);
+  function loadFromAPI(){
+    list.innerHTML = '<div class="empty">불러오는 중...</div>';
+    fetch(API + '/api/posts?type=' + current)
+      .then(function(r){ return r.json(); })
+      .then(function(data){ render(Array.isArray(data) ? data : []); })
+      .catch(function(){ render([]); });
   }
   tabs.forEach(function(tab){
     tab.addEventListener('click', function(){
       current = tab.dataset.type;
       history.replaceState(null, '', '?type=' + current);
       form.classList.remove('open');
-      render();
+      loadFromAPI();
     });
   });
-
+  document.getElementById('writeBtn').addEventListener('click', function(){
+    titleInput.value = '';
+    if(window._quill) window._quill.setText('');
+    form.classList.add('open');
+    titleInput.focus();
+  });
+  document.getElementById('cancelBtn').addEventListener('click', function(){
+    form.classList.remove('open');
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var title = titleInput.value.trim();
+    var html = window._quill ? window._quill.root.innerHTML.trim() : '';
+    var text = window._quill ? window._quill.getText().trim() : '';
+    if(!title){alert('제목을 입력하세요.'); titleInput.focus(); return;}
+    if(!text){alert('내용을 입력하세요.'); return;}
+    fetch(API + '/api/posts', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({type:current, title:title, content:html, is_html:true, date:today()})
+    }).then(function(r){ return r.json(); })
+      .then(function(){ form.classList.remove('open'); loadFromAPI(); })
+      .catch(function(){ alert('저장 실패. 다시 시도해주세요.'); });
+  });
+  window.wyDelete = function(id){
+    if(!confirm('이 글을 삭제하시겠습니까?')) return;
+    fetch(API + '/api/posts/' + id, {method:'DELETE'})
+      .then(function(){ loadFromAPI(); })
+      .catch(function(){ alert('삭제 실패.'); });
+  };
   // Quill 에디터 초기화
-  var quill = new Quill('#editor', {
+  window._quill = new Quill('#editor', {
     theme: 'snow',
     placeholder: '내용을 입력하세요. 표, 굵게, 제목 등 자유롭게 작성하실 수 있습니다.',
     modules: {
@@ -328,41 +313,15 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
         [{ list: 'ordered' }, { list: 'bullet' }],
         [{ align: [] }],
         ['blockquote'],
-        ['table'],
         ['clean']
       ]
     }
   });
-
-  // 글자 수 표시
-  quill.on('text-change', function(){
-    var len = quill.getText().replace(/\n/g,'').length;
+  window._quill.on('text-change', function(){
+    var len = window._quill.getText().replace(/\n/g,'').length;
     document.getElementById('charCount').textContent = len.toLocaleString() + '자';
   });
-
-  document.getElementById('writeBtn').addEventListener('click', function(){
-    titleInput.value = '';
-    quill.setText('');
-    form.classList.add('open');
-    titleInput.focus();
-  });
-  document.getElementById('cancelBtn').addEventListener('click', function(){
-    form.classList.remove('open');
-  });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var title = titleInput.value.trim();
-    var html = quill.root.innerHTML.trim();
-    var text = quill.getText().trim();
-    if(!title){alert('제목을 입력하세요.'); titleInput.focus(); return;}
-    if(!text){alert('내용을 입력하세요.'); quill.focus(); return;}
-    var items = loadStored(current);
-    items.push({title:title, content:html, isHtml:true, date:today()});
-    save(current, items);
-    form.classList.remove('open');
-    render();
-  });
-  render();
+  loadFromAPI();
 })();
 </script>
 </body>

@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.core.css" rel="stylesheet">
 <style>
 :root{
   --navy:#111a2e;
@@ -52,18 +51,9 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,42px);line-height:
 .source-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:11px 14px;border:1px solid var(--line);border-radius:6px;color:var(--navy);font-size:13px;font-weight:800;background:#fff;}
 .source-link:hover{border-color:var(--gold);}
 .body{padding:46px 48px 56px;font-size:17px;color:#2f3744;font-weight:300;line-height:2.05;word-break:keep-all;overflow-wrap:break-word;}
-.body p{margin:0 0 18px;}
+.body p{margin:0 0 22px;}
 .body p:last-child{margin-bottom:0;}
-.body h2{font-family:'Noto Serif KR',serif;font-size:22px;color:var(--navy);font-weight:700;margin:32px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--gold);}
-.body h3{font-family:'Noto Serif KR',serif;font-size:18px;color:var(--navy);font-weight:700;margin:24px 0 10px;}
-.body strong,.body b{font-weight:700;color:#1a2438;}
-.body ul,.body ol{padding-left:24px;margin:10px 0 18px;}
-.body li{margin-bottom:6px;}
-.body blockquote{border-left:4px solid var(--gold);margin:18px 0;padding:14px 20px;background:#fffdf5;color:#5a4010;font-style:italic;}
-.body table{border-collapse:collapse;width:100%;margin:18px 0;font-size:15px;}
-.body table th{background:var(--navy);color:#fff;font-weight:700;padding:12px 16px;text-align:center;}
-.body table td{border:1px solid #d0d5dd;padding:11px 16px;vertical-align:top;}
-.body table tr:nth-child(even) td{background:#f8f9fb;}
+.blank{height:10px;}
 .cta{margin:0 48px 48px;padding:28px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
 .cta h2{font-family:'Noto Serif KR',serif;font-size:22px;line-height:1.4;}
 .cta p{color:rgba(255,255,255,.68);font-size:14px;margin-top:4px;}
@@ -125,123 +115,105 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,42px);line-height:
   var params = new URLSearchParams(location.search);
   var labels = { case:'성공사례', law:'법률칼럼', press:'언론' };
   var type = params.get('type') || '';
-  var post = getPost();
+  var id = params.get('id') || '';
   var listUrl = 'board.html' + (labels[type] ? '?type=' + encodeURIComponent(type) : '');
   document.getElementById('listTop').href = listUrl;
-  if(!post || !post.title){
-    renderError(listUrl);
-    return;
-  }
-  type = post.type || type;
-  var label = post.typeLabel || labels[type] || '게시글';
-  document.title = post.title + ' | 법률사무소 위드윤';
-  renderArticle({
-    type:type,
-    label:label,
-    title:post.title,
-    date:post.date || '',
-    content:post.content || '',
-    source:post.source || '',
-    externalUrl:post.externalUrl || ''
-  }, listUrl);
-  injectArticleSeo(post, label);
 
-  function getPost(){
-    var postKey = params.get('postKey');
-    if(postKey){
-      try{
-        var stored = JSON.parse(localStorage.getItem(postKey) || 'null');
-        if(stored) return stored;
-      }catch(e){}
+  var API = 'https://with-yoon-api.omd0154.workers.dev';
+
+  // seedData (board와 동일)
+  var seedData = {
+    press:[
+      {title:'유령 상간남, 월급으로 위자료 받는 법', date:'2026', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/IJ3DZ9BHT4UA', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
+      {title:'맞벌이하지 않으면 이혼하겠다는 남편…이것이 이혼 사유가 될 수 있나?', date:'2024', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/8WD3L4AZ9KLN', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'},
+      {title:'CCTV가 본 진실, 지하철 폭행 누명 벗었지만…', date:'2026.03.12', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/PYI29IY6C8SN', content:'로톡뉴스에 게재된 법률사무소 위드윤 윤성호 변호사의 언론 코멘트입니다.\n\n원문 기사에서 자세한 내용을 확인할 수 있습니다.'}
+    ],
+    law:[
+      {title:'고소장을 취하하지 않고 보완해야 하는 이유', date:'2026.05.31', source:'위드윤 법률칼럼', content:'고소장 내용이 부족하다고 느껴질 때 곧바로 취하 후 재고소를 선택하는 것은 위험할 수 있습니다.\n\n친고죄나 반의사불벌죄는 고소 취소 후 다시 고소하는 데 제한이 생길 수 있고, 비친고죄라도 수사 실무상 재고소가 제약될 수 있습니다.\n\n기존 사건을 유지한 채 추가고소장, 보충 의견서, 증거자료를 제출하는 방식이 더 안전한 대응이 될 수 있습니다.\n\n법률사무소 위드윤은 형사 고소 단계에서 사실관계 정리, 증거 구성, 의견서 작성 방향을 사건별로 검토합니다.'}
+    ],
+    case:[]
+  };
+
+  function getPost(cb){
+    // DB 글 (id 있으면)
+    if(id){
+      fetch(API + '/api/posts?type=' + type)
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          var found = (data||[]).find(function(p){ return String(p.id) === id; });
+          if(found){ cb(Object.assign({}, found, {typeLabel: labels[type]})); return; }
+          fallback(cb);
+        }).catch(function(){ fallback(cb); });
+    } else {
+      fallback(cb);
     }
-    var idx = params.get('idx');
-    if(type && idx !== null){
-      try{
-        var items = JSON.parse(localStorage.getItem('wyBoard_' + type) || '[]');
-        var item = items[Number(idx)];
-        if(item){
-          return {type:type,typeLabel:labels[type],title:item.title,date:item.date,content:item.content,isHtml:item.isHtml||false,source:item.source || '',externalUrl:item.externalUrl || ''};
-        }
-      }catch(e){}
-    }
+  }
+  function fallback(cb){
+    // URL 파라미터로 seed 글 표시
     var title = params.get('title');
     if(title){
-      return {
-        type:type,
-        typeLabel:params.get('typeLabel') || labels[type] || '게시글',
-        title:title,
-        date:params.get('date') || '',
-        content:params.get('content') || '',
-        source:params.get('source') || '',
-        externalUrl:params.get('externalUrl') || ''
-      };
+      cb({
+        type: type, typeLabel: labels[type] || '게시글',
+        title: title, date: params.get('date') || '',
+        content: params.get('content') || '',
+        is_html: params.get('is_html') === '1',
+        source: params.get('source') || '',
+        externalUrl: params.get('externalUrl') || ''
+      });
+    } else {
+      cb(null);
     }
-    return null;
   }
+
   function esc(s){
-    return String(s || '').replace(/[&<>"']/g, function(ch){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    return String(s||'').replace(/[&<>"']/g,function(c){
+      return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
     });
   }
   function bodyHtml(content, isHtml){
-    if(isHtml){
-      // Quill로 작성된 HTML 콘텐츠 그대로 렌더링
-      return content || '<p>내용이 없습니다.</p>';
-    }
-    // 기존 텍스트 콘텐츠 처리
-    var text = String(content || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    if(isHtml) return content || '<p>내용이 없습니다.</p>';
+    var text = String(content||'').replace(/\r\n/g,'\n').replace(/\r/g,'\n');
     if(!text.trim()) return '<p>내용이 없습니다.</p>';
     return text.split('\n').map(function(line){
       return line.trim() ? '<p>'+esc(line)+'</p>' : '<div style="height:10px"></div>';
     }).join('');
   }
-  function injectArticleSeo(post, label){
-    var description = String(post.content || '').replace(/\s+/g, ' ').trim().slice(0, 150) || '법률사무소 위드윤 게시글입니다.';
-    var metaDesc = document.querySelector('meta[name="description"]');
-    if(metaDesc) metaDesc.setAttribute('content', description);
-    var ogTitle = document.createElement('meta');
-    ogTitle.setAttribute('property', 'og:title');
-    ogTitle.setAttribute('content', post.title + ' | 법률사무소 위드윤');
-    document.head.appendChild(ogTitle);
-    var ogDesc = document.createElement('meta');
-    ogDesc.setAttribute('property', 'og:description');
-    ogDesc.setAttribute('content', description);
-    document.head.appendChild(ogDesc);
-    var schema = document.createElement('script');
-    schema.type = 'application/ld+json';
-    schema.textContent = JSON.stringify({
-      '@context':'https://schema.org',
-      '@type':'Article',
-      headline:post.title,
-      description:description,
-      articleSection:label,
-      author:{'@type':'Organization', name:'법률사무소 위드윤'},
-      publisher:{'@type':'LegalService', name:'법률사무소 위드윤', telephone:'010-9491-1567', areaServed:'서울 서초구'},
-      datePublished:post.date || undefined,
-      mainEntityOfPage:location.href,
-      sameAs:post.externalUrl ? [post.externalUrl] : undefined
-    });
-    document.head.appendChild(schema);
+  function setMeta(attr, name, value){
+    var el = document.querySelector('meta['+attr+'="'+name+'"]');
+    if(!el){ el=document.createElement('meta'); el.setAttribute(attr,name); document.head.appendChild(el); }
+    el.setAttribute('content', value);
   }
-  function renderArticle(post, listUrl){
-    var catClass = post.type === 'press' ? 'press' : post.type === 'case' ? 'case' : '';
+  function renderArticle(post){
+    var label = post.typeLabel || labels[post.type] || '게시글';
+    var catClass = post.type==='press'?'press':post.type==='case'?'case':'';
+    var exUrl = post.externalUrl || post.external_url || '';
+    var description = String(post.content||'').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim().slice(0,150);
+    document.title = post.title + ' | 법률사무소 위드윤';
+    setMeta('name','description', description);
+    setMeta('property','og:title', post.title + ' | 법률사무소 위드윤');
+    setMeta('property','og:description', description);
     document.getElementById('page').innerHTML =
-      '<nav class="crumb" aria-label="현재 위치"><a href="index.html#top">홈</a><span>&gt;</span><a href="'+listUrl+'">칼럼</a><span>&gt;</span><span>'+esc(post.label)+'</span></nav>'
-      + '<article class="article">'
-      + '<header class="head"><div class="cat '+catClass+'">'+esc(post.label)+'</div><h1>'+esc(post.title)+'</h1>'
-      + '<div class="meta"><span><strong>작성자</strong> 법률사무소 위드윤</span>' + (post.date ? '<span><strong>작성일</strong> '+esc(post.date)+'</span>' : '') + (post.source ? '<span><strong>출처</strong> '+esc(post.source)+'</span>' : '') + '</div>'
-      + (post.externalUrl ? '<a class="source-link" href="'+esc(post.externalUrl)+'" target="_blank" rel="noopener">원문 기사 보기</a>' : '')
-      + '</header>'
-      + '<div class="body">'+bodyHtml(post.content, post.isHtml)+'</div>'
-      + '<section class="cta"><div><h2>법률 상담이 필요하신가요?</h2><p>대표 변호사가 사건 방향을 직접 확인합니다.</p></div>'
-      + '<div class="cta-links"><a class="btn gold" href="tel:010-9491-1567">전화 상담</a><a class="btn naver" href="https://map.naver.com/p/entry/place/1750217153" target="_blank" rel="noopener">N 네이버 예약</a></div></section>'
-      + '</article>'
-      + '<section class="related"><h2>바로가기</h2><a href="'+listUrl+'"><span>'+esc(post.label)+' 목록</span><span>보기</span></a><a href="index.html#contact"><span>상담 안내 및 오시는 길</span><span>확인</span></a></section>';
+      '<nav class="crumb" aria-label="현재 위치"><a href="index.html#top">홈</a><span>&gt;</span><a href="'+listUrl+'">칼럼</a><span>&gt;</span><span>'+esc(label)+'</span></nav>'
+      +'<article class="article">'
+      +'<header class="head"><div class="cat '+catClass+'">'+esc(label)+'</div><h1>'+esc(post.title)+'</h1>'
+      +'<div class="meta"><span><strong>작성자</strong> 법률사무소 위드윤</span>'+(post.date?'<span><strong>작성일</strong> '+esc(post.date)+'</span>':'')+(post.source?'<span><strong>출처</strong> '+esc(post.source)+'</span>':'')+'</div>'
+      +(exUrl?'<a class="source-link" href="'+esc(exUrl)+'" target="_blank" rel="noopener">원문 기사 보기 →</a>':'')
+      +'</header>'
+      +'<div class="body">'+bodyHtml(post.content, post.is_html||post.is_html===1)+'</div>'
+      +'<section class="cta"><div><h2>법률 상담이 필요하신가요?</h2><p>대표 변호사가 사건 방향을 직접 확인합니다.</p></div>'
+      +'<div class="cta-links"><a class="btn gold" href="tel:010-9491-1567">전화 상담</a><a class="btn naver" href="https://map.naver.com/p/entry/place/1750217153" target="_blank" rel="noopener">N 네이버 예약</a></div></section>'
+      +'</article>'
+      +'<section class="related"><h2>바로가기</h2><a href="'+listUrl+'"><span>'+esc(label)+' 목록</span><span>보기</span></a><a href="index.html#contact"><span>상담 안내 및 오시는 길</span><span>확인</span></a></section>';
   }
-  function renderError(listUrl){
+  function renderError(){
     document.getElementById('page').innerHTML =
-      '<div class="error"><h1>게시글을 찾을 수 없습니다</h1><p>주소가 올바르지 않거나 게시글이 삭제되었습니다.</p><a class="btn primary" href="'+listUrl+'">목록으로 돌아가기</a></div>';
+      '<div class="error"><h1>게시글을 찾을 수 없습니다</h1><p>주소가 올바르지 않거나 삭제된 게시글입니다.</p><a class="btn primary" href="'+listUrl+'">목록으로 돌아가기</a></div>';
   }
+
+  getPost(function(post){
+    if(!post || !post.title){ renderError(); return; }
+    renderArticle(post);
+  });
 })();
 </script>
 </body>
