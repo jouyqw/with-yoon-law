@@ -31,8 +31,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Noto Sans KR',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden;line-height:1.7;}
-
-/* HEADER */
 header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,8,8,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,215,0,.2);transition:box-shadow .3s;}
 .hi{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px;}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
@@ -58,8 +56,6 @@ nav a.nav-em:hover,.nav-drop:hover .nav-drop-toggle.nav-em,.nav-drop-toggle.nav-
 .mnav.open{display:flex;}
 .mnav a{color:#fff;text-decoration:none;font-size:19px;font-family:'Noto Serif KR',serif;padding:12px 32px;border-bottom:1px solid rgba(255,215,0,.2);width:260px;text-align:center;}
 .mnav a:last-child{background:#FFD700;color:#111111;font-weight:700;border:none;border-radius:6px;margin-top:8px;}
-
-/* HERO */
 .hero{min-height:100vh;background:linear-gradient(155deg,#080808 0%,#111111 52%,#080808 100%);display:flex;align-items:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23c9a84c' fill-opacity='0.035'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
 .hero-ring{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:560px;height:560px;border:1px solid rgba(255,215,0,.07);border-radius:50%;pointer-events:none;}
@@ -82,27 +78,19 @@ nav a.nav-em:hover,.nav-drop:hover .nav-drop-toggle.nav-em,.nav-drop-toggle.nav-
 .hphone{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);text-decoration:none;font-size:14.5px;transition:color .2s;}
 .hphone:hover{color:#FFD700;}
 .hphone-icon{width:34px;height:34px;border-radius:50%;background:rgba(255,215,0,.2);border:1px solid rgba(255,215,0,.3);display:flex;align-items:center;justify-content:center;font-size:13px;}
-
-/* Hero photo panel */
 .hero-photos{position:relative;animation:fu .8s .3s ease both;}
 .hero-photo-main{width:100%;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);border:1px solid rgba(255,215,0,.2);}
 .hero-photo-main img{width:100%;height:420px;object-fit:cover;object-position:center center;display:block;}
 @keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-
-/* TRUST BAR */
 .tbar{background:#E53935;padding:18px 24px;}
 .tbar-in{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:20px 48px;}
 .titem{display:flex;align-items:center;gap:10px;color:#ffffff;font-weight:700;font-size:14px;letter-spacing:0.3px;}
-
-/* SECTIONS */
 section{padding:96px 24px;}
 .sin{max-width:1200px;margin:0 auto;}
 .slabel{display:inline-block;font-size:11px;letter-spacing:3px;font-weight:600;color:#E53935;text-transform:uppercase;margin-bottom:12px;}
 .stitle{font-family:'Noto Serif KR',serif;font-size:clamp(24px,3.2vw,38px);font-weight:600;color:var(--navy);line-height:1.35;margin-bottom:16px;}
 .ssub{font-size:14.5px;color:var(--mid);max-width:560px;line-height:1.9;font-weight:300;}
 .gline{width:44px;height:3px;background:#E53935;margin:18px 0 44px;border-radius:2px;}
-
-/* WHY */
 .why{background:var(--cream);}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:24px;margin-top:48px;}
 .wcard{background:#fff;border:1px solid rgba(255,215,0,.18);border-radius:8px;padding:34px 30px;transition:all .3s;position:relative;overflow:hidden;}
@@ -114,8 +102,6 @@ section{padding:96px 24px;}
 .wcard p{font-size:14px;color:var(--mid);line-height:1.9;font-weight:300;word-break:keep-all;overflow-wrap:break-word;}
 .wcard p+p{margin-top:10px;}
 .wcard strong{color:var(--navy);font-weight:700;}
-
-/* LAWYERS */
 .lawyers-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:52px;}
 @media(max-width:1024px){.lawyers-wrap{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:640px){.lawyers-wrap{grid-template-columns:1fr;}}
@@ -135,8 +121,6 @@ section{padding:96px 24px;}
 .career-list li:last-child{border-bottom:none;}
 .career-list li::before{content:'▸';position:absolute;left:0;top:16px;color:#E53935;font-size:9px;}
 .career-list li strong{color:var(--navy);font-weight:700;}
-
-/* CASES */
 .cases{background:var(--navy);}
 .cases .stitle,.cases .gline{color:#fff;}
 .cases .ssub{color:rgba(255,255,255,.5);}
@@ -148,8 +132,6 @@ section{padding:96px 24px;}
 a.case-item{color:inherit;}
 a.case-item:visited .case-charge{color:rgba(255,255,255,.75);}
 .cases-note{margin-top:24px;text-align:center;font-size:12px;color:rgba(255,255,255,.3);font-weight:300;}
-
-/* CASE MARQUEE & PROOF */
 .case-marquee{padding:0;background:#0b0d10;color:#ffffff;overflow:hidden;border-top:1px solid rgba(201,168,76,.55);border-bottom:1px solid rgba(255,255,255,.08);}
 .marquee-track{display:flex;width:max-content;min-width:100%;animation:marquee-left 420s linear infinite;}
 .marquee-track.reverse{border-top:2px solid rgba(201,168,76,.45);animation:marquee-right 460s linear infinite;}
@@ -176,16 +158,12 @@ a.case-item:visited .case-charge{color:rgba(255,255,255,.75);}
 @keyframes marquee-left{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
 @keyframes marquee-right{from{transform:translate3d(-50%,0,0);}to{transform:translate3d(0,0,0);}}
 @media(prefers-reduced-motion:reduce){.marquee-track,.marquee-track.reverse{animation:none;transform:none;}}
-
-/* PRACTICE */
 .practice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:14px;margin-top:48px;}
 .pitem{background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.13);border-radius:6px;padding:26px 18px;transition:all .3s;text-align:center;}
 .pitem:hover{background:rgba(255,215,0,.1);border-color:rgba(255,215,0,.35);transform:translateY(-3px);}
 .picon{font-size:26px;margin-bottom:10px;display:block;}
 .pitem h3{color:#fff;font-size:14px;font-weight:500;margin-bottom:4px;}
 .pitem p{color:rgba(255,255,255,.38);font-size:11.5px;line-height:1.5;}
-
-/* PROCESS */
 .process{background:var(--cream);}
 .process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:48px;}
 .pstep{padding:32px 20px;text-align:center;position:relative;}
@@ -193,14 +171,10 @@ a.case-item:visited .case-charge{color:rgba(255,255,255,.75);}
 .snum{width:50px;height:50px;border-radius:50%;background:var(--navy);color:#FFD700;font-family:'Playfair Display',serif;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px solid #FFD700;}
 .pstep h3{font-size:14.5px;color:var(--navy);font-weight:600;margin-bottom:6px;font-family:'Noto Serif KR',serif;}
 .pstep p{font-size:12.5px;color:var(--mid);line-height:1.7;font-weight:300;}
-
-/* OFFICE */
 .office-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
 .office-img{border-radius:8px;overflow:hidden;border:1px solid var(--border);}
 .office-img img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .4s;}
 .office-img:hover img{transform:scale(1.04);}
-
-/* CTA */
 .cta-sec{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);padding:88px 24px;position:relative;overflow:hidden;}
 .cta-sec::before{content:'';position:absolute;right:-100px;top:-100px;width:380px;height:380px;border:1px solid rgba(255,215,0,.09);border-radius:50%;}
 .cta-in{max-width:780px;margin:0 auto;text-align:center;position:relative;z-index:1;}
@@ -214,8 +188,6 @@ a.case-item:visited .case-charge{color:rgba(255,255,255,.75);}
 .phone-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:36px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);}
 .pbtn{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;padding:13px 22px;border-radius:4px;font-size:16px;font-weight:600;transition:all .25s;letter-spacing:.8px;}
 .pbtn:hover{background:rgba(255,215,0,.2);border-color:#FFD700;color:#FFD700;}
-
-/* MAP */
 .map-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:48px;align-items:start;}
 .ilist{list-style:none;}
 .ilist li{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid #f0f0f0;align-items:flex-start;}
@@ -227,8 +199,6 @@ a.case-item:visited .case-charge{color:rgba(255,255,255,.75);}
 .ival a:hover{color:#FFD700;}
 .mapframe{border-radius:8px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);}
 .mapframe iframe{width:100%;height:340px;border:none;display:block;}
-
-/* SOCIAL */
 .social{background:var(--cream);padding:52px 24px;}
 .social-in{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
 .social-links{display:flex;gap:10px;flex-wrap:wrap;}
@@ -237,8 +207,6 @@ a.case-item:visited .case-charge{color:rgba(255,255,255,.75);}
 .sl-blog{background:#03C75A;color:#fff;}
 .sl-yt{background:#FF0000;color:#fff;}
 .sl-kako{background:#FEE500;color:#191919;}
-
-/* BOARD TABS */
 .board-tabs{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid #e8e8e8;}
 .board-tab{background:none;border:none;padding:14px 28px;font-size:15px;font-weight:600;color:var(--light);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;font-family:'Noto Sans KR',sans-serif;}
 .board-tab:hover{color:var(--navy);}
@@ -277,19 +245,65 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
 .fbot a{color:rgba(255,255,255,.3);text-decoration:none;margin-left:14px;}
 .fbot a:hover{color:#FFD700;}
 .fnotice{font-size:10.5px;color:rgba(255,255,255,.22);margin-top:10px;line-height:1.8;}
-
-/* FLOAT */
-.fcta{position:fixed;bottom:24px;right:20px;z-index:900;display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
-.fbtn{display:flex;align-items:center;gap:8px;padding:11px 16px;border-radius:26px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:all .25s;}
-.fbtn:hover{transform:translateY(-2px);}
+.fcta{position:fixed;bottom:24px;right:20px;z-index:900;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+.fbtn{display:flex;align-items:center;gap:10px;padding:13px 18px;border-radius:28px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:all .25s;min-width:160px;justify-content:center;}
+.fbtn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.3);}
 .fbtn-k{background:#FEE500;color:#191919;}
 .fbtn-c{background:#FFD700;color:#111111;}
-
-/* REVEAL */
+.fbtn-naver{background:#03C75A;color:#fff;}
+.fbtn-blog{background:#03C75A;color:#fff;}
+.fbtn svg{flex-shrink:0;}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
 .rv.vs{opacity:1;transform:translateY(0);}
-
-/* RESPONSIVE */
+.direct-badge{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:16px;padding:12px 18px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);border-radius:6px;font-size:13px;color:rgba(255,255,255,.9);}
+.direct-badge .sep{color:rgba(255,215,0,.5);}
+.direct-badge strong{color:#FFD700;}
+.yt-slider-wrap{margin-top:48px;position:relative;}
+.yt-slider{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.yt-card{border-radius:10px;overflow:hidden;border:1px solid var(--border);transition:all .3s;background:#fff;}
+.yt-card:hover{box-shadow:var(--sh);transform:translateY(-4px);}
+.yt-thumb-link{text-decoration:none;display:block;}
+.yt-thumb{position:relative;overflow:hidden;aspect-ratio:16/9;background:var(--navy);}
+.yt-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.yt-card:hover .yt-thumb img{transform:scale(1.04);}
+.yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;background:rgba(255,0,0,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:all .3s;}
+.yt-card:hover .yt-play{background:#ff0000;transform:translate(-50%,-50%) scale(1.12);}
+.yt-info{padding:16px;}
+.yt-tag{display:inline-block;background:#FFD700;color:#111111;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:3px;letter-spacing:.5px;margin-bottom:7px;}
+.yt-title{font-size:14.5px;color:var(--dark);font-weight:600;line-height:1.5;font-family:'Noto Serif KR',serif;}
+.yt-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px;}
+.yt-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--navy);}
+.yt-btn:hover{background:#FFD700;border-color:#FFD700;color:#111111;}
+.yt-dots{display:flex;gap:7px;}
+.yt-dot{width:8px;height:8px;border-radius:50%;background:#ddd;cursor:pointer;transition:background .2s;}
+.yt-dot.active{background:#E53935;}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px;}
+.review-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px;transition:all .3s;position:relative;display:flex;flex-direction:column;height:100%;}
+.review-card:hover{box-shadow:var(--sh);transform:translateY(-3px);}
+.review-stars{color:#FFD700;font-size:16px;margin-bottom:12px;letter-spacing:2px;}
+.review-text{font-size:14px;color:var(--mid);line-height:1.9;font-weight:300;margin-bottom:20px;flex:1;}
+.review-text strong{color:var(--navy);}
+.review-meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding-top:14px;}
+.review-name{font-size:13px;color:var(--dark);font-weight:600;}
+.review-case{font-size:11px;background:#E53935;color:#ffffff;padding:3px 10px;border-radius:20px;font-weight:600;}
+.board-overlay{display:none;position:fixed;inset:0;z-index:2000;background:#fff;overflow-y:auto;}
+.board-overlay.open{display:block;}
+.board-overlay-header{display:flex;align-items:center;gap:16px;padding:16px 24px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.board-overlay-back{background:var(--navy);color:#fff;border:none;padding:9px 18px;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;}
+.board-overlay-back:hover{background:#FFD700;color:#111;}
+.board-overlay-type{font-size:12px;letter-spacing:1.5px;color:var(--light);font-weight:600;text-transform:uppercase;}
+.board-overlay-inner{max-width:860px;margin:0 auto;padding:48px 24px 100px;}
+.board-overlay-title{font-family:'Noto Serif KR',serif;font-size:28px;color:var(--navy);font-weight:600;margin:0 0 12px;line-height:1.4;}
+.board-overlay-meta{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid #eee;border-bottom:1px solid #eee;margin-bottom:40px;font-size:13px;color:var(--light);}
+.board-overlay-body{font-size:16px;color:#333;line-height:2;white-space:pre-wrap;min-height:200px;}
+.board-overlay-footer{margin-top:60px;padding-top:24px;border-top:1px solid #eee;}
+.board-overlay-footer button{background:var(--navy);color:#fff;border:none;padding:11px 24px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;}
+.board-overlay-footer button:hover{background:#FFD700;color:#111;}
+.hero-subtitle{font-size:clamp(15px,1.8vw,20px);color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:16px;animation:fu .8s .15s ease both;font-weight:300;}
+.hero-subtitle em{font-style:normal;color:#FFD700;font-weight:600;}
+.tbar-in{gap:16px 32px;}
+.titem{font-size:13px;letter-spacing:.5px;font-weight:600;}
+.titem::before{content:'✓';margin-right:7px;font-size:12px;}
 @media(max-width:960px){
   nav{display:none;}
   .ham{display:flex;}
@@ -320,123 +334,17 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
   .cta-btns{flex-direction:column;align-items:center;}
   .phone-row{flex-direction:column;align-items:center;}
   .fcta{bottom:16px;right:14px;gap:8px;align-items:flex-end;}
-  .fbtn span{display:inline;}
   .fbtn{width:auto;height:48px;min-width:176px;padding:12px 18px;border-radius:999px;justify-content:center;font-size:13px;}
+  .fbtn span{display:inline;}
   .marquee-item{min-height:56px;padding:0 18px;font-size:16px;}
   .proof-wrap{padding:42px 20px 54px;}
   .proof-grid{grid-template-columns:1fr;}
   .proof-card,.proof-card:nth-child(2n),.proof-card:nth-child(4n),.proof-card:nth-child(n+3){border:1px solid #e3e6eb;}
   .proof-card:last-child{border-bottom:0;}
 }
-
-/* DIRECT BADGE */
-.direct-badge{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:16px;padding:12px 18px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);border-radius:6px;font-size:13px;color:rgba(255,255,255,.9);}
-.direct-badge .sep{color:rgba(255,215,0,.5);}
-.direct-badge strong{color:#FFD700;}
-
-/* YOUTUBE SLIDER */
-.yt-slider-wrap{margin-top:48px;position:relative;}
-.yt-slider{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.yt-card{border-radius:10px;overflow:hidden;border:1px solid var(--border);transition:all .3s;background:#fff;}
-.yt-card:hover{box-shadow:var(--sh);transform:translateY(-4px);}
-.yt-thumb-link{text-decoration:none;display:block;}
-.yt-thumb{position:relative;overflow:hidden;aspect-ratio:16/9;background:var(--navy);}
-.yt-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
-.yt-card:hover .yt-thumb img{transform:scale(1.04);}
-.yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;background:rgba(255,0,0,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transition:all .3s;}
-.yt-card:hover .yt-play{background:#ff0000;transform:translate(-50%,-50%) scale(1.12);}
-.yt-info{padding:16px;}
-.yt-tag{display:inline-block;background:#FFD700;color:#111111;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:3px;letter-spacing:.5px;margin-bottom:7px;}
-.yt-title{font-size:14.5px;color:var(--dark);font-weight:600;line-height:1.5;font-family:'Noto Serif KR',serif;}
-.yt-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px;}
-.yt-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--navy);}
-.yt-btn:hover{background:#FFD700;border-color:#FFD700;color:#111111;}
-.yt-dots{display:flex;gap:7px;}
-.yt-dot{width:8px;height:8px;border-radius:50%;background:#ddd;cursor:pointer;transition:background .2s;}
-.yt-dot.active{background:#E53935;}
-
-/* REVIEW */
-.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px;}
-.review-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px;transition:all .3s;position:relative;display:flex;flex-direction:column;height:100%;}
-.review-card:hover{box-shadow:var(--sh);transform:translateY(-3px);}
-.review-stars{color:#FFD700;font-size:16px;margin-bottom:12px;letter-spacing:2px;}
-.review-text{font-size:14px;color:var(--mid);line-height:1.9;font-weight:300;margin-bottom:20px;flex:1;}
-.review-text strong{color:var(--navy);}
-.review-meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding-top:14px;}
-.review-name{font-size:13px;color:var(--dark);font-weight:600;}
-.review-case{font-size:11px;background:#E53935;color:#ffffff;padding:3px 10px;border-radius:20px;font-weight:600;}
-
-/* COLUMN BOARD */
-.col-list{margin-top:40px;}
-.col-empty{text-align:center;padding:60px 20px;color:var(--mid);font-size:15px;border:2px dashed #e0e0e0;border-radius:8px;}
-.col-item{border-bottom:1px solid #f0f0f0;padding:20px 0;cursor:pointer;transition:all .2s;}
-.col-item:hover{padding-left:8px;}
-.col-item:last-child{border-bottom:none;}
-.col-item-title{font-family:'Noto Serif KR',serif;font-size:17px;color:var(--navy);font-weight:600;margin-bottom:6px;text-decoration:underline;text-underline-offset:4px;}
-.col-item-meta{font-size:12px;color:var(--light);}
-.col-write-btn{background:var(--navy);color:#FFD700;border:1px solid #FFD700;padding:10px 20px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s;cursor:pointer;display:inline-block;}
-.col-write-btn:hover{background:#FFD700;color:#111111;}
-.col-form{margin-top:40px;background:var(--cream);border-radius:10px;padding:32px;}
-.col-form-title{font-family:'Noto Serif KR',serif;font-size:20px;color:var(--navy);margin-bottom:20px;}
-.col-input{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:4px;font-size:15px;font-family:'Noto Sans KR',sans-serif;margin-bottom:14px;box-sizing:border-box;outline:none;}
-.col-input:focus{border-color:#FFD700;}
-.col-textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:4px;font-size:14px;font-family:'Noto Sans KR',sans-serif;resize:vertical;box-sizing:border-box;outline:none;line-height:1.8;}
-.col-textarea:focus{border-color:#FFD700;}
-.col-form-btns{display:flex;gap:10px;margin-top:16px;}
-.col-submit{background:#FFD700;color:#111111;padding:11px 24px;border-radius:4px;border:none;font-weight:700;cursor:pointer;font-size:14px;transition:all .2s;}
-.col-submit:hover{background:#ffe033;}
-.col-cancel{background:#fff;color:var(--mid);padding:11px 24px;border-radius:4px;border:1px solid #ddd;font-weight:600;cursor:pointer;font-size:14px;}
-.col-back{background:none;border:none;color:#FFD700;cursor:pointer;font-size:14px;padding:0;margin-bottom:20px;font-weight:600;}
-.col-detail-title{font-family:'Noto Serif KR',serif;font-size:22px;color:var(--navy);margin-bottom:10px;}
-.col-detail-meta{font-size:12px;color:var(--light);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #f0f0f0;}
-.col-detail-body{font-size:15px;color:var(--mid);line-height:1.9;white-space:pre-wrap;}
-
-/* 전체화면 상세 오버레이 */
-.board-overlay{display:none;position:fixed;inset:0;z-index:2000;background:#fff;overflow-y:auto;}
-.board-overlay.open{display:block;}
-.board-overlay-header{display:flex;align-items:center;gap:16px;padding:16px 24px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.06);}
-.board-overlay-back{background:var(--navy);color:#fff;border:none;padding:9px 18px;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;}
-.board-overlay-back:hover{background:#FFD700;color:#111;}
-.board-overlay-type{font-size:12px;letter-spacing:1.5px;color:var(--light);font-weight:600;text-transform:uppercase;}
-.board-overlay-inner{max-width:860px;margin:0 auto;padding:48px 24px 100px;}
-.board-overlay-title{font-family:'Noto Serif KR',serif;font-size:28px;color:var(--navy);font-weight:600;margin:0 0 12px;line-height:1.4;}
-.board-overlay-meta{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid #eee;border-bottom:1px solid #eee;margin-bottom:40px;font-size:13px;color:var(--light);}
-.board-overlay-body{font-size:16px;color:#333;line-height:2;white-space:pre-wrap;min-height:200px;}
-.board-overlay-footer{margin-top:60px;padding-top:24px;border-top:1px solid #eee;}
-.board-overlay-footer button{background:var(--navy);color:#fff;border:none;padding:11px 24px;border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;}
-.board-overlay-footer button:hover{background:#FFD700;color:#111;}
-
-/* FLOATING BUTTONS - REDESIGNED BIGGER */
-.fcta{position:fixed;bottom:24px;right:20px;z-index:900;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
-.fbtn{display:flex;align-items:center;gap:10px;padding:13px 18px;border-radius:28px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:all .25s;min-width:160px;justify-content:center;}
-.fbtn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.3);}
-.fbtn-k{background:#FEE500;color:#191919;}
-.fbtn-c{background:#FFD700;color:#111111;}
-.fbtn-naver{background:#03C75A;color:#fff;}
-.fbtn-blog{background:#03C75A;color:#fff;}
-.fbtn svg{flex-shrink:0;}
-@media(max-width:640px){
-  .fcta{bottom:16px;right:14px;gap:8px;align-items:flex-end;}
-  .fbtn{width:auto;height:48px;min-width:176px;padding:12px 18px;border-radius:999px;justify-content:center;font-size:13px;}
-  .fbtn span{display:inline;}
-}
-
-
-/* HERO SUBTITLE & URGENCY */
-.hero-subtitle{font-size:clamp(15px,1.8vw,20px);color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:16px;animation:fu .8s .15s ease both;font-weight:300;}
-.hero-subtitle em{font-style:normal;color:#FFD700;font-weight:600;}
-.hero-urgency{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,215,0,.25);color:rgba(255,255,255,.9);padding:14px 20px;border-radius:6px;font-size:clamp(13px,1.4vw,16px);line-height:1.7;margin-bottom:32px;animation:fu .8s .25s ease both;letter-spacing:.3px;}
-
-/* TBAR 개선 */
-.tbar-in{gap:16px 32px;}
-.titem{font-size:13px;letter-spacing:.5px;font-weight:600;}
-.titem::before{content:'✓';margin-right:7px;font-size:12px;}
-
-/* 반응형 개선 */
 @media(max-width:480px){
   .hero-title{font-size:28px;}
   .hero-subtitle{font-size:14px;}
-  .hero-urgency{font-size:13px;padding:12px 16px;}
   .hero-btns .btn-p,.hero-btns .btn-o{font-size:13px;padding:13px 20px;}
   .hero-phones{margin-top:28px;padding-top:24px;}
   section{padding:60px 16px;}
@@ -446,9 +354,7 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
   .titem{font-size:12px;}
   .lcard-img{height:280px!important;}
 }
-@media(max-width:360px){
-  .hero-title{font-size:24px;}
-}
+@media(max-width:360px){.hero-title{font-size:24px;}}
 </style>
 </head>
 <body>
@@ -495,6 +401,7 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
   <a href="tel:010-9491-1567" onclick="cn()">지금 상담전화하기</a>
 </div>
 
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-ring"></div>
   <div class="hero-in">
@@ -516,12 +423,16 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
         <a href="#lawyers" class="btn-o">변호사 소개 보기 →</a>
       </div>
       <div class="hero-phones">
-        <a href="tel:010-9491-1567" class="hphone"><div class="hphone-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.95C17.55 15.34 18.76 15.55 20 15.55C20.55 15.55 21 16 21 16.55V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.71 6.45 9.1 7.57C9.22 7.92 9.14 8.31 8.86 8.59L6.62 10.79Z" fill="#FFD700"/></svg></div><div><div style="font-size:10.5px;color:rgba(255,255,255,.45);margin-bottom:1px;">상담전화</div><div style="font-weight:600;">010-9491-1567</div></div></a>
+        <a href="tel:010-9491-1567" class="hphone">
+          <div class="hphone-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.95C17.55 15.34 18.76 15.55 20 15.55C20.55 15.55 21 16 21 16.55V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.71 6.45 9.1 7.57C9.22 7.92 9.14 8.31 8.86 8.59L6.62 10.79Z" fill="#FFD700"/></svg></div>
+          <div><div style="font-size:10.5px;color:rgba(255,255,255,.45);margin-bottom:1px;">상담전화</div><div style="font-weight:600;">010-9491-1567</div></div>
+        </a>
       </div>
     </div>
     <div class="hero-photos">
       <div class="hero-photo-main">
-        <img src="lawyers.jpg" alt="윤석만·윤성호 변호사 - 법률사무소 위드윤">
+        <!-- ✅ GitHub raw URL로 변경 -->
+        <img src="https://raw.githubusercontent.com/jouyqw/with-yoon-law/main/lawyers.jpg" alt="윤석만·윤성호 변호사 - 법률사무소 위드윤">
       </div>
     </div>
   </div>
@@ -539,7 +450,6 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
       <h2 class="proof-title" id="proof-title">숫자로 확인하는 위드윤의 기준</h2>
       <p class="proof-copy">법률사무소 위드윤은 30여 년의 검사·변호사 경험과 서울대 로스쿨·대형로펌 실무 경험을 바탕으로, 합리적인 비용의 체계적인 법률서비스를 제공합니다.</p>
     </div>
-
     <div class="proof-grid">
       <div class="proof-card yellow rv"><div class="proof-value">수천 건+</div><div class="proof-label">상담 경험</div></div>
       <div class="proof-card rv" style="transition-delay:.04s"><div class="proof-value">600건+</div><div class="proof-label">로톡 후기 600건 이상</div></div>
@@ -567,6 +477,7 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
   </div>
 </section>
 
+<!-- LAWYERS -->
 <section id="lawyers" style="padding:96px 24px;">
   <div class="sin">
     <div class="rv">
@@ -577,9 +488,11 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
     </div>
     <div class="lawyers-wrap">
 
+      <!-- 윤석만 변호사 -->
       <div class="lcard rv">
         <div class="lcard-top">
-          <img class="lcard-img" src="yoonseokman.jpg" alt="윤석만 변호사 - 부장검사 경력">
+          <!-- ✅ GitHub raw URL로 변경 -->
+          <img class="lcard-img" src="https://raw.githubusercontent.com/jouyqw/with-yoon-law/main/yoonseokman.jpg" alt="윤석만 변호사 - 부장검사 경력">
           <div class="lcard-info">
             <div class="lbadge">前 수원·인천·대전지검 부장검사</div>
             <div class="lname">윤석만 변호사</div>
@@ -603,9 +516,11 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
         </div>
       </div>
 
+      <!-- 윤성호 변호사 -->
       <div class="lcard rv" style="transition-delay:.15s">
         <div class="lcard-top">
-          <img class="lcard-img" src="yoonseongho.jpg" alt="윤성호 변호사 - 서울대 로스쿨 경력">
+          <!-- ✅ GitHub raw URL로 변경 -->
+          <img class="lcard-img" src="https://raw.githubusercontent.com/jouyqw/with-yoon-law/main/yoonseongho.jpg" alt="윤성호 변호사 - 서울대 로스쿨 경력">
           <div class="lcard-info">
             <div class="lbadge">서울대 로스쿨 · 대형로펌 경력</div>
             <div class="lname">윤성호 변호사</div>
@@ -632,126 +547,25 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
   </div>
 </section>
 
-
 <section style="padding:96px 24px;background:#fff;" id="youtube">
   <div class="sin">
     <div class="rv">
       <span class="slabel">판결 영상</span>
       <h2 class="stitle">실제 판결 사례 — 영상으로 확인하세요</h2>
-      <p class="ssub" style="margin-bottom:0;">
-        상담실장·사무장 없이, <strong>대표변호사가 직접 수임하고 직접 수행</strong>한 실제 판결 사례입니다.
-      </p>
+      <p class="ssub" style="margin-bottom:0;">상담실장·사무장 없이, <strong>대표변호사가 직접 수임하고 직접 수행</strong>한 실제 판결 사례입니다.</p>
       <div class="gline"></div>
     </div>
     <div class="yt-slider-wrap">
       <div class="yt-slider" id="ytSlider">
-        <div class="yt-card rv">
-          <a href="https://youtube.com/shorts/2jgnN4A6i_Q?si=lSZrjAJZqmjOH5Yq" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/2jgnN4A6i_Q/hqdefault.jpg" alt="상간소송 전액승소 사건" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>상간소송 전액승소</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">상간소송</span>
-              <p class="yt-title">상간소송 전액 승소 사건</p>
-            </div>
-          </a>
-        </div>
-        <div class="yt-card rv" style="transition-delay:.1s">
-          <a href="https://youtube.com/shorts/nglVPnTOxaQ?si=cEj3y1-V9sq7Hs3h" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/nglVPnTOxaQ/hqdefault.jpg" alt="음주운전 무죄 사건" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>음주운전 무죄</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">음주운전</span>
-              <p class="yt-title">음주운전 무죄 사건</p>
-            </div>
-          </a>
-        </div>
-        <div class="yt-card rv" style="transition-delay:.2s">
-          <a href="https://youtube.com/shorts/xslLPY9__ag?si=j3PPG_9xtY3o7lmg" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/xslLPY9__ag/hqdefault.jpg" alt="마약 구속영장 방어 사례" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>마약 영장 기각</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">마약</span>
-              <p class="yt-title">마약 구속영장 기각 방어 사례</p>
-            </div>
-          </a>
-        </div>
-        <div class="yt-card rv" style="transition-delay:.3s">
-          <a href="https://youtube.com/shorts/EMl8o_KSoQo?si=3mU6kOznkP4U6Vpm" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/EMl8o_KSoQo/hqdefault.jpg" alt="강제추행 무죄 사례" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>강제추행 무죄</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">강제추행</span>
-              <p class="yt-title">강제추행 무죄 사례</p>
-            </div>
-          </a>
-        </div>
-        <div class="yt-card rv" style="transition-delay:.4s">
-          <a href="https://youtube.com/shorts/nreemmlttRU?si=6jww2vEztwaxZAMW" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/nreemmlttRU/hqdefault.jpg" alt="스토킹 재범 기소유예 방어 사례" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>스토킹 기소유예</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">스토킹</span>
-              <p class="yt-title">스토킹 재범 기소유예 방어 사례</p>
-            </div>
-          </a>
-        </div>        <div class="yt-card rv" style="transition-delay:.5s">
-          <a href="https://youtube.com/shorts/44_TZ2IZUCk?si=wpfS0noT3JJtUP5w" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/44_TZ2IZUCk/hqdefault.jpg" alt="군인징계 방어사례" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>군인징계 방어</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">군인징계</span>
-              <p class="yt-title">군인징계 방어사례</p>
-            </div>
-          </a>
-        </div>
-        <div class="yt-card rv" style="transition-delay:.6s">
-          <a href="https://youtube.com/shorts/cdLtoLBiiF8?si=8pKKupBxPLTxfaSE" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/cdLtoLBiiF8/hqdefault.jpg" alt="특수강간 검찰송치" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>특수강간 검찰송치</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">특수강간</span>
-              <p class="yt-title">특수강간 검찰송치 방어사례</p>
-            </div>
-          </a>
-        </div>
-        <div class="yt-card rv" style="transition-delay:.7s">
-          <a href="https://youtube.com/shorts/25T6l2WVz7g?si=PHga6Fng4sHzzScs" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/25T6l2WVz7g/hqdefault.jpg" alt="지하철성범죄 기소유예 방어사례" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>지하철성범죄 기소유예</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">지하철성범죄</span>
-              <p class="yt-title">지하철성범죄 기소유예 방어사례</p>
-            </div>
-          </a>
-        </div>
-        <div class="yt-card rv" style="transition-delay:.8s">
-          <a href="https://youtube.com/shorts/-DY4mnGbmyg?si=x4Ib2dS5wMH6c9IL" target="_blank" class="yt-thumb-link">
-            <div class="yt-thumb">
-              <img src="https://img.youtube.com/vi/-DY4mnGbmyg/hqdefault.jpg" alt="강간죄 불송치 방어사례" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%230d1f3c%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23c9a84c%22 text-anchor=%22middle%22 font-size=%2216%22>강간죄 불송치</text></svg>'">
-              <div class="yt-play">▶</div>
-            </div>
-            <div class="yt-info">
-              <span class="yt-tag">강간죄</span>
-              <p class="yt-title">강간죄 불송치 방어사례</p>
-            </div>
-          </a>
-        </div>
+        <div class="yt-card rv"><a href="https://youtube.com/shorts/2jgnN4A6i_Q?si=lSZrjAJZqmjOH5Yq" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/2jgnN4A6i_Q/hqdefault.jpg" alt="상간소송 전액승소 사건" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">상간소송</span><p class="yt-title">상간소송 전액 승소 사건</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.1s"><a href="https://youtube.com/shorts/nglVPnTOxaQ?si=cEj3y1-V9sq7Hs3h" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/nglVPnTOxaQ/hqdefault.jpg" alt="음주운전 무죄 사건" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">음주운전</span><p class="yt-title">음주운전 무죄 사건</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.2s"><a href="https://youtube.com/shorts/xslLPY9__ag?si=j3PPG_9xtY3o7lmg" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/xslLPY9__ag/hqdefault.jpg" alt="마약 구속영장 방어 사례" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">마약</span><p class="yt-title">마약 구속영장 기각 방어 사례</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.3s"><a href="https://youtube.com/shorts/EMl8o_KSoQo?si=3mU6kOznkP4U6Vpm" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/EMl8o_KSoQo/hqdefault.jpg" alt="강제추행 무죄 사례" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">강제추행</span><p class="yt-title">강제추행 무죄 사례</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.4s"><a href="https://youtube.com/shorts/nreemmlttRU?si=6jww2vEztwaxZAMW" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/nreemmlttRU/hqdefault.jpg" alt="스토킹 재범 기소유예 방어 사례" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">스토킹</span><p class="yt-title">스토킹 재범 기소유예 방어 사례</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.5s"><a href="https://youtube.com/shorts/44_TZ2IZUCk?si=wpfS0noT3JJtUP5w" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/44_TZ2IZUCk/hqdefault.jpg" alt="군인징계 방어사례" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">군인징계</span><p class="yt-title">군인징계 방어사례</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.6s"><a href="https://youtube.com/shorts/cdLtoLBiiF8?si=8pKKupBxPLTxfaSE" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/cdLtoLBiiF8/hqdefault.jpg" alt="특수강간 검찰송치" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">특수강간</span><p class="yt-title">특수강간 검찰송치 방어사례</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.7s"><a href="https://youtube.com/shorts/25T6l2WVz7g?si=PHga6Fng4sHzzScs" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/25T6l2WVz7g/hqdefault.jpg" alt="지하철성범죄 기소유예 방어사례" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">지하철성범죄</span><p class="yt-title">지하철성범죄 기소유예 방어사례</p></div></a></div>
+        <div class="yt-card rv" style="transition-delay:.8s"><a href="https://youtube.com/shorts/-DY4mnGbmyg?si=x4Ib2dS5wMH6c9IL" target="_blank" class="yt-thumb-link"><div class="yt-thumb"><img src="https://img.youtube.com/vi/-DY4mnGbmyg/hqdefault.jpg" alt="강간죄 불송치 방어사례" loading="lazy"><div class="yt-play">▶</div></div><div class="yt-info"><span class="yt-tag">강간죄</span><p class="yt-title">강간죄 불송치 방어사례</p></div></a></div>
       </div>
       <div class="yt-nav">
         <button class="yt-btn" id="ytPrev" aria-label="이전">‹</button>
@@ -803,43 +617,6 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
   </div>
 </section>
 
-<section style="padding:96px 24px;background:var(--navy);display:none;" id="practice">
-  <div class="sin">
-    <div class="rv">
-      <span class="slabel" style="color:#FFD700">Practice Areas</span>
-      <h2 class="stitle" style="color:#fff;">주요 전문 분야</h2>
-      <div class="gline"></div>
-      <p class="ssub" style="color:rgba(255,255,255,.5);">형사 사건 전 분야에 걸쳐 전문적인 법률 서비스를 제공합니다.</p>
-    </div>
-    <div class="practice-grid">
-      <div class="pitem rv"><h3>고소·고발 대응</h3><p>수사 초기 전략적 대응</p></div>
-      <div class="pitem rv" style="transition-delay:.05s"><h3>형사공판</h3><p>법원 공판 전 과정 직접 수행</p></div>
-      <div class="pitem rv" style="transition-delay:.10s"><h3>구속적부심·보석</h3><p>구속 단계 신속 대응</p></div>
-      <div class="pitem rv" style="transition-delay:.15s"><h3>경제범죄</h3><p>횡령·배임·사기 등</p></div>
-      <div class="pitem rv" style="transition-delay:.20s"><h3>교통·음주운전</h3><p>교통 형사사건 전반</p></div>
-      <div class="pitem rv" style="transition-delay:.25s"><h3>디지털·사이버범죄</h3><p>온라인 범죄 및 명예훼손</p></div>
-      <div class="pitem rv" style="transition-delay:.30s"><h3>성범죄 피의자 변호</h3><p>무고·허위 고소 대응</p></div>
-      <div class="pitem rv" style="transition-delay:.35s"><h3>항소·상고심</h3><p>1심 결과 불복</p></div>
-      <div class="pitem rv" style="transition-delay:.40s"><h3>마약범죄</h3><p>마약 소지·투약 변호</p></div>
-      <div class="pitem rv" style="transition-delay:.45s"><h3>이혼·가사</h3><p>이혼소송 및 위자료</p></div>
-    </div>
-  </div>
-</section>
-
-<section style="padding:96px 24px;background:var(--cream);display:none;" id="office">
-  <div class="sin">
-    <div class="rv">
-      <span class="slabel">Our Office</span>
-      <h2 class="stitle">사무소 소개</h2>
-      <div class="gline"></div>
-      <p class="ssub">서울 서초구 서초대로, 서울중앙지방법원 인근에 위치한 법률사무소 위드윤입니다.</p>
-    </div>
-    <div class="office-grid rv" style="transition-delay:.1s">
-      <div class="office-img"><img src="" alt="법률사무소 위드윤 상담실"></div>
-    </div>
-  </div>
-</section>
-
 <section style="padding:96px 24px;background:var(--cream);" id="reviews">
   <div class="sin">
     <div class="rv">
@@ -850,66 +627,18 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
     </div>
     <div class="yt-slider-wrap" style="margin-top:48px;">
       <div class="yt-slider" id="reviewSlider" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;">
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"음주운전으로 억울하게 기소된 상황에서 윤석만 변호사님이 직접 수사 과정부터 공판까지 함께해 주셨습니다. 대리인이나 직원이 아닌 변호사님이 직접 전화도 받아 주시고, 덕분에 <strong>무죄 판결</strong>을 받을 수 있었습니다. 정말 감사드립니다."</p>
-          <div class="review-meta"><span class="review-name">강○○ 의뢰인</span><span class="review-case">음주운전 무죄</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"상간소송을 맡겨드렸는데, 처음 상담부터 최종 판결까지 윤성호 변호사님이 직접 챙겨주셨어요. 복잡한 법률 용어도 쉽게 설명해 주시고, 절차 하나하나 안내해 주셔서 불안감이 훨씬 줄었습니다. 결과적으로 <strong>전액 승소</strong>했습니다."</p>
-          <div class="review-meta"><span class="review-name">이○○ 의뢰인</span><span class="review-case">상간소송 전액 승소</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"마약 혐의로 구속영장이 청구되어 너무 당황스러웠는데, 위드윤 변호사님들이 즉각 대응해 주셨습니다. 부장검사 경력이라 검찰의 수사 흐름을 너무 잘 아시더라고요. 영장이 기각되어 일상으로 돌아올 수 있었습니다. <strong>정말 감사합니다.</strong>"</p>
-          <div class="review-meta"><span class="review-name">박○○ 의뢰인</span><span class="review-case">마약 구속영장 기각</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"스토킹 재범으로 기소될 뻔한 상황에서 위드윤에 연락했습니다. 변호사님이 직접 경찰 조사에 동행해 주시고, 검사 면담도 함께 준비해 주셔서 <strong>기소유예</strong>로 마무리되었습니다. 혼자였다면 절대 이런 결과가 나오지 않았을 거예요."</p>
-          <div class="review-meta"><span class="review-name">최○○ 의뢰인</span><span class="review-case">스토킹 재범 기소유예</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"강제추행 혐의로 갑자기 경찰에 불려가 너무 무서웠습니다. 윤성호 변호사님이 바로 조사에 동행해 주시고, 세심하게 대응 전략을 짜주셔서 <strong>기소유예</strong>로 마무리 됐습니다. 변호사님께서 직접 챙겨주시니 든든했어요."</p>
-          <div class="review-meta"><span class="review-name">김○○ 의뢰인</span><span class="review-case">강제추행 기소유예</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"군 복무 중 징계 문제가 생겨 막막했습니다. 윤성호변호사님이 군검사 경력을 살려 내부 절차까지 꼼꼼히 대응해 주셨습니다. 덕분에 <strong>징계 취소</strong> 결정을 받을 수 있었고, 정말 믿고 맡길 수 있었습니다."</p>
-          <div class="review-meta"><span class="review-name">이○○ 의뢰인</span><span class="review-case">군 징계 전부 취소</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"주거침입 혐의로 갑자기 입건되었습니다. 처음엔 어떻게 대처해야 할지 몰라 당황했는데, 윤성호 변호사님이 처음부터 끝까지 방향을 잡아주셨습니다. <strong>기소유예</strong>로 사건이 마무리되어 정말 다행입니다."</p>
-          <div class="review-meta"><span class="review-name">정○○ 의뢰인</span><span class="review-case">주거침입 기소유예</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"특수절도 사건으로 구속이 걱정되었습니다. 윤석만 변호사님이 부장검사 시절 경험을 바탕으로 수사 대응 방향을 명확하게 제시해 주셨고, <strong>기소유예</strong>로 마무리되었습니다. 변호사님의 경험 덕분에 든든했습니다."</p>
-          <div class="review-meta"><span class="review-name">오○○ 의뢰인</span><span class="review-case">특수절도 기소유예</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"불법촬영 혐의로 큰 걱정을 했습니다. 사건의 사실관계를 꼼꼼히 검토하여 <strong>혐의없음 불송치</strong> 결정을 받았습니다. 변호사님이 직접 수사에 대응해 주신 덕분에 불안감 없이 진행할 수 있었습니다."</p>
-          <div class="review-meta"><span class="review-name">한○○ 의뢰인</span><span class="review-case">불법촬영 혐의없음</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"아내의 부정행위로 오랜 고통을 겪어온 상황에서 상담을 요청드렸습니다. 윤성호 변호사님이 증거 수집 방법부터 소송 전략까지 전부 함께 준비해 주셨고, 최종적으로 <strong>위자료 승소</strong> 판결을 받았습니다."</p>
-          <div class="review-meta"><span class="review-name">서○○ 의뢰인</span><span class="review-case">상간소송 위자료 승소</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"지하철 강제추행 혐의로 경찰 조사를 받게 되었습니다. 무고성 혐의임을 변호사님이 빠르게 파악하시고 적극적으로 대응해 주셨습니다. <strong>기소유예</strong>로 사건이 마무리되었고, 신속한 대처에 감사드립니다."</p>
-          <div class="review-meta"><span class="review-name">윤○○ 의뢰인</span><span class="review-case">지하철 강제추행 기소유예</span></div>
-        </div>
-        <div class="review-card rv">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"남편의 외도 사실을 알게 된 후, 상간소송을 어떻게 진행해야 할지 막막했습니다. 윤성호 변호사님이 증거 정리부터 소송 전략까지 직접 챙겨주셨고, 상대방이 청구한 금액을 전부 인정받아 <strong>전액 승소</strong>할 수 있었습니다. 로톡 후기를 보고 믿고 맡겼는데 기대 이상이었습니다."</p>
-          <div class="review-meta"><span class="review-name">장○○ 의뢰인</span><span class="review-case">상간소송 전액 승소</span></div>
-        </div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"음주운전으로 억울하게 기소된 상황에서 윤석만 변호사님이 직접 수사 과정부터 공판까지 함께해 주셨습니다. 대리인이나 직원이 아닌 변호사님이 직접 전화도 받아 주시고, 덕분에 <strong>무죄 판결</strong>을 받을 수 있었습니다. 정말 감사드립니다."</p><div class="review-meta"><span class="review-name">강○○ 의뢰인</span><span class="review-case">음주운전 무죄</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"상간소송을 맡겨드렸는데, 처음 상담부터 최종 판결까지 윤성호 변호사님이 직접 챙겨주셨어요. 복잡한 법률 용어도 쉽게 설명해 주시고, 절차 하나하나 안내해 주셔서 불안감이 훨씬 줄었습니다. 결과적으로 <strong>전액 승소</strong>했습니다."</p><div class="review-meta"><span class="review-name">이○○ 의뢰인</span><span class="review-case">상간소송 전액 승소</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"마약 혐의로 구속영장이 청구되어 너무 당황스러웠는데, 위드윤 변호사님들이 즉각 대응해 주셨습니다. 부장검사 경력이라 검찰의 수사 흐름을 너무 잘 아시더라고요. 영장이 기각되어 일상으로 돌아올 수 있었습니다. <strong>정말 감사합니다.</strong>"</p><div class="review-meta"><span class="review-name">박○○ 의뢰인</span><span class="review-case">마약 구속영장 기각</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"스토킹 재범으로 기소될 뻔한 상황에서 위드윤에 연락했습니다. 변호사님이 직접 경찰 조사에 동행해 주시고, 검사 면담도 함께 준비해 주셔서 <strong>기소유예</strong>로 마무리되었습니다. 혼자였다면 절대 이런 결과가 나오지 않았을 거예요."</p><div class="review-meta"><span class="review-name">최○○ 의뢰인</span><span class="review-case">스토킹 재범 기소유예</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"강제추행 혐의로 갑자기 경찰에 불려가 너무 무서웠습니다. 윤성호 변호사님이 바로 조사에 동행해 주시고, 세심하게 대응 전략을 짜주셔서 <strong>기소유예</strong>로 마무리 됐습니다. 변호사님께서 직접 챙겨주시니 든든했어요."</p><div class="review-meta"><span class="review-name">김○○ 의뢰인</span><span class="review-case">강제추행 기소유예</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"군 복무 중 징계 문제가 생겨 막막했습니다. 윤성호변호사님이 군검사 경력을 살려 내부 절차까지 꼼꼼히 대응해 주셨습니다. 덕분에 <strong>징계 취소</strong> 결정을 받을 수 있었고, 정말 믿고 맡길 수 있었습니다."</p><div class="review-meta"><span class="review-name">이○○ 의뢰인</span><span class="review-case">군 징계 전부 취소</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"주거침입 혐의로 갑자기 입건되었습니다. 처음엔 어떻게 대처해야 할지 몰라 당황했는데, 윤성호 변호사님이 처음부터 끝까지 방향을 잡아주셨습니다. <strong>기소유예</strong>로 사건이 마무리되어 정말 다행입니다."</p><div class="review-meta"><span class="review-name">정○○ 의뢰인</span><span class="review-case">주거침입 기소유예</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"특수절도 사건으로 구속이 걱정되었습니다. 윤석만 변호사님이 부장검사 시절 경험을 바탕으로 수사 대응 방향을 명확하게 제시해 주셨고, <strong>기소유예</strong>로 마무리되었습니다. 변호사님의 경험 덕분에 든든했습니다."</p><div class="review-meta"><span class="review-name">오○○ 의뢰인</span><span class="review-case">특수절도 기소유예</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"불법촬영 혐의로 큰 걱정을 했습니다. 사건의 사실관계를 꼼꼼히 검토하여 <strong>혐의없음 불송치</strong> 결정을 받았습니다. 변호사님이 직접 수사에 대응해 주신 덕분에 불안감 없이 진행할 수 있었습니다."</p><div class="review-meta"><span class="review-name">한○○ 의뢰인</span><span class="review-case">불법촬영 혐의없음</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"아내의 부정행위로 오랜 고통을 겪어온 상황에서 상담을 요청드렸습니다. 윤성호 변호사님이 증거 수집 방법부터 소송 전략까지 전부 함께 준비해 주셨고, 최종적으로 <strong>위자료 승소</strong> 판결을 받았습니다."</p><div class="review-meta"><span class="review-name">서○○ 의뢰인</span><span class="review-case">상간소송 위자료 승소</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"지하철 강제추행 혐의로 경찰 조사를 받게 되었습니다. 무고성 혐의임을 변호사님이 빠르게 파악하시고 적극적으로 대응해 주셨습니다. <strong>기소유예</strong>로 사건이 마무리되었고, 신속한 대처에 감사드립니다."</p><div class="review-meta"><span class="review-name">윤○○ 의뢰인</span><span class="review-case">지하철 강제추행 기소유예</span></div></div>
+        <div class="review-card rv"><div class="review-stars">★★★★★</div><p class="review-text">"남편의 외도 사실을 알게 된 후, 상간소송을 어떻게 진행해야 할지 막막했습니다. 윤성호 변호사님이 증거 정리부터 소송 전략까지 직접 챙겨주셨고, 상대방이 청구한 금액을 전부 인정받아 <strong>전액 승소</strong>할 수 있었습니다. 로톡 후기를 보고 믿고 맡겼는데 기대 이상이었습니다."</p><div class="review-meta"><span class="review-name">장○○ 의뢰인</span><span class="review-case">상간소송 전액 승소</span></div></div>
       </div>
       <div class="yt-nav">
         <button class="yt-btn" id="reviewPrev" aria-label="이전">‹</button>
@@ -997,11 +726,7 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
       </div>
       <div class="finfo">
         <h4>Contact</h4>
-        <p>대표 변호사: 윤성호<br>
-        상담전화: <a href="tel:010-9491-1567">010-9491-1567</a><br>
-        메일: <a href="mailto:withyoonlaw@naver.com">withyoonlaw@naver.com</a><br>
-        주소: 서울 서초구 서초대로 270 서보빌딩 602호<br>
-        사업자번호: 548-34-01393</p>
+        <p>대표 변호사: 윤성호<br>상담전화: <a href="tel:010-9491-1567">010-9491-1567</a><br>메일: <a href="mailto:withyoonlaw@naver.com">withyoonlaw@naver.com</a><br>주소: 서울 서초구 서초대로 270 서보빌딩 602호<br>사업자번호: 548-34-01393</p>
       </div>
       <div class="finfo">
         <h4>Quick Links</h4>
@@ -1023,19 +748,19 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
 
 <div class="fcta">
   <a href="https://blog.naver.com/dmucjdquwa2gu/224060672013" target="_blank" class="fbtn fbtn-blog" title="네이버 블로그">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#03C75A"/><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">N</text></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#03C75A"/><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">N</text></svg>
     <span>블로그</span>
   </a>
   <a href="https://map.naver.com/p/entry/place/1750217153" target="_blank" class="fbtn fbtn-naver" title="네이버 플레이스">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#03C75A"/><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">N</text></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#03C75A"/><text x="12" y="17" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">N</text></svg>
     <span>예약</span>
   </a>
   <a href="http://pf.kakao.com/_CNtxjX" target="_blank" class="fbtn fbtn-k">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="#FEE500"/><path d="M12 6C8.69 6 6 8.13 6 10.75C6 12.37 7.02 13.8 8.62 14.66L8.07 16.87C8.04 16.96 8.14 17.03 8.22 16.98L10.84 15.33C11.22 15.39 11.61 15.42 12 15.42C15.31 15.42 18 13.29 18 10.75C18 8.13 15.31 6 12 6Z" fill="#191919"/></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="12" fill="#FEE500"/><path d="M12 6C8.69 6 6 8.13 6 10.75C6 12.37 7.02 13.8 8.62 14.66L8.07 16.87C8.04 16.96 8.14 17.03 8.22 16.98L10.84 15.33C11.22 15.39 11.61 15.42 12 15.42C15.31 15.42 18 13.29 18 10.75C18 8.13 15.31 6 12 6Z" fill="#191919"/></svg>
     <span>카카오 상담</span>
   </a>
   <a href="tel:010-9491-1567" class="fbtn fbtn-c">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.95C17.55 15.34 18.76 15.55 20 15.55C20.55 15.55 21 16 21 16.55V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.71 6.45 9.1 7.57C9.22 7.92 9.14 8.31 8.86 8.59L6.62 10.79Z" fill="white"/></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.95C17.55 15.34 18.76 15.55 20 15.55C20.55 15.55 21 16 21 16.55V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.71 6.45 9.1 7.57C9.22 7.92 9.14 8.31 8.86 8.59L6.62 10.79Z" fill="white"/></svg>
     <span>010-9491-1567</span>
   </a>
 </div>
@@ -1048,285 +773,137 @@ window.addEventListener('scroll',()=>{
   document.getElementById('hdr').style.boxShadow=window.scrollY>50?'0 2px 20px rgba(0,0,0,.3)':'none';
 });
 const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vs');obs.unobserve(e.target);}}); 
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vs');obs.unobserve(e.target);}});
 },{threshold:0.1});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-// YOUTUBE SLIDER
 (function(){
-  var slider = document.getElementById('ytSlider');
-  var dotsContainer = document.getElementById('ytDots');
-  var prevBtn = document.getElementById('ytPrev');
-  var nextBtn = document.getElementById('ytNext');
+  var slider=document.getElementById('ytSlider');
+  var dotsContainer=document.getElementById('ytDots');
+  var prevBtn=document.getElementById('ytPrev');
+  var nextBtn=document.getElementById('ytNext');
   if(!slider) return;
-  
-  var cards = slider.querySelectorAll('.yt-card');
-  var total = cards.length;
-  var perPage = window.innerWidth < 640 ? 1 : window.innerWidth < 960 ? 2 : 3;
-  var current = 0;
-  
-  function getPerPage(){
-    return window.innerWidth < 640 ? 1 : window.innerWidth < 960 ? 2 : 3;
-  }
-  
+  var cards=slider.querySelectorAll('.yt-card');
+  var total=cards.length;
+  var current=0;
+  function getPerPage(){return window.innerWidth<640?1:window.innerWidth<960?2:3;}
   function render(){
-    perPage = getPerPage();
-    var pages = Math.ceil(total / perPage);
-    dotsContainer.innerHTML = '';
+    var perPage=getPerPage();
+    var pages=Math.ceil(total/perPage);
+    dotsContainer.innerHTML='';
     for(var i=0;i<pages;i++){
-      var d = document.createElement('div');
-      d.className = 'yt-dot' + (i===current?' active':'');
-      d.setAttribute('data-i', i);
-      d.onclick = function(){current=parseInt(this.getAttribute('data-i'));render();};
+      var d=document.createElement('div');
+      d.className='yt-dot'+(i===current?' active':'');
+      d.setAttribute('data-i',i);
+      d.onclick=function(){current=parseInt(this.getAttribute('data-i'));render();};
       dotsContainer.appendChild(d);
     }
-    var offset = current * perPage;
-    cards.forEach(function(c,i){
-      c.style.display = (i>=offset && i<offset+perPage) ? '' : 'none';
-    });
-    slider.style.gridTemplateColumns = 'repeat('+perPage+',1fr)';
+    var offset=current*perPage;
+    cards.forEach(function(c,i){c.style.display=(i>=offset&&i<offset+perPage)?'':'none';});
+    slider.style.gridTemplateColumns='repeat('+perPage+',1fr)';
   }
-  
-  prevBtn.onclick = function(){
-    var pages = Math.ceil(total/getPerPage());
-    current = (current-1+pages)%pages; render();
-  };
-  nextBtn.onclick = function(){
-    var pages = Math.ceil(total/getPerPage());
-    current = (current+1)%pages; render();
-  };
-  
-  window.addEventListener('resize', function(){ current=0; render(); });
+  prevBtn.onclick=function(){var pages=Math.ceil(total/getPerPage());current=(current-1+pages)%pages;render();};
+  nextBtn.onclick=function(){var pages=Math.ceil(total/getPerPage());current=(current+1)%pages;render();};
+  window.addEventListener('resize',function(){current=0;render();});
   render();
 })();
 
-// REVIEW SLIDER
 (function(){
-  var slider = document.getElementById('reviewSlider');
-  var dotsContainer = document.getElementById('reviewDots');
-  var prevBtn = document.getElementById('reviewPrev');
-  var nextBtn = document.getElementById('reviewNext');
+  var slider=document.getElementById('reviewSlider');
+  var dotsContainer=document.getElementById('reviewDots');
+  var prevBtn=document.getElementById('reviewPrev');
+  var nextBtn=document.getElementById('reviewNext');
   if(!slider) return;
-  
-  var cards = slider.querySelectorAll('.review-card');
-  var total = cards.length;
-  var current = 0;
-  
-  function getPerPage(){
-    return window.innerWidth < 640 ? 1 : window.innerWidth < 960 ? 2 : 3;
-  }
-  
+  var cards=slider.querySelectorAll('.review-card');
+  var total=cards.length;
+  var current=0;
+  function getPerPage(){return window.innerWidth<640?1:window.innerWidth<960?2:3;}
   function render(){
-    var perPage = getPerPage();
-    var pages = Math.ceil(total / perPage);
-    dotsContainer.innerHTML = '';
+    var perPage=getPerPage();
+    var pages=Math.ceil(total/perPage);
+    dotsContainer.innerHTML='';
     for(var i=0;i<pages;i++){
-      var d = document.createElement('div');
-      d.className = 'yt-dot' + (i===current?' active':'');
-      d.setAttribute('data-i', i);
-      d.onclick = function(){current=parseInt(this.getAttribute('data-i'));render();};
+      var d=document.createElement('div');
+      d.className='yt-dot'+(i===current?' active':'');
+      d.setAttribute('data-i',i);
+      d.onclick=function(){current=parseInt(this.getAttribute('data-i'));render();};
       dotsContainer.appendChild(d);
     }
-    var offset = current * perPage;
-    cards.forEach(function(c,i){
-      c.style.display = (i>=offset && i<offset+perPage) ? '' : 'none';
-    });
-    slider.style.gridTemplateColumns = 'repeat('+perPage+',1fr)';
+    var offset=current*perPage;
+    cards.forEach(function(c,i){c.style.display=(i>=offset&&i<offset+perPage)?'':'none';});
+    slider.style.gridTemplateColumns='repeat('+perPage+',1fr)';
   }
-  
-  prevBtn.onclick = function(){
-    var pages = Math.ceil(total/getPerPage());
-    current = (current-1+pages)%pages; render();
-  };
-  nextBtn.onclick = function(){
-    var pages = Math.ceil(total/getPerPage());
-    current = (current+1)%pages; render();
-  };
-  
-  window.addEventListener('resize', function(){ current=0; render(); });
+  prevBtn.onclick=function(){var pages=Math.ceil(total/getPerPage());current=(current-1+pages)%pages;render();};
+  nextBtn.onclick=function(){var pages=Math.ceil(total/getPerPage());current=(current+1)%pages;render();};
+  window.addEventListener('resize',function(){current=0;render();});
   render();
 })();
 
-// CASE MARQUEE
 (function(){
-  var caseItems = Array.prototype.slice.call(document.querySelectorAll('.cases-grid .case-item'));
-  var successTrack = document.querySelector('[data-marquee-track="success"]');
-  var defenseTrack = document.querySelector('[data-marquee-track="defense"]');
-  if(!caseItems.length || !successTrack || !defenseTrack) return;
-
-  var defenseWords = ['무혐의','불송치','기소유예','방어','기각','취소','무죄','혐의없음'];
-  var items = caseItems.map(function(item){
-    var charge = (item.querySelector('.case-charge') || {}).textContent || '';
-    var result = (item.querySelector('.case-result') || {}).textContent || '';
-    var isDefense = defenseWords.some(function(word){ return result.indexOf(word) > -1; });
-    return {
-      type: isDefense ? '방어사례' : '성공사례',
-      charge: charge.trim(),
-      result: result.trim(),
-      href: item.getAttribute('href') || '#'
-    };
+  var caseItems=Array.prototype.slice.call(document.querySelectorAll('.cases-grid .case-item'));
+  var successTrack=document.querySelector('[data-marquee-track="success"]');
+  var defenseTrack=document.querySelector('[data-marquee-track="defense"]');
+  if(!caseItems.length||!successTrack||!defenseTrack) return;
+  var defenseWords=['무혐의','불송치','기소유예','방어','기각','취소','무죄','혐의없음'];
+  var items=caseItems.map(function(item){
+    var charge=(item.querySelector('.case-charge')||{}).textContent||'';
+    var result=(item.querySelector('.case-result')||{}).textContent||'';
+    var isDefense=defenseWords.some(function(word){return result.indexOf(word)>-1;});
+    return{type:isDefense?'방어사례':'성공사례',charge:charge.trim(),result:result.trim(),href:item.getAttribute('href')||'#'};
   });
-
+  function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
   function makeSet(list){
-    var set = document.createElement('div');
-    set.className = 'marquee-set';
+    var set=document.createElement('div');
+    set.className='marquee-set';
     list.forEach(function(data){
-      var link = document.createElement('a');
-      link.className = 'marquee-item';
-      link.href = data.href;
-      link.target = '_blank';
-      link.rel = 'noopener';
-      link.innerHTML = '<span class="marquee-tag">'+escHtml(data.type)+'</span>'
-        + '<span class="marquee-charge">'+escHtml(data.charge)+'</span>'
-        + '<span class="marquee-result">'+escHtml(data.result)+'</span>';
+      var link=document.createElement('a');
+      link.className='marquee-item';
+      link.href=data.href;
+      link.target='_blank';
+      link.rel='noopener';
+      link.innerHTML='<span class="marquee-tag">'+escHtml(data.type)+'</span><span class="marquee-charge">'+escHtml(data.charge)+'</span><span class="marquee-result">'+escHtml(data.result)+'</span>';
       set.appendChild(link);
     });
     return set;
   }
-
-  function fillTrack(track, list){
-    var set = makeSet(list);
-    track.appendChild(set);
-    track.appendChild(set.cloneNode(true));
-  }
-
-  fillTrack(successTrack, items);
-  fillTrack(defenseTrack, items.slice().reverse());
+  function fillTrack(track,list){var set=makeSet(list);track.appendChild(set);track.appendChild(set.cloneNode(true));}
+  fillTrack(successTrack,items);
+  fillTrack(defenseTrack,items.slice().reverse());
 })();
 
-
-// BOARD SYSTEM
-var boardData = {
-  'case': JSON.parse(localStorage.getItem('wyBoard_case') || '[]'),
-  'law':  JSON.parse(localStorage.getItem('wyBoard_law')  || '[]'),
-  'press':JSON.parse(localStorage.getItem('wyBoard_press') || '[]')
-};
-var currentBoardType = 'case';
-var currentDetailIdx = -1;
-
-function escHtml(s){
-  return String(s || '')
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;')
-    .replace(/'/g,'&#39;');
+var boardData={'case':JSON.parse(localStorage.getItem('wyBoard_case')||'[]'),'law':JSON.parse(localStorage.getItem('wyBoard_law')||'[]'),'press':JSON.parse(localStorage.getItem('wyBoard_press')||'[]')};
+var currentBoardType='case';
+function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+function today(){var n=new Date();return n.getFullYear()+'.'+(n.getMonth()+1).toString().padStart(2,'0')+'.'+n.getDate().toString().padStart(2,'0');}
+var tbodyMap={case:'caseTbody',law:'lawTbody',press:'pressTbody'};
+var countMap={case:'caseCount',law:'lawCount',press:'pressCount'};
+function typeLabel(type){return type==='case'?'성공사례':type==='law'?'법률칼럼':'언론 보도';}
+function makeDetailUrl(type,idx,item){
+  var postKey='wyBoardPost_'+type+'_'+idx+'_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+  try{localStorage.setItem(postKey,JSON.stringify({type:type,typeLabel:typeLabel(type),title:item.title,date:item.date,content:item.content}));}catch(e){}
+  var params=new URLSearchParams({postKey:postKey,type:type,idx:String(idx)});
+  return'board_detail.html?'+params.toString();
 }
-
-function today(){
-  var n=new Date();
-  return n.getFullYear()+'.'+(n.getMonth()+1).toString().padStart(2,'0')+'.'+n.getDate().toString().padStart(2,'0');
-}
-
-var tbodyMap = { case:'caseTbody', law:'lawTbody', press:'pressTbody' };
-var countMap  = { case:'caseCount', law:'lawCount', press:'pressCount' };
-
-function typeLabel(type){
-  return type==='case'?'성공사례':type==='law'?'법률칼럼':'언론 보도';
-}
-
-function makeDetailUrl(type, idx, item){
-  var postKey = 'wyBoardPost_' + type + '_' + idx + '_' + Date.now() + '_' + Math.random().toString(36).slice(2);
-  try{
-    localStorage.setItem(postKey, JSON.stringify({
-      type: type,
-      typeLabel: typeLabel(type),
-      title: item.title,
-      date: item.date,
-      content: item.content
-    }));
-  }catch(e){}
-
-  var params = new URLSearchParams({
-    postKey: postKey,
-    type: type,
-    idx: String(idx)
-  });
-  return 'board_detail.html?' + params.toString();
-}
-
 function renderBoard(type){
-  var items = boardData[type];
-  var tbody = document.getElementById(tbodyMap[type]);
-  var countEl = document.getElementById(countMap[type]);
-  if(countEl) countEl.textContent = '총 ' + items.length + '건';
+  var items=boardData[type];
+  var tbody=document.getElementById(tbodyMap[type]);
+  var countEl=document.getElementById(countMap[type]);
+  if(countEl) countEl.textContent='총 '+items.length+'건';
   if(!tbody) return;
-  if(items.length === 0){
-    tbody.innerHTML = '<tr><td colspan="3" class="board-empty-row">등록된 게시글이 없습니다.</td></tr>';
-    return;
-  }
-  tbody.innerHTML = '';
-  items.slice().reverse().forEach(function(item, i){
-    var realIdx = items.length - 1 - i;
-    var detailUrl = makeDetailUrl(type, realIdx, item);
-    var tr = document.createElement('tr');
-    tr.innerHTML = '<td>'+(items.length - i)+'</td>'
-      +'<td class="board-title-cell"><a class="board-title-link" href="'+escHtml(detailUrl)+'" target="_blank" rel="noopener">'+escHtml(item.title)+'</a></td>'
-      +'<td class="board-date-cell board-date">'+item.date+'</td>';
-    tr.onclick = function(e){
-      if(e.target.closest && e.target.closest('a')) return;
-      openDetail(type, realIdx);
-    };
+  if(items.length===0){tbody.innerHTML='<tr><td colspan="3" class="board-empty-row">등록된 게시글이 없습니다.</td></tr>';return;}
+  tbody.innerHTML='';
+  items.slice().reverse().forEach(function(item,i){
+    var realIdx=items.length-1-i;
+    var detailUrl=makeDetailUrl(type,realIdx,item);
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td>'+(items.length-i)+'</td><td class="board-title-cell"><a class="board-title-link" href="'+escHtml(detailUrl)+'" target="_blank" rel="noopener">'+escHtml(item.title)+'</a></td><td class="board-date-cell board-date">'+item.date+'</td>';
+    tr.onclick=function(e){if(e.target.closest&&e.target.closest('a')) return;openDetail(type,realIdx);};
     tbody.appendChild(tr);
   });
 }
-
-function switchTab(panelId, btn){
-  document.querySelectorAll('.board-panel').forEach(function(p){ p.style.display='none'; });
-  document.querySelectorAll('.board-tab').forEach(function(b){ b.classList.remove('active'); });
-  document.getElementById(panelId).style.display = '';
-  btn.classList.add('active');
-  currentBoardType = panelId.replace('-board','');
-  document.getElementById('boardForm').style.display = 'none';
-  document.getElementById('boardDetail').style.display = 'none';
-}
-
-function openForm(type){
-  currentBoardType = type;
-  document.getElementById('boardFormTitle').textContent =
-    type==='case'?'성공사례 작성':type==='law'?'법률칼럼 작성':'언론 보도 등록';
-  document.getElementById('boardSubject').value = '';
-  document.getElementById('boardContent').value = '';
-  document.getElementById('boardForm').style.display = '';
-  document.getElementById('boardDetail').style.display = 'none';
-  document.getElementById('boardForm').scrollIntoView({behavior:'smooth', block:'center'});
-}
-
-function closeForm(){
-  document.getElementById('boardForm').style.display = 'none';
-}
-
-function submitBoard(){
-  var title = document.getElementById('boardSubject').value.trim();
-  var content = document.getElementById('boardContent').value.trim();
-  if(!title){ alert('제목을 입력해주세요.'); return; }
-  if(!content){ alert('내용을 입력해주세요.'); return; }
-  boardData[currentBoardType].push({ title:title, content:content, date:today() });
-  localStorage.setItem('wyBoard_'+currentBoardType, JSON.stringify(boardData[currentBoardType]));
-  renderBoard(currentBoardType);
-  closeForm();
-}
-
-function openDetail(type, idx){
-  var item = boardData[type][idx];
-  var win = window.open(makeDetailUrl(type, idx, item), '_blank');
-  if(win) win.opener = null;
-}
-
-function closeOverlay(){
-  document.getElementById('boardOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeDetail(){
-  document.getElementById('boardDetail').style.display = 'none';
-}
-
-// 초기 렌더
-renderBoard('case');
-renderBoard('law');
-renderBoard('press');
-
+function closeOverlay(){document.getElementById('boardOverlay').classList.remove('open');document.body.style.overflow='';}
+function openDetail(type,idx){var item=boardData[type][idx];var win=window.open(makeDetailUrl(type,idx,item),'_blank');if(win) win.opener=null;}
+renderBoard('case');renderBoard('law');renderBoard('press');
 </script>
 
 <div class="board-overlay" id="boardOverlay">
@@ -1336,15 +913,15 @@ renderBoard('press');
   </div>
   <div class="board-overlay-inner">
     <h2 class="board-overlay-title" id="overlayTitle"></h2>
-    <div class="board-overlay-meta">
-      <span id="overlayDate"></span>
-    </div>
+    <div class="board-overlay-meta"><span id="overlayDate"></span></div>
     <div class="board-overlay-body" id="overlayBody"></div>
-    <div class="board-overlay-footer">
-      <button onclick="closeOverlay()">← 목록으로 돌아가기</button>
-    </div>
+    <div class="board-overlay-footer"><button onclick="closeOverlay()">← 목록으로 돌아가기</button></div>
   </div>
 </div>
 
 </body>
 </html>
+
+
+
+
