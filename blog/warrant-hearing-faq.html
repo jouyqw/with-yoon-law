@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사전구속·영장실질심사 완전정리 | 법무법인 태앤규</title>
+<meta name="description" content="사전구속이란 무엇인지, 영장실질심사는 어떻게 진행되는지, 왜 반드시 구속을 막아야 하는지 — 전직 부장검사 출신 변호사가 핵심만 정리합니다.">
+<meta name="keywords" content="사전구속,영장실질심사,구속전피의자심문,구속영장,구속영장기각,형사변호사,전주형사변호사,법무법인태앤규">
+<meta name="author" content="법무법인 태앤규">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="사전구속·영장실질심사 완전정리 | 법무법인 태앤규">
+<meta property="og:description" content="전직 부장검사 출신 변호사가 말하는 구속 전 피의자 심문의 진실과 대응 전략">
+<meta property="og:locale" content="ko_KR">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "사전구속과 영장실질심사, 왜 이 단계에서 반드시 막아야 하는가",
+  "author": {"@type":"Organization","name":"법무법인 태앤규"},
+  "publisher": {"@type":"LegalService","name":"법무법인 태앤규","telephone":"0507-1336-5516"},
+  "datePublished": "2026-06-08",
+  "inLanguage": "ko"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #1a2740;
+  --navy-deep: #0f1825;
+  --gold: #d4a843;
+  --gold-light: #e8c97a;
+  --gold-dim: rgba(212,168,67,.15);
+  --paper: #ffffff;
+  --bg: #f5f6f8;
+  --ink: #111827;
+  --mid: #475467;
+  --muted: #667085;
+  --line: #e4e7ec;
+  --red: #c0392b;
+  --green: #1a7a45;
+  --shadow: 0 18px 50px rgba(17,24,39,.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.8;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── 상단 바 ── */
+.top {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.top-in {
+  max-width: 1120px; margin: 0 auto; padding: 0 22px;
+  min-height: 70px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.mark {
+  width: 38px; height: 38px;
+  background: var(--navy); border: 2px solid var(--gold);
+  color: var(--gold);
+  display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 14px;
+}
+.brand strong { display: block; font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 2px; color: var(--navy); }
+.brand span { display: block; font-size: 12px; color: var(--muted); }
+.top-actions { display: flex; gap: 8px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line); background: #fff; color: var(--navy);
+  padding: 9px 14px; border-radius: 6px; font-size: 13px; font-weight: 700;
+  transition: all .15s; white-space: nowrap;
+}
+.btn.gold { background: var(--gold); border-color: var(--gold); color: #111; }
+.btn.kakao { background: #FEE500; border-color: #FEE500; color: #111; }
+
+/* ── 본문 레이아웃 ── */
+.page { max-width: 980px; margin: 0 auto; padding: 42px 22px 100px; }
+
+.crumb {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  color: #98a2b3; font-size: 13px; margin-bottom: 22px;
+}
+.crumb span:last-child { color: var(--navy); font-weight: 700; }
+
+/* ── 아티클 카드 ── */
+.article {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* ── 헤더 ── */
+.head {
+  padding: 48px 52px 36px;
+  border-bottom: 1px solid var(--line);
+}
+.cat-badge {
+  display: inline-flex; align-items: center; height: 28px; padding: 0 12px;
+  border-radius: 4px; background: var(--gold-dim);
+  color: #7b5d1f; font-size: 12px; font-weight: 900; letter-spacing: .5px;
+  margin-bottom: 20px;
+}
+h1.post-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(22px, 3.5vw, 36px);
+  line-height: 1.35; color: var(--navy); font-weight: 700;
+  word-break: keep-all;
+}
+h1.post-title em { font-style: normal; color: var(--gold); }
+.post-desc {
+  margin-top: 14px; font-size: 16px; color: var(--mid);
+  line-height: 1.75; word-break: keep-all; max-width: 660px;
+}
+.meta {
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  margin-top: 18px; color: var(--muted); font-size: 13px;
+}
+.meta strong { color: var(--mid); }
+
+/* ── 본문 ── */
+.body { padding: 48px 52px 56px; }
+
+.section-label {
+  font-size: 11px; font-weight: 900; letter-spacing: 2px;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 6px;
+}
+h2.block-title {
+  font-family: 'Noto Serif KR', serif; font-size: 22px;
+  color: var(--navy); font-weight: 700;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 2px solid var(--navy);
+}
+
+/* ── FAQ 블록 ── */
+.faq-block {
+  margin: 32px 0;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.faq-q {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 22px 24px;
+  background: var(--navy);
+}
+.faq-q-badge {
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  background: var(--gold); color: #111;
+  display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 14px;
+  margin-top: 1px;
+}
+.faq-q-text {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 17px; font-weight: 700;
+  color: #fff; line-height: 1.6; word-break: keep-all;
+}
+
+.faq-a {
+  padding: 28px 24px 26px;
+  background: #fff;
+}
+
+/* ── 텍스트 스타일 ── */
+.a-text {
+  font-size: 15.5px; color: #2f3744;
+  line-height: 2; word-break: keep-all;
+}
+.a-text strong { color: var(--navy); font-weight: 700; }
+.a-text + .a-text { margin-top: 16px; }
+
+/* ── 박스류 ── */
+.warn-box {
+  margin: 20px 0; padding: 16px 20px;
+  background: #fffbeb; border-left: 4px solid #f59e0b;
+  font-size: 15px; color: #78350f; line-height: 1.85;
+}
+.key-box {
+  margin: 20px 0; padding: 20px 22px;
+  background: rgba(26,39,64,.04); border-left: 4px solid var(--navy);
+  font-size: 15px; color: var(--navy); line-height: 1.9; font-weight: 500;
+}
+.danger-box {
+  margin: 20px 0; padding: 20px 22px;
+  background: rgba(192,57,43,.05); border-left: 4px solid var(--red);
+  font-size: 15px; color: #7f1d1d; line-height: 1.9;
+}
+.success-box {
+  margin: 20px 0; padding: 18px 22px;
+  background: rgba(26,122,69,.05); border-left: 4px solid var(--green);
+  font-size: 15px; color: #14532d; line-height: 1.85;
+}
+
+/* ── 다크 강조 블록 ── */
+.reality-block {
+  margin: 24px 0; padding: 28px 30px;
+  background: var(--navy); color: #fff;
+}
+.reality-block .r-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px; font-weight: 700; color: var(--gold);
+  margin-bottom: 14px;
+}
+.reality-block p {
+  font-size: 15px; color: rgba(255,255,255,.8); line-height: 2;
+}
+.reality-block strong { color: #fff; }
+
+/* ── 체크 리스트 ── */
+.check-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 18px 0;
+}
+.check-list li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 15px; color: #2f3744; line-height: 1.8;
+}
+.check-list li::before {
+  content: '✓';
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  background: var(--gold); color: #111;
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 900; border-radius: 50%;
+  margin-top: 2px;
+}
+
+/* ── 3요소 카드 ── */
+.tri-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px; margin: 20px 0;
+}
+.tri-card {
+  padding: 20px 18px;
+  border: 1px solid var(--line); border-top: 3px solid var(--gold);
+  background: #fff;
+}
+.tri-card .tc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; color: var(--gold); font-weight: 700;
+  line-height: 1; margin-bottom: 10px;
+}
+.tri-card strong {
+  display: block;
+  font-size: 14px; font-weight: 700; color: var(--navy);
+  margin-bottom: 6px; line-height: 1.5;
+}
+.tri-card p { font-size: 13px; color: var(--mid); line-height: 1.75; }
+
+/* ── 인용 강조 ── */
+.quote-highlight {
+  margin: 32px 0; padding: 26px 30px;
+  background: var(--navy); position: relative;
+}
+.quote-highlight::before {
+  content: '"';
+  position: absolute; top: 8px; left: 22px;
+  font-family: 'Playfair Display', serif;
+  font-size: 60px; color: var(--gold); opacity: .3; line-height: 1;
+}
+.quote-highlight p {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px; line-height: 1.75; color: #fff;
+  word-break: keep-all; padding-left: 14px;
+}
+.quote-highlight .q-source {
+  margin-top: 12px; font-size: 13px;
+  color: rgba(255,255,255,.45); padding-left: 14px;
+}
+
+/* ── 검사 대응 포인트 ── */
+.strategy-block {
+  margin: 24px 0; padding: 26px 28px;
+  border: 1px solid var(--line); background: #fff;
+  border-top: 4px solid var(--navy);
+}
+.strategy-block .sb-label {
+  font-size: 11px; font-weight: 900; letter-spacing: 1.5px;
+  color: var(--navy); margin-bottom: 12px;
+}
+.strategy-block h3 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 17px; color: var(--navy); font-weight: 700; margin-bottom: 14px;
+}
+
+/* ── 구분선 ── */
+.divider { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
+
+/* ── CTA ── */
+.cta {
+  margin: 0 52px 52px;
+  padding: 30px 32px;
+  background: var(--navy); color: #fff;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.cta h2 { font-family: 'Noto Serif KR', serif; font-size: 20px; line-height: 1.45; }
+.cta p { color: rgba(255,255,255,.6); font-size: 14px; margin-top: 6px; }
+.cta-links { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ── 관련글 ── */
+.related {
+  margin-top: 20px; background: #fff;
+  border: 1px solid var(--line); padding: 26px 30px;
+}
+.related h2 { font-family: 'Noto Serif KR', serif; color: var(--navy); font-size: 18px; margin-bottom: 14px; }
+.related a {
+  display: flex; justify-content: space-between; gap: 14px;
+  padding: 13px 0; border-top: 1px solid #f0f2f5;
+  color: var(--mid); font-size: 14px;
+}
+.related a span:last-child { white-space: nowrap; color: #98a2b3; }
+
+.disclaimer { margin-top: 20px; color: #98a2b3; font-size: 12px; line-height: 1.75; }
+
+/* ── 푸터 ── */
+.foot {
+  background: #0b0d10; color: rgba(255,255,255,.5);
+  text-align: center; padding: 28px 20px;
+  font-size: 12px; line-height: 1.9;
+}
+.foot strong { color: #fff; }
+.foot a { color: var(--gold-light); }
+
+/* ── 반응형 ── */
+@media (max-width: 720px) {
+  .top-in { padding: 0 16px; min-height: 64px; }
+  .brand strong { font-size: 12px; }
+  .head, .body { padding: 28px 20px; }
+  .cta { margin: 0 20px 36px; padding: 22px 20px; }
+  .tri-grid { grid-template-columns: 1fr; }
+  .faq-q { padding: 18px 18px; }
+  .faq-q-text { font-size: 15px; }
+  .faq-a { padding: 22px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 상단 네비게이션 -->
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <div class="mark">T&K</div>
+      <div>
+        <strong>TAE &amp; KYU</strong>
+        <span>법무법인 태앤규</span>
+      </div>
+    </div>
+    <div class="top-actions">
+      <a class="btn gold" href="tel:0507-1336-5516">☎ 전화 상담</a>
+      <a class="btn kakao" href="https://pf.kakao.com/_vsGmn/chat" target="_blank" rel="noopener">카카오톡</a>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="crumb" aria-label="breadcrumb">
+    <span>홈</span><span>›</span>
+    <span>법률 칼럼</span><span>›</span>
+    <span>사전구속 · 영장실질심사 완전정리</span>
+  </nav>
+
+  <article class="article" itemscope itemtype="https://schema.org/Article">
+
+    <!-- ── 헤더 ── -->
+    <header class="head">
+      <div class="cat-badge">형사 법률 Q&amp;A</div>
+      <h1 class="post-title" itemprop="headline">
+        사전구속과 영장실질심사,<br>
+        <em>지금 이 단계가 형사 사건의 승패를 가릅니다</em>
+      </h1>
+      <p class="post-desc">
+        구속영장이 청구되는 순간부터 심문 결과가 나오기까지, 의뢰인이 가장 많이 묻는 질문들에 전직 부장검사 출신 변호사가 직접 답합니다.
+      </p>
+      <div class="meta">
+        <span><strong>작성</strong> 법무법인 태앤규</span>
+        <span><strong>분야</strong> 형사 · 구속 전 피의자 심문</span>
+        <span><strong>대표전화</strong> 0507-1336-5516</span>
+      </div>
+    </header>
+
+    <div class="body" itemprop="articleBody">
+
+      <!-- ── 01 ── -->
+      <div class="section-label" style="margin-top:4px;">Q 01</div>
+      <h2 class="block-title">'사전 구속'이 정확히 뭔가요? 일반 체포랑 다른 건가요?</h2>
+
+      <div class="faq-block">
+        <div class="faq-q">
+          <div class="faq-q-badge">Q</div>
+          <div class="faq-q-text">
+            뉴스에서 '사전구속'이라는 말을 자주 듣는데, 일반 체포나 긴급체포와 어떻게 다른 건가요?
+          </div>
+        </div>
+        <div class="faq-a">
+          <p class="a-text">
+            핵심 차이는 딱 하나입니다. <strong>'체포 과정 없이 곧바로 구속 절차에 들어가는 것'</strong>이 사전 구속입니다.
+          </p>
+
+          <div class="key-box" style="margin-top:20px;">
+            우리가 드라마나 뉴스에서 흔히 보는 장면은 <strong>사후 구속</strong>입니다.<br>
+            현행범으로 체포되거나 긴급체포된 후, 구속 여부가 결정되는 순서입니다.<br><br>
+            반면 <strong>사전 구속</strong>은 아직 체포조차 되지 않은 채 밖에서 조사를 받던 피의자에 대해,
+            검사가 법원에 영장을 청구해 바로 구속하는 절차입니다.
+          </div>
+
+          <p class="a-text" style="margin-top:20px;">
+            즉, <strong>체포 → 구속</strong>이라는 단계 없이 <strong>영장 청구 → 심문 → 구속</strong>으로 이어지는 것이 사전 구속의 특징입니다.
+            자유롭게 수사에 임하고 있던 사람이 갑자기 구치소로 직행할 수 있다는 점에서, 당사자 입장에서는 더욱 충격적으로 다가오는 절차이기도 합니다.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- ── 02 ── -->
+      <div class="divider"></div>
+      <div class="section-label">Q 02</div>
+      <h2 class="block-title">영장실질심사, 그게 정확히 무엇인가요?</h2>
+
+      <div class="faq-block">
+        <div class="faq-q">
+          <div class="faq-q-badge">Q</div>
+          <div class="faq-q-text">
+            검사가 구속영장을 청구하면 무조건 구속되는 건가요? 뉴스에서 보이는 '영장실질심사'는 어떤 절차인가요?
+          </div>
+        </div>
+        <div class="faq-a">
+          <p class="a-text">
+            <strong>절대 자동으로 구속되지 않습니다.</strong>
+            바로 이 지점에서 결정적인 방어 타이밍이 열립니다.
+          </p>
+
+          <p class="a-text" style="margin-top:16px;">
+            영장실질심사의 정식 명칭은 <strong>'구속 전 피의자 심문'</strong>입니다.
+            구속영장 청구를 받은 판사가 피의자를 법정으로 직접 불러, 정말 구속이 필요한 상황인지 직접 확인하는 절차입니다.
+            이 자리에서 판사는 아래 세 가지 요건을 중심으로 판단합니다.
+          </p>
+
+          <div class="tri-grid" style="margin-top:24px;">
+            <div class="tri-card">
+              <div class="tc-num">01</div>
+              <strong>범죄 혐의의 상당성</strong>
+              <p>피의자가 범죄를 저질렀다고 의심할 만한 이유가 충분한가</p>
+            </div>
+            <div class="tri-card">
+              <div class="tc-num">02</div>
+              <strong>도주 우려</strong>
+              <p>주거가 불분명하거나 해외 도피 등 도망갈 가능성이 있는가</p>
+            </div>
+            <div class="tri-card">
+              <div class="tc-num">03</div>
+              <strong>증거 인멸 우려</strong>
+              <p>증거를 숨기거나 조작할 위험이 있는가</p>
+            </div>
+          </div>
+
+          <p class="a-text" style="margin-top:20px;">
+            검사는 이 심문 자리에서 구속의 필요성을 강하게 주장합니다.
+            반대로 변호인과 피의자는 세 가지 요건 중 어느 것도 해당하지 않음을 조목조목 반박하며
+            <strong>불구속 상태에서 수사·재판을 받을 수 있도록</strong> 적극 다투게 됩니다.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- ── 03 ── -->
+      <div class="divider"></div>
+      <div class="section-label">Q 03</div>
+      <h2 class="block-title">굳이 구속을 막아야 하나요? 들어가서 조사받으면 안 되나요?</h2>
+
+      <div class="faq-block">
+        <div class="faq-q">
+          <div class="faq-q-badge">Q</div>
+          <div class="faq-q-text">
+            억울한 게 없다면 당당하게 들어가서 조사받는 게 낫지 않나요? 굳이 구속을 막아야 하는 이유가 있나요?
+          </div>
+        </div>
+        <div class="faq-a">
+          <p class="a-text">
+            수사 현장에서 가장 자주 듣는 말이고, 가장 위험한 착각입니다.
+          </p>
+
+          <div class="reality-block" style="margin-top:20px;">
+            <div class="r-title">구속이 결정되는 순간, 두 가지 현실이 시작됩니다</div>
+            <p>
+              첫째, 법원이 구속영장을 발부했다는 것 자체가 <strong>"이 사람은 죄가 무겁고, 도주 또는 증거 인멸의 위험이 있다"</strong>고
+              1차 공인한 것입니다. 최종 판결 단계에서 재판부 심리에 심리적 악영향을 미칩니다.
+            </p>
+            <p style="margin-top:12px;">
+              둘째, 구치소 안에서는 <strong>변호사와의 자유로운 면담, 유리한 증거 수집, 피해자와의 합의 진행</strong>이
+              극도로 제한됩니다. 불구속 상태와 구속 상태의 방어력 차이는 비교 자체가 무의미할 정도입니다.
+            </p>
+          </div>
+
+          <div class="danger-box" style="margin-top:4px;">
+            ⚠ <strong>"나중에 재판 가서 잘 싸우면 된다"는 생각은 통하지 않습니다.</strong><br>
+            구속된 채로 수개월의 수사를 버텨야 하고, 선처는 고사하고 실형 여부를 걱정해야 하는 상황으로 내몰립니다.
+            구속은 <strong>지금 당장, 이 단계에서</strong> 반드시 막아야 합니다.
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ── 04 ── -->
+      <div class="divider"></div>
+      <div class="section-label">Q 04</div>
+      <h2 class="block-title">변호사가 봐도 영장실질심사는 그렇게 어렵습니까?</h2>
+
+      <div class="faq-block">
+        <div class="faq-q">
+          <div class="faq-q-badge">Q</div>
+          <div class="faq-q-text">
+            경험 많은 변호사에게도 영장실질심사는 어려운 절차인가요?
+          </div>
+        </div>
+        <div class="faq-a">
+          <p class="a-text">
+            변호사들 사이에서도 <strong>극단적으로 난이도가 높은 영역</strong>으로 꼽힙니다. 이유는 명확합니다.
+          </p>
+
+          <ul class="check-list" style="margin-top:20px;">
+            <li>
+              영장 청구 직후 심문까지 주어지는 시간은 불과 수 시간에서 하루 이내입니다.
+              방어 논리 구성과 자료 수집을 그 안에 모두 완료해야 합니다.
+            </li>
+            <li>
+              재판부는 검찰의 '구속 필요성' 주장을 먼저 검토한 상태로 심문을 시작합니다.
+              변호인은 불리한 기울기에서 역전을 노려야 하는 구조입니다.
+            </li>
+            <li>
+              심문 과정에서 한 번의 실수, 핀트가 어긋난 변론 하나가
+              그 자리에서 즉각적인 구속 결정으로 이어집니다.
+            </li>
+          </ul>
+
+          <div class="warn-box" style="margin-top:24px;">
+            실전 경험이 없는 변호사가 이 자리에 앉으면, 사실상 의미 있는 방어는 불가능합니다.
+            <strong>이 단계에서 변호인 선택의 무게가 결정적입니다.</strong>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ── 05 ── -->
+      <div class="divider"></div>
+      <div class="section-label">Q 05</div>
+      <h2 class="block-title">그렇다면 이 짧은 시간 안에 어떻게 구속을 막아냅니까?</h2>
+
+      <div class="faq-block">
+        <div class="faq-q">
+          <div class="faq-q-badge">Q</div>
+          <div class="faq-q-text">
+            시간도 없고 불리한 출발선인데, 실제로 어떤 방식으로 구속을 막아냅니까?
+          </div>
+        </div>
+        <div class="faq-a">
+          <p class="a-text">
+            감정에 호소하는 읍소나 이론 중심의 법리 싸움이 아닙니다.
+            <strong>철저한 계산과 실전 전략</strong>입니다.
+          </p>
+
+          <div class="strategy-block" style="margin-top:24px;">
+            <div class="sb-label">STRATEGY POINT</div>
+            <h3>구속을 막아내는 세 가지 실전 접근</h3>
+
+            <ul class="check-list">
+              <li>
+                <strong>객관적 자료로 수사기관 논리를 정면 반박합니다.</strong><br>
+                <span style="font-size:14px; color:var(--mid);">
+                  도주 우려, 증거 인멸 우려 — 검찰이 내세운 구속 사유를 하나하나 박살 낼
+                  주거 안정성, 직장·가족관계, 증거 현황 자료를 신속하게 확보합니다.
+                </span>
+              </li>
+              <li>
+                <strong>심문 전 피의자의 진술과 태도를 완벽하게 준비시킵니다.</strong><br>
+                <span style="font-size:14px; color:var(--mid);">
+                  말 한마디, 시선 처리, 자세 하나까지 — 판사에게 구속 불필요성을 직관적으로
+                  각인시키는 것이 실전에서 결정적입니다.
+                </span>
+              </li>
+              <li>
+                <strong>검찰의 영장 청구가 얼마나 과도한지를 판사가 단박에 알아채게 만듭니다.</strong><br>
+                <span style="font-size:14px; color:var(--mid);">
+                  이 사건이 불구속 수사로도 충분히 진행 가능함을 논리적·수치적으로 입증하는 것,
+                  이것이 핵심입니다.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="success-box" style="margin-top:20px;">
+            💡 검찰 출신 변호사가 특히 이 단계에서 강한 이유가 있습니다.
+            검사가 어떤 논리로 영장을 청구하는지, 재판부가 어느 지점에서 판단을 기울이는지를
+            <strong>내부에서 직접 경험한 시각</strong>으로 대응하기 때문입니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 마무리 인용 ── -->
+      <div class="quote-highlight" style="margin-top:40px;">
+        <p>
+          구속은 재판 전에 이미 불리한 판을 짜 버립니다.<br>
+          구속을 막아내는 것, 그것이 형사 사건 방어의 출발점이자 핵심입니다.
+        </p>
+        <div class="q-source">— 법무법인 태앤규 · 전직 부장검사 출신 변호사</div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- ── CTA ── -->
+    <div class="cta">
+      <div>
+        <h2>구속영장이 청구됐다면, 지금 당장 연락하십시오</h2>
+        <p>영장실질심사 기일은 예고 없이 빠르게 지정됩니다. 단 하루도 지체할 수 없습니다.</p>
+      </div>
+      <div class="cta-links">
+        <a class="btn gold" href="tel:0507-1336-5516">☎ 0507-1336-5516</a>
+        <a class="btn kakao" href="https://pf.kakao.com/_vsGmn/chat" target="_blank" rel="noopener">카카오톡 상담</a>
+      </div>
+    </div>
+
+  </article>
+
+  <nav class="related">
+    <h2>함께 읽으면 좋은 글</h2>
+    <a href="#"><span>구속 후 보석 신청, 어떻게 준비해야 하나요?</span><span>보기 →</span></a>
+    <a href="#"><span>수사 초기 변호인 선임, 왜 빠를수록 유리한가</span><span>보기 →</span></a>
+    <a href="#"><span>법무법인 태앤규 형사 성공사례 보기</span><span>보기 →</span></a>
+  </nav>
+
+  <p class="disclaimer">
+    ※ 본 칼럼은 일반적인 법률정보 제공을 목적으로 작성되었으며, 개별 사건에 대한 법률적 조언이 아닙니다.
+    구체적인 사건은 반드시 변호사와 직접 상담하시기 바랍니다.
+  </p>
+
+</main>
+
+<footer class="foot">
+  <strong>법무법인 태앤규</strong> · 전북특별자치도 전주시 덕진구 건산로 215, 9층<br>
+  대표전화: <a href="tel:0507-1336-5516">0507-1336-5516</a>
+  &nbsp;·&nbsp;
+  카카오톡: <a href="https://pf.kakao.com/_vsGmn/chat" target="_blank" rel="noopener">pf.kakao.com/_vsGmn/chat</a><br>
+  © 2026 법무법인 태앤규. All rights reserved.
+</footer>
+
+</body>
+</html>
