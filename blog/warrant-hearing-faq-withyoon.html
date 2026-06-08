@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사전구속·영장실질심사 완전정리 | 법률사무소 위드윤 · 서울대 로스쿨 윤성호 변호사</title>
+<meta name="description" content="사전구속이란 무엇인지, 영장실질심사는 어떻게 진행되는지, 왜 반드시 구속을 막아야 하는지 — 서울대 로스쿨 출신 형사전문 윤성호 변호사가 핵심만 정리합니다.">
+<meta name="keywords" content="사전구속,영장실질심사,구속전피의자심문,구속영장,구속영장기각,형사변호사,위드윤,윤성호변호사,서울대로스쿨">
+<meta name="author" content="윤성호 변호사 | 법률사무소 위드윤">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #0f1829;
+  --navy2: #1a2640;
+  --gold: #c9a84c;
+  --gold2: #e8c97a;
+  --paper: #ffffff;
+  --bg: #f3f4f7;
+  --ink: #0f1829;
+  --mid: #3d4f6b;
+  --muted: #6b7a96;
+  --line: #e0e4ed;
+  --red: #c0392b;
+  --green: #0a8a4e;
+  --green-bg: #edfaf3;
+  --amber: #92400e;
+  --amber-bg: #fffbeb;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.8;
+  font-size: 15px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(201,168,76,.25);
+}
+.nav-in {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.mark {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+.brand-text strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 12.5px;
+  letter-spacing: 2.5px;
+  color: #fff;
+}
+.brand-text span {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  margin-top: 1px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-link {
+  color: rgba(255,255,255,.6);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  transition: color .15s;
+}
+.nav-link:hover { color: #fff; }
+.nav-cta {
+  background: var(--gold);
+  color: #111;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 10px 20px;
+  letter-spacing: .3px;
+  transition: background .15s;
+}
+.nav-cta:hover { background: var(--gold2); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 72px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.hero-in {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid rgba(201,168,76,.4);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+.hero h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(26px, 4vw, 42px);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.4;
+  word-break: keep-all;
+  margin-bottom: 18px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold);
+}
+.hero-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.9;
+  word-break: keep-all;
+  max-width: 580px;
+  margin-bottom: 36px;
+}
+.hero-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  background: rgba(201,168,76,.15);
+  border: 2px solid rgba(201,168,76,.4);
+  display: grid;
+  place-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.author-info strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.author-info span {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+}
+.author-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.author-tag {
+  padding: 3px 10px;
+  background: rgba(201,168,76,.12);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* ── LAYOUT ── */
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+/* ── TOC ── */
+.toc {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--navy);
+  padding: 28px 30px;
+  margin-bottom: 52px;
+}
+.toc-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.toc ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.toc ol li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.toc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 26px;
+}
+.toc ol a {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.7;
+  transition: color .15s;
+  word-break: keep-all;
+}
+.toc ol a:hover { color: var(--navy); }
+
+/* ── FAQ ITEM ── */
+.faq-item {
+  margin-bottom: 60px;
+  scroll-margin-top: 90px;
+}
+.faq-item:last-child { margin-bottom: 0; }
+
+.faq-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.faq-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(17px, 2.5vw, 22px);
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.5;
+  word-break: keep-all;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 0;
+}
+
+/* Q box */
+.q-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 24px;
+}
+.q-mark {
+  flex-shrink: 0;
+  width: 44px;
+  background: var(--gold);
+  color: #111;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-height: 52px;
+}
+.q-text {
+  flex: 1;
+  background: var(--navy);
+  padding: 16px 22px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* A box */
+.a-wrap {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: none;
+  padding: 32px 28px 30px;
+}
+.a-mark-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.a-mark {
+  width: 28px;
+  height: 28px;
+  background: rgba(201,168,76,.12);
+  border: 1px solid rgba(201,168,76,.4);
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.a-mark-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.para {
+  font-size: 15.5px;
+  color: #2d3b52;
+  line-height: 2;
+  word-break: keep-all;
+}
+.para + .para { margin-top: 16px; }
+.para strong { color: var(--navy); font-weight: 700; }
+
+/* Callout boxes */
+.box {
+  margin: 22px 0;
+  padding: 18px 22px;
+  line-height: 1.9;
+  font-size: 15px;
+  word-break: keep-all;
+}
+.box-key {
+  background: rgba(15,24,41,.04);
+  border-left: 4px solid var(--navy);
+  color: var(--navy);
+  font-weight: 500;
+}
+.box-warn {
+  background: var(--amber-bg);
+  border-left: 4px solid #f59e0b;
+  color: var(--amber);
+}
+.box-danger {
+  background: rgba(192,57,43,.05);
+  border-left: 4px solid var(--red);
+  color: #7f1d1d;
+}
+.box-success {
+  background: var(--green-bg);
+  border-left: 4px solid var(--green);
+  color: #065f36;
+}
+.box strong { font-weight: 700; }
+
+/* Dark block */
+.dark-block {
+  background: var(--navy);
+  padding: 28px 30px;
+  margin: 22px 0;
+}
+.dark-block .db-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(201,168,76,.25);
+}
+.dark-block p {
+  font-size: 15px;
+  color: rgba(255,255,255,.8);
+  line-height: 2;
+  word-break: keep-all;
+}
+.dark-block p + p { margin-top: 12px; }
+.dark-block strong { color: #fff; }
+
+/* 3-grid */
+.tri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 22px 0;
+}
+.tri-card {
+  padding: 20px 16px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  background: #fff;
+}
+.tri-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.tri-card strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.tri-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* checklist */
+.check-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0;
+}
+.check-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: #2d3b52;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+.check-list li::before {
+  content: '✓';
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--gold);
+  color: #111;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 900;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+.check-list li strong { color: var(--navy); font-weight: 700; }
+
+/* strategy block */
+.strategy {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--navy);
+  background: #fff;
+  padding: 26px 26px 24px;
+  margin: 22px 0;
+}
+.strategy .s-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.strategy h3 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* quote */
+.quote {
+  background: var(--navy);
+  padding: 32px 36px;
+  margin: 48px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.quote::before {
+  content: '"';
+  position: absolute;
+  top: 4px;
+  left: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  color: var(--gold);
+  opacity: .2;
+  line-height: 1;
+}
+.quote p {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 17.5px;
+  line-height: 1.8;
+  color: #fff;
+  word-break: keep-all;
+  padding-left: 8px;
+  position: relative;
+}
+.quote-source {
+  margin-top: 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  padding-left: 8px;
+}
+
+/* divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 48px 0;
+}
+
+/* CTA */
+.cta {
+  background: var(--navy);
+  padding: 36px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 56px;
+}
+.cta-text h2 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 19px;
+  color: #fff;
+  line-height: 1.5;
+  word-break: keep-all;
+  margin-bottom: 6px;
+}
+.cta-text p {
+  font-size: 14px;
+  color: rgba(255,255,255,.45);
+  word-break: keep-all;
+}
+.cta-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 24px;
+  background: var(--gold);
+  color: #111;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .3px;
+}
+.btn-kakao {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 24px;
+  background: #fee500;
+  color: #111;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .3px;
+}
+
+/* Related nav */
+.related {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 24px 28px;
+  margin-top: 20px;
+}
+.related h2 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px;
+  color: var(--navy);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.related a {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid #f0f2f5;
+  color: var(--mid);
+  font-size: 14px;
+  transition: color .15s;
+}
+.related a:hover { color: var(--navy); }
+.related a span:last-child { white-space: nowrap; color: var(--muted); }
+
+/* disclaimer */
+.disclaimer {
+  margin-top: 18px;
+  color: #98a2b3;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* footer */
+footer {
+  background: #080b12;
+  color: rgba(255,255,255,.38);
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 12px;
+  line-height: 2;
+}
+footer strong { color: rgba(255,255,255,.75); }
+footer a { color: var(--gold); }
+
+@media (max-width: 680px) {
+  .nav-link { display: none; }
+  .hero { padding: 50px 20px 60px; }
+  .wrap { padding: 36px 16px 70px; }
+  .tri-grid { grid-template-columns: 1fr; }
+  .cta { padding: 26px 22px; }
+  .q-mark { width: 36px; font-size: 17px; }
+  .a-wrap { padding: 24px 18px 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/index.html">
+      <div class="mark">WY</div>
+      <div class="brand-text">
+        <strong>WITH YOON LAW</strong>
+        <span>법률사무소 위드윤</span>
+      </div>
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="/board.html?type=law">법률칼럼</a>
+      <a class="nav-link" href="/board.html?type=case">성공사례</a>
+      <a class="nav-cta" href="tel:010-9491-1567">☎ 상담전화</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-badge">형사 법률 Q&amp;A</div>
+    <h1>
+      사전구속과 영장실질심사,<br>
+      <em>이 단계가 형사 사건의 승패를 가릅니다</em>
+    </h1>
+    <p class="hero-desc">
+      구속영장이 청구되는 순간부터 심문 결과가 나오기까지 — 의뢰인이 가장 많이 묻는 5가지 질문에 윤성호 변호사가 직접 답합니다.
+    </p>
+    <div class="hero-author">
+      <div class="author-avatar">尹</div>
+      <div>
+        <div class="author-info">
+          <strong>윤성호 변호사 · 법률사무소 위드윤</strong>
+          <span>작성일 2026.06.08 &nbsp;·&nbsp; 분야: 형사 · 구속 전 피의자 심문</span>
+        </div>
+        <div class="author-tags">
+          <span class="author-tag">서울대학교 로스쿨</span>
+          <span class="author-tag">형사 전문</span>
+          <span class="author-tag">영장실질심사</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="목차">
+    <div class="toc-title">목차 — 5가지 핵심 질문</div>
+    <ol>
+      <li>
+        <span class="toc-num">Q 01</span>
+        <a href="#q01">'사전 구속'이 정확히 뭔가요? 일반 체포랑 다른 건가요?</a>
+      </li>
+      <li>
+        <span class="toc-num">Q 02</span>
+        <a href="#q02">검사가 구속영장을 청구하면 무조건 구속되는 건가요? 영장실질심사는 뭔가요?</a>
+      </li>
+      <li>
+        <span class="toc-num">Q 03</span>
+        <a href="#q03">굳이 구속을 막아야 하나요? 그냥 들어가서 조사받으면 안 되나요?</a>
+      </li>
+      <li>
+        <span class="toc-num">Q 04</span>
+        <a href="#q04">변호사가 봐도 영장실질심사가 그렇게 어렵습니까?</a>
+      </li>
+      <li>
+        <span class="toc-num">Q 05</span>
+        <a href="#q05">이 짧은 시간 안에 어떻게 구속을 막아냅니까?</a>
+      </li>
+    </ol>
+  </nav>
+
+
+  <!-- Q 01 -->
+  <div class="faq-item" id="q01">
+    <div class="faq-label">Q 01</div>
+    <h2 class="faq-title">'사전 구속'이 정확히 뭔가요? 일반 체포랑 다른 건가요?</h2>
+
+    <div class="q-box">
+      <div class="q-mark">Q</div>
+      <div class="q-text">뉴스에서 '사전구속'이라는 말을 자주 듣는데, 일반 체포나 긴급체포와 어떻게 다른 건가요?</div>
+    </div>
+
+    <div class="a-wrap">
+      <div class="a-mark-row">
+        <div class="a-mark">A</div>
+        <span class="a-mark-label">윤성호 변호사의 답변</span>
+      </div>
+
+      <p class="para">
+        핵심 차이는 하나입니다. <strong>'체포 과정 없이 곧바로 구속 절차에 들어가는 것'</strong>이 사전 구속입니다.
+      </p>
+
+      <div class="box box-key" style="margin-top: 20px;">
+        우리가 드라마나 뉴스에서 흔히 보는 장면은 <strong>사후 구속</strong>입니다.<br>
+        현행범으로 체포되거나 긴급체포된 후, 구속 여부가 결정되는 순서이지요.<br><br>
+        반면 <strong>사전 구속</strong>은 아직 체포조차 되지 않은 채 밖에서 조사를 받던 피의자에 대해,
+        검사가 법원에 영장을 청구하여 바로 구속하는 절차입니다.
+      </div>
+
+      <p class="para" style="margin-top: 20px;">
+        즉, <strong>체포 → 구속</strong>이라는 단계 없이 <strong>영장 청구 → 심문 → 구속</strong>으로 이어지는 것이 사전 구속의 특징입니다.
+        자유롭게 수사에 임하던 사람이 갑자기 구치소로 직행할 수 있다는 점에서,
+        당사자 입장에서는 더욱 충격적으로 다가오는 절차입니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Q 02 -->
+  <div class="faq-item" id="q02">
+    <div class="faq-label">Q 02</div>
+    <h2 class="faq-title">검사가 구속영장을 청구하면 무조건 구속되는 건가요? 영장실질심사는 뭔가요?</h2>
+
+    <div class="q-box">
+      <div class="q-mark">Q</div>
+      <div class="q-text">검사가 구속영장을 청구하면 무조건 구속되는 건가요? 뉴스에 나오는 '영장실질심사'는 또 뭔가요?</div>
+    </div>
+
+    <div class="a-wrap">
+      <div class="a-mark-row">
+        <div class="a-mark">A</div>
+        <span class="a-mark-label">윤성호 변호사의 답변</span>
+      </div>
+
+      <p class="para">
+        <strong>절대 자동으로 구속되지 않습니다.</strong>
+        바로 이 지점에서 결정적인 방어 타이밍이 열립니다.
+      </p>
+
+      <p class="para" style="margin-top: 16px;">
+        영장실질심사의 정식 명칭은 <strong>'구속 전 피의자 심문'</strong>입니다.
+        구속영장 청구를 받은 판사가 피의자를 법정으로 직접 불러,
+        정말로 구속이 필요한 상황인지 직접 따져보는 절차입니다.
+        이 자리에서 판사는 아래 세 가지 요건을 중심으로 판단합니다.
+      </p>
+
+      <div class="tri-grid">
+        <div class="tri-card">
+          <div class="tri-num">01</div>
+          <strong>범죄 혐의의 상당성</strong>
+          <p>피의자가 범죄를 저질렀다고 의심할 만한 이유가 충분한가</p>
+        </div>
+        <div class="tri-card">
+          <div class="tri-num">02</div>
+          <strong>도주 우려</strong>
+          <p>주거가 불분명하거나 해외 도피 등 도망갈 가능성이 있는가</p>
+        </div>
+        <div class="tri-card">
+          <div class="tri-num">03</div>
+          <strong>증거 인멸 우려</strong>
+          <p>증거를 숨기거나 조작할 위험이 있는가</p>
+        </div>
+      </div>
+
+      <p class="para">
+        검사는 이 심문 자리에서 구속의 필요성을 강하게 주장합니다.
+        반대로 변호인과 피의자는 세 가지 요건 중 어느 것도 해당하지 않음을 조목조목 반박하며
+        <strong>불구속 상태에서 수사·재판을 받을 수 있도록</strong> 적극적으로 다투게 됩니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Q 03 -->
+  <div class="faq-item" id="q03">
+    <div class="faq-label">Q 03</div>
+    <h2 class="faq-title">굳이 구속을 막아야 하나요? 그냥 들어가서 조사받으면 안 되나요?</h2>
+
+    <div class="q-box">
+      <div class="q-mark">Q</div>
+      <div class="q-text">억울한 게 없다면 당당하게 들어가서 조사받는 게 낫지 않나요? 굳이 구속을 막아야 하는 이유가 있나요?</div>
+    </div>
+
+    <div class="a-wrap">
+      <div class="a-mark-row">
+        <div class="a-mark">A</div>
+        <span class="a-mark-label">윤성호 변호사의 답변</span>
+      </div>
+
+      <p class="para">
+        수사 현장에서 가장 자주 듣는 말이고, 동시에 가장 위험한 착각입니다.
+      </p>
+
+      <div class="dark-block">
+        <div class="db-title">구속이 결정되는 순간, 두 가지 현실이 시작됩니다</div>
+        <p>
+          첫째, 법원이 구속영장을 발부했다는 것 자체가 <strong>"이 사람은 죄가 무겁고, 도주 또는 증거 인멸의 위험이 있다"</strong>고
+          1차 공인한 것입니다. 이는 최종 판결 단계에서 재판부의 심리에 심각한 악영향을 미칩니다.
+        </p>
+        <p>
+          둘째, 구치소 안에서는 <strong>변호사와의 자유로운 면담, 유리한 증거 수집, 피해자와의 합의 진행</strong>이
+          극도로 제한됩니다. 불구속 상태와 구속 상태의 방어력 차이는 비교 자체가 무의미할 정도입니다.
+        </p>
+      </div>
+
+      <div class="box box-danger">
+        ⚠ <strong>"나중에 재판 가서 잘 싸우면 된다"는 생각은 통하지 않습니다.</strong><br>
+        구속된 채로 수개월의 수사를 버텨야 하고, 선처는 고사하고 실형 여부를 걱정해야 하는 상황으로 추락합니다.
+        구속은 <strong>지금 당장, 이 단계에서</strong> 반드시 막아야 합니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Q 04 -->
+  <div class="faq-item" id="q04">
+    <div class="faq-label">Q 04</div>
+    <h2 class="faq-title">변호사가 봐도 영장실질심사가 그렇게 어렵습니까?</h2>
+
+    <div class="q-box">
+      <div class="q-mark">Q</div>
+      <div class="q-text">경험 많은 변호사에게도 영장실질심사는 어려운 절차인가요?</div>
+    </div>
+
+    <div class="a-wrap">
+      <div class="a-mark-row">
+        <div class="a-mark">A</div>
+        <span class="a-mark-label">윤성호 변호사의 답변</span>
+      </div>
+
+      <p class="para">
+        네, 같은 변호사들 사이에서도 <strong>극단적으로 난이도가 높은 영역</strong>으로 꼽힙니다.
+        이유는 단순하고 치명적입니다.
+      </p>
+
+      <ul class="check-list" style="margin-top: 20px;">
+        <li>영장 청구 직후 심문까지 주어지는 시간은 불과 수 시간에서 하루 이내입니다. 방어 논리 구성과 자료 수집을 그 안에 모두 완료해야 합니다.</li>
+        <li>재판부는 검찰의 '구속 필요성' 주장을 먼저 검토한 상태로 심문을 시작합니다. 변호인은 불리한 기울기에서 역전을 노려야 하는 구조입니다.</li>
+        <li>심문 과정에서 단 한 번의 실수, 핀트가 어긋난 변론 하나가 그 자리에서 즉각적인 구속 결정으로 이어집니다.</li>
+      </ul>
+
+      <div class="box box-warn">
+        실전 경험이 없는 변호사가 이 자리에 앉으면, 사실상 의미 있는 방어는 불가능합니다.
+        <strong>이 단계에서 변호인 선택의 무게가 결정적입니다.</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Q 05 -->
+  <div class="faq-item" id="q05">
+    <div class="faq-label">Q 05</div>
+    <h2 class="faq-title">그렇다면 이 짧은 시간 안에 어떻게 구속을 막아냅니까?</h2>
+
+    <div class="q-box">
+      <div class="q-mark">Q</div>
+      <div class="q-text">시간도 없고 불리한 상황에서, 실제로 어떤 방식으로 구속을 막아냅니까?</div>
+    </div>
+
+    <div class="a-wrap">
+      <div class="a-mark-row">
+        <div class="a-mark">A</div>
+        <span class="a-mark-label">윤성호 변호사의 답변</span>
+      </div>
+
+      <p class="para">
+        감정에 호소하는 읍소나 책에 나오는 이론 싸움이 아닙니다.
+        <strong>철저한 계산과 실전 전략</strong>입니다.
+      </p>
+
+      <div class="strategy">
+        <div class="s-label">Strategy Point</div>
+        <h3>구속을 막아내는 세 가지 실전 접근</h3>
+        <ul class="check-list">
+          <li>
+            <strong>객관적 자료로 수사기관의 논리를 정면 반박합니다.</strong>
+            도주 우려, 증거 인멸 우려 — 검찰이 내세운 구속 사유를 박살 낼
+            주거 안정성, 직장·가족관계, 증거 현황 자료를 신속하게 확보합니다.
+          </li>
+          <li>
+            <strong>심문 전 피의자의 진술과 태도를 완벽하게 준비시킵니다.</strong>
+            법정에서 내뱉는 말 한마디, 심지어 피의자의 시선 처리와 태도 하나까지
+            완벽하게 통제되어야 합니다.
+          </li>
+          <li>
+            <strong>검찰의 영장 청구가 얼마나 과도한지를 판사가 단박에 알아채게 만듭니다.</strong>
+            이 사건이 불구속 수사로 충분히 진행 가능함을 논리적·수치적으로 입증하는 것,
+            이것이 핵심입니다.
+          </li>
+        </ul>
+      </div>
+
+      <div class="box box-success">
+        💡 수사기관이 어떤 논리로 영장을 청구하고, 재판부가 어느 지점에서 판단을 기울이는지를
+        직접 경험한 시각으로 대응할 때 실질적인 방어가 가능합니다.
+        <strong>서울대 로스쿨 출신 윤성호 변호사는 바로 그 경험을 의뢰인을 위해 씁니다.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote">
+    <p>
+      구속은 재판 전에 이미 불리한 판을 짜 버립니다.<br>
+      구속을 막아내는 것, 그것이 형사 사건 방어의 출발점이자 핵심입니다.
+    </p>
+    <div class="quote-source">— 윤성호 변호사 · 서울대학교 로스쿨 · 법률사무소 위드윤</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-text">
+      <h2>구속영장이 청구됐다면, 지금 당장 연락하십시오</h2>
+      <p>영장실질심사 기일은 예고 없이 빠르게 지정됩니다. 단 하루도 지체할 수 없습니다.</p>
+    </div>
+    <div class="cta-btns">
+      <a class="btn-gold" href="tel:010-9491-1567">☎ 전화 상담</a>
+      <a class="btn-kakao" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a>
+    </div>
+  </div>
+
+  <!-- Related -->
+  <nav class="related" aria-label="바로가기">
+    <h2>바로가기</h2>
+    <a href="/board.html?type=law"><span>법률칼럼 전체 목록</span><span>보기 →</span></a>
+    <a href="/board.html?type=case"><span>성공사례 보기</span><span>보기 →</span></a>
+    <a href="/index.html#contact"><span>상담 안내 및 오시는 길</span><span>확인 →</span></a>
+  </nav>
+
+  <p class="disclaimer">※ 본 칼럼은 일반적인 법률정보 제공 목적이며, 개별 사건에 대한 법률적 조언이 아닙니다. 구체적인 사건은 반드시 변호사와 상담하시기 바랍니다.</p>
+
+</div>
+
+<footer>
+  <strong>법률사무소 위드윤 · 서울대학교 로스쿨 윤성호 변호사</strong><br>
+  서울 서초구 서초대로 270 서보빌딩 602호<br>
+  상담전화: <a href="tel:010-9491-1567">010-9491-1567</a> &nbsp;·&nbsp;
+  사무실: <a href="tel:02-2038-7241">02-2038-7241</a> &nbsp;·&nbsp;
+  <a href="mailto:withyoonlaw@naver.com">withyoonlaw@naver.com</a><br>
+  © 2026 Law Office With Yoon. All rights reserved.
+</footer>
+
+</body>
+</html>
