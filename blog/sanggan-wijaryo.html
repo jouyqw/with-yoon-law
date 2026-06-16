@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>배우자 불륜 · 상간자 위자료 청구 소송 | 법률사무소 위드윤 윤성호 변호사</title>
+<meta name="description" content="상간자 위자료, 무조건 받을 수 있을까? 증거 수집 방법, 불법증거의 함정, 실제 승소사례까지 윤성호 변호사가 직접 풀어드립니다.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:       #0e1118;
+  --surface:  #151b27;
+  --card:     #1b2335;
+  --card2:    #1e2a3d;
+  --border:   rgba(255,255,255,.09);
+  --gold:     #d4a84b;
+  --gold-dim: rgba(212,168,75,.18);
+  --green:    #2dbe74;
+  --red:      #e05050;
+  --white:    #f0f4ff;
+  --white2:   rgba(240,244,255,.82);
+  --white3:   rgba(240,244,255,.55);
+  --accent:   #5b9cf6;
+  --shadow:   0 24px 60px rgba(0,0,0,.55);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.85;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ───── 상단 헤더 ───── */
+.top {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(14,17,24,.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.top-in {
+  max-width: 1120px; margin: 0 auto;
+  padding: 0 24px; min-height: 68px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 13px; }
+.mark {
+  width: 38px; height: 38px;
+  background: var(--gold-dim);
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px;
+}
+.brand strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 12.5px; letter-spacing: 2.5px;
+  color: var(--white);
+}
+.brand span { display: block; font-size: 11.5px; color: var(--white3); }
+.top-actions { display: flex; gap: 8px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+  padding: 9px 15px; border-radius: 5px;
+  font-size: 13px; font-weight: 600;
+  transition: all .18s;
+}
+.btn:hover { background: rgba(255,255,255,.12); }
+.btn.primary { background: var(--gold); border-color: var(--gold); color: #0e1118; font-weight: 700; }
+.btn.primary:hover { background: #e0b857; }
+.btn.gold { background: var(--gold); border-color: var(--gold); color: #0e1118; font-weight: 700; }
+.btn.green { background: var(--green); border-color: var(--green); color: #0e1118; font-weight: 700; }
+
+/* ───── 레이아웃 ───── */
+.page { max-width: 980px; margin: 0 auto; padding: 40px 22px 100px; }
+.crumb { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; color: var(--white3); font-size: 13px; margin-bottom: 24px; }
+.crumb span:last-child { color: var(--gold); font-weight: 700; }
+.article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* ───── 아티클 헤더 ───── */
+.head {
+  padding: 52px 56px 40px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(160deg, #1a2540 0%, var(--surface) 100%);
+}
+.cat-badge {
+  display: inline-flex; align-items: center; height: 26px; padding: 0 12px;
+  background: var(--gold-dim); border: 1px solid rgba(212,168,75,.3);
+  color: var(--gold); font-size: 11px; font-weight: 900; letter-spacing: 1.2px;
+  margin-bottom: 22px;
+}
+h1.post-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(22px, 3.2vw, 36px);
+  line-height: 1.4; color: var(--white); font-weight: 700; word-break: keep-all;
+}
+h1.post-title em { font-style: normal; color: var(--gold); }
+.post-desc {
+  margin-top: 16px; font-size: 15.5px; color: var(--white2);
+  line-height: 1.85; word-break: keep-all; max-width: 640px;
+}
+.meta { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 22px; color: var(--white3); font-size: 12.5px; }
+.meta strong { color: rgba(212,168,75,.75); }
+
+/* ───── 본문 ───── */
+.body { padding: 52px 56px 60px; }
+.section-label {
+  font-size: 10.5px; font-weight: 900; letter-spacing: 2.5px;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 8px;
+  opacity: .9;
+}
+h2.block-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 21px; color: var(--white); font-weight: 700;
+  margin-bottom: 22px; padding-bottom: 14px;
+  border-bottom: 1px solid rgba(212,168,75,.3);
+}
+h2.block-title::after {
+  content: ''; display: block; width: 40px; height: 2px;
+  background: var(--gold); margin-top: -1px;
+}
+
+.a-text { font-size: 15.5px; color: var(--white2); line-height: 2.05; word-break: keep-all; }
+.a-text strong {
+  font-family: 'Noto Serif KR', serif;
+  color: var(--white); font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(212,168,75,.4);
+  text-underline-offset: 4px;
+}
+.a-text + .a-text { margin-top: 18px; }
+
+/* ───── 구분선 ───── */
+.divider { height: 1px; background: var(--border); margin: 44px 0; }
+
+/* ───── 박스 ───── */
+.warn-box {
+  margin: 22px 0; padding: 18px 22px;
+  background: rgba(212,168,75,.08);
+  border-left: 3px solid var(--gold);
+  font-size: 14.5px; color: rgba(212,168,75,.9); line-height: 1.9;
+}
+.warn-box strong { font-family: 'Noto Serif KR', serif; color: var(--gold); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(212,168,75,.5); }
+.info-box {
+  margin: 20px 0; padding: 18px 22px;
+  background: rgba(91,156,246,.07); border-left: 3px solid var(--accent);
+  font-size: 14.5px; color: rgba(180,210,255,.85); line-height: 1.9;
+}
+.info-box strong { font-family: 'Noto Serif KR', serif; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(91,156,246,.4); }
+.key-box {
+  margin: 24px 0; padding: 22px 26px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border); border-left: 3px solid var(--white);
+  font-size: 15px; color: var(--white); line-height: 2; font-weight: 500;
+}
+.danger-box {
+  margin: 20px 0; padding: 18px 22px;
+  background: rgba(224,80,80,.08); border-left: 3px solid var(--red);
+  font-size: 14.5px; color: rgba(255,160,160,.88); line-height: 1.9;
+}
+.danger-box strong { font-family: 'Noto Serif KR', serif; color: #ff9999; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(224,80,80,.5); }
+.success-box {
+  margin: 20px 0; padding: 18px 22px;
+  background: rgba(45,190,116,.07); border-left: 3px solid var(--green);
+  font-size: 14.5px; color: rgba(120,240,170,.88); line-height: 1.9;
+}
+.success-box strong { font-family: 'Noto Serif KR', serif; color: #7df5b2; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(45,190,116,.5); }
+
+/* ───── 다크 강조 블록 ───── */
+.reality-block {
+  margin: 28px 0; padding: 30px 32px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(212,168,75,.2);
+}
+.reality-block .r-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px; font-weight: 700; color: var(--gold); margin-bottom: 16px;
+  text-decoration: underline; text-underline-offset: 5px;
+  text-decoration-color: rgba(212,168,75,.4);
+}
+.reality-block p { font-size: 15px; color: var(--white2); line-height: 2.05; }
+.reality-block p + p { margin-top: 12px; }
+.reality-block strong { font-family: 'Noto Serif KR', serif; color: var(--white); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,.35); }
+
+/* ───── Q&A 카드 ───── */
+.qa-block {
+  margin: 28px 0;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.qa-q {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 22px 26px;
+  background: linear-gradient(135deg, #1d2c47 0%, #1a2540 100%);
+  border-bottom: 1px solid rgba(212,168,75,.2);
+}
+.qa-badge {
+  flex-shrink: 0; width: 38px; height: 38px;
+  background: var(--gold-dim); border: 1.5px solid var(--gold);
+  color: var(--gold); display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; border-radius: 50%;
+}
+.qa-q-text {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16.5px; font-weight: 700; color: var(--white); word-break: keep-all; line-height: 1.6;
+  padding-top: 6px;
+}
+.qa-a {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 26px 28px; background: var(--card);
+}
+.qa-badge.a { background: rgba(45,190,116,.12); border-color: var(--green); color: var(--green); }
+.qa-a-text { font-size: 15px; color: var(--white2); line-height: 2.05; word-break: keep-all; padding-top: 6px; }
+.qa-a-text strong { font-family: 'Noto Serif KR', serif; color: var(--white); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(212,168,75,.45); }
+.qa-a-text p + p { margin-top: 14px; }
+
+/* ───── 증거 그리드 ───── */
+.evidence-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) { .evidence-grid { grid-template-columns: 1fr; } }
+.ev-card {
+  padding: 20px 22px;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+}
+.ev-card .ev-label {
+  font-size: 11px; font-weight: 900; letter-spacing: 1.2px; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.ev-card .ev-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px;
+}
+.ev-card .ev-text { font-size: 13.5px; color: var(--white2); line-height: 1.85; word-break: keep-all; }
+
+/* ───── 불법증거 리스트 ───── */
+.illegal-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.illegal-list li {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 18px 20px;
+  background: rgba(224,80,80,.06);
+  border: 1px solid rgba(224,80,80,.18); border-left: 3px solid var(--red);
+}
+.il-icon { flex-shrink: 0; color: var(--red); font-size: 16px; margin-top: 2px; }
+.il-body { font-size: 14.5px; color: rgba(255,160,160,.88); line-height: 1.85; word-break: keep-all; }
+.il-body strong { color: #ff9999; font-weight: 700; }
+
+/* ───── 비교 표 ───── */
+.compare-table {
+  width: 100%; border-collapse: collapse;
+  margin: 22px 0; font-size: 14px;
+}
+.compare-table th {
+  background: rgba(212,168,75,.12); color: var(--gold); font-weight: 700;
+  padding: 13px 16px; text-align: left;
+  border-bottom: 1px solid rgba(212,168,75,.3);
+  font-family: 'Noto Serif KR', serif; font-size: 13px;
+}
+.compare-table td {
+  padding: 13px 16px; color: var(--white2); line-height: 1.8;
+  border-bottom: 1px solid var(--border); vertical-align: top;
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table td:first-child { font-family: 'Noto Serif KR', serif; color: var(--white); font-weight: 600; font-size: 13.5px; }
+.compare-table td.good { color: rgba(100,230,160,.85); font-weight: 700; }
+.compare-table td.bad { color: rgba(255,130,130,.85); }
+.compare-table tr:hover td { background: rgba(255,255,255,.02); }
+
+/* ───── 사건 개요 카드 ───── */
+.case-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) { .case-grid { grid-template-columns: 1fr; } }
+.case-card {
+  padding: 20px;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+}
+.case-card .cc-label {
+  font-size: 11px; font-weight: 900; letter-spacing: 1.2px; color: var(--accent);
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.case-card .cc-text { font-size: 14px; color: var(--white2); line-height: 1.85; word-break: keep-all; }
+
+/* ───── 결과 배지 ───── */
+.result-banner {
+  margin: 28px 0; padding: 24px 28px;
+  background: rgba(45,190,116,.08);
+  border: 1px solid rgba(45,190,116,.3);
+  display: flex; align-items: center; gap: 18px;
+}
+.result-banner .rb-icon {
+  flex-shrink: 0; width: 50px; height: 50px;
+  background: rgba(45,190,116,.15); border: 1.5px solid var(--green);
+  color: var(--green); display: grid; place-items: center;
+  font-size: 22px; border-radius: 50%;
+}
+.result-banner .rb-text strong { display: block; font-family: 'Noto Serif KR', serif; font-size: 17px; color: #7df5b2; font-weight: 700; margin-bottom: 4px; }
+.result-banner .rb-text span { font-size: 14px; color: var(--white2); }
+
+/* ───── 인용 강조 ───── */
+.quote-highlight {
+  margin: 34px 0; padding: 32px 36px;
+  background: linear-gradient(160deg, #1a2540 0%, var(--surface) 100%);
+  border: 1px solid rgba(212,168,75,.25); text-align: center;
+}
+.quote-highlight p { font-family: 'Noto Serif KR', serif; font-size: 18px; color: var(--white); line-height: 1.7; font-weight: 600; }
+.quote-highlight .q-source { margin-top: 14px; font-size: 13px; color: var(--white3); }
+
+/* ───── CTA ───── */
+.cta {
+  margin: 0 0 28px; padding: 30px 32px;
+  background: linear-gradient(135deg, #1d2c47 0%, #1a2540 100%);
+  border: 1px solid rgba(212,168,75,.25);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.cta h2 { font-family: 'Noto Serif KR', serif; font-size: 18px; color: var(--white); margin-bottom: 6px; }
+.cta p { font-size: 13.5px; color: var(--white3); }
+.cta-links { display: flex; gap: 10px; }
+
+/* ───── 변호사 프로필 ───── */
+.profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+@media (max-width: 720px) { .profile-grid { grid-template-columns: 1fr; } }
+.profile-card { padding: 24px; background: var(--card2); border: 1px solid var(--border); border-top: 3px solid var(--gold); }
+.profile-card .pc-name { font-family: 'Noto Serif KR', serif; font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.profile-card .pc-role { font-size: 12.5px; color: var(--gold); margin-bottom: 16px; }
+.profile-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.profile-card li { font-size: 13.5px; color: var(--white2); line-height: 1.7; padding-left: 14px; position: relative; }
+.profile-card li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+
+/* ───── 관련 링크 / 푸터 ───── */
+.related { padding: 30px 32px; }
+.related h2 { font-family: 'Noto Serif KR', serif; font-size: 15px; color: var(--white3); margin-bottom: 4px; }
+.related a { display: flex; justify-content: space-between; gap: 14px; padding: 15px 0; border-top: 1px solid var(--border); color: var(--white2); font-size: 14.5px; transition: color .15s; }
+.related a:hover { color: var(--gold); }
+.related a span:first-child { font-weight: 500; }
+.related a span:last-child { white-space: nowrap; color: var(--gold); font-weight: 700; font-size: 13.5px; }
+.disclaimer { margin-top: 22px; padding: 16px 20px; background: rgba(255,255,255,.03); border: 1px solid var(--border); border-left: 2px solid rgba(255,255,255,.2); color: var(--white3); font-size: 12.5px; line-height: 1.9; }
+.foot { background: #080a0e; color: var(--white3); text-align: center; padding: 44px 24px; font-size: 13px; line-height: 2.3; }
+.foot strong { color: var(--white); font-size: 14px; letter-spacing: .5px; }
+.foot a { color: var(--gold); }
+.foot-divider { margin: 14px auto; width: 36px; height: 1px; background: rgba(212,168,75,.3); }
+
+/* ───── 반응형 ───── */
+@media (max-width: 720px) {
+  .top-in { padding: 0 16px; min-height: 62px; }
+  .top-actions .btn:not(.primary) { display: none; }
+  .page { padding: 24px 14px 80px; }
+  .head { padding: 28px 18px 22px; }
+  .body { padding: 26px 18px 38px; }
+  .cta { margin: 0 14px 28px; padding: 22px 18px; }
+  .related { padding: 22px 18px; }
+  .qa-q, .qa-a { padding: 18px; }
+  .compare-table th, .compare-table td { padding: 10px 12px; font-size: 13px; }
+  .result-banner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- 상단 고정 헤더 -->
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="/index.html">
+      <div class="mark">WY</div>
+      <div>
+        <strong>WITH YOON LAW</strong>
+        <span>법률사무소 위드윤</span>
+      </div>
+    </a>
+    <div class="top-actions">
+      <a class="btn" href="/board.html?type=law">법률칼럼</a>
+      <a class="btn primary" href="tel:010-9491-1567">상담전화</a>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- 브레드크럼 -->
+  <nav class="crumb" aria-label="현재 위치">
+    <a href="/index.html">홈</a><span>&gt;</span>
+    <a href="/board.html?type=law">법률칼럼</a><span>&gt;</span>
+    <span>배우자 불륜 · 상간자 위자료 청구 소송</span>
+  </nav>
+
+  <article class="article">
+
+    <!-- 아티클 헤더 -->
+    <header class="head">
+      <div class="cat-badge">이혼 · 손해배상 법률칼럼</div>
+      <h1 class="post-title">
+        배우자와 바람난 상간자,<br>
+        <em>위자료 소송으로 반드시 받을 수 있을까?</em>
+      </h1>
+      <p class="post-desc">
+        증거도 없이 분노만으로 소송하면 집니다. 법원이 인정하는 불륜 증거의 기준,
+        절대 해선 안 되는 증거 수집 방법, 그리고 실제 1,500만 원 위자료 승소 사례까지 —
+        윤성호 변호사가 직접 풀어드립니다.
+      </p>
+      <div class="meta">
+        <span><strong>작성자</strong> 윤성호 변호사 · 법률사무소 위드윤</span>
+        <span><strong>분야</strong> 이혼 · 상간자 위자료 · 손해배상</span>
+      </div>
+    </header>
+
+    <div class="body">
+
+      <!-- ─── Q1 ─── -->
+      <div class="section-label" style="margin-top:4px;">자주 묻는 질문 01</div>
+      <h2 class="block-title">상간자, 무조건 소송해서 위자료 받을 수 있나요?</h2>
+
+      <div class="qa-block">
+        <div class="qa-q">
+          <div class="qa-badge">Q</div>
+          <div class="qa-q-text">배우자와 바람난 상간자, 무조건 소송하면 위자료를 받을 수 있는 건가요?</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-badge a">A</div>
+          <div class="qa-a-text">
+            <p>아닙니다. 법원은 <strong>분노나 배신감의 크기</strong>만 보고 판결하지 않습니다.</p>
+            <p>위자료를 받으려면 두 가지를 <strong>객관적인 증거</strong>로 직접 입증해야 합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="compare-table" style="margin-top:4px;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>입증해야 할 사실</th>
+              <th>핵심 포인트</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>① 인식</td>
+              <td>상간자가 배우자가 <strong>기혼자임을 알면서도</strong> 만났다는 사실</td>
+              <td class="good">✔ 필수 요건</td>
+            </tr>
+            <tr>
+              <td>② 인과관계</td>
+              <td>그 부적절한 만남으로 인해 <strong>혼인관계가 파탄</strong>에 이르렀다는 사실</td>
+              <td class="good">✔ 필수 요건</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        ⚠ <strong>심증이나 주장만으로는 부족합니다.</strong> 판사를 설득할 증거가 없다면 소송에서 패소할 수 있습니다.
+      </div>
+
+
+      <!-- ─── Q2 ─── -->
+      <div class="divider"></div>
+      <div class="section-label">자주 묻는 질문 02</div>
+      <h2 class="block-title">'확실한' 불륜 증거는 대체 뭔가요?</h2>
+
+      <div class="qa-block">
+        <div class="qa-q">
+          <div class="qa-badge">Q</div>
+          <div class="qa-q-text">모텔 들어가는 사진이라도 찍어야 하나요?</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-badge a">A</div>
+          <div class="qa-a-text">
+            <p>현실적으로 그런 증거를 확보하기란 <strong>거의 불가능</strong>에 가깝습니다.</p>
+            <p>상간 소송은 보통 <strong>'간접증거'들을 얼마나 탄탄하게 엮어내느냐</strong>에 따라 승패가 갈립니다. 판사가 "이 증거들을 종합해보니 두 사람이 부적절한 관계라고 판단할 수밖에 없겠군"이라고 생각하게 만드는 것이 핵심입니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="a-text" style="margin-top: 8px;">법원에서 주로 인정하는 간접증거들은 다음과 같습니다.</p>
+
+      <div class="evidence-grid" style="margin-top:18px;">
+        <div class="ev-card">
+          <div class="ev-label">증거 유형 01</div>
+          <div class="ev-title">💬 카카오톡 · 문자 메시지</div>
+          <div class="ev-text">"보고 싶다", "사랑한다" 같은 애정 표현, 성관계를 암시하는 대화, 함께 여행·호텔을 예약한 내역 등. 구체적일수록 유리합니다.</div>
+        </div>
+        <div class="ev-card">
+          <div class="ev-label">증거 유형 02</div>
+          <div class="ev-title">📹 블랙박스 · CCTV 영상</div>
+          <div class="ev-text">모텔 주차장 또는 차량 안에서 단둘이 있는 모습, 다정한 스킨십 장면이 담긴 블랙박스·CCTV 화면.</div>
+        </div>
+        <div class="ev-card">
+          <div class="ev-label">증거 유형 03</div>
+          <div class="ev-title">💳 카드 사용 내역</div>
+          <div class="ev-text">두 사람이 함께 숙박업소나 특정 장소에서 사용한 카드 내역. 다른 증거와 결합될 때 강력한 정황 증거가 됩니다.</div>
+        </div>
+        <div class="ev-card">
+          <div class="ev-label">증거 유형 04</div>
+          <div class="ev-title">📱 SNS · 통화 기록</div>
+          <div class="ev-text">비슷한 시간대에 같은 장소에서 올린 SNS 게시물, 심야 시간에 자주 통화한 기록 등도 의미 있는 증거가 될 수 있습니다.</div>
+        </div>
+      </div>
+
+      <div class="reality-block">
+        <div class="r-title">💡 증거는 '하나'가 아니라 '스토리'로 엮어야 합니다</div>
+        <p>하나의 증거만으로 상대를 압박하려 하기보다, <strong>여러 증거를 엮어서 두 사람이 부적절한 관계라는 하나의 완성된 스토리</strong>를 만드는 것이 핵심입니다.</p>
+      </div>
+
+
+      <!-- ─── Q3 ─── -->
+      <div class="divider"></div>
+      <div class="section-label">자주 묻는 질문 03</div>
+      <h2 class="block-title">배우자 몰래 휴대폰을 열어봤어요. 이거 증거로 쓸 수 있나요?</h2>
+
+      <div class="qa-block">
+        <div class="qa-q">
+          <div class="qa-badge">Q</div>
+          <div class="qa-q-text">너무 급한 마음에 배우자 몰래 휴대폰을 열어봤어요. 이거 증거로 쓸 수 있나요?</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-badge a">A</div>
+          <div class="qa-a-text">
+            <p>이 부분이 정말, 정말 중요합니다.</p>
+            <p>결론부터 말씀드리면, <strong>그렇게 수집한 증거는 법원에서 인정받지 못할 뿐만 아니라</strong>, 오히려 형사처벌을 받을 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="a-text" style="margin-top:8px;">불륜 사실을 입증하겠다는 마음에 아래와 같은 행동을 하시는 경우가 정말 많습니다.</p>
+
+      <ul class="illegal-list" style="margin-top:18px;">
+        <li>
+          <div class="il-icon">✕</div>
+          <div class="il-body"><strong>스마트폰 몰래 열람</strong> — 배우자 몰래 스마트폰 패턴을 풀고 카톡이나 사진첩을 촬영하는 행위</div>
+        </li>
+        <li>
+          <div class="il-icon">✕</div>
+          <div class="il-body"><strong>GPS 위치추적기 설치</strong> — 차량에 몰래 위치추적기를 설치하는 행위</div>
+        </li>
+        <li>
+          <div class="il-icon">✕</div>
+          <div class="il-body"><strong>불법 녹음기 설치</strong> — 두 사람의 대화를 엿듣기 위해 몰래 녹음기를 설치하는 행위</div>
+        </li>
+        <li>
+          <div class="il-icon">✕</div>
+          <div class="il-body"><strong>상간자 집 무단 침입</strong> — 상간자의 집에 허락 없이 들어가는 행위</div>
+        </li>
+      </ul>
+
+      <div class="danger-box">
+        ⚠ 이런 불법적인 방법으로 수집된 증거는 <strong>'위법수집증거'</strong>가 되어 재판에서 효력이 없습니다.
+        오히려 상대방에게 통신비밀보호법 위반 등으로 <strong>'역고소'를 당할 빌미</strong>를 주는 최악의 수가 될 수 있습니다.
+      </div>
+
+
+      <!-- ─── 승소사례 ─── -->
+      <div class="divider"></div>
+      <div class="section-label">실제 해결 사례</div>
+      <h2 class="block-title">20년 지기 친구와 아내의 불륜 — 위자료 1,500만 원 승소</h2>
+
+      <p class="a-text">말로만 하면 감이 잘 안 오실 테니, 제가 직접 해결했던 사건을 들려드릴게요.</p>
+
+      <div class="case-grid" style="margin-top:22px;">
+        <div class="case-card">
+          <div class="cc-label">사건의 발단</div>
+          <div class="cc-text">계속해서 울리는 메시지 알람. 무심코 화면을 들여다본 의뢰인의 눈에 들어온 것은, 20년 지기 친구와 아내가 나눈 명백한 부정행위 대화였습니다.</div>
+        </div>
+        <div class="case-card">
+          <div class="cc-label">가중되는 피해</div>
+          <div class="cc-text">피고(상간남)는 단순한 제3자가 아닌 가족과 다름없는 존재. 용서의 기회를 주었음에도 "다시는 만나지 않겠다"는 약속을 어기고 관계를 이어갔습니다.</div>
+        </div>
+        <div class="case-card">
+          <div class="cc-label">결혼 생활의 파탄</div>
+          <div class="cc-text">두 사람의 오랜 부정행위가 결국 10년의 결혼 생활을 파탄에 이르게 한 결정적 원인이 되었습니다. 의뢰인은 먼저 협의이혼을 통해 아내에게 위자료를 받았습니다.</div>
+        </div>
+      </div>
+
+      <p class="a-text" style="margin-top:24px;">해결 전략은 세 가지 축으로 짰습니다.</p>
+
+      <table class="compare-table" style="margin-top:14px;">
+        <thead>
+          <tr>
+            <th>전략</th>
+            <th>구체적 내용</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>특수 관계 부각</td>
+            <td>20년 우정을 이용한 배신이라는 점에서 일반적인 상간 소송보다 극심한 정신적 충격을 강조</td>
+            <td class="good">✔ 핵심</td>
+          </tr>
+          <tr>
+            <td>이중 배신 주장</td>
+            <td>용서 후 약속을 어기고 관계를 이어간 것은 의뢰인을 두 번 기만한 악의적 행위임을 강력 주장</td>
+            <td class="good">✔ 결정적</td>
+          </tr>
+          <tr>
+            <td>혼인 파탄 인과관계</td>
+            <td>두 사람의 장기간 부정행위가 10년 결혼 생활 파탄의 직접적 원인임을 명확히 입증</td>
+            <td class="good">✔ 필수</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="result-banner" style="margin-top:26px;">
+        <div class="rb-icon">✓</div>
+        <div class="rb-text">
+          <strong>결과: 위자료 1,500만 원 승소 판결</strong>
+          <span>재판부는 변호인 측 주장을 받아들여 상간남에게 위자료 지급 판결을 내렸습니다. 의뢰인은 앞서 아내로부터 협의이혼 위자료를 수령했기 때문에 금액이 조정된 것으로, 아내 위자료가 없었다면 판결 금액은 훨씬 높았을 것입니다.</span>
+        </div>
+      </div>
+
+
+      <!-- ─── 결론 ─── -->
+      <div class="divider"></div>
+
+      <div class="quote-highlight">
+        <p>
+          분노는 소송을 시작하게 하지만,<br>
+          소송에서 이기는 것은 결국 증거와 전략입니다.
+        </p>
+        <div class="q-source">— 윤성호 변호사, 법률사무소 위드윤</div>
+      </div>
+
+      <p class="a-text" style="margin-top:28px;">
+        상간자 위자료 소송은 <strong>상간자의 인식 입증, 혼인 파탄 인과관계, 적법한 증거 확보</strong>라는
+        세 가지 축이 흔들리면 패소합니다. 혼자 끌어안고 계시지 말고, 이혼·형사 전문 변호사와 빠르게 상담받으시길 권합니다.
+      </p>
+
+
+      <!-- ─── 변호사 프로필 ─── -->
+      <div class="divider"></div>
+      <div class="section-label">담당 변호사</div>
+      <h2 class="block-title">법률사무소 위드윤 대표 변호사</h2>
+
+      <div class="profile-grid">
+        <div class="profile-card">
+          <div class="pc-name">윤성호 변호사</div>
+          <div class="pc-role">現 법률사무소 위드윤 대표 변호사</div>
+          <ul>
+            <li>서울대 경제학부 &amp; 서울대 로스쿨 출신</li>
+            <li>前 법무법인 클라스</li>
+            <li>前 법무법인 KCL 기업송무팀 변호사</li>
+            <li>前 법무법인 대륙아주 금융기업팀 변호사</li>
+            <li>前 삼성자산운용 사내변호사</li>
+            <li>前 해군 법무관 (군검사, 징계간사, 법무실장)</li>
+            <li>現 대한변협 등록 형사·이혼 전문 변호사</li>
+          </ul>
+        </div>
+        <div class="profile-card">
+          <div class="pc-name">윤석만 변호사</div>
+          <div class="pc-role">現 법률사무소 위드윤 대표 변호사</div>
+          <ul>
+            <li>前 수원지검 부장검사</li>
+            <li>前 인천지검 · 대전지검 특수부장검사</li>
+            <li>前 법무연수원 교수 · 지청장</li>
+            <li>前 서울중앙지검 부부장검사</li>
+            <li>사법연수원 15기 · 성균관대학교 법학석사</li>
+            <li>前 법무법인 여명 파트너변호사</li>
+            <li>前 법무부·서울중앙·서울동부·수원·광주지검 검사</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- CTA -->
+    <div class="cta">
+      <div>
+        <h2>상간자 위자료 소송, 초기 전략이 승패를 가릅니다</h2>
+        <p>지금 바로 상담하시고 사건 방향을 함께 잡아보세요.</p>
+      </div>
+      <div class="cta-links">
+        <a class="btn gold" href="tel:010-9491-1567">☎ 전화 상담</a>
+        <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- 관련 링크 -->
+  <nav class="related">
+    <h2>바로가기</h2>
+    <a href="/board.html?type=law"><span>법률칼럼 전체 목록</span><span>보기 →</span></a>
+    <a href="/board.html?type=case"><span>성공사례 보기</span><span>보기 →</span></a>
+    <a href="/index.html#contact"><span>상담 안내 및 오시는 길</span><span>확인 →</span></a>
+  </nav>
+
+  <p class="disclaimer">
+    ※ 본 칼럼은 일반적인 법률정보 제공 목적이며, 개별 사건에 대한 법률적 조언이 아닙니다.
+    구체적인 사건은 반드시 변호사와 상담하시기 바랍니다.
+  </p>
+
+</main>
+
+<footer class="foot">
+  <strong>법률사무소 위드윤</strong>
+  <div class="foot-divider"></div>
+  서울 서초구 서초대로 270 서보빌딩 602호<br>
+  상담전화: <a href="tel:010-9491-1567">010-9491-1567</a> &nbsp;·&nbsp;
+  사무실: <a href="tel:02-2038-7241">02-2038-7241</a> &nbsp;·&nbsp;
+  <a href="mailto:withyoonlaw@naver.com">withyoonlaw@naver.com</a><br>
+  <span style="font-size:12px; margin-top:8px; display:inline-block; color:rgba(255,255,255,.3);">© 2025 Law Office With Yoon. All rights reserved.</span>
+</footer>
+
+</body>
+</html>
