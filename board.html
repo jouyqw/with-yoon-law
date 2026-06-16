@@ -150,6 +150,33 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   </section>
 </main>
 
+<!-- ▼ SEO 정적 링크: JS 미지원 크롤러(구글봇·네이버 Yeti) 전용 ▼ -->
+<noscript>
+<nav aria-label="법률칼럼 목록" style="max-width:1120px;margin:0 auto;padding:32px 22px;background:#f9fafb;border-top:2px solid #111a2e;">
+  <p style="font-family:sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;color:#7b5d1f;margin-bottom:16px;">WITH YOON · 법률칼럼</p>
+  <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;">
+    <li><a href="/blog/special-assault-law-column.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">특수상해·상해 해결전략 — 술자리 시비, 폭행 혐의를 받고 있다면</a></li>
+    <li><a href="/blog/sexual-crime-fee-qa.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 변호사 선임료, 도대체 얼마가 적정한가요?</a></li>
+    <li><a href="/blog/sexual-crime-false-accusation.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 고소를 당했다면, 지금 당장 이렇게 하십시오</a></li>
+    <li><a href="/blog/voice-phishing-defense.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">보이스피싱 억울하게 연루됐다면 — 단순 가담자도 실형, 초기 대응이 전부입니다</a></li>
+    <li><a href="/blog/police-investigation-guide.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">경찰 조사 피의자신문조서, 왜 중요한가</a></li>
+    <li><a href="/blog/trespass-column.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">주거침입죄 성립요건과 처벌 — 발만 들여도 범죄가 됩니다</a></li>
+    <li><a href="/blog/special-assault-column.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">특수상해 혐의, 실형을 피하려면 지금 당장 움직이십시오</a></li>
+    <li><a href="/blog/sexual-crime-qa-column.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">경찰조사 시간·결과·대응전략 완전 가이드</a></li>
+    <li><a href="/blog/sexual-crime-case-results.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 실제 해결사례 — 2심 무죄·강제추행 기소유예</a></li>
+    <li><a href="/blog/appeal-lawyer-change.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">1심 패소 후 항소심, 변호사를 바꿔야 합니까 유지해야 합니까?</a></li>
+    <li><a href="/blog/sexual-crime-investigation2.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">경찰조사 여청수사팀 연락받았다면</a></li>
+    <li><a href="/blog/drunk-groping-deferred-prosecution.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">술에 취해 강제추행 혐의 — 기소유예로 마무리한 실제 사례</a></li>
+    <li><a href="/blog/arrest-without-warrant.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">영장 없이 체포됐다면 — 긴급체포·현행범 체포 대응 가이드</a></li>
+    <li><a href="/blog/warrant-hearing-faq-withyoon.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">구속영장 실질심사, 당일 무엇을 어떻게 해야 하나</a></li>
+    <li><a href="/blog/case-success-sexual-crime.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">동성 연인 사이 유사강간·불법촬영 혐의 — 경찰 단계 불송치(혐의없음) 성공사례</a></li>
+    <li><a href="/blog/recording-evidence-sex-crime.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성관계 증거자료 녹음으로 충분한가?</a></li>
+    <li><a href="/blog/workplace-harassment-column.html" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">직장내성추행 고소 대응전략</a></li>
+  </ul>
+</nav>
+</noscript>
+<!-- ▲ SEO 정적 링크 끝 ▲ -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js"></script>
 <script>
 (function(){
@@ -164,9 +191,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   var titleInput = document.getElementById('subject');
   var formTitle = document.getElementById('formTitle');
 
-  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  // 언론 고정 데이터 (변경 없음)
-  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   var pressData = [
     {title:'유령 상간남, 월급으로 위자료 받는 법', date:'2026', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/IJ3DZ9BHT4UA', content:''},
     {title:'법률사무소 위드윤 언론보도', date:'2025', source:'뉴스리포트', externalUrl:'https://www.news-report.co.kr/news/articleView.html?idxno=2293', content:''},
@@ -198,9 +222,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
   }
 
-  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  // 법률칼럼: posts.json 에서 자동 로드
-  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   function loadLawPosts(callback){
     fetch('/blog/posts.json?v=' + Date.now())
       .then(function(r){ return r.json(); })
@@ -260,7 +281,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     list.innerHTML = '<div class="empty">불러오는 중...</div>';
 
     if(current === 'law'){
-      // posts.json + API 병렬 로드
       var lawSeeds = [];
       var apiDone = false, seedDone = false;
       var apiItems = [];
@@ -279,7 +299,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       render(pressData, []);
 
     } else {
-      // 성공사례: API만
       fetch(API+'/api/posts?type='+current)
         .then(function(r){ return r.json(); })
         .then(function(data){ render([], Array.isArray(data)?data:[]); })
