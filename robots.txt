@@ -4,4 +4,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-Sitemap: Sitemap: https://with-yoon-law.com/sitemap.xml
+Sitemap: https://with-yoon-law.com/sitemap.xml
