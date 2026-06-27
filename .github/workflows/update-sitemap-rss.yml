@@ -80,35 +80,47 @@ jobs:
             }))
           ];
 
-          const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n` +
-            `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-            sitemapUrls.map((item) => `  <url>
-    <loc>${escapeXml(item.loc)}</loc>
-    <lastmod>${escapeXml(item.lastmod)}</lastmod>
-    <changefreq>${item.changefreq}</changefreq>
-    <priority>${item.priority}</priority>
-  </url>`).join('\n') +
-            `\n</urlset>\n`;
+          const sitemapItems = sitemapUrls.map((item) => [
+            '  <url>',
+            `    <loc>${escapeXml(item.loc)}</loc>`,
+            `    <lastmod>${escapeXml(item.lastmod)}</lastmod>`,
+            `    <changefreq>${item.changefreq}</changefreq>`,
+            `    <priority>${item.priority}</priority>`,
+            '  </url>'
+          ].join('\n')).join('\n');
 
-          const rssPosts = posts.slice(0, 30).map((post) => `    <item>
-      <title>${escapeXml(post.title)}</title>
-      <link>${escapeXml(post.url)}</link>
-      <guid isPermaLink="true">${escapeXml(post.url)}</guid>
-      <description>${escapeXml(post.description)}</description>
-      <pubDate>${new Date(`${post.date}T00:00:00+09:00`).toUTCString()}</pubDate>
-    </item>`).join('\n');
+          const sitemap = [
+            '<?xml version="1.0" encoding="UTF-8"?>',
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+            sitemapItems,
+            '</urlset>',
+            ''
+          ].join('\n');
 
-          const rss = `<?xml version="1.0" encoding="UTF-8"?>\n` +
-            `<rss version="2.0">\n` +
-            `  <channel>\n` +
-            `    <title>법률사무소 위드윤 칼럼</title>\n` +
-            `    <link>${site}/board?type=law</link>\n` +
-            `    <description>법률사무소 위드윤의 법률 칼럼과 형사 사건 대응 정보</description>\n` +
-            `    <language>ko</language>\n` +
-            `    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n` +
-            rssPosts + `\n` +
-            `  </channel>\n` +
-            `</rss>\n`;
+          const rssPosts = posts.slice(0, 30).map((post) => [
+            '    <item>',
+            `      <title>${escapeXml(post.title)}</title>`,
+            `      <link>${escapeXml(post.url)}</link>`,
+            `      <guid isPermaLink="true">${escapeXml(post.url)}</guid>`,
+            `      <description>${escapeXml(post.description)}</description>`,
+            `      <pubDate>${new Date(`${post.date}T00:00:00+09:00`).toUTCString()}</pubDate>`,
+            '    </item>'
+          ].join('\n')).join('\n');
+
+          const rss = [
+            '<?xml version="1.0" encoding="UTF-8"?>',
+            '<rss version="2.0">',
+            '  <channel>',
+            '    <title>법률사무소 위드윤 칼럼</title>',
+            `    <link>${site}/board?type=law</link>`,
+            '    <description>법률사무소 위드윤의 법률 칼럼과 형사 사건 대응 정보</description>',
+            '    <language>ko</language>',
+            `    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>`,
+            rssPosts,
+            '  </channel>',
+            '</rss>',
+            ''
+          ].join('\n');
 
           fs.writeFileSync('sitemap.xml', sitemap);
           fs.writeFileSync('rss.xml', rss);
