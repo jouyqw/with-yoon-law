@@ -1,10 +1,16 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
 User-agent: Yeti
 Allow: /
 
-User-agent: Googlebot
+User-agent: NaverBot
+Allow: /
+
+User-agent: Daum
 Allow: /
 
 Sitemap: https://with-yoon-law.com/sitemap.xml
