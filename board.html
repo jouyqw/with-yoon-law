@@ -241,6 +241,24 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       .catch(function(){ callback([]); });
   }
 
+  function loadCasePosts(callback){
+    fetch('/blog/cases.json?v=' + Date.now())
+      .then(function(r){ return r.json(); })
+      .then(function(posts){
+        var items = posts.map(function(p){
+          return {
+            title: p.title,
+            date: p.date,
+            source: '위드윤 성공사례',
+            blogUrl: '/blog/' + p.slug + '.html',
+            content: p.summary,
+            _seed: true
+          };
+        });
+        callback(items);
+      })
+      .catch(function(){ callback([]); });
+  }
   function detailUrl(type, item){
     if(item.blogUrl) return item.blogUrl;
     var p = new URLSearchParams({
@@ -299,10 +317,19 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       render(pressData, []);
 
     } else {
+      var caseSeeds = [];
+      var caseApiDone = false, caseSeedDone = false;
+      var caseApiItems = [];
+
+      loadCasePosts(function(items){
+        caseSeeds = items;
+        caseSeedDone = true;
+        if(caseApiDone) render(caseSeeds, caseApiItems);
+      });
       fetch(API+'/api/posts?type='+current)
         .then(function(r){ return r.json(); })
-        .then(function(data){ render([], Array.isArray(data)?data:[]); })
-        .catch(function(){ render([], []); });
+        .then(function(data){ caseApiItems = Array.isArray(data)?data:[]; caseApiDone=true; if(caseSeedDone) render(caseSeeds, caseApiItems); })
+        .catch(function(){ caseApiDone=true; if(caseSeedDone) render(caseSeeds, []); });
     }
   }
 
