@@ -9,14 +9,20 @@
   <url>
     <loc>https://with-yoon-law.com/board?type=law</loc>
     <lastmod>2026-07-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/board?type=case</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/consultation-guide</loc>
+    <loc>https://with-yoon-law.com/board?type=press</loc>
     <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://with-yoon-law.com/blog/criminal-mediation-system-guide</loc>
@@ -91,12 +97,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/sanggan-wijaryo</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://with-yoon-law.com/blog/seoul-criminal-defense-lawyer</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -110,18 +110,6 @@
   </url>
   <url>
     <loc>https://with-yoon-law.com/blog/sexual-crime-deferred-prosecution-conditions</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/sexual-crime-fee-qa</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/sexual-crime-investigation2</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -157,80 +145,116 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/warrant-hearing-faq-withyoon</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://with-yoon-law.com/blog/women-juvenile-crime-team-call</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/adultery-lawsuit-defendant</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/arrest-warrant-faq</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/deepfake-police-investigation</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/divorce-mutual-affair-qa</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/gupongpan</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/lawyer-investigation-tips</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/no-charge-5-counts</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/police-investigation-guide (2)</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://with-yoon-law.com/blog/voice-phishing-arrest</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/drunk-driving-acquittal</loc>
-    <lastmod>2026-06-10</lastmod>
+    <loc>https://with-yoon-law.com/blog/sanggan-wijaryo</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://with-yoon-law.com/blog/sex-crime-security-measures</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/sexual-assault-investigation</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/no-charge-5-counts</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/onenight-sexual-assault</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/gupongpan</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/juvenile-law</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/lawyer-investigation-tips</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/divorce-mutual-affair-qa</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/drug-strategic-surrender</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/drunk-driving-acquittal</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/consultation-guide</loc>
     <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/crowded-place-molestation</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/deepfake-police-investigation</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/defense-opinion-letter</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/adultery-lawsuit-defendant</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/arrest-warrant-faq</loc>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -247,20 +271,8 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/drug-strategic-surrender</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/juvenile-law</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/sexual-assault-investigation</loc>
-    <lastmod>2026-06-09</lastmod>
+    <loc>https://with-yoon-law.com/blog/appeal-lawyer-change</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -277,7 +289,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/crowded-place-molestation</loc>
+    <loc>https://with-yoon-law.com/blog/drunk-groping-deferred-prosecution</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -295,13 +307,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://with-yoon-law.com/blog/sexual-crime-investigation2</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://with-yoon-law.com/blog/sexual-crime-qa-column</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/special-assault-column</loc>
+    <loc>https://with-yoon-law.com/blog/warrant-hearing-faq-withyoon</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -313,7 +331,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://with-yoon-law.com/blog/appeal-lawyer-change</loc>
+    <loc>https://with-yoon-law.com/blog/police-investigation-guide (2)</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -326,6 +344,18 @@
   </url>
   <url>
     <loc>https://with-yoon-law.com/blog/sexual-crime-false-accusation</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/sexual-crime-fee-qa</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://with-yoon-law.com/blog/special-assault-column</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -345,24 +375,6 @@
   <url>
     <loc>https://with-yoon-law.com/blog/voice-phishing-defense</loc>
     <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/defense-opinion-letter</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/drunk-groping-deferred-prosecution</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://with-yoon-law.com/blog/onenight-sexual-assault</loc>
-    <lastmod>2025-12-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
