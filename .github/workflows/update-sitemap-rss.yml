@@ -6,8 +6,14 @@ on:
       - main
     paths:
       - "blog/**/*.html"
+      - "blog/posts.json"
+      - "blog/cases.json"
+      - "board.html"
       - "index.html"
+      - "robots.txt"
       - ".github/workflows/update-sitemap-rss.yml"
+  schedule:
+    - cron: "0 18 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate sitemap and RSS
+      - name: Generate sitemap, RSS, and robots
         run: |
           node <<'NODE'
           const fs = require('fs');
@@ -43,9 +49,21 @@ jobs:
             .replace(/\s+/g, ' ')
             .trim();
 
-          const read = (file) => fs.readFileSync(file, 'utf8');
+          const read = (file) => fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
           const match = (html, regex) => (html.match(regex) || [])[1]?.trim() || '';
 
+          function readPostsJson() {
+            const file = path.join('blog', 'posts.json');
+            if (!fs.existsSync(file)) return [];
+            try {
+              return JSON.parse(read(file));
+            } catch (error) {
+              console.warn(`Could not parse ${file}: ${error.message}`);
+              return [];
+            }
+          }
+
+          const postsJson = new Map(readPostsJson().map((post) => [post.slug, post]));
           const blogDir = 'blog';
           const blogFiles = fs.existsSync(blogDir)
             ? fs.readdirSync(blogDir).filter((file) => file.endsWith('.html')).sort()
@@ -55,23 +73,32 @@ jobs:
             const fullPath = path.join(blogDir, file);
             const html = read(fullPath);
             const slug = file.replace(/\.html$/, '');
+            const fromJson = postsJson.get(slug) || {};
             const url = `${site}/blog/${slug}`;
-            const title = match(html, /<title>([\s\S]*?)<\/title>/i)
-              .replace(/\s*\|\s*법률사무소[\s\S]*$/i, '')
-              || match(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i)
+            const title = fromJson.title
+              || match(html, /<title>([\s\S]*?)<\/title>/i).replace(/\s*\|\s*법률사무소[\s\S]*$/i, '')
+              || stripHtml(match(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i))
               || slug;
-            const description = match(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i)
+            const description = fromJson.summary
+              || match(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i)
               || stripHtml(match(html, /<article[^>]*>([\s\S]*?)<\/article>/i)).slice(0, 180);
-            const date = match(html, /"datePublished"\s*:\s*"([^"]+)"/i)
+            const date = (fromJson.date || '').replace(/\./g, '-').replace(/-$/g, '')
+              || match(html, /"datePublished"\s*:\s*"([^"]+)"/i)
               || match(html, /<time[^>]*datetime=["']([^"']+)["']/i)
               || today;
 
-            return { file, url, title, description, date };
+            return { file, slug, url, title, description, date };
           }).sort((a, b) => b.date.localeCompare(a.date) || a.file.localeCompare(b.file));
 
-          const sitemapUrls = [
+          const staticUrls = [
             { loc: `${site}/`, changefreq: 'weekly', priority: '1.0', lastmod: today },
-            { loc: `${site}/board?type=law`, changefreq: 'weekly', priority: '0.8', lastmod: today },
+            { loc: `${site}/board?type=law`, changefreq: 'daily', priority: '0.9', lastmod: today },
+            { loc: `${site}/board?type=case`, changefreq: 'daily', priority: '0.8', lastmod: today },
+            { loc: `${site}/board?type=press`, changefreq: 'weekly', priority: '0.6', lastmod: today }
+          ];
+
+          const sitemapUrls = [
+            ...staticUrls,
             ...posts.map((post) => ({
               loc: post.url,
               changefreq: 'monthly',
@@ -97,7 +124,7 @@ jobs:
             ''
           ].join('\n');
 
-          const rssPosts = posts.slice(0, 30).map((post) => [
+          const rssPosts = posts.slice(0, 50).map((post) => [
             '    <item>',
             `      <title>${escapeXml(post.title)}</title>`,
             `      <link>${escapeXml(post.url)}</link>`,
@@ -109,33 +136,51 @@ jobs:
 
           const rss = [
             '<?xml version="1.0" encoding="UTF-8"?>',
-            '<rss version="2.0">',
+            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
             '  <channel>',
-            '    <title>법률사무소 위드윤 칼럼</title>',
+            '    <title>법률사무소 위드윤 법률칼럼</title>',
             `    <link>${site}/board?type=law</link>`,
-            '    <description>법률사무소 위드윤의 법률 칼럼과 형사 사건 대응 정보</description>',
-            '    <language>ko</language>',
+            '    <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례</description>',
+            '    <language>ko-KR</language>',
             `    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>`,
+            `    <atom:link href="${site}/rss.xml" rel="self" type="application/rss+xml" />`,
             rssPosts,
             '  </channel>',
             '</rss>',
             ''
           ].join('\n');
 
+          const robots = [
+            'User-agent: *',
+            'Allow: /',
+            '',
+            'User-agent: Yeti',
+            'Allow: /',
+            '',
+            'User-agent: Googlebot',
+            'Allow: /',
+            '',
+            `Sitemap: ${site}/sitemap.xml`,
+            `Sitemap: ${site}/rss.xml`,
+            ''
+          ].join('\n');
+
           fs.writeFileSync('sitemap.xml', sitemap);
           fs.writeFileSync('rss.xml', rss);
+          fs.writeFileSync('robots.txt', robots);
           console.log(`Generated sitemap.xml with ${sitemapUrls.length} URLs`);
-          console.log(`Generated rss.xml with ${Math.min(posts.length, 30)} items`);
+          console.log(`Generated rss.xml with ${Math.min(posts.length, 50)} items`);
+          console.log('Generated robots.txt');
           NODE
 
       - name: Commit generated files
         run: |
-          if git diff --quiet -- sitemap.xml rss.xml; then
-            echo "No sitemap or RSS changes"
+          if git diff --quiet -- sitemap.xml rss.xml robots.txt; then
+            echo "No sitemap, RSS, or robots changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml rss.xml
-          git commit -m "Update sitemap and RSS"
+          git add sitemap.xml rss.xml robots.txt
+          git commit -m "Update sitemap, RSS, and robots"
           git push
