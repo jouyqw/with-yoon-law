@@ -1,4 +1,4 @@
-name: Update sitemap and RSS
+name: Update search feeds
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate sitemap, RSS, and robots
+      - name: Generate sitemap, RSS, robots, and LLM index
         run: |
           node <<'NODE'
           const fs = require('fs');
@@ -50,87 +50,96 @@ jobs:
             .trim();
 
           const read = (file) => fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
+          const exists = (file) => fs.existsSync(file);
           const match = (html, regex) => (html.match(regex) || [])[1]?.trim() || '';
+          const normalizeDate = (date = '') => {
+            const cleaned = String(date).trim().replace(/\./g, '-').replace(/-$/g, '');
+            return /^\d{4}-\d{2}-\d{2}$/.test(cleaned) ? cleaned : today;
+          };
 
-          function readPostsJson() {
-            const file = path.join('blog', 'posts.json');
-            if (!fs.existsSync(file)) return [];
+          function readJson(file) {
+            if (!exists(file)) return [];
             try {
-              return JSON.parse(read(file));
+              const parsed = JSON.parse(read(file));
+              return Array.isArray(parsed) ? parsed : [];
             } catch (error) {
               console.warn(`Could not parse ${file}: ${error.message}`);
               return [];
             }
           }
 
-          const postsJson = new Map(readPostsJson().map((post) => [post.slug, post]));
+          const metadata = new Map();
+          for (const post of readJson(path.join('blog', 'posts.json'))) {
+            if (post.slug) metadata.set(post.slug, { ...post, type: 'law' });
+          }
+          for (const item of readJson(path.join('blog', 'cases.json'))) {
+            if (item.slug) metadata.set(item.slug, { ...item, type: 'case' });
+          }
+
           const blogDir = 'blog';
-          const blogFiles = fs.existsSync(blogDir)
+          const blogFiles = exists(blogDir)
             ? fs.readdirSync(blogDir).filter((file) => file.endsWith('.html')).sort()
             : [];
 
-          const posts = blogFiles.map((file) => {
-            const fullPath = path.join(blogDir, file);
-            const html = read(fullPath);
+          const entries = blogFiles.map((file) => {
+            const html = read(path.join(blogDir, file));
             const slug = file.replace(/\.html$/, '');
-            const fromJson = postsJson.get(slug) || {};
+            const meta = metadata.get(slug) || {};
             const url = `${site}/blog/${slug}`;
-            const title = fromJson.title
-              || match(html, /<title>([\s\S]*?)<\/title>/i).replace(/\s*\|\s*법률사무소[\s\S]*$/i, '')
+            const title = meta.title
               || stripHtml(match(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i))
+              || stripHtml(match(html, /<title>([\s\S]*?)<\/title>/i)).replace(/\s*\|\s*법률사무소[\s\S]*$/i, '')
               || slug;
-            const description = fromJson.summary
+            const description = meta.summary
               || match(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i)
               || stripHtml(match(html, /<article[^>]*>([\s\S]*?)<\/article>/i)).slice(0, 180);
-            const date = (fromJson.date || '').replace(/\./g, '-').replace(/-$/g, '')
+            const date = normalizeDate(meta.date
               || match(html, /"datePublished"\s*:\s*"([^"]+)"/i)
-              || match(html, /<time[^>]*datetime=["']([^"']+)["']/i)
-              || today;
-
-            return { file, slug, url, title, description, date };
+              || match(html, /<time[^>]*datetime=["']([^"']+)["']/i));
+            const type = meta.type || (slug.includes('case') || slug.includes('deferred-prosecution') ? 'case' : 'law');
+            return { file, slug, url, title, description, date, type };
           }).sort((a, b) => b.date.localeCompare(a.date) || a.file.localeCompare(b.file));
 
           const staticUrls = [
             { loc: `${site}/`, changefreq: 'weekly', priority: '1.0', lastmod: today },
             { loc: `${site}/board?type=law`, changefreq: 'daily', priority: '0.9', lastmod: today },
-            { loc: `${site}/board?type=case`, changefreq: 'daily', priority: '0.8', lastmod: today },
+            { loc: `${site}/board?type=case`, changefreq: 'daily', priority: '0.9', lastmod: today },
             { loc: `${site}/board?type=press`, changefreq: 'weekly', priority: '0.6', lastmod: today }
           ];
 
           const sitemapUrls = [
             ...staticUrls,
-            ...posts.map((post) => ({
-              loc: post.url,
-              changefreq: 'monthly',
-              priority: '0.9',
-              lastmod: post.date
+            ...entries.map((entry) => ({
+              loc: entry.url,
+              changefreq: entry.type === 'case' ? 'monthly' : 'weekly',
+              priority: entry.type === 'case' ? '0.9' : '0.85',
+              lastmod: entry.date
             }))
           ];
-
-          const sitemapItems = sitemapUrls.map((item) => [
-            '  <url>',
-            `    <loc>${escapeXml(item.loc)}</loc>`,
-            `    <lastmod>${escapeXml(item.lastmod)}</lastmod>`,
-            `    <changefreq>${item.changefreq}</changefreq>`,
-            `    <priority>${item.priority}</priority>`,
-            '  </url>'
-          ].join('\n')).join('\n');
 
           const sitemap = [
             '<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-            sitemapItems,
+            sitemapUrls.map((item) => [
+              '  <url>',
+              `    <loc>${escapeXml(item.loc)}</loc>`,
+              `    <lastmod>${escapeXml(item.lastmod)}</lastmod>`,
+              `    <changefreq>${item.changefreq}</changefreq>`,
+              `    <priority>${item.priority}</priority>`,
+              '  </url>'
+            ].join('\n')).join('\n'),
             '</urlset>',
             ''
           ].join('\n');
 
-          const rssPosts = posts.slice(0, 50).map((post) => [
+          const rssItems = entries.slice(0, 50).map((entry) => [
             '    <item>',
-            `      <title>${escapeXml(post.title)}</title>`,
-            `      <link>${escapeXml(post.url)}</link>`,
-            `      <guid isPermaLink="true">${escapeXml(post.url)}</guid>`,
-            `      <description>${escapeXml(post.description)}</description>`,
-            `      <pubDate>${new Date(`${post.date}T00:00:00+09:00`).toUTCString()}</pubDate>`,
+            `      <title>${escapeXml(entry.title)}</title>`,
+            `      <link>${escapeXml(entry.url)}</link>`,
+            `      <guid isPermaLink="true">${escapeXml(entry.url)}</guid>`,
+            `      <description>${escapeXml(entry.description)}</description>`,
+            `      <category>${entry.type === 'case' ? '성공사례' : '법률칼럼'}</category>`,
+            `      <pubDate>${new Date(`${entry.date}T00:00:00+09:00`).toUTCString()}</pubDate>`,
             '    </item>'
           ].join('\n')).join('\n');
 
@@ -138,13 +147,13 @@ jobs:
             '<?xml version="1.0" encoding="UTF-8"?>',
             '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
             '  <channel>',
-            '    <title>법률사무소 위드윤 법률칼럼</title>',
+            '    <title>법률사무소 위드윤 법률칼럼·성공사례</title>',
             `    <link>${site}/board?type=law</link>`,
-            '    <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례</description>',
+            '    <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>',
             '    <language>ko-KR</language>',
             `    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>`,
             `    <atom:link href="${site}/rss.xml" rel="self" type="application/rss+xml" />`,
-            rssPosts,
+            rssItems,
             '  </channel>',
             '</rss>',
             ''
@@ -154,10 +163,16 @@ jobs:
             'User-agent: *',
             'Allow: /',
             '',
+            'User-agent: Googlebot',
+            'Allow: /',
+            '',
             'User-agent: Yeti',
             'Allow: /',
             '',
-            'User-agent: Googlebot',
+            'User-agent: NaverBot',
+            'Allow: /',
+            '',
+            'User-agent: Daum',
             'Allow: /',
             '',
             `Sitemap: ${site}/sitemap.xml`,
@@ -165,22 +180,38 @@ jobs:
             ''
           ].join('\n');
 
+          const llms = [
+            '# 법률사무소 위드윤 콘텐츠 색인',
+            '',
+            '형사·성범죄 법률칼럼과 성공사례를 검색엔진 및 AI 수집기가 이해하기 쉽게 정리한 목록입니다.',
+            '',
+            '## 주요 게시판',
+            `- 법률칼럼: ${site}/board?type=law`,
+            `- 성공사례: ${site}/board?type=case`,
+            '',
+            '## 최신 콘텐츠',
+            ...entries.slice(0, 80).map((entry) => `- [${entry.type === 'case' ? '성공사례' : '법률칼럼'}] ${entry.title}: ${entry.url}`),
+            ''
+          ].join('\n');
+
           fs.writeFileSync('sitemap.xml', sitemap);
           fs.writeFileSync('rss.xml', rss);
           fs.writeFileSync('robots.txt', robots);
+          fs.writeFileSync('llms.txt', llms);
           console.log(`Generated sitemap.xml with ${sitemapUrls.length} URLs`);
-          console.log(`Generated rss.xml with ${Math.min(posts.length, 50)} items`);
+          console.log(`Generated rss.xml with ${Math.min(entries.length, 50)} items`);
           console.log('Generated robots.txt');
+          console.log('Generated llms.txt');
           NODE
 
       - name: Commit generated files
         run: |
-          if git diff --quiet -- sitemap.xml rss.xml robots.txt; then
-            echo "No sitemap, RSS, or robots changes"
+          if git diff --quiet -- sitemap.xml rss.xml robots.txt llms.txt; then
+            echo "No search feed changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml rss.xml robots.txt
-          git commit -m "Update sitemap, RSS, and robots"
+          git add sitemap.xml rss.xml robots.txt llms.txt
+          git commit -m "Update search feeds"
           git push
