@@ -1,0 +1,17 @@
+/sitemap.xml
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Robots-Tag: index, follow
+
+/rss.xml
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Robots-Tag: index, follow
+
+/robots.txt
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Robots-Tag: index, follow
+
+/blog/*
+  X-Robots-Tag: index, follow
+
+/board*
+  X-Robots-Tag: index, follow
