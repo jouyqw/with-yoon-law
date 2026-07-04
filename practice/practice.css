@@ -28,6 +28,9 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(32px,5vw,54px);line-height:
 .p-faq{display:grid;gap:14px;margin-top:24px}
 .p-faq article{background:#fff;border:1px solid #e7e7e7;border-radius:8px;padding:22px}
 .p-faq h3{margin:0 0 8px;font-size:18px}
+.p-faq p{margin:0;color:#444}
+.p-dark .p-faq article{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+.p-dark .p-faq p{color:rgba(255,255,255,.76)}
 .p-cta{text-align:center;background:#080808;color:#fff;padding:64px 22px}
 .p-cta h2{font-family:'Noto Serif KR',serif;margin-top:0}
 .p-footer{background:#080808;color:rgba(255,255,255,.55);padding:28px 22px;text-align:center;font-size:13px}
