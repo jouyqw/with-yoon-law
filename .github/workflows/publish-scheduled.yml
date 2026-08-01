@@ -1,0 +1,124 @@
+name: Publish scheduled columns
+
+# blog/scheduled.json 에 대기 중인 칼럼을 발행일(KST)이 되면 blog/posts.json 으로 옮긴다.
+# HTML 파일은 이미 blog/ 에 있으나, posts.json·sitemap·rss 어디에도 노출되지 않으므로
+# 발행일 전에는 게시판에도 뜨지 않고 검색엔진도 수집하지 않는다.
+
+on:
+  schedule:
+    - cron: "5 15 * * *"   # 매일 00:05 KST (15:05 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Promote due columns
+        id: promote
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const QUEUE = path.join('blog', 'scheduled.json');
+          const POSTS = path.join('blog', 'posts.json');
+
+          // KST(UTC+9) 기준 오늘 날짜
+          const kst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+          const today = kst.toISOString().slice(0, 10);
+          console.log(`KST today = ${today}`);
+
+          const readJson = (f) => {
+            if (!fs.existsSync(f)) return [];
+            try {
+              const v = JSON.parse(fs.readFileSync(f, 'utf8').replace(/^﻿/, ''));
+              return Array.isArray(v) ? v : [];
+            } catch (e) {
+              console.error(`parse fail ${f}: ${e.message}`);
+              process.exit(1);
+            }
+          };
+
+          const queue = readJson(QUEUE);
+          const posts = readJson(POSTS);
+          if (!queue.length) {
+            console.log('Queue is empty. Nothing to publish.');
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, 'published=0\n');
+            process.exit(0);
+          }
+
+          const existing = new Set(posts.map((p) => p.slug));
+          const due = [];
+          const rest = [];
+
+          for (const item of queue) {
+            const at = String(item.publishAt || '').slice(0, 10);
+            if (at && at <= today) due.push(item);
+            else rest.push(item);
+          }
+
+          if (!due.length) {
+            console.log(`Nothing due yet. ${queue.length} still scheduled.`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, 'published=0\n');
+            process.exit(0);
+          }
+
+          const titles = [];
+          for (const item of due) {
+            const html = path.join('blog', `${item.slug}.html`);
+            if (!fs.existsSync(html)) {
+              console.warn(`SKIP ${item.slug} — blog/${item.slug}.html not found`);
+              rest.push(item);
+              continue;
+            }
+            if (existing.has(item.slug)) {
+              console.warn(`SKIP ${item.slug} — already in posts.json`);
+              continue;
+            }
+            const { publishAt, ...meta } = item;
+            posts.push(meta);
+            titles.push(item.title);
+            console.log(`PUBLISH ${item.slug} (${publishAt})`);
+          }
+
+          // 날짜 오름차순 정렬 후 저장 (board.html 이 최신순으로 다시 정렬함)
+          const key = (p) => {
+            const d = String(p.date || '').replace(/[^0-9]/g, '');
+            return (d.length === 4 ? d + '0101' : d.length === 6 ? d + '01' : d).padEnd(8, '0');
+          };
+          posts.sort((a, b) => key(a).localeCompare(key(b)));
+
+          fs.writeFileSync(POSTS, JSON.stringify(posts, null, 2) + '\n');
+          fs.writeFileSync(QUEUE, JSON.stringify(rest, null, 2) + '\n');
+
+          const out = process.env.GITHUB_OUTPUT;
+          fs.appendFileSync(out, `published=${titles.length}\n`);
+          fs.appendFileSync(out, `summary=${titles.join(' / ').slice(0, 180)}\n`);
+          console.log(`Published ${titles.length}, remaining ${rest.length}`);
+          NODE
+
+      - name: Commit
+        if: steps.promote.outputs.published != '0'
+        run: |
+          if git diff --quiet -- blog/posts.json blog/scheduled.json; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog/posts.json blog/scheduled.json
+          git commit -m "칼럼 예약발행: ${{ steps.promote.outputs.summary }}"
+          git push
+
+      - name: Regenerate search feeds
+        if: steps.promote.outputs.published != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run "Update search feeds" --ref main

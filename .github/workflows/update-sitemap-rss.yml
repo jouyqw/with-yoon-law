@@ -68,6 +68,14 @@ jobs:
             }
           }
 
+          // 예약 대기 중인 칼럼은 sitemap/rss/llms 에서 제외한다 (발행일 전 노출 방지)
+          const scheduled = new Set(
+            readJson(path.join('blog', 'scheduled.json'))
+              .map((item) => item.slug)
+              .filter(Boolean)
+          );
+          if (scheduled.size) console.log(`Excluding ${scheduled.size} scheduled column(s) from feeds`);
+
           const metadata = new Map();
           for (const post of readJson(path.join('blog', 'posts.json'))) {
             if (post.slug) metadata.set(post.slug, { ...post, type: 'law' });
@@ -78,7 +86,10 @@ jobs:
 
           const blogDir = 'blog';
           const blogFiles = exists(blogDir)
-            ? fs.readdirSync(blogDir).filter((file) => file.endsWith('.html')).sort()
+            ? fs.readdirSync(blogDir)
+                .filter((file) => file.endsWith('.html'))
+                .filter((file) => !scheduled.has(file.replace(/\.html$/, '')))
+                .sort()
             : [];
 
           const entries = blogFiles.map((file) => {
