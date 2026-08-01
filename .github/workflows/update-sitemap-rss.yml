@@ -111,11 +111,31 @@ jobs:
             return { file, slug, url, title, description, date, type };
           }).sort((a, b) => b.date.localeCompare(a.date) || a.file.localeCompare(b.file));
 
+          // 분야별 랜딩 페이지 (서초 대표 키워드 타깃) — 칼럼보다 우선순위를 높게 준다
+          const practiceDir = 'practice';
+          const practicePages = exists(practiceDir)
+            ? fs.readdirSync(practiceDir, { withFileTypes: true })
+                .filter((d) => d.isDirectory() && exists(path.join(practiceDir, d.name, 'index.html')))
+                .map((d) => {
+                  const html = read(path.join(practiceDir, d.name, 'index.html'));
+                  return {
+                    loc: `${site}/practice/${d.name}/`,
+                    title: stripHtml(match(html, /<h1[^>]*>([\s\S]*?)<\/h1>/i)) || d.name,
+                    description: match(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i) || '',
+                    changefreq: 'weekly',
+                    priority: '0.95',
+                    lastmod: today
+                  };
+                })
+            : [];
+          if (practicePages.length) console.log(`Found ${practicePages.length} practice landing page(s)`);
+
           const staticUrls = [
             { loc: `${site}/`, changefreq: 'weekly', priority: '1.0', lastmod: today },
             { loc: `${site}/board?type=law`, changefreq: 'daily', priority: '0.9', lastmod: today },
             { loc: `${site}/board?type=case`, changefreq: 'daily', priority: '0.9', lastmod: today },
-            { loc: `${site}/board?type=press`, changefreq: 'weekly', priority: '0.6', lastmod: today }
+            { loc: `${site}/board?type=press`, changefreq: 'weekly', priority: '0.6', lastmod: today },
+            ...practicePages.map(({ loc, changefreq, priority, lastmod }) => ({ loc, changefreq, priority, lastmod }))
           ];
 
           const sitemapUrls = [
@@ -199,6 +219,9 @@ jobs:
             '## 주요 게시판',
             `- 법률칼럼: ${site}/board?type=law`,
             `- 성공사례: ${site}/board?type=case`,
+            '',
+            '## 분야별 안내',
+            ...practicePages.map((p) => `- ${p.title}: ${p.loc}`),
             '',
             '## 최신 콘텐츠',
             ...entries.slice(0, 80).map((entry) => `- [${entry.type === 'case' ? '성공사례' : '법률칼럼'}] ${entry.title}: ${entry.url}`),
