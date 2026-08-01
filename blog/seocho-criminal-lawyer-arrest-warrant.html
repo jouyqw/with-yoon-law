@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초형사전문변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 형사</div><h1>서초형사전문변호사 — 구속영장 실질심사, 준비 시간은 하루뿐입니다</h1><p class="desc">서초형사전문변호사가 정리한 영장실질심사 대응. 구속 사유 세 가지, 서울중앙지법 영장전담 심문 진행 순서, 하루 만에 준비해야 할 서류를 실무 기준으로 정리했습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.05</span><span><b>키워드</b> 서초형사전문변호사</span><span><b>지역</b> 서울 서초구(서울중앙지방법원 영장전담)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초형사전문변호사가 정리한 영장실질심사 대응.</li><li>주거 안정 소명.</li><li>직업·소득 소명.</li><li>증거인멸 우려 차단.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">영장이 청구되면 남은 시간은 보통 하루입니다</a></li><li><a href="#s2">체포부터 결정까지의 시간표</a></li><li><a href="#s3">하루 안에 만들어야 할 소명자료</a></li><li><a href="#s4">심문에서 지켜야 할 원칙</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초 지역 영장 사건 진행 경로</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">영장이 청구되면 남은 시간은 보통 하루입니다</a></li><li><a href="#s2">체포부터 결정까지의 시간표</a></li><li><a href="#s3">체포부터 결정까지 시간 단위 대응</a></li><li><a href="#s4">하루 안에 만들어야 할 소명자료</a></li><li><a href="#s5">심문에서 지켜야 할 원칙</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">영장심사에 대한 오해</a></li><li><a href="#s8">서초 지역 영장 사건 진행 경로</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">영장이 청구되면 남은 시간은 보통 하루입니다</h2>
 <p class="a-text">체포 후 구속영장이 청구되면 통상 다음 날 영장실질심사(구속 전 피의자심문)가 열립니다. 준비 시간이 하루뿐이라는 뜻이고, 이 하루에 무엇을 제출하느냐가 구속 여부를 정합니다.</p>
 <p class="a-text">서초구를 포함한 서울중앙지검 관할 사건의 영장심문은 서울중앙지방법원 영장전담 판사가 담당합니다. 사무소가 법원과 가까울수록 소명자료 접수와 접견이 빨라지는 것은 실무상 분명한 차이입니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>심문</th><td>비공개로 진행되며 판사가 직접 질문합니다. 통상 10~30분 내외입니다.</td></tr>
 <tr><th>결정</th><td>심문 당일 저녁 또는 익일 새벽에 발부·기각이 결정됩니다.</td></tr>
 <tr><th>불복</th><td>구속되면 구속적부심사를 청구할 수 있습니다. 기소 후에는 보석 청구가 가능합니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">DOCUMENTS</div><h2 class="title" id="s3">하루 안에 만들어야 할 소명자료</h2><ul class="list"><li><b>1</b><span>주거 안정 소명 — 등본, 임대차계약서, 가족관계증명서로 일정한 주거가 있음을 보입니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">체포부터 결정까지 시간 단위 대응</h2><table class="tbl"><tbody><tr><th>체포 직후</th><td>체포 시점부터 48시간 이내 영장 청구. 이때부터 시계가 돌아갑니다.</td></tr>
+<tr><th>영장 청구 당일 밤</th><td>변호인 접견(시간 제한 없음). 진술 방향과 소명 우선순위를 확정합니다.</td></tr>
+<tr><th>심문 전 오전</th><td>주거·직업·신원보증·피해회복 자료 접수. 서초 소재 사무소는 당일 직접 접수가 가능합니다.</td></tr>
+<tr><th>심문</th><td>비공개 10~30분. 판사가 직접 질문하며 쟁점은 도주·증거인멸 우려입니다.</td></tr>
+<tr><th>당일 저녁~익일 새벽</th><td>발부 또는 기각 결정이 나옵니다.</td></tr>
+<tr><th>구속된 경우</th><td>구속적부심 청구, 기소 후 보석 청구로 단계적으로 다툽니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">DOCUMENTS</div><h2 class="title" id="s4">하루 안에 만들어야 할 소명자료</h2><ul class="list"><li><b>1</b><span>주거 안정 소명 — 등본, 임대차계약서, 가족관계증명서로 일정한 주거가 있음을 보입니다.</span></li>
 <li><b>2</b><span>직업·소득 소명 — 재직증명서, 사업자등록증, 급여명세로 도주 유인이 낮음을 보입니다.</span></li>
 <li><b>3</b><span>증거인멸 우려 차단 — 관련자 연락 차단 서약, 휴대전화 임의제출, 자료 이미 제출 사실 정리.</span></li>
 <li><b>4</b><span>피해 회복 자료 — 합의서, 공탁 접수증, 처벌불원서가 있으면 가장 강력합니다.</span></li>
 <li><b>5</b><span>신원보증 — 가족·직장 상사의 신원보증서와 탄원서.</span></li>
 <li><b>6</b><span>건강·부양 사정 — 진단서, 부양가족 자료 등 구속이 과도한 결과를 낳는다는 소명.</span></li></ul>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">심문에서 지켜야 할 원칙</h2><ul class="list"><li><b>1</b><span>쟁점을 구속 사유로 좁히십시오. 유무죄 다툼은 본안에서 하는 것이고, 심문에서는 도주·인멸 우려의 부존재가 핵심입니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">심문에서 지켜야 할 원칙</h2><ul class="list"><li><b>1</b><span>쟁점을 구속 사유로 좁히십시오. 유무죄 다툼은 본안에서 하는 것이고, 심문에서는 도주·인멸 우려의 부존재가 핵심입니다.</span></li>
 <li><b>2</b><span>혐의를 다투더라도 태도는 절제해야 합니다. 판사가 보는 것은 주장 강도가 아니라 태도의 일관성입니다.</span></li>
 <li><b>3</b><span>&#x27;앞으로 잘하겠다&#x27;가 아니라 &#x27;이미 무엇을 했다&#x27;로 말하십시오. 공탁, 자료 제출, 연락 차단은 완료형이어야 합니다.</span></li>
 <li><b>4</b><span>피해자와 접촉 이력이 있으면 반드시 정리해 설명하십시오. 숨기면 증거인멸 정황으로 평가됩니다.</span></li>
 <li><b>5</b><span>공범이 있는 사건은 진술 일치 여부가 인멸 우려로 직결됩니다. 사전 접촉은 절대 금물입니다.</span></li>
 <li><b>6</b><span>기각되더라도 수사는 계속됩니다. 심문 자료가 이후 불기소 의견서의 토대가 되도록 작성해야 합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>가족이 체포됐다는 연락을 받은 밤</h3><p>가족: 내일 오전에 영장심사라는데 지금 뭘 해야 하나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>가족이 체포됐다는 연락을 받은 밤</h3><p>가족: 내일 오전에 영장심사라는데 지금 뭘 해야 하나요?</p>
 <p>변호사: 오늘 밤에 접견하고, 아침까지 주거·직업·신원보증 자료를 만들어 접수해야 합니다. 순서가 정해져 있습니다.</p>
 <p>가족: 합의를 시도해도 되나요?</p>
 <p>변호사: 시도는 하되 직접 연락은 안 됩니다. 변호인을 통해야 하고, 시간이 없으면 형사공탁으로 피해 회복 의사를 먼저 남기는 방법이 있습니다.</p>
 <p>가족: 구속되면 끝인가요?</p>
 <p>변호사: 아닙니다. 구속적부심, 기소 후 보석이 있습니다. 다만 처음부터 막는 것이 압도적으로 유리합니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초 지역 영장 사건 진행 경로</h2><table class="tbl"><tbody><tr><th>수사기관</th><td>서초경찰서·방배경찰서·강남경찰서 → 서울중앙지방검찰청</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">영장심사에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;영장이 청구되면 무조건 구속된다&#x27;</th><td>실무상 기각되는 사건이 상당수입니다. 소명자료의 질이 결과를 크게 좌우합니다.</td></tr>
+<tr><th>&#x27;심문에서 결백을 강하게 주장해야 한다&#x27;</th><td>심문의 쟁점은 유무죄가 아니라 도주·인멸 우려입니다. 초점을 잘못 잡으면 오히려 불리합니다.</td></tr>
+<tr><th>&#x27;합의가 안 되면 방법이 없다&#x27;</th><td>형사공탁으로 피해 회복 의사를 객관적으로 남길 수 있습니다. 피해자 인적사항을 몰라도 가능합니다.</td></tr>
+<tr><th>&#x27;앞으로 잘하겠다고 하면 된다&#x27;</th><td>완료형 사실이 필요합니다. 이미 제출한 자료, 이미 끊은 연락이 설득력을 가집니다.</td></tr>
+<tr><th>&#x27;기각되면 사건이 끝난다&#x27;</th><td>불구속 상태로 수사가 계속됩니다. 심문 자료가 이후 불기소 의견서의 토대가 되어야 합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초 지역 영장 사건 진행 경로</h2><table class="tbl"><tbody><tr><th>수사기관</th><td>서초경찰서·방배경찰서·강남경찰서 → 서울중앙지방검찰청</td></tr>
 <tr><th>영장 심문</th><td>서울 서초구 서초중앙로 157, 서울중앙지방법원 영장전담</td></tr>
 <tr><th>유치 장소</th><td>심문 전까지 관할 경찰서 유치장에서 대기합니다.</td></tr>
 <tr><th>접견</th><td>심문 전 변호인 접견은 시간 제한 없이 가능합니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>체포 소식을 들었다면 오늘 밤이 전부입니다</h2><p>접견과 소명자료 접수는 심문 전에 끝나야 합니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

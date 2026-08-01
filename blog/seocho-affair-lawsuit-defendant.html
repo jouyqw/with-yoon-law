@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초상간소송변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 상간소송</div><h1>서초상간소송변호사 — 소장을 받았다면 30일 안에 방어 축을 정해야 합니다</h1><p class="desc">서초상간소송변호사가 정리한 피고 방어 전략. 혼인관계 이미 파탄 항변, 기혼 사실 부지(不知) 주장, 소멸시효 항변과 위자료 감액 요소를 실무 기준으로 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.07</span><span><b>키워드</b> 서초상간소송변호사</span><span><b>지역</b> 서울 서초구 서초동·방배동</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초상간소송변호사가 정리한 피고 방어 전략.</li><li>송달일을 확인하십시오.</li><li>소장에 첨부된 증거목록을 먼저 보십시오.</li><li>관련 대화 기록을 삭제하지 마십시오.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">소장을 무시하면 청구금액 전부가 그대로 확정됩니다</a></li><li><a href="#s2">방어 축별 필요한 자료</a></li><li><a href="#s3">소장을 받은 뒤 순서</a></li><li><a href="#s4">인정액을 낮추는 실무 요소</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">피고 입장에서의 진행 흐름</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">소장을 무시하면 청구금액 전부가 그대로 확정됩니다</a></li><li><a href="#s2">방어 축별 필요한 자료</a></li><li><a href="#s3">소장 수령 후 30일</a></li><li><a href="#s4">소장을 받은 뒤 순서</a></li><li><a href="#s5">인정액을 낮추는 실무 요소</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">피고 입장의 오해</a></li><li><a href="#s8">피고 입장에서의 진행 흐름</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">소장을 무시하면 청구금액 전부가 그대로 확정됩니다</h2>
 <p class="a-text">상간소송 피고가 되면 가장 먼저 드는 생각은 &#x27;조용히 넘어갔으면&#x27;입니다. 그래서 소장을 받고도 대응하지 않는 분들이 있습니다. 이 선택의 결과는 명확합니다. 자백간주로 청구금액 전액이 인정될 수 있습니다.</p>
 <p class="a-text">소장을 송달받으면 30일 이내에 답변서를 제출해야 합니다. 이 기한 안에 방어의 축을 정하는 것이 실무의 출발점입니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>소멸시효</th><td>원고가 부정행위를 안 날부터 3년이 지났음을 입증합니다. 원고의 과거 문자·통화가 근거가 됩니다.</td></tr>
 <tr><th>과실상계·감액</th><td>기간이 짧고 일회적이며 관계를 즉시 정리했음을 보이면 액수가 조정됩니다.</td></tr>
 <tr><th>공동불법행위 항변</th><td>배우자의 주도적 기망이 있었던 사정은 책임 비율에 반영될 수 있습니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">FIRST STEP</div><h2 class="title" id="s3">소장을 받은 뒤 순서</h2><ul class="list"><li><b>1</b><span>송달일을 확인하십시오. 답변서 제출 기한 30일의 기산점입니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">소장 수령 후 30일</h2><table class="tbl"><tbody><tr><th>D-Day</th><td>송달일 확인. 답변서 제출기한 30일의 기산점입니다.</td></tr>
+<tr><th>D+1 ~ D+7</th><td>소장 첨부 증거목록 검토. 원고가 가진 자료가 방어 축을 결정합니다.</td></tr>
+<tr><th>D+7 ~ D+20</th><td>혼인 파탄 시점, 기혼 사실 인식 여부에 관한 자료를 수집합니다.</td></tr>
+<tr><th>D+30</th><td>답변서 제출. 미제출 시 무변론 판결로 청구액이 그대로 인정될 수 있습니다.</td></tr>
+<tr><th>D+60 ~ D+150</th><td>사실조회와 변론. 상당수 사건이 조정에서 종결됩니다.</td></tr>
+<tr><th>종결</th><td>합의 시 부제소 특약을 반드시 넣어야 재청구를 막을 수 있습니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">FIRST STEP</div><h2 class="title" id="s4">소장을 받은 뒤 순서</h2><ul class="list"><li><b>1</b><span>송달일을 확인하십시오. 답변서 제출 기한 30일의 기산점입니다.</span></li>
 <li><b>2</b><span>소장에 첨부된 증거목록을 먼저 보십시오. 원고가 무엇을 가지고 있는지가 방어 축을 정합니다.</span></li>
 <li><b>3</b><span>관련 대화 기록을 삭제하지 마십시오. 삭제 사실이 확인되면 심증이 급격히 나빠집니다.</span></li>
 <li><b>4</b><span>배우자(상대방)와 말을 맞추지 마십시오. 그 대화가 제출되면 방어 전체가 무너집니다.</span></li>
 <li><b>5</b><span>원고에게 직접 연락하지 마십시오. 협박이나 2차 가해로 평가되면 액수가 올라갑니다.</span></li>
 <li><b>6</b><span>회사·가족에게 알려질 위험이 걱정된다면 송달 주소 관리부터 변호인과 상의하십시오.</span></li></ul>
-<div class="divider"></div><div class="label">AMOUNT</div><h2 class="title" id="s4">인정액을 낮추는 실무 요소</h2><ul class="list"><li><b>1</b><span>관계의 기간과 빈도가 짧고 적을수록 감액 요소가 됩니다.</span></li>
+<div class="divider"></div><div class="label">AMOUNT</div><h2 class="title" id="s5">인정액을 낮추는 실무 요소</h2><ul class="list"><li><b>1</b><span>관계의 기간과 빈도가 짧고 적을수록 감액 요소가 됩니다.</span></li>
 <li><b>2</b><span>원고가 사실을 안 이후에도 혼인이 유지되고 있다면 파탄 정도가 낮게 평가됩니다.</span></li>
 <li><b>3</b><span>부정행위 인지 후 즉시 관계를 정리했다면 유리한 사정입니다.</span></li>
 <li><b>4</b><span>임신·출산, 동거, 공개적 과시 등 가중 사정이 없어야 합니다.</span></li>
 <li><b>5</b><span>소송 과정에서 명백한 사실을 끝까지 부인하면 오히려 액수가 올라갑니다.</span></li>
 <li><b>6</b><span>조정 단계에서의 진지한 사과와 조기 정산은 실질적인 감액 요인으로 작용합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>이미 별거 중이라고 들었던 경우</h3><p>의뢰인: 별거 중이고 곧 이혼한다고 들었습니다.</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>이미 별거 중이라고 들었던 경우</h3><p>의뢰인: 별거 중이고 곧 이혼한다고 들었습니다.</p>
 <p>변호사: 그 말을 들었다는 것만으로는 부족합니다. 실제로 별거가 언제부터였는지, 이혼 절차가 진행 중이었는지 객관 자료가 필요합니다. 그 대화 기록부터 보겠습니다.</p>
 <p>의뢰인: 소장 금액이 3천만원인데 그대로 내야 하나요?</p>
 <p>변호사: 청구액과 인정액은 다릅니다. 다만 답변서를 내지 않으면 청구액이 그대로 확정될 수 있습니다.</p>
 <p>의뢰인: 회사에 알려질까 봐 두렵습니다.</p>
 <p>변호사: 법원이 회사에 통보하지 않습니다. 송달 주소를 관리하고 원고와 직접 접촉하지 않는 것이 노출 위험을 가장 크게 줄입니다.</p></div>
-<div class="divider"></div><div class="label">PROCESS</div><h2 class="title" id="s6">피고 입장에서의 진행 흐름</h2><table class="tbl"><tbody><tr><th>소장 송달</th><td>30일 내 답변서 제출. 미제출 시 자백간주 위험이 있습니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">피고 입장의 오해</h2><table class="tbl"><tbody><tr><th>&#x27;대응 안 하면 조용히 넘어간다&#x27;</th><td>자백간주로 청구금액 전액이 인정될 수 있습니다. 가장 비싼 선택입니다.</td></tr>
+<tr><th>&#x27;별거 중이었으면 면책된다&#x27;</th><td>별거만으로는 부족하고 혼인관계가 회복 불가능한 상태였는지가 기준입니다.</td></tr>
+<tr><th>&#x27;청구액을 그대로 내야 한다&#x27;</th><td>청구액과 인정액은 다릅니다. 기간·빈도·파탄 정도에 따라 크게 조정됩니다.</td></tr>
+<tr><th>&#x27;배우자와 말을 맞추면 된다&#x27;</th><td>그 대화가 제출되면 방어 전체가 무너집니다.</td></tr>
+<tr><th>&#x27;끝까지 부인하는 게 유리하다&#x27;</th><td>명백한 증거에도 전면 부인하면 인정액이 오히려 올라갑니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">PROCESS</div><h2 class="title" id="s8">피고 입장에서의 진행 흐름</h2><table class="tbl"><tbody><tr><th>소장 송달</th><td>30일 내 답변서 제출. 미제출 시 자백간주 위험이 있습니다.</td></tr>
 <tr><th>답변서</th><td>방어 축을 정하고 항변 사유를 특정합니다. 이 서면이 소송 방향을 정합니다.</td></tr>
 <tr><th>증거 제출</th><td>혼인 파탄 시점, 기혼 사실 인식 여부를 뒷받침하는 자료를 냅니다.</td></tr>
 <tr><th>조정</th><td>상당수 사건이 조정에서 종결됩니다. 금액과 부제소 특약이 핵심입니다.</td></tr>
@@ -132,5 +210,6 @@
 <div class="cta"><div><h2>답변서 기한은 30일입니다</h2><p>방어 축을 정하는 데 시간이 필요합니다. 오늘 자료부터 정리하십시오.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

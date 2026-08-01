@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초재산분할변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 재산분할</div><h1>서초재산분할변호사 — 사업체 지분과 비상장주식, 숨기면 비율이 불리해집니다</h1><p class="desc">서초재산분할변호사가 정리한 사업체 재산분할. 비상장주식 평가 방법, 법인 명의 재산의 처리, 소득 축소와 재산 은닉을 밝히는 사실조회·문서제출명령 실무를 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.07</span><span><b>키워드</b> 서초재산분할변호사</span><span><b>지역</b> 서울 서초구·인접 강남구 역삼동 테헤란로 일대</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초재산분할변호사가 정리한 사업체 재산분할.</li><li>금융거래정보 제출명령.</li><li>과세정보 제출명령.</li><li>법인등기·재무제표 확인.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">자영업·법인 사건은 &#x27;얼마인지&#x27;부터 다툽니다</a></li><li><a href="#s2">비상장주식·사업체 평가 방법</a></li><li><a href="#s3">숨긴 재산을 찾는 실무 도구</a></li><li><a href="#s4">사건 초기에 반드시 해야 할 조치</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초·강남권 사업자 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">자영업·법인 사건은 &#x27;얼마인지&#x27;부터 다툽니다</a></li><li><a href="#s2">비상장주식·사업체 평가 방법</a></li><li><a href="#s3">사업체가 얽힌 사건의 진행</a></li><li><a href="#s4">숨긴 재산을 찾는 실무 도구</a></li><li><a href="#s5">사건 초기에 반드시 해야 할 조치</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">사업체 재산분할에 대한 오해</a></li><li><a href="#s8">서초·강남권 사업자 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">자영업·법인 사건은 &#x27;얼마인지&#x27;부터 다툽니다</h2>
 <p class="a-text">월급쟁이 부부의 재산분할은 목록이 명확합니다. 반면 배우자 한쪽이 사업체를 운영하는 경우는 목록 자체가 다툼의 대상이 됩니다. 무엇이 개인 재산이고 무엇이 법인 재산인지 경계가 흐리기 때문입니다.</p>
 <p class="a-text">서초·강남 일대에는 개인사업자와 소규모 법인이 밀집해 있습니다. 그래서 이 지역 사건은 &#x27;재산이 있느냐&#x27;가 아니라 &#x27;어디에 어떤 형태로 있느냐&#x27;를 찾아내는 작업이 절반입니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>감정</th><td>다툼이 크면 법원 감정을 통해 평가합니다. 비용과 기간이 들지만 가장 확실합니다.</td></tr>
 <tr><th>영업권</th><td>프랜차이즈·병의원 등은 권리금·영업권이 별도 쟁점이 됩니다.</td></tr>
 <tr><th>개인사업자</th><td>사업용 자산, 임차보증금, 매출채권, 재고를 개별 항목으로 산정합니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">DISCOVERY</div><h2 class="title" id="s3">숨긴 재산을 찾는 실무 도구</h2><ul class="list"><li><b>1</b><span>금융거래정보 제출명령 — 은행, 증권사, 보험사에 계좌 내역과 상품 보유 현황을 요구합니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">사업체가 얽힌 사건의 진행</h2><table class="tbl"><tbody><tr><th>초기 보전</th><td>사업용 자산은 이전이 빠릅니다. 소장 접수 전 가압류 검토가 최우선입니다.</td></tr>
+<tr><th>법인 자료 확보</th><td>법인등기·주주명부·재무제표·가지급금 계정을 먼저 확인합니다.</td></tr>
+<tr><th>과세정보 조회</th><td>국세청 소득자료와 카드 사용 내역을 대조해 실질 소득을 확인합니다. 1~2개월 소요.</td></tr>
+<tr><th>평가 방법 확정</th><td>순자산가치·수익가치·보충적 평가 중 무엇을 주장할지가 금액을 크게 바꿉니다.</td></tr>
+<tr><th>감정</th><td>다툼이 크면 법원 감정. 수개월과 별도 비용이 발생합니다.</td></tr>
+<tr><th>조정·판결</th><td>지분 자체를 나누기보다 가액을 정산하는 방식이 일반적입니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">DISCOVERY</div><h2 class="title" id="s4">숨긴 재산을 찾는 실무 도구</h2><ul class="list"><li><b>1</b><span>금융거래정보 제출명령 — 은행, 증권사, 보험사에 계좌 내역과 상품 보유 현황을 요구합니다.</span></li>
 <li><b>2</b><span>과세정보 제출명령 — 국세청에 소득자료, 사업소득, 부동산 취득 내역을 조회합니다.</span></li>
 <li><b>3</b><span>법인등기·재무제표 확인 — 주주명부, 임원 변동, 가지급금·가수금 계정을 봅니다.</span></li>
 <li><b>4</b><span>부동산 조회 — 전국 소유 부동산과 근저당 설정 이력을 확인합니다.</span></li>
 <li><b>5</b><span>카드사용 내역 — 생활 수준과 신고 소득의 괴리를 보여주는 자료가 됩니다.</span></li>
 <li><b>6</b><span>명의신탁 정황 — 소송 직전 가족 명의로 이전된 자산은 사해행위취소 대상이 될 수 있습니다.</span></li></ul>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">사건 초기에 반드시 해야 할 조치</h2><ul class="list"><li><b>1</b><span>소장 접수 전 가압류·가처분을 검토하십시오. 사업체 자산은 이전이 빠릅니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">사건 초기에 반드시 해야 할 조치</h2><ul class="list"><li><b>1</b><span>소장 접수 전 가압류·가처분을 검토하십시오. 사업체 자산은 이전이 빠릅니다.</span></li>
 <li><b>2</b><span>매출이 급감했다는 주장에 대비해 과거 3~5년 자료를 확보하십시오. 소송 직전 축소 신고는 대비로 드러납니다.</span></li>
 <li><b>3</b><span>배우자 사업에 실제로 기여했다면 근무 사실, 무급 노동, 자금 대여 내역을 자료로 남기십시오.</span></li>
 <li><b>4</b><span>법인 카드로 생활비를 써 왔다면 그 내역이 실질 소득의 증거가 됩니다.</span></li>
 <li><b>5</b><span>대출 명의와 실제 상환 주체가 다르면 계좌 흐름으로 밝힐 수 있습니다.</span></li>
 <li><b>6</b><span>평가 방법 선택 자체가 금액을 크게 바꿉니다. 어느 방법을 주장할지 초기에 정해야 합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>남편이 운영하는 법인, 아내는 서류상 아무것도 없는 경우</h3><p>의뢰인: 회사는 전부 남편 명의고 저는 관련이 없습니다.</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>남편이 운영하는 법인, 아내는 서류상 아무것도 없는 경우</h3><p>의뢰인: 회사는 전부 남편 명의고 저는 관련이 없습니다.</p>
 <p>변호사: 서류상 그렇더라도 혼인 중 형성된 지분이면 분할 대상입니다. 주주명부부터 확인하겠습니다.</p>
 <p>의뢰인: 남편이 요즘 회사가 어렵다고 합니다.</p>
 <p>변호사: 소송이 시작되면 자주 나오는 주장입니다. 과거 재무제표와 카드 사용 내역을 비교하면 실제 수준이 드러납니다.</p>
 <p>의뢰인: 제가 경리 일을 도왔는데 급여는 못 받았습니다.</p>
 <p>변호사: 그게 기여도 자료입니다. 근무 사실을 보여주는 메일, 거래처 연락, 계좌 이체 내역을 모으십시오.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초·강남권 사업자 사건의 특징</h2><table class="tbl"><tbody><tr><th>서초동·교대역</th><td>전문직 사무소(법무·세무·의료) 지분과 영업권 평가가 쟁점입니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">사업체 재산분할에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;법인 재산은 건드릴 수 없다&#x27;</th><td>법인 재산 자체는 대상이 아니지만 주식·지분 가치로 반영됩니다. 실질이 1인 회사면 달리 볼 여지도 있습니다.</td></tr>
+<tr><th>&#x27;매출이 줄었다고 신고하면 된다&#x27;</th><td>과거 3~5년 자료와 카드 사용 내역 대조로 드러납니다. 은닉이 확인되면 비율 자체가 불리해집니다.</td></tr>
+<tr><th>&#x27;배우자는 회사와 무관하다&#x27;</th><td>경리·거래처 응대 등 무급 노동도 기여도 자료가 됩니다.</td></tr>
+<tr><th>&#x27;가족 명의로 넘기면 안전하다&#x27;</th><td>사해행위취소 대상이 됩니다. 이전 시점과 대가 지급 여부가 핵심입니다.</td></tr>
+<tr><th>&#x27;가사만 했으면 지분은 못 받는다&#x27;</th><td>간접 기여도 인정됩니다. 비율에 차이가 생길 뿐입니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초·강남권 사업자 사건의 특징</h2><table class="tbl"><tbody><tr><th>서초동·교대역</th><td>전문직 사무소(법무·세무·의료) 지분과 영업권 평가가 쟁점입니다.</td></tr>
 <tr><th>역삼·논현 테헤란로</th><td>소규모 법인 지분, 스톡옵션, 가수금 계정 처리가 다툼이 됩니다.</td></tr>
 <tr><th>방배·이수</th><td>자영업 점포의 권리금과 임차보증금 정산이 핵심입니다.</td></tr>
 <tr><th>양재·내곡</th><td>토지·창고 등 사업용 부동산 평가가 필요합니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>사업체가 얽힌 사건은 초기 보전이 핵심입니다</h2><p>가압류 시점을 놓치면 판결을 받아도 회수가 어렵습니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

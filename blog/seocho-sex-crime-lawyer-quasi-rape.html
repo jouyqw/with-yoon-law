@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초성범죄변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 성범죄</div><h1>서초성범죄변호사 — 준강간 혐의, &#x27;동의했다&#x27;는 말만으로는 부족합니다</h1><p class="desc">서초성범죄변호사가 정리한 준강간 대응. 심신상실·항거불능의 판단 기준, 알코올 블랙아웃과 패싱아웃의 차이, 동의 여부를 다투는 객관 증거를 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.05</span><span><b>키워드</b> 서초성범죄변호사</span><span><b>지역</b> 서울 서초구 방배동·인접 동작구 사당·이수</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초성범죄변호사가 정리한 준강간 대응.</li><li>이동 동선 CCTV.</li><li>엘리베이터·공동현관 영상.</li><li>메시지·통화 기록.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">준강간은 폭행·협박이 없어도 성립합니다</a></li><li><a href="#s2">쟁점별 판단 기준</a></li><li><a href="#s3">결론을 만드는 객관 증거</a></li><li><a href="#s4">준강간 사건 방어의 순서</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">방배·사당·이수 권역 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">준강간은 폭행·협박이 없어도 성립합니다</a></li><li><a href="#s2">쟁점별 판단 기준</a></li><li><a href="#s3">사건 전후 복원해야 할 구간</a></li><li><a href="#s4">결론을 만드는 객관 증거</a></li><li><a href="#s5">준강간 사건 방어의 순서</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">준강간에 대한 오해</a></li><li><a href="#s8">방배·사당·이수 권역 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">준강간은 폭행·협박이 없어도 성립합니다</h2>
 <p class="a-text">형법 제299조 준강간은 사람의 심신상실 또는 항거불능 상태를 이용하여 간음한 경우를 처벌합니다. 법정형은 강간죄와 같습니다. 폭행이나 협박이 없었다는 사실은 방어 논거가 되지 못합니다.</p>
 <p class="a-text">실무에서 다투는 지점은 두 가지입니다. 첫째, 피해자가 실제로 심신상실·항거불능 상태였는지. 둘째, 피의자가 그 상태를 인식하고 이용했는지입니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>고의</th><td>피해자가 그러한 상태임을 인식하고 이용했는지가 필요합니다. 착오가 있었다면 다툴 여지가 생깁니다.</td></tr>
 <tr><th>동의</th><td>사후에 &#x27;동의했다&#x27;는 주장만으로는 부족하며, 당시 정황을 뒷받침하는 객관 자료가 필요합니다.</td></tr>
 <tr><th>불능미수</th><td>피해자가 항거불능 상태가 아니었더라도 그렇다고 오인하고 실행한 경우 준강간의 불능미수가 성립할 수 있습니다(대법원 2018도16002 전원합의체).</td></tr></tbody></table>
-<div class="divider"></div><div class="label">EVIDENCE</div><h2 class="title" id="s3">결론을 만드는 객관 증거</h2><ul class="list"><li><b>1</b><span>이동 동선 CCTV — 스스로 걸었는지, 대화하며 이동했는지가 상태 판단의 핵심입니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">사건 전후 복원해야 할 구간</h2><table class="tbl"><tbody><tr><th>사건 6시간 전</th><td>음주 시작 시각, 주량, 동석자. 상태 판단의 출발점입니다.</td></tr>
+<tr><th>이동 구간</th><td>도보 여부, 대화 여부, 부축 필요 여부. CCTV로 가장 직접 확인됩니다.</td></tr>
+<tr><th>진입 시점</th><td>공동현관·엘리베이터·객실 출입 기록이 결정적 자료가 됩니다.</td></tr>
+<tr><th>사건 직후</th><td>메시지 발신 여부와 문장 구성으로 의식 수준을 추정합니다.</td></tr>
+<tr><th>다음 날</th><td>연락 내용과 태도가 동의 여부 판단의 정황이 됩니다.</td></tr>
+<tr><th>고소 시점</th><td>고소까지의 기간과 경위도 신빙성 판단에 함께 고려됩니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">EVIDENCE</div><h2 class="title" id="s4">결론을 만드는 객관 증거</h2><ul class="list"><li><b>1</b><span>이동 동선 CCTV — 스스로 걸었는지, 대화하며 이동했는지가 상태 판단의 핵심입니다.</span></li>
 <li><b>2</b><span>엘리베이터·공동현관 영상 — 주거지 진입 시점의 상태가 가장 직접적인 자료입니다.</span></li>
 <li><b>3</b><span>메시지·통화 기록 — 사건 전후 대화의 내용과 문장 구성으로 의식 수준을 추정합니다.</span></li>
 <li><b>4</b><span>결제·주문 내역 — 본인이 직접 결제했다면 의사결정 능력의 근거가 됩니다.</span></li>
 <li><b>5</b><span>택시 호출·이용 기록 — 목적지 입력, 기사와의 대화 여부가 자료로 남습니다.</span></li>
 <li><b>6</b><span>동석자 진술 — 헤어질 당시 상태에 대한 제3자 진술은 양측 모두에게 중요합니다.</span></li></ul>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">준강간 사건 방어의 순서</h2><ul class="list"><li><b>1</b><span>먼저 상태를 다툴 사건인지, 동의를 다툴 사건인지 방향을 정합니다. 둘 다 주장하면 신빙성이 떨어집니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">준강간 사건 방어의 순서</h2><ul class="list"><li><b>1</b><span>먼저 상태를 다툴 사건인지, 동의를 다툴 사건인지 방향을 정합니다. 둘 다 주장하면 신빙성이 떨어집니다.</span></li>
 <li><b>2</b><span>사건 전후 6시간을 분 단위로 복원합니다. 시간표가 곧 방어 논거가 됩니다.</span></li>
 <li><b>3</b><span>CCTV 보존요청을 최우선으로 진행합니다. 상업시설·공동주택 영상은 곧 삭제됩니다.</span></li>
 <li><b>4</b><span>메시지는 전체를 제출합니다. 유리한 부분만 발췌하면 오히려 불리해집니다.</span></li>
 <li><b>5</b><span>다투는 사건에서 무고 고소는 신중해야 합니다. 본안이 정리되기 전 맞고소는 역효과가 큽니다.</span></li>
 <li><b>6</b><span>인정하는 사건이라면 합의·공탁과 양형자료를 최우선으로 준비합니다. 준강간은 법정형이 높아 실형 위험이 큽니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>사당역 술자리 이후 고소된 사례</h3><p>의뢰인: 서로 대화도 하고 같이 걸어갔는데 준강간이라니 이해가 안 됩니다.</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>사당역 술자리 이후 고소된 사례</h3><p>의뢰인: 서로 대화도 하고 같이 걸어갔는데 준강간이라니 이해가 안 됩니다.</p>
 <p>변호사: 그 대화와 보행이 바로 방어 자료입니다. CCTV와 메시지로 복원하면 심신상실 주장을 다툴 수 있습니다. 먼저 영상부터 확보해야 합니다.</p>
 <p>의뢰인: 상대방이 기억이 안 난다고 합니다.</p>
 <p>변호사: 기억 없음이 곧 항거불능은 아닙니다. 다만 그 구분을 우리가 자료로 보여줘야 합니다.</p>
 <p>의뢰인: 무고로 맞고소하고 싶습니다.</p>
 <p>변호사: 지금은 아닙니다. 본안에서 불송치나 무혐의가 나온 뒤에 검토하는 것이 순서입니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">방배·사당·이수 권역 사건의 특징</h2><table class="tbl"><tbody><tr><th>이수·사당역 상권</th><td>심야 상권과 주거지가 붙어 있어 도보 동선 CCTV 확보가 관건입니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">준강간에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;폭행·협박이 없으면 무죄다&#x27;</th><td>준강간은 심신상실·항거불능 상태를 이용한 경우를 처벌합니다. 폭행 부존재는 방어 논거가 되지 않습니다.</td></tr>
+<tr><th>&#x27;기억이 없다면 항거불능이다&#x27;</th><td>블랙아웃은 기억 결손일 뿐이며 그 자체로 항거불능이 인정되지는 않습니다.</td></tr>
+<tr><th>&#x27;동의했다고 하면 된다&#x27;</th><td>사후 주장만으로는 부족하고 당시 정황을 뒷받침하는 객관 자료가 필요합니다.</td></tr>
+<tr><th>&#x27;상태가 아니었으면 무조건 무죄다&#x27;</th><td>항거불능으로 오인하고 실행했다면 불능미수가 성립할 수 있습니다(대법원 2018도16002 전원합의체).</td></tr>
+<tr><th>&#x27;맞고소부터 하는 게 유리하다&#x27;</th><td>본안이 정리되기 전 무고 맞고소는 역효과가 큽니다. 순서가 중요합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">방배·사당·이수 권역 사건의 특징</h2><table class="tbl"><tbody><tr><th>이수·사당역 상권</th><td>심야 상권과 주거지가 붙어 있어 도보 동선 CCTV 확보가 관건입니다.</td></tr>
 <tr><th>방배동 주택가</th><td>골목 CCTV가 적어 차량 블랙박스가 중요한 보완 증거가 됩니다.</td></tr>
 <tr><th>서초·교대역</th><td>오피스텔·호텔 출입 기록이 결정적 자료가 되는 사건이 많습니다.</td></tr>
 <tr><th>수사 관할</th><td>방배경찰서·서초경찰서 여성청소년수사팀에서 담당합니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>CCTV 보존이 가장 급합니다</h2><p>영상은 2주면 사라집니다. 오늘 요청해야 남습니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초성범죄변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 성범죄</div><h1>서초성범죄변호사 — 강제추행 고소, &#x27;기억이 안 난다&#x27;가 가장 위험합니다</h1><p class="desc">서초성범죄변호사가 정리한 강제추행 고소 초기 대응. 폭행·협박 요건과 기습추행 법리, 술자리 사건에서 진술이 무너지는 지점을 실무 기준으로 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.02</span><span><b>키워드</b> 서초성범죄변호사</span><span><b>지역</b> 서울 서초구·강남역 인접 상권</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초성범죄변호사가 정리한 강제추행 고소 초기 대응.</li><li>메시지·통화·SNS 기록을 절대 삭제하지 마십시오.</li><li>사건 장소의 CCTV 보존을 서두르십시오.</li><li>동석자에게 연락하되, 진술 내용을 맞추자는 취지의 대화는 절대 하지 마십시오.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">강제추행은 &#x27;추행&#x27;보다 &#x27;폭행·협박&#x27;에서 갈립니다</a></li><li><a href="#s2">성립요건과 실무 판단 기준</a></li><li><a href="#s3">고소 사실을 알게 된 직후 72시간</a></li><li><a href="#s4">다투는 사건과 인정하는 사건, 전략이 정반대입니다</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초·인접 지역 강제추행 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">강제추행은 &#x27;추행&#x27;보다 &#x27;폭행·협박&#x27;에서 갈립니다</a></li><li><a href="#s2">성립요건과 실무 판단 기준</a></li><li><a href="#s3">고소 인지부터 처분까지</a></li><li><a href="#s4">고소 사실을 알게 된 직후 72시간</a></li><li><a href="#s5">다투는 사건과 인정하는 사건, 전략이 정반대입니다</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">강제추행에 대한 오해</a></li><li><a href="#s8">서초·인접 지역 강제추행 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">강제추행은 &#x27;추행&#x27;보다 &#x27;폭행·협박&#x27;에서 갈립니다</h2>
 <p class="a-text">형법 제298조 강제추행은 폭행 또는 협박으로 사람을 추행한 경우를 처벌합니다. 10년 이하의 징역 또는 1,500만원 이하의 벌금입니다. 많은 분들이 신체 접촉 사실만 놓고 다투지만, 실무에서 쟁점이 되는 지점은 대부분 그 앞입니다.</p>
 <p class="a-text">대법원은 폭행행위 자체가 추행에 해당하는 이른바 &#x27;기습추행&#x27;도 강제추행으로 인정합니다. 별도의 폭행이 없어도 갑작스러운 접촉 자체를 폭행으로 평가하는 것입니다. 그래서 &#x27;밀치거나 잡은 적 없다&#x27;는 주장만으로는 방어가 되지 않습니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>항거곤란</th><td>기습추행 유형에서는 별도로 요구되지 않습니다.</td></tr>
 <tr><th>피해자 진술</th><td>일관성, 구체성, 허위 진술 동기의 부존재를 종합해 신빙성을 판단합니다.</td></tr>
 <tr><th>부수처분</th><td>유죄 시 신상정보 등록, 취업제한, 이수명령이 함께 검토됩니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">FIRST 72H</div><h2 class="title" id="s3">고소 사실을 알게 된 직후 72시간</h2><ul class="list"><li><b>1</b><span>메시지·통화·SNS 기록을 절대 삭제하지 마십시오. 삭제 흔적 자체가 증거인멸 정황으로 평가됩니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">고소 인지부터 처분까지</h2><table class="tbl"><tbody><tr><th>고소 인지 직후 72시간</th><td>CCTV 보존요청, 메시지 전체 백업, 동선 복원. 이 시기를 놓치면 방어 자료가 사라집니다.</td></tr>
+<tr><th>첫 조사 전</th><td>성립요건 검토로 인정·부인 방향 확정. 여성청소년수사팀 조사는 통상 2~4시간입니다.</td></tr>
+<tr><th>조사 ~ 송치</th><td>1~3개월. 필요 시 변호인의견서와 피해자 합의를 병행합니다.</td></tr>
+<tr><th>검찰 단계</th><td>1~3개월. 기소유예를 목표로 한다면 이 구간이 마지막 골든타임입니다.</td></tr>
+<tr><th>약식 또는 공판</th><td>약식명령은 고지 후 7일 내 정식재판청구 가능. 공판은 4~8개월 소요.</td></tr>
+<tr><th>처분 확정 후</th><td>유죄 시 신상정보 등록·취업제한 절차가 별도로 진행됩니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">FIRST 72H</div><h2 class="title" id="s4">고소 사실을 알게 된 직후 72시간</h2><ul class="list"><li><b>1</b><span>메시지·통화·SNS 기록을 절대 삭제하지 마십시오. 삭제 흔적 자체가 증거인멸 정황으로 평가됩니다.</span></li>
 <li><b>2</b><span>사건 장소의 CCTV 보존을 서두르십시오. 매장·상가 영상은 통상 2주 내외에 덮어씌워집니다.</span></li>
 <li><b>3</b><span>동석자에게 연락하되, 진술 내용을 맞추자는 취지의 대화는 절대 하지 마십시오. 그 대화가 증거가 됩니다.</span></li>
 <li><b>4</b><span>결제내역·교통카드·차량 블랙박스로 동선을 시간 단위로 복원하십시오.</span></li>
 <li><b>5</b><span>피해자에게 직접 연락하지 마십시오. 사과 목적이라도 2차 가해나 합의 강요로 해석될 수 있습니다.</span></li>
 <li><b>6</b><span>인정 여부를 결정하기 전에 성립요건 검토를 먼저 받으십시오. 접촉 사실 인정이 곧 유죄 인정은 아닙니다.</span></li></ul>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">다투는 사건과 인정하는 사건, 전략이 정반대입니다</h2><ul class="list"><li><b>1</b><span>다투는 사건: 객관 증거로 시간·위치·자세를 재구성하고, 피해자 진술의 내적 모순을 구체적으로 특정합니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">다투는 사건과 인정하는 사건, 전략이 정반대입니다</h2><ul class="list"><li><b>1</b><span>다투는 사건: 객관 증거로 시간·위치·자세를 재구성하고, 피해자 진술의 내적 모순을 구체적으로 특정합니다.</span></li>
 <li><b>2</b><span>다투는 사건: 무리한 무고 주장은 역효과입니다. 사실관계 반박에 집중해야 신빙성이 유지됩니다.</span></li>
 <li><b>3</b><span>인정하는 사건: 조기 합의와 처벌불원 확보가 기소유예·선고유예 가능성을 좌우합니다.</span></li>
 <li><b>4</b><span>인정하는 사건: 반성문, 교육 이수, 재범방지 계획 등 양형자료를 절차 초기부터 축적합니다.</span></li>
 <li><b>5</b><span>공통: 신상정보 등록과 취업제한의 실제 적용 범위를 먼저 계산해 목표 처분을 정합니다.</span></li>
 <li><b>6</b><span>공통: 합의는 반드시 서면으로, 처벌불원 문구와 부제소 특약을 정확히 넣어야 합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>강남역 인근 술자리 이후 고소된 사례</h3><p>의뢰인: 어깨에 손을 올린 게 전부인데 강제추행이 되나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>강남역 인근 술자리 이후 고소된 사례</h3><p>의뢰인: 어깨에 손을 올린 게 전부인데 강제추행이 되나요?</p>
 <p>변호사: 부위·상황·지속 시간에 따라 달라집니다. 다만 접촉 사실을 부인하다가 CCTV로 확인되면 그때부터는 훨씬 불리해집니다.</p>
 <p>의뢰인: 술에 취해서 기억이 없습니다.</p>
 <p>변호사: 심신미약 주장은 성범죄에서 감경으로 이어지지 않는 경우가 많습니다. 오히려 기억 없음을 이유로 방어를 포기하면 안 됩니다. 자료로 복원하십시오.</p>
 <p>의뢰인: 지금 사과 문자라도 보내면 안 될까요?</p>
 <p>변호사: 보내지 마십시오. 자백으로 쓰이거나 접근금지 사유가 됩니다. 합의는 변호인을 통해 절차대로 진행해야 합니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초·인접 지역 강제추행 사건의 특징</h2><table class="tbl"><tbody><tr><th>강남역·신논현 상권</th><td>다중이용업소 내 사건이 많아 CCTV 확보가 결정적입니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">강제추행에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;밀치거나 잡지 않았으면 무죄다&#x27;</th><td>기습추행 법리상 갑작스러운 접촉 자체가 폭행으로 평가될 수 있습니다.</td></tr>
+<tr><th>&#x27;합의하면 사건이 끝난다&#x27;</th><td>2013년부터 친고죄가 아닙니다. 합의해도 수사·재판은 진행되며 처분을 낮추는 요소로만 작용합니다.</td></tr>
+<tr><th>&#x27;술에 취했으니 감형된다&#x27;</th><td>성범죄에서 음주는 감경 사유로 잘 받아들여지지 않습니다. 오히려 가중 요소가 되기도 합니다.</td></tr>
+<tr><th>&#x27;벌금이면 전과가 아니다&#x27;</th><td>벌금형도 성범죄 전과로 기록되며 신상정보 등록 대상이 될 수 있습니다.</td></tr>
+<tr><th>&#x27;사과 문자라도 보내야 한다&#x27;</th><td>자백 자료가 되거나 접근금지 사유가 됩니다. 합의는 반드시 변호인을 통해 절차대로 진행해야 합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초·인접 지역 강제추행 사건의 특징</h2><table class="tbl"><tbody><tr><th>강남역·신논현 상권</th><td>다중이용업소 내 사건이 많아 CCTV 확보가 결정적입니다.</td></tr>
 <tr><th>서초역·교대역</th><td>직장 회식 관련 사건 비중이 높고, 직장 내 징계와 병행되는 경우가 많습니다.</td></tr>
 <tr><th>방배·사당·이수</th><td>귀가 동선상 골목 사건이 많아 목격자 확보가 어렵습니다.</td></tr>
 <tr><th>지하철 2·3호선</th><td>공중밀집장소추행(성폭력처벌법 제11조)이 적용될 수 있습니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>고소 사실을 알게 된 오늘이 가장 빠릅니다</h2><p>CCTV 보존과 메시지 백업은 시간이 지나면 되돌릴 수 없습니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

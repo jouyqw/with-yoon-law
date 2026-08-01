@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초성범죄전문변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 성범죄</div><h1>서초성범죄전문변호사 — 불법촬영, 지웠다는 말이 가장 위험합니다</h1><p class="desc">서초성범죄전문변호사가 정리한 디지털 성범죄 대응. 카메라등이용촬영죄의 성립 범위, 디지털포렌식 절차, 소지·시청 처벌, 삭제와 증거인멸의 경계를 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.08</span><span><b>키워드</b> 서초성범죄전문변호사</span><span><b>지역</b> 서울 서초구·인접 강남구 강남역·신논현 일대</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초성범죄전문변호사가 정리한 디지털 성범죄 대응.</li><li>휴대전화 임의제출을 요구받으면 제출 범위를 특정할 수 있습니다.</li><li>포렌식 참여권이 보장됩니다.</li><li>압수 대상은 혐의사실과 관련성이 있는 범위로 제한됩니다.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">디지털 성범죄는 삭제해도 복원됩니다</a></li><li><a href="#s2">처벌 범위 — 어디까지가 범죄인가</a></li><li><a href="#s3">디지털포렌식 절차에서 알아야 할 것</a></li><li><a href="#s4">방어와 감경의 실무</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초·강남권 디지털 성범죄 사건 경로</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">디지털 성범죄는 삭제해도 복원됩니다</a></li><li><a href="#s2">처벌 범위 — 어디까지가 범죄인가</a></li><li><a href="#s3">연락받은 시점부터의 순서</a></li><li><a href="#s4">디지털포렌식 절차에서 알아야 할 것</a></li><li><a href="#s5">방어와 감경의 실무</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">디지털 성범죄에 대한 오해</a></li><li><a href="#s8">서초·강남권 디지털 성범죄 사건 경로</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">디지털 성범죄는 삭제해도 복원됩니다</h2>
 <p class="a-text">성폭력처벌법 제14조 카메라등이용촬영죄는 사람의 신체를 성적 욕망 또는 수치심을 유발할 수 있는 형태로 촬영하거나 반포·판매·제공·전시·상영한 경우를 처벌합니다. 7년 이하 징역 또는 5천만원 이하 벌금입니다.</p>
 <p class="a-text">가장 많이 하는 실수는 연락을 받은 직후 파일을 삭제하는 것입니다. 디지털포렌식은 삭제된 데이터도 상당 부분 복원합니다. 그리고 삭제 행위 자체가 증거인멸 정황으로 평가되어 구속 사유가 됩니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>소지·저장·시청</th><td>2020년 개정으로 처벌 대상입니다. 시청 사실이 로그로 확인됩니다.</td></tr>
 <tr><th>허위영상물(딥페이크)</th><td>제14조의2로 별도 처벌되며, 반포 목적이 인정되면 형이 가중됩니다.</td></tr>
 <tr><th>촬영물 이용 협박</th><td>제14조의3에 따라 협박·강요는 별도 중형 대상입니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">FORENSIC</div><h2 class="title" id="s3">디지털포렌식 절차에서 알아야 할 것</h2><ul class="list"><li><b>1</b><span>휴대전화 임의제출을 요구받으면 제출 범위를 특정할 수 있습니다. 무제한 제출은 별건 수사로 확대될 위험이 큽니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">연락받은 시점부터의 순서</h2><table class="tbl"><tbody><tr><th>연락 직후</th><td>절대 파일을 지우지 마십시오. 복원되고 인멸 정황이 됩니다. 순서를 먼저 정해야 합니다.</td></tr>
+<tr><th>임의제출 요구</th><td>제출 범위를 특정할 수 있습니다. 무제한 제출은 별건 수사로 확대될 위험이 큽니다.</td></tr>
+<tr><th>포렌식</th><td>변호인 참여권을 행사해 사건과 무관한 자료의 반출을 막습니다.</td></tr>
+<tr><th>결과 도출</th><td>클라우드 동기화·다운로드 로그·대화방 참여 이력이 함께 확인됩니다. 2주~2개월 소요.</td></tr>
+<tr><th>진술 확정</th><td>포렌식 결과가 나오기 전 진술을 확정하면 나중에 번복하기 어렵습니다.</td></tr>
+<tr><th>처분</th><td>유포 여부가 형량을 가릅니다. 유포되지 않았음을 포렌식으로 소명하는 것이 핵심입니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">FORENSIC</div><h2 class="title" id="s4">디지털포렌식 절차에서 알아야 할 것</h2><ul class="list"><li><b>1</b><span>휴대전화 임의제출을 요구받으면 제출 범위를 특정할 수 있습니다. 무제한 제출은 별건 수사로 확대될 위험이 큽니다.</span></li>
 <li><b>2</b><span>포렌식 참여권이 보장됩니다. 변호인이 선별 과정에 참여해 사건과 무관한 자료의 반출을 막을 수 있습니다.</span></li>
 <li><b>3</b><span>압수 대상은 혐의사실과 관련성이 있는 범위로 제한됩니다. 관련성 없는 자료는 이의를 제기할 수 있습니다.</span></li>
 <li><b>4</b><span>클라우드 계정 동기화 여부를 확인하십시오. 기기에서 지워도 서버에 남습니다.</span></li>
 <li><b>5</b><span>메신저 대화방 참여 이력, 다운로드 로그, 접속 IP가 모두 자료가 됩니다.</span></li>
 <li><b>6</b><span>포렌식 결과가 나오기 전 진술을 확정하면 나중에 번복하기 어렵습니다.</span></li></ul>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">방어와 감경의 실무</h2><ul class="list"><li><b>1</b><span>촬영 의도와 대상 특정을 다툴 수 있는 사건인지 먼저 검토합니다. 우연히 촬영된 배경 등은 성립을 다툴 여지가 있습니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">방어와 감경의 실무</h2><ul class="list"><li><b>1</b><span>촬영 의도와 대상 특정을 다툴 수 있는 사건인지 먼저 검토합니다. 우연히 촬영된 배경 등은 성립을 다툴 여지가 있습니다.</span></li>
 <li><b>2</b><span>&#x27;성적 욕망 또는 수치심을 유발할 수 있는 신체&#x27;인지는 부위·각도·촬영 거리·의도를 종합해 판단합니다.</span></li>
 <li><b>3</b><span>인정하는 사건이라면 유포 여부가 형량을 가릅니다. 유포되지 않았음을 포렌식으로 소명하는 것이 핵심입니다.</span></li>
 <li><b>4</b><span>피해자 합의와 처벌불원, 삭제 확인, 재발 방지 조치를 시간 순으로 자료화합니다.</span></li>
 <li><b>5</b><span>디지털성범죄피해자지원센터를 통한 삭제 지원 협조 이력도 유리한 자료가 됩니다.</span></li>
 <li><b>6</b><span>신상정보 등록·취업제한 범위를 계산해 목표 처분을 먼저 정합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>단톡방에 올라온 영상을 보기만 한 경우</h3><p>의뢰인: 저는 올린 사람이 아니고 보기만 했습니다.</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>단톡방에 올라온 영상을 보기만 한 경우</h3><p>의뢰인: 저는 올린 사람이 아니고 보기만 했습니다.</p>
 <p>변호사: 시청과 소지도 처벌 대상입니다. 다만 인지 여부와 다운로드 여부, 대화방에서의 역할에 따라 결과가 크게 달라집니다.</p>
 <p>의뢰인: 지금이라도 방을 나가고 파일을 지우면 되나요?</p>
 <p>변호사: 절대 임의로 지우지 마십시오. 복원되고, 인멸 정황으로 평가됩니다. 순서와 방법을 정한 뒤에 움직여야 합니다.</p>
 <p>의뢰인: 휴대전화를 달라고 하는데 줘야 하나요?</p>
 <p>변호사: 제출 범위를 특정하고 참여권을 행사해야 합니다. 그냥 넘기면 별건으로 번지는 사례가 많습니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초·강남권 디지털 성범죄 사건 경로</h2><table class="tbl"><tbody><tr><th>강남역·신논현</th><td>다중이용시설 내 촬영 신고가 다수 접수됩니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">디지털 성범죄에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;바로 지웠으니 증거가 없다&#x27;</th><td>삭제 데이터는 상당 부분 복원되고 삭제 행위 자체가 구속 사유가 됩니다.</td></tr>
+<tr><th>&#x27;보기만 했으면 처벌받지 않는다&#x27;</th><td>2020년 개정으로 소지·구입·저장·시청도 처벌 대상입니다.</td></tr>
+<tr><th>&#x27;얼굴이 안 나오면 괜찮다&#x27;</th><td>특정 가능성은 요소 중 하나일 뿐 신체 부위와 촬영 태양에 따라 성립합니다.</td></tr>
+<tr><th>&#x27;딥페이크는 실제가 아니니 무죄다&#x27;</th><td>성폭력처벌법 제14조의2가 허위영상물 제작·반포를 별도로 처벌합니다.</td></tr>
+<tr><th>&#x27;휴대폰을 안 주면 그만이다&#x27;</th><td>압수수색영장으로 확보될 수 있습니다. 거부보다 범위 특정과 참여권 행사가 실질적입니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초·강남권 디지털 성범죄 사건 경로</h2><table class="tbl"><tbody><tr><th>강남역·신논현</th><td>다중이용시설 내 촬영 신고가 다수 접수됩니다.</td></tr>
 <tr><th>서초역·교대역</th><td>오피스 화장실·탈의실 관련 사건이 문제됩니다.</td></tr>
 <tr><th>지하철 2·3호선</th><td>역사 내 촬영 사건은 지하철경찰대와 관할서가 함께 처리합니다.</td></tr>
 <tr><th>온라인 사건</th><td>서버 소재지와 무관하게 국내 이용자는 국내법이 적용됩니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>파일을 건드리기 전에 상담부터 하십시오</h2><p>삭제 한 번이 구속 사유가 되는 것이 이 분야입니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

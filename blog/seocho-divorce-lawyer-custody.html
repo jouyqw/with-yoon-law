@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초이혼전문변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 이혼</div><h1>서초이혼전문변호사 — 양육권은 &#x27;누가 더 사랑하느냐&#x27;로 정해지지 않습니다</h1><p class="desc">서초이혼전문변호사가 정리한 양육권·양육비 실무. 서울가정법원 가사조사 절차, 자녀 의사 반영 기준, 양육비 산정기준표 적용과 미지급 시 강제 수단을 정리했습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.06</span><span><b>키워드</b> 서초이혼전문변호사</span><span><b>지역</b> 서울 서초구 양재동(서울가정법원 관할)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초이혼전문변호사가 정리한 양육권·양육비 실무.</li><li>돌봄 기록.</li><li>생활 사진과 일정표.</li><li>근무 형태 소명.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">법원이 보는 기준은 단 하나, 자녀의 복리입니다</a></li><li><a href="#s2">양육자 지정에서 실제로 평가되는 요소</a></li><li><a href="#s3">양육권 다툼에서 실제로 도움이 되는 자료</a></li><li><a href="#s4">양육비, 산정과 집행</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서울가정법원 진행 절차</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">법원이 보는 기준은 단 하나, 자녀의 복리입니다</a></li><li><a href="#s2">양육자 지정에서 실제로 평가되는 요소</a></li><li><a href="#s3">양육권 사건 진행 순서</a></li><li><a href="#s4">양육권 다툼에서 실제로 도움이 되는 자료</a></li><li><a href="#s5">양육비, 산정과 집행</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">양육권에 대한 오해</a></li><li><a href="#s8">서울가정법원 진행 절차</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">법원이 보는 기준은 단 하나, 자녀의 복리입니다</h2>
 <p class="a-text">양육권 다툼에서 부모는 대개 상대방의 흠을 말합니다. 외도, 폭언, 무관심 같은 것입니다. 그런데 가정법원의 판단 기준은 부모의 잘잘못이 아니라 &#x27;어느 쪽이 자녀에게 더 안정적인가&#x27;입니다.</p>
 <p class="a-text">그래서 유책배우자라도 양육자로 지정되는 사례가 실제로 있습니다. 이혼 사유와 양육권은 별개의 판단이라는 뜻입니다.</p>
@@ -86,26 +153,37 @@
 <tr><th>양육 보조자</th><td>조부모 등 실질적 조력자가 있는지도 안정성 요소로 평가됩니다.</td></tr>
 <tr><th>경제력</th><td>중요하지만 결정적이지 않습니다. 부족한 부분은 양육비로 보완됩니다.</td></tr>
 <tr><th>면접교섭 협조 의지</th><td>상대방과 자녀의 관계를 존중하는 태도가 유리하게 평가됩니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">PREPARE</div><h2 class="title" id="s3">양육권 다툼에서 실제로 도움이 되는 자료</h2><ul class="list"><li><b>1</b><span>돌봄 기록 — 어린이집·학교 알림장, 병원 진료기록의 보호자란, 학원 상담 이력.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">양육권 사건 진행 순서</h2><table class="tbl"><tbody><tr><th>사전처분</th><td>소송 중 임시 양육자 지정과 임시 양육비를 먼저 정할 수 있습니다.</td></tr>
+<tr><th>가사조사</th><td>조사관이 양측 면담·가정방문·자녀 면담을 실시합니다. 1~3개월 소요됩니다.</td></tr>
+<tr><th>자녀 의견 청취</th><td>13세 이상은 원칙적으로 청취하며 별도 공간에서 진행됩니다.</td></tr>
+<tr><th>조정</th><td>합의되면 조정조서가 판결과 같은 효력을 갖습니다.</td></tr>
+<tr><th>판결</th><td>양육자·친권자·양육비·면접교섭 방법이 한꺼번에 정해집니다.</td></tr>
+<tr><th>변경</th><td>사정 변경이 있으면 양육자 변경이나 양육비 증감을 청구할 수 있습니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">PREPARE</div><h2 class="title" id="s4">양육권 다툼에서 실제로 도움이 되는 자료</h2><ul class="list"><li><b>1</b><span>돌봄 기록 — 어린이집·학교 알림장, 병원 진료기록의 보호자란, 학원 상담 이력.</span></li>
 <li><b>2</b><span>생활 사진과 일정표 — 일상적 양육 사실을 시계열로 보여주는 자료입니다.</span></li>
 <li><b>3</b><span>근무 형태 소명 — 재택·유연근무 등 실제 돌봄이 가능한 구조임을 증명합니다.</span></li>
 <li><b>4</b><span>주거 환경 — 학교와의 거리, 자녀 방 확보 여부, 조력자 동거 여부.</span></li>
 <li><b>5</b><span>상대방의 양육 저해 사정 — 폭력, 방임, 음주 문제 등이 있다면 객관 자료로만 제시합니다.</span></li>
 <li><b>6</b><span>면접교섭 계획서 — 상대와 자녀의 만남을 어떻게 보장할지 구체적으로 제시하면 신뢰를 얻습니다.</span></li></ul>
 <div class="info">자녀를 데리고 일방적으로 집을 나가는 행위는 신중해야 합니다. 유리해 보이지만 &#x27;현 상태 유지&#x27;가 인정될 수도, 반대로 양육 태도에 대한 부정 평가로 이어질 수도 있습니다. 사전 검토가 필요합니다.</div>
-<div class="divider"></div><div class="label">SUPPORT</div><h2 class="title" id="s4">양육비, 산정과 집행</h2><ul class="list"><li><b>1</b><span>서울가정법원 양육비 산정기준표를 기준으로 부모 합산 소득과 자녀 나이에 따라 표준액을 정합니다.</span></li>
+<div class="divider"></div><div class="label">SUPPORT</div><h2 class="title" id="s5">양육비, 산정과 집행</h2><ul class="list"><li><b>1</b><span>서울가정법원 양육비 산정기준표를 기준으로 부모 합산 소득과 자녀 나이에 따라 표준액을 정합니다.</span></li>
 <li><b>2</b><span>여기에 자녀 수, 거주지역, 치료·교육비 등 개별 사정을 가감해 최종 금액을 정합니다.</span></li>
 <li><b>3</b><span>지급 방법·시기·계좌를 명확히 정하고, 증액 기준도 함께 넣어야 분쟁이 줄어듭니다.</span></li>
 <li><b>4</b><span>미지급 시 이행명령, 감치, 급여 직접지급명령, 담보제공명령을 순차적으로 활용할 수 있습니다.</span></li>
 <li><b>5</b><span>양육비 이행관리원을 통해 이행 확보 지원을 받을 수 있습니다.</span></li>
 <li><b>6</b><span>고액·장기 미지급자는 명단 공개, 출국금지, 운전면허 정지 처분 대상이 될 수 있습니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>맞벌이 부부, 두 사람 모두 양육을 원하는 경우</h3><p>의뢰인: 제가 돈을 더 많이 버니까 제가 키우는 게 맞지 않나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>맞벌이 부부, 두 사람 모두 양육을 원하는 경우</h3><p>의뢰인: 제가 돈을 더 많이 버니까 제가 키우는 게 맞지 않나요?</p>
 <p>변호사: 경제력은 요소 중 하나일 뿐입니다. 그동안 실제로 누가 돌봤는지가 더 큽니다. 병원·학교 기록에 보호자로 누가 적혀 있는지부터 보겠습니다.</p>
 <p>의뢰인: 아이가 저와 살고 싶다고 합니다.</p>
 <p>변호사: 중요한 자료입니다. 다만 부모가 유도한 정황이 보이면 오히려 감점입니다. 가사조사에서 자연스럽게 확인되도록 해야 합니다.</p>
 <p>의뢰인: 면접교섭은 최소한으로 하고 싶습니다.</p>
 <p>변호사: 그 태도가 양육자 지정에서 불리하게 작용합니다. 법원은 자녀와 상대 부모의 관계 유지를 중요하게 봅니다.</p></div>
-<div class="divider"></div><div class="label">PROCESS</div><h2 class="title" id="s6">서울가정법원 진행 절차</h2><table class="tbl"><tbody><tr><th>사전처분</th><td>소송 중 임시 양육자 지정, 임시 양육비 지급을 신청할 수 있습니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">양육권에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;어린 자녀는 무조건 엄마가 키운다&#x27;</th><td>그런 원칙은 없습니다. 실제 양육 실태와 환경의 계속성이 기준입니다.</td></tr>
+<tr><th>&#x27;돈을 더 버는 쪽이 유리하다&#x27;</th><td>경제력은 요소 중 하나일 뿐이고 부족분은 양육비로 보완됩니다.</td></tr>
+<tr><th>&#x27;유책배우자는 양육권을 못 받는다&#x27;</th><td>이혼 사유와 양육권은 별개 판단입니다. 유책배우자가 양육자로 지정된 사례가 있습니다.</td></tr>
+<tr><th>&#x27;아이가 원하면 그대로 된다&#x27;</th><td>중요한 자료지만 부모가 유도한 정황이 보이면 오히려 감점입니다.</td></tr>
+<tr><th>&#x27;면접교섭은 최소화하는 게 유리하다&#x27;</th><td>반대입니다. 상대와 자녀의 관계를 존중하는 태도가 유리하게 평가됩니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">PROCESS</div><h2 class="title" id="s8">서울가정법원 진행 절차</h2><table class="tbl"><tbody><tr><th>사전처분</th><td>소송 중 임시 양육자 지정, 임시 양육비 지급을 신청할 수 있습니다.</td></tr>
 <tr><th>가사조사</th><td>가사조사관이 양측 면담, 가정방문, 자녀 면담을 실시합니다.</td></tr>
 <tr><th>자녀 의견 청취</th><td>13세 이상은 원칙적으로 청취하며, 별도 공간에서 진행됩니다.</td></tr>
 <tr><th>조정</th><td>합의가 이루어지면 조정조서가 판결과 같은 효력을 갖습니다.</td></tr>
@@ -133,5 +211,6 @@
 <div class="cta"><div><h2>돌봄 기록부터 정리하십시오</h2><p>알림장, 진료기록, 학원 상담 이력이 가장 강력한 자료입니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초재산분할변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 재산분할</div><h1>서초재산분할변호사 — 아파트 한 채와 퇴직연금, 기여도는 이렇게 계산됩니다</h1><p class="desc">서초재산분할변호사가 정리한 분할 기준. 특유재산과 공동재산의 경계, 반포·잠원 아파트 시가 산정 시점, 퇴직연금·국민연금 분할까지 실무 기준으로 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.03</span><span><b>키워드</b> 서초재산분할변호사</span><span><b>지역</b> 서울 서초구 반포동·잠원동 일대</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초재산분할변호사가 정리한 분할 기준.</li><li>기준시를 정합니다.</li><li>적극재산을 명의별로 전부 확인합니다.</li><li>소극재산(채무)을 확인해 순재산을 계산합니다.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">재산분할은 &#x27;내 명의냐&#x27;가 아니라 &#x27;언제 어떻게 형성됐냐&#x27;입니다</a></li><li><a href="#s2">항목별 분할 대상 여부</a></li><li><a href="#s3">금액을 정하는 순서</a></li><li><a href="#s4">실무에서 비율을 바꾸는 요소들</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초·인접 지역 재산분할 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">재산분할은 &#x27;내 명의냐&#x27;가 아니라 &#x27;언제 어떻게 형성됐냐&#x27;입니다</a></li><li><a href="#s2">항목별 분할 대상 여부</a></li><li><a href="#s3">재산분할 진행 순서와 기간</a></li><li><a href="#s4">금액을 정하는 순서</a></li><li><a href="#s5">실무에서 비율을 바꾸는 요소들</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">재산분할에 대한 오해</a></li><li><a href="#s8">서초·인접 지역 재산분할 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">재산분할은 &#x27;내 명의냐&#x27;가 아니라 &#x27;언제 어떻게 형성됐냐&#x27;입니다</h2>
 <p class="a-text">재산분할에서 가장 흔한 오해는 명의입니다. 내 이름으로 된 아파트니까 당연히 내 것이라는 생각이 출발점이면 협상이 어긋납니다. 법원은 명의가 아니라 형성·유지·증식에 대한 기여를 봅니다.</p>
 <p class="a-text">서초구 반포동·잠원동처럼 자산 규모가 큰 지역의 사건은 분할 비율 1%가 수천만 원 차이를 만듭니다. 그래서 &#x27;대충 반반&#x27;으로 합의하기 전에 계산부터 해야 합니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>퇴직금·퇴직연금</th><td>이혼 시점에 이미 수령했거나 장래 수령이 확정적이면 분할 대상입니다(대법원 2013므2250 전원합의체).</td></tr>
 <tr><th>국민연금</th><td>혼인 기간 5년 이상 등 요건을 갖추면 분할연금을 청구할 수 있습니다. 별도 절차와 기한이 있습니다.</td></tr>
 <tr><th>채무</th><td>혼인 공동생활을 위해 부담한 채무는 소극재산으로 공제됩니다. 개인 유흥·도박 채무는 제외되는 것이 일반적입니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">VALUATION</div><h2 class="title" id="s3">금액을 정하는 순서</h2><ul class="list"><li><b>1</b><span>기준시를 정합니다. 원칙은 사실심 변론종결시이며, 별거가 길었다면 별거 시점이 함께 고려됩니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">재산분할 진행 순서와 기간</h2><table class="tbl"><tbody><tr><th>사전 준비</th><td>명의별 자산·부채 목록화. 통상 2~4주 소요되며 여기서 누락되면 회복이 어렵습니다.</td></tr>
+<tr><th>보전처분</th><td>가압류·가처분 신청. 상대방 처분이 우려되면 소장 접수 전에 먼저 진행합니다.</td></tr>
+<tr><th>사실조회</th><td>금융거래정보 제출명령·과세정보 조회. 회신까지 1~2개월 걸립니다.</td></tr>
+<tr><th>감정</th><td>부동산 시가 다툼이 크면 감정 신청. 2~3개월과 별도 비용이 듭니다.</td></tr>
+<tr><th>조정</th><td>합산 순재산과 기여도 비율이 정리되면 조정에서 종결되는 사건이 많습니다.</td></tr>
+<tr><th>판결·이행</th><td>현물분할·정산금 지급·경매분할 중 방법이 정해집니다. 미이행 시 강제집행으로 갑니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">VALUATION</div><h2 class="title" id="s4">금액을 정하는 순서</h2><ul class="list"><li><b>1</b><span>기준시를 정합니다. 원칙은 사실심 변론종결시이며, 별거가 길었다면 별거 시점이 함께 고려됩니다.</span></li>
 <li><b>2</b><span>적극재산을 명의별로 전부 확인합니다. 금융거래정보 제출명령, 과세정보 사실조회로 누락을 찾습니다.</span></li>
 <li><b>3</b><span>소극재산(채무)을 확인해 순재산을 계산합니다. 주택담보대출 잔액이 대표적입니다.</span></li>
 <li><b>4</b><span>부동산은 시가로 평가합니다. 다툼이 크면 감정 신청이 필요하며, 공시가격은 기준이 되지 않습니다.</span></li>
 <li><b>5</b><span>기여도 비율을 정합니다. 소득, 가사·육아, 혼인 기간, 재산 형성 경위가 종합 고려됩니다.</span></li>
 <li><b>6</b><span>현물분할·대상분할(정산금 지급)·경매분할 중 실행 방법을 정합니다.</span></li></ul>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">실무에서 비율을 바꾸는 요소들</h2><ul class="list"><li><b>1</b><span>전업주부의 가사·육아 기여는 실무상 상당한 비율로 인정됩니다. &#x27;수입이 없었으니 적게 받는다&#x27;는 전제는 틀렸습니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">실무에서 비율을 바꾸는 요소들</h2><ul class="list"><li><b>1</b><span>전업주부의 가사·육아 기여는 실무상 상당한 비율로 인정됩니다. &#x27;수입이 없었으니 적게 받는다&#x27;는 전제는 틀렸습니다.</span></li>
 <li><b>2</b><span>혼인 기간이 길수록 특유재산도 분할 대상에 편입될 가능성이 커집니다.</span></li>
 <li><b>3</b><span>재산 은닉이 의심되면 금융거래정보 제출명령과 사실조회를 적극 활용해야 합니다. 은닉이 드러나면 비율 자체가 불리해집니다.</span></li>
 <li><b>4</b><span>별거 이후 형성된 재산은 분할 대상에서 빠질 수 있으므로 별거 시점 특정이 중요합니다.</span></li>
 <li><b>5</b><span>부양적 재산분할이 인정되는 사안에서는 청산 비율과 별도로 가산될 수 있습니다.</span></li>
 <li><b>6</b><span>위자료와 재산분할은 성질이 다릅니다. 합의서에 뭉뚱그리면 세무상 불이익이 생길 수 있습니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>잠원동 아파트, 남편 명의 단독인 경우</h3><p>의뢰인: 집이 전부 남편 명의인데 저도 받을 수 있나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>잠원동 아파트, 남편 명의 단독인 경우</h3><p>의뢰인: 집이 전부 남편 명의인데 저도 받을 수 있나요?</p>
 <p>변호사: 명의는 기준이 아닙니다. 혼인 중 취득했다면 원칙적으로 분할 대상이고, 기여도에 따라 비율이 정해집니다.</p>
 <p>의뢰인: 시부모님이 사주신 집이라고 하는데요.</p>
 <p>변호사: 증여 사실이 확인되면 특유재산 주장이 나옵니다. 다만 혼인 기간이 길고 대출 상환을 함께 했다면 상당 부분이 분할 대상에 들어옵니다. 상환 내역을 확보하십시오.</p>
 <p>의뢰인: 남편 퇴직연금도 나눌 수 있나요?</p>
 <p>변호사: 장래 수령이 확정적이라면 분할 대상입니다. 재직증명, 예상수령액 자료를 확보해야 합니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초·인접 지역 재산분할 사건의 특징</h2><table class="tbl"><tbody><tr><th>반포·잠원</th><td>재건축 조합원 지위, 이주비 대출, 분담금 처리가 쟁점이 됩니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">재산분할에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;내 명의니까 내 재산이다&#x27;</th><td>법원은 명의가 아니라 형성·유지·증식에 대한 기여를 봅니다.</td></tr>
+<tr><th>&#x27;전업주부는 적게 받는다&#x27;</th><td>가사·육아 기여는 실무상 상당한 비율로 인정됩니다. 소득 유무가 기준이 아닙니다.</td></tr>
+<tr><th>&#x27;혼전 재산은 무조건 제외다&#x27;</th><td>원칙은 특유재산이나, 혼인 기간이 길고 상대방이 유지·증식에 기여했다면 포함될 수 있습니다.</td></tr>
+<tr><th>&#x27;공시가격으로 나누면 된다&#x27;</th><td>부동산은 시가로 평가합니다. 다툼이 크면 감정이 필요합니다.</td></tr>
+<tr><th>&#x27;퇴직금은 아직 안 받았으니 대상이 아니다&#x27;</th><td>장래 수령이 확정적이면 분할 대상입니다(대법원 2013므2250 전원합의체).</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초·인접 지역 재산분할 사건의 특징</h2><table class="tbl"><tbody><tr><th>반포·잠원</th><td>재건축 조합원 지위, 이주비 대출, 분담금 처리가 쟁점이 됩니다.</td></tr>
 <tr><th>서초동·방배동</th><td>단독·다세대 및 상가 임대소득의 평가와 임대차보증금 정산이 문제됩니다.</td></tr>
 <tr><th>양재·내곡</th><td>토지·단독주택 비중이 높아 감정평가 신청 사례가 많습니다.</td></tr>
 <tr><th>역삼·논현</th><td>법인 지분과 사업소득 은닉 여부 확인이 핵심입니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>먼저 재산 목록부터 만드십시오</h2><p>명의별 자산·부채 정리가 끝나야 협상도 소송도 시작됩니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

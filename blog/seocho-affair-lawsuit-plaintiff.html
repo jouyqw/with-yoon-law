@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초상간소송변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 상간소송</div><h1>서초상간소송변호사 — 위자료를 청구하기 전에 증거부터 확인하십시오</h1><p class="desc">서초상간소송변호사가 정리한 상간자 위자료 청구 실무. 부정행위 입증 수준, 위법하지 않은 증거 수집 방법, 소멸시효 3년과 청구액 산정 기준을 짚었습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.04</span><span><b>키워드</b> 서초상간소송변호사</span><span><b>지역</b> 서울 서초구(서울가정법원 관할)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초상간소송변호사가 정리한 상간자 위자료 청구 실무.</li><li>제3자 간 대화를 몰래 녹음하는 행위.</li><li>배우자 휴대전화의 잠금을 풀어 내용을 빼내는 행위.</li><li>상간자의 주거지나 사무실에 들어가는 행위.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">상간소송의 승패는 소장 접수 전에 거의 정해집니다</a></li><li><a href="#s2">증거의 등급 — 실무에서 인정되는 순서</a></li><li><a href="#s3">이렇게 모으면 증거가 아니라 범죄가 됩니다</a></li><li><a href="#s4">위자료 액수를 좌우하는 요소</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">소송 진행 순서</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">상간소송의 승패는 소장 접수 전에 거의 정해집니다</a></li><li><a href="#s2">증거의 등급 — 실무에서 인정되는 순서</a></li><li><a href="#s3">상간소송 진행 순서</a></li><li><a href="#s4">이렇게 모으면 증거가 아니라 범죄가 됩니다</a></li><li><a href="#s5">위자료 액수를 좌우하는 요소</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">위자료 청구에 대한 오해</a></li><li><a href="#s8">소송 진행 순서</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">상간소송의 승패는 소장 접수 전에 거의 정해집니다</h2>
 <p class="a-text">상간자 소송은 배우자의 부정행위에 가담한 제3자를 상대로 정신적 손해배상(위자료)을 청구하는 민사·가사 사건입니다. 이혼 여부와 무관하게 제기할 수 있습니다.</p>
 <p class="a-text">실무에서 결과를 가르는 것은 법리가 아니라 증거입니다. 부정행위 사실과 상대방이 &#x27;배우자 있는 사람임을 알았거나 알 수 있었다&#x27;는 점, 두 가지를 입증해야 합니다.</p>
@@ -86,26 +153,37 @@
 <tr><th>차량 블랙박스</th><td>본인 차량의 녹음·영상은 원칙적으로 활용 가능합니다.</td></tr>
 <tr><th>자인 진술</th><td>상간자나 배우자가 인정한 녹음·메시지는 결정적입니다. 본인이 대화 당사자여야 합니다.</td></tr>
 <tr><th>정황만 있는 자료</th><td>단순 통화 횟수, 같은 건물 근무 등만으로는 인정이 어렵습니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">LEGAL LIMIT</div><h2 class="title" id="s3">이렇게 모으면 증거가 아니라 범죄가 됩니다</h2><ul class="list"><li><b>1</b><span>제3자 간 대화를 몰래 녹음하는 행위 — 통신비밀보호법 위반입니다. 본인이 대화 당사자인 경우만 허용됩니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">상간소송 진행 순서</h2><table class="tbl"><tbody><tr><th>증거 정리</th><td>시간 순 목록화와 취득 경위 기록. 여기서 위법 수집이 섞이면 이후 전부가 흔들립니다.</td></tr>
+<tr><th>내용증명</th><td>임의 협의 단계. 협박성 문구는 절대 넣지 않아야 합니다.</td></tr>
+<tr><th>소장 접수</th><td>서울 거주자는 양재동 서울가정법원 또는 피고 주소지 관할.</td></tr>
+<tr><th>송달·답변</th><td>피고 송달 2~4주, 답변서 제출기한 30일.</td></tr>
+<tr><th>사실조회</th><td>통신사·숙박업체·카드사 자료 확보에 1~2개월.</td></tr>
+<tr><th>조정·판결</th><td>접수부터 종결까지 통상 6~10개월. 상당수가 조정에서 마무리됩니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">LEGAL LIMIT</div><h2 class="title" id="s4">이렇게 모으면 증거가 아니라 범죄가 됩니다</h2><ul class="list"><li><b>1</b><span>제3자 간 대화를 몰래 녹음하는 행위 — 통신비밀보호법 위반입니다. 본인이 대화 당사자인 경우만 허용됩니다.</span></li>
 <li><b>2</b><span>배우자 휴대전화의 잠금을 풀어 내용을 빼내는 행위 — 정보통신망법 위반이 될 수 있습니다.</span></li>
 <li><b>3</b><span>상간자의 주거지나 사무실에 들어가는 행위 — 주거침입죄가 성립합니다.</span></li>
 <li><b>4</b><span>상대 차량에 위치추적기를 부착하는 행위 — 위치정보법 위반으로 처벌된 사례가 있습니다.</span></li>
 <li><b>5</b><span>직장·가족에게 사실을 알리는 행위 — 사실이라도 명예훼손이 성립할 수 있습니다.</span></li>
 <li><b>6</b><span>SNS에 공개적으로 폭로하는 행위 — 정보통신망법상 명예훼손은 형이 더 무겁습니다.</span></li></ul>
 <div class="info">합법적인 방법만으로도 충분한 경우가 대부분입니다. 본인 명의 카드·통신 내역, 공유 계정 기록, 사실조회 신청, 통신사·숙박업체에 대한 문서제출명령이 실무의 기본 도구입니다.</div>
-<div class="divider"></div><div class="label">AMOUNT</div><h2 class="title" id="s4">위자료 액수를 좌우하는 요소</h2><ul class="list"><li><b>1</b><span>부정행위의 기간과 횟수 — 일회성인지 수개월 이상 지속됐는지가 가장 큰 변수입니다.</span></li>
+<div class="divider"></div><div class="label">AMOUNT</div><h2 class="title" id="s5">위자료 액수를 좌우하는 요소</h2><ul class="list"><li><b>1</b><span>부정행위의 기간과 횟수 — 일회성인지 수개월 이상 지속됐는지가 가장 큰 변수입니다.</span></li>
 <li><b>2</b><span>혼인관계 파탄 여부 — 부정행위로 이혼에 이르렀다면 액수가 올라갑니다.</span></li>
 <li><b>3</b><span>상간자의 인식 정도 — 배우자 있는 사실을 명확히 알았는지, 적극적으로 관계를 유지했는지.</span></li>
 <li><b>4</b><span>자녀 유무와 혼인 기간 — 미성년 자녀가 있는 장기 혼인일수록 인정액이 높아지는 경향이 있습니다.</span></li>
 <li><b>5</b><span>임신·출산 등 가중 사정 — 실무상 상당한 가중 요소로 작용합니다.</span></li>
 <li><b>6</b><span>소송 중 태도 — 명백한 증거에도 전면 부인하거나 2차 가해가 있으면 불리하게 작용합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>이혼은 안 하고 상간자만 소송하고 싶은 경우</h3><p>의뢰인: 이혼은 안 할 생각인데 상간녀만 소송할 수 있나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>이혼은 안 하고 상간자만 소송하고 싶은 경우</h3><p>의뢰인: 이혼은 안 할 생각인데 상간녀만 소송할 수 있나요?</p>
 <p>변호사: 가능합니다. 이혼 여부와 별개의 손해배상 청구입니다. 다만 혼인이 유지된다면 파탄 정도가 낮게 평가될 수 있습니다.</p>
 <p>의뢰인: 남편 휴대전화에서 찾은 사진이 있습니다.</p>
 <p>변호사: 취득 경위가 문제될 수 있습니다. 어떤 방법으로 확보했는지 먼저 확인해야 합니다. 취득 경위가 위법하면 그 증거 때문에 오히려 역공을 받습니다.</p>
 <p>의뢰인: 상대 직장에 알리고 싶습니다.</p>
 <p>변호사: 하지 마십시오. 사실이라도 명예훼손이 되고, 소송에서 청구액이 깎이는 사유가 됩니다.</p></div>
-<div class="divider"></div><div class="label">PROCESS</div><h2 class="title" id="s6">소송 진행 순서</h2><table class="tbl"><tbody><tr><th>증거 정리</th><td>시간 순 목록화. 무엇을 언제 어떻게 확보했는지까지 기록합니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">위자료 청구에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;이혼해야 상간소송을 할 수 있다&#x27;</th><td>이혼 여부와 무관하게 청구할 수 있습니다. 다만 혼인이 유지되면 파탄 정도가 낮게 평가될 수 있습니다.</td></tr>
+<tr><th>&#x27;증거는 많을수록 좋다&#x27;</th><td>위법하게 수집한 증거는 배척되고 별건 고소로 역공을 받습니다. 적법성이 양보다 중요합니다.</td></tr>
+<tr><th>&#x27;몰랐다고 하면 빠져나간다&#x27;</th><td>알았거나 알 수 있었는지를 대화 내용·만남 장소·관계 기간으로 판단합니다.</td></tr>
+<tr><th>&#x27;직장에 알리면 압박이 된다&#x27;</th><td>사실이라도 명예훼손이 성립하고, 소송에서 인정액이 깎이는 사유가 됩니다.</td></tr>
+<tr><th>&#x27;언제든 청구할 수 있다&#x27;</th><td>안 날부터 3년, 행위가 있은 날부터 10년이 지나면 소멸합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">PROCESS</div><h2 class="title" id="s8">소송 진행 순서</h2><table class="tbl"><tbody><tr><th>증거 정리</th><td>시간 순 목록화. 무엇을 언제 어떻게 확보했는지까지 기록합니다.</td></tr>
 <tr><th>내용증명</th><td>임의 협의를 시도하는 단계입니다. 협박성 문구는 절대 넣지 않습니다.</td></tr>
 <tr><th>소장 접수</th><td>서울 거주자는 양재동 서울가정법원 또는 피고 주소지 관할 법원에 제기합니다.</td></tr>
 <tr><th>사실조회·문서제출명령</th><td>통신사, 숙박업체, 카드사 자료를 확보하는 단계입니다.</td></tr>
@@ -133,5 +211,6 @@
 <div class="cta"><div><h2>증거 수집 방법부터 점검하십시오</h2><p>잘못 모은 자료는 소송에서 쓰지 못하고 역공의 빌미가 됩니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 교통형사</div><h1>서초변호사 — 양재IC 음주단속, 측정 절차 하나로 결과가 뒤집힙니다</h1><p class="desc">서초변호사가 정리한 음주운전·교통형사 대응. 호흡측정과 채혈의 차이, 위드마크 적용, 위법수집증거 배척 사례, 12대 중과실 사고의 형사책임을 정리했습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.08</span><span><b>키워드</b> 서초변호사</span><span><b>지역</b> 서울 서초구 양재동·내곡동(경부고속도로·양재IC 인접)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초변호사가 정리한 음주운전·교통형사 대응.</li><li>위드마크 역추산의 오류.</li><li>상승기 문제.</li><li>구강 잔류 알코올.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">음주운전 사건은 수치보다 절차에서 갈립니다</a></li><li><a href="#s2">음주운전 처벌 기준</a></li><li><a href="#s3">실제로 다툴 수 있는 지점</a></li><li><a href="#s4">사고가 동반된 경우 확인할 것</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초 지역 교통형사 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">음주운전 사건은 수치보다 절차에서 갈립니다</a></li><li><a href="#s2">음주운전 처벌 기준</a></li><li><a href="#s3">단속부터 처분까지</a></li><li><a href="#s4">실제로 다툴 수 있는 지점</a></li><li><a href="#s5">사고가 동반된 경우 확인할 것</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">음주운전에 대한 오해</a></li><li><a href="#s8">서초 지역 교통형사 사건의 특징</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">음주운전 사건은 수치보다 절차에서 갈립니다</h2>
 <p class="a-text">음주운전으로 적발되면 대부분 &#x27;수치가 나왔으니 끝났다&#x27;고 생각합니다. 실무는 다릅니다. 측정 절차가 법이 정한 방식대로 이루어졌는지에 따라 증거 자체가 배척되는 사건이 실제로 존재합니다.</p>
 <p class="a-text">서초구 양재동·내곡동은 경부고속도로 양재IC와 헌릉로가 지나는 구간으로 상시 단속이 이루어집니다. 반포·잠원 강변 도로와 서초대로 일대도 마찬가지입니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>측정 거부</th><td>1년 이상 5년 이하 징역 또는 500만원 이상 2천만원 이하 벌금</td></tr>
 <tr><th>재범 가중</th><td>일정 기간 내 재범 시 가중 처벌됩니다. 초범 여부가 실형 판단에 큰 영향을 줍니다.</td></tr>
 <tr><th>사고 동반</th><td>피해자가 상해를 입으면 위험운전치사상죄가 적용되어 형이 대폭 상향됩니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">DEFENSE</div><h2 class="title" id="s3">실제로 다툴 수 있는 지점</h2><ul class="list"><li><b>1</b><span>위드마크 역추산의 오류 — 운전 종료 후 상당한 시간이 지난 뒤 측정된 사건에서 계산의 전제(체중, 음주 종료 시각, 흡수율)를 다툴 수 있습니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">단속부터 처분까지</h2><table class="tbl"><tbody><tr><th>단속 현장</th><td>물 제공과 20분 대기, 채혈 요구권 고지 여부가 이후 쟁점이 됩니다.</td></tr>
+<tr><th>측정</th><td>호흡측정 결과에 불복하면 채혈을 요구할 수 있습니다. 현장에서만 가능한 선택입니다.</td></tr>
+<tr><th>D+1 ~ D+14</th><td>운전면허 정지·취소 사전통지. 행정절차는 형사절차와 별도로 진행됩니다.</td></tr>
+<tr><th>경찰 조사</th><td>측정 경위, 음주 시각, 운전 구간을 확인합니다.</td></tr>
+<tr><th>검찰 처분</th><td>단순 음주는 약식기소가 일반적이나 수치·사고 유무에 따라 구공판으로 갑니다.</td></tr>
+<tr><th>행정 불복</th><td>면허 처분은 행정심판·행정소송으로 별도로 다퉈야 합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">DEFENSE</div><h2 class="title" id="s4">실제로 다툴 수 있는 지점</h2><ul class="list"><li><b>1</b><span>위드마크 역추산의 오류 — 운전 종료 후 상당한 시간이 지난 뒤 측정된 사건에서 계산의 전제(체중, 음주 종료 시각, 흡수율)를 다툴 수 있습니다.</span></li>
 <li><b>2</b><span>상승기 문제 — 음주 직후 혈중농도가 상승하는 구간에서 측정된 경우, 운전 당시 농도가 더 낮았을 가능성을 주장할 수 있습니다.</span></li>
 <li><b>3</b><span>구강 잔류 알코올 — 물 제공과 대기 시간이 지켜지지 않았다면 호흡측정 결과의 신뢰성을 다툴 수 있습니다.</span></li>
 <li><b>4</b><span>채혈 요구권 미고지 — 불복 시 채혈할 수 있음을 고지받지 못했다면 절차 위법을 주장할 수 있습니다.</span></li>
 <li><b>5</b><span>임의동행의 위법 — 동의 없이 이루어진 동행과 그에 이은 측정은 위법수집증거로 배척될 수 있습니다.</span></li>
 <li><b>6</b><span>운전 사실 자체 — 시동만 걸었거나 주차 상태 이동 등은 &#x27;운전&#x27;의 성립을 다툴 여지가 있습니다.</span></li></ul>
-<div class="divider"></div><div class="label">ACCIDENT</div><h2 class="title" id="s4">사고가 동반된 경우 확인할 것</h2><ul class="list"><li><b>1</b><span>교통사고처리특례법상 12대 중과실에 해당하는지 확인하십시오. 해당하면 종합보험 가입만으로 면책되지 않습니다.</span></li>
+<div class="divider"></div><div class="label">ACCIDENT</div><h2 class="title" id="s5">사고가 동반된 경우 확인할 것</h2><ul class="list"><li><b>1</b><span>교통사고처리특례법상 12대 중과실에 해당하는지 확인하십시오. 해당하면 종합보험 가입만으로 면책되지 않습니다.</span></li>
 <li><b>2</b><span>중과실 유형: 신호위반, 중앙선 침범, 제한속도 20km 초과, 앞지르기 위반, 건널목 위반, 횡단보도 사고, 무면허, 음주, 보도 침범, 개문발차, 어린이보호구역, 화물 낙하 등.</span></li>
 <li><b>3</b><span>피해자 상해 정도와 진단서 내용을 확보하십시오. 형사 합의 시점이 결과를 좌우합니다.</span></li>
 <li><b>4</b><span>블랙박스와 사고 현장 CCTV는 즉시 확보하십시오. 과실비율 판단의 근거입니다.</span></li>
 <li><b>5</b><span>위험운전치사상죄가 적용되면 특정범죄가중법이 적용되어 형이 크게 상향됩니다.</span></li>
 <li><b>6</b><span>도주 의심을 받지 않도록 현장 조치와 신고 이력을 명확히 남기십시오.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>양재IC 인근 단속 사건</h3><p>의뢰인: 0.09%가 나왔는데 방법이 없나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>양재IC 인근 단속 사건</h3><p>의뢰인: 0.09%가 나왔는데 방법이 없나요?</p>
 <p>변호사: 측정 시각과 마지막 음주 시각의 간격부터 확인해야 합니다. 상승기였다면 운전 당시 수치는 더 낮았을 수 있습니다.</p>
 <p>의뢰인: 채혈은 안 했습니다.</p>
 <p>변호사: 채혈 요구권을 고지받았는지가 쟁점입니다. 단속 현장 영상과 근무일지 확인을 요청해 보겠습니다.</p>
 <p>의뢰인: 이미 자백서에 서명했습니다.</p>
 <p>변호사: 서명했더라도 절차 위법이 확인되면 증거능력 자체를 다툴 수 있습니다. 포기하기에는 이릅니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초 지역 교통형사 사건의 특징</h2><table class="tbl"><tbody><tr><th>양재IC·헌릉로</th><td>고속도로 진출입 구간 상시 단속, 심야 적발 비중이 높습니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">음주운전에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;수치가 나왔으면 끝이다&#x27;</th><td>측정 절차 위법이 확인되면 증거 자체가 배척된 사례가 있습니다.</td></tr>
+<tr><th>&#x27;시동만 걸었으면 운전이 아니다&#x27;</th><td>사안에 따라 다툴 여지가 있으나 자동으로 면책되지는 않습니다.</td></tr>
+<tr><th>&#x27;전동킥보드는 괜찮다&#x27;</th><td>개인형 이동장치로 음주운전 처벌 대상입니다.</td></tr>
+<tr><th>&#x27;자백서에 서명했으면 방법이 없다&#x27;</th><td>절차 위법이 확인되면 증거능력 자체를 다툴 수 있습니다.</td></tr>
+<tr><th>&#x27;면허는 형사재판에서 같이 정해진다&#x27;</th><td>별개 절차입니다. 형사와 행정을 각각 대응해야 합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초 지역 교통형사 사건의 특징</h2><table class="tbl"><tbody><tr><th>양재IC·헌릉로</th><td>고속도로 진출입 구간 상시 단속, 심야 적발 비중이 높습니다.</td></tr>
 <tr><th>서초대로·강남대로</th><td>회식 이후 단거리 운전 적발 사례가 많습니다.</td></tr>
 <tr><th>반포·잠원 강변</th><td>올림픽대로 진입 구간 단속 지점입니다.</td></tr>
 <tr><th>내곡·우면</th><td>야간 통행량이 적어 사고 후 조치 미이행이 문제되는 사건이 있습니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>단속 절차부터 다시 보겠습니다</h2><p>측정 시각, 고지 여부, 대기 시간 — 확인할 것이 남아 있습니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

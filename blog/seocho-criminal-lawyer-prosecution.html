@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초형사전문변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 형사</div><h1>서초형사전문변호사 — 검찰 송치 후, 마지막으로 결과를 바꿀 수 있는 구간입니다</h1><p class="desc">서초형사전문변호사가 정리한 송치 이후 대응. 송치 의견의 의미, 검찰 단계 변호인의견서, 형사조정과 공탁, 약식명령에 대한 정식재판청구까지 순서대로 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.10</span><span><b>키워드</b> 서초형사전문변호사</span><span><b>지역</b> 서울 서초구(서울중앙지방검찰청 관할)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초형사전문변호사가 정리한 송치 이후 대응.</li><li>사건번호와 담당 검찰청·부서를 확인하십시오.</li><li>경찰 단계 수사기록의 열람·등사를 신청하십시오.</li><li>변호인의견서를 준비하십시오.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">송치는 결론이 아니라 두 번째 기회입니다</a></li><li><a href="#s2">검찰 단계에서 나올 수 있는 결론</a></li><li><a href="#s3">송치 사실을 알게 된 뒤 해야 할 일</a></li><li><a href="#s4">검찰 단계 변호인의견서에 들어가야 할 것</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초 지역 검찰 단계 실무</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">송치는 결론이 아니라 두 번째 기회입니다</a></li><li><a href="#s2">검찰 단계에서 나올 수 있는 결론</a></li><li><a href="#s3">송치 이후 구간별 대응</a></li><li><a href="#s4">송치 사실을 알게 된 뒤 해야 할 일</a></li><li><a href="#s5">검찰 단계 변호인의견서에 들어가야 할 것</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">검찰 단계에 대한 오해</a></li><li><a href="#s8">서초 지역 검찰 단계 실무</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">송치는 결론이 아니라 두 번째 기회입니다</h2>
 <p class="a-text">경찰이 사건을 검찰에 송치하면 많은 분들이 &#x27;이미 유죄가 된 것&#x27;으로 받아들입니다. 사실이 아닙니다. 기소 여부는 검사가 정하며, 송치 의견과 다른 결론이 나오는 사건이 실제로 있습니다.</p>
 <p class="a-text">2021년 수사권 조정 이후 경찰은 혐의가 인정되지 않으면 불송치 결정을 하고, 혐의가 인정된다고 판단하면 송치합니다. 즉 송치됐다는 것은 경찰 단계에서 다투는 데 실패했다는 뜻이지만, 검찰 단계는 남아 있습니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>약식기소</th><td>벌금형이 상당한 사건에서 법원에 약식명령을 청구합니다. 정식재판 없이 벌금이 확정됩니다.</td></tr>
 <tr><th>구공판</th><td>정식재판 청구입니다. 실형·집행유예가 검토되는 사건입니다.</td></tr>
 <tr><th>보완수사요구</th><td>검사가 경찰에 추가 수사를 요구하는 경우로, 이 구간에서 의견서 제출 실익이 큽니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">ACTION</div><h2 class="title" id="s3">송치 사실을 알게 된 뒤 해야 할 일</h2><ul class="list"><li><b>1</b><span>사건번호와 담당 검찰청·부서를 확인하십시오. 형사사법포털이나 담당 수사관을 통해 확인할 수 있습니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">송치 이후 구간별 대응</h2><table class="tbl"><tbody><tr><th>송치 직후</th><td>사건번호와 담당 검찰청·부서 확인. 형사사법포털에서 조회할 수 있습니다.</td></tr>
+<tr><th>D+7 이내</th><td>경찰 단계 수사기록 열람·등사 신청. 무엇이 증거로 올라갔는지 알아야 다툴 수 있습니다.</td></tr>
+<tr><th>D+14 ~ D+30</th><td>변호인의견서 작성·제출. 쟁점·사실관계·법리·정상관계를 구분해야 읽힙니다.</td></tr>
+<tr><th>합의·공탁</th><td>이 구간이 마지막 골든타임입니다. 기소 후 합의는 효과가 줄어듭니다.</td></tr>
+<tr><th>보완수사요구</th><td>검사가 경찰에 추가 수사를 요구하면 의견서 제출 실익이 특히 큽니다.</td></tr>
+<tr><th>처분</th><td>혐의없음·기소유예·약식기소·구공판. 약식명령은 고지 후 7일 내 정식재판청구 가능.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">ACTION</div><h2 class="title" id="s4">송치 사실을 알게 된 뒤 해야 할 일</h2><ul class="list"><li><b>1</b><span>사건번호와 담당 검찰청·부서를 확인하십시오. 형사사법포털이나 담당 수사관을 통해 확인할 수 있습니다.</span></li>
 <li><b>2</b><span>경찰 단계 수사기록의 열람·등사를 신청하십시오. 무엇이 증거로 올라갔는지 알아야 다툴 수 있습니다.</span></li>
 <li><b>3</b><span>변호인의견서를 준비하십시오. 사실관계, 법리, 증거, 정상관계를 구분해 작성해야 읽힙니다.</span></li>
 <li><b>4</b><span>합의가 필요한 사건이면 이 구간이 마지막 골든타임입니다. 기소 후 합의는 효과가 줄어듭니다.</span></li>
 <li><b>5</b><span>합의가 어렵다면 형사공탁을 검토하십시오. 피해자 인적사항을 몰라도 공탁이 가능합니다.</span></li>
 <li><b>6</b><span>형사조정 회부가 가능한 사건인지 확인하십시오. 재산범죄·명예훼손 등에서 활용도가 높습니다.</span></li></ul>
-<div class="divider"></div><div class="label">OPINION</div><h2 class="title" id="s4">검찰 단계 변호인의견서에 들어가야 할 것</h2><ul class="list"><li><b>1</b><span>쟁점 정리 — 경찰 의견의 어느 부분을 다투는지 한 문단으로 명확히 밝힙니다.</span></li>
+<div class="divider"></div><div class="label">OPINION</div><h2 class="title" id="s5">검찰 단계 변호인의견서에 들어가야 할 것</h2><ul class="list"><li><b>1</b><span>쟁점 정리 — 경찰 의견의 어느 부분을 다투는지 한 문단으로 명확히 밝힙니다.</span></li>
 <li><b>2</b><span>사실관계 시간표 — 다툼 있는 사실을 객관 자료와 대응시켜 표로 제시합니다.</span></li>
 <li><b>3</b><span>법리 검토 — 성립요건 중 어느 요건이 충족되지 않는지 판례를 인용해 특정합니다.</span></li>
 <li><b>4</b><span>증거 평가 — 상대 진술의 내적 모순과 객관 자료와의 불일치를 구체적으로 지적합니다.</span></li>
 <li><b>5</b><span>정상관계 — 초범, 부양가족, 직업, 피해 회복, 재발 방지 조치를 자료로 첨부합니다.</span></li>
 <li><b>6</b><span>구하는 처분 — &#x27;선처&#x27;가 아니라 &#x27;혐의없음&#x27; 또는 &#x27;기소유예&#x27;를 명시적으로 구합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>약식명령이 날아온 경우</h3><p>의뢰인: 벌금 500만원 약식명령을 받았습니다. 그냥 내는 게 나을까요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>약식명령이 날아온 경우</h3><p>의뢰인: 벌금 500만원 약식명령을 받았습니다. 그냥 내는 게 나을까요?</p>
 <p>변호사: 죄명부터 봐야 합니다. 성범죄라면 신상정보 등록이 따라올 수 있어 벌금 액수보다 처분 종류가 중요합니다.</p>
 <p>의뢰인: 정식재판을 청구하면 형이 더 무거워지지 않나요?</p>
 <p>변호사: 약식명령에 대한 정식재판에서는 형종 상향이 제한됩니다. 다만 벌금액이 올라갈 가능성은 있으므로 기록을 보고 판단해야 합니다.</p>
 <p>의뢰인: 기한이 언제까지인가요?</p>
 <p>변호사: 고지받은 날부터 7일입니다. 이 기간을 넘기면 확정됩니다. 오늘 날짜부터 세어 보십시오.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초 지역 검찰 단계 실무</h2><table class="tbl"><tbody><tr><th>관할 검찰청</th><td>서울 서초구 반포대로 158, 서울중앙지방검찰청</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">검찰 단계에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;송치됐으면 유죄가 확정된 것이다&#x27;</th><td>기소 여부는 검사가 정합니다. 송치 의견과 다른 결론이 나오는 사건이 실제로 있습니다.</td></tr>
+<tr><th>&#x27;불송치를 받으면 끝난다&#x27;</th><td>고소인 이의신청이 있으면 사건은 검찰로 송치됩니다.</td></tr>
+<tr><th>&#x27;검찰 조사를 또 받아야 한다&#x27;</th><td>서면 자료만으로 처분되는 사건도 많습니다. 보완수사가 필요할 때만 조사합니다.</td></tr>
+<tr><th>&#x27;공탁은 합의가 아니라 소용없다&#x27;</th><td>피해 회복 노력으로 평가됩니다. 피해자 인적사항을 몰라도 가능합니다.</td></tr>
+<tr><th>&#x27;약식명령은 그냥 내는 게 낫다&#x27;</th><td>죄명에 따라 신상정보 등록이 따라옵니다. 벌금액보다 처분 종류를 먼저 봐야 합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초 지역 검찰 단계 실무</h2><table class="tbl"><tbody><tr><th>관할 검찰청</th><td>서울 서초구 반포대로 158, 서울중앙지방검찰청</td></tr>
 <tr><th>사건 확인</th><td>형사사법포털(KICS)에서 진행 상황을 조회할 수 있습니다.</td></tr>
 <tr><th>기록 열람</th><td>불기소 사건은 처분 후, 기소 사건은 공소제기 후 열람·등사가 가능합니다.</td></tr>
 <tr><th>공탁</th><td>서울중앙지방법원 공탁소에서 형사공탁이 가능합니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>송치 통보를 받았다면 아직 늦지 않았습니다</h2><p>기록 열람과 의견서 제출로 처분을 바꿀 수 있는 구간입니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

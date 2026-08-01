@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초이혼전문변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 이혼</div><h1>서초이혼전문변호사 — 황혼이혼, 연금분할을 빼면 절반을 잃습니다</h1><p class="desc">서초이혼전문변호사가 정리한 황혼이혼 실무. 국민연금 분할연금 요건과 청구 기한, 공무원·사학연금 분할, 장기혼의 기여도 산정, 부양적 재산분할까지 짚었습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.09</span><span><b>키워드</b> 서초이혼전문변호사</span><span><b>지역</b> 서울 서초구 반포동·잠원동</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초이혼전문변호사가 정리한 황혼이혼 실무.</li><li>혼인 기간이 길수록 특유재산도 분할 대상에 편입될 가능성이 커집니다.</li><li>전업주부의 가사·육아 기여는 장기혼에서 특히 크게 평가됩니다.</li><li>배우자 부모 부양, 가업 조력, 사업체 무급 노동은 별도의 기여 요소로 주장할 수 있습니다.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">20년 이상 혼인은 계산 구조 자체가 다릅니다</a></li><li><a href="#s2">연금 종류별 분할 방식</a></li><li><a href="#s3">장기혼에서 기여도가 높게 인정되는 근거</a></li><li><a href="#s4">황혼이혼에서 반드시 확인할 목록</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">반포·잠원 지역 사건의 실무 포인트</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">20년 이상 혼인은 계산 구조 자체가 다릅니다</a></li><li><a href="#s2">연금 종류별 분할 방식</a></li><li><a href="#s3">황혼이혼에서 챙겨야 할 순서</a></li><li><a href="#s4">장기혼에서 기여도가 높게 인정되는 근거</a></li><li><a href="#s5">황혼이혼에서 반드시 확인할 목록</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">황혼이혼에 대한 오해</a></li><li><a href="#s8">반포·잠원 지역 사건의 실무 포인트</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">20년 이상 혼인은 계산 구조 자체가 다릅니다</h2>
 <p class="a-text">혼인 기간이 20년, 30년에 이른 이혼은 젊은 부부의 이혼과 계산 구조가 다릅니다. 재산의 상당 부분이 이미 형성되어 있고, 앞으로 벌 소득은 적으며, 노후 소득원이 곧 생계이기 때문입니다.</p>
 <p class="a-text">그래서 황혼이혼에서 가장 자주 빠뜨리는 항목이 연금입니다. 부동산과 예금만 나누고 연금을 놓치면, 매달 들어올 수십만 원을 20년 이상 포기하는 셈이 됩니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>개인연금·연금보험</th><td>해약환급금 또는 평가액을 기준으로 분할 대상에 포함됩니다.</td></tr>
 <tr><th>주택연금</th><td>가입 주택 자체의 소유권 정리와 함께 검토해야 합니다.</td></tr>
 <tr><th>청구 기한</th><td>분할연금은 요건을 갖춘 때부터 5년 이내에 청구해야 합니다. 놓치면 회복이 어렵습니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">CONTRIBUTION</div><h2 class="title" id="s3">장기혼에서 기여도가 높게 인정되는 근거</h2><ul class="list"><li><b>1</b><span>혼인 기간이 길수록 특유재산도 분할 대상에 편입될 가능성이 커집니다. 30년 넘게 함께 유지한 재산은 출처를 구분하기 어렵기 때문입니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">황혼이혼에서 챙겨야 할 순서</h2><table class="tbl"><tbody><tr><th>연금 확인</th><td>국민연금·퇴직연금·개인연금·공무원연금을 각각 조회합니다. 절차와 기한이 모두 다릅니다.</td></tr>
+<tr><th>부동산 정리</th><td>재건축 조합원 지위, 이주비 대출, 추가분담금 부담 주체를 특정합니다.</td></tr>
+<tr><th>보험 정리</th><td>계약자·수익자 변경과 해약환급금 평가를 진행합니다.</td></tr>
+<tr><th>건강보험</th><td>이혼 후 피부양자 자격 상실에 따른 부담을 미리 계산합니다.</td></tr>
+<tr><th>분할연금 청구</th><td>요건을 갖춘 날부터 5년 이내. 놓치면 회복이 어렵습니다.</td></tr>
+<tr><th>이행</th><td>협의서는 공정증서로 만들어야 상대 미이행 시 바로 집행할 수 있습니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">CONTRIBUTION</div><h2 class="title" id="s4">장기혼에서 기여도가 높게 인정되는 근거</h2><ul class="list"><li><b>1</b><span>혼인 기간이 길수록 특유재산도 분할 대상에 편입될 가능성이 커집니다. 30년 넘게 함께 유지한 재산은 출처를 구분하기 어렵기 때문입니다.</span></li>
 <li><b>2</b><span>전업주부의 가사·육아 기여는 장기혼에서 특히 크게 평가됩니다. 소득이 없었다는 사실이 감액 사유가 되지 않습니다.</span></li>
 <li><b>3</b><span>배우자 부모 부양, 가업 조력, 사업체 무급 노동은 별도의 기여 요소로 주장할 수 있습니다.</span></li>
 <li><b>4</b><span>부양적 재산분할 — 이혼 후 자력으로 생계를 유지하기 어려운 사정이 있으면 청산 비율과 별도로 고려됩니다.</span></li>
 <li><b>5</b><span>건강 상태와 취업 가능성은 부양적 요소 판단에 직접 반영됩니다.</span></li>
 <li><b>6</b><span>자녀가 성년이라도 부양 부담이 계속되는 사정이 있다면 자료로 제출할 수 있습니다.</span></li></ul>
-<div class="divider"></div><div class="label">CHECK</div><h2 class="title" id="s4">황혼이혼에서 반드시 확인할 목록</h2><ul class="list"><li><b>1</b><span>부동산 — 재건축·재개발 조합원 지위, 이주비 대출, 추가분담금 부담 주체를 명확히 합니다.</span></li>
+<div class="divider"></div><div class="label">CHECK</div><h2 class="title" id="s5">황혼이혼에서 반드시 확인할 목록</h2><ul class="list"><li><b>1</b><span>부동산 — 재건축·재개발 조합원 지위, 이주비 대출, 추가분담금 부담 주체를 명확히 합니다.</span></li>
 <li><b>2</b><span>연금 — 국민연금, 퇴직연금, 개인연금, 공무원·사학연금을 각각 확인합니다.</span></li>
 <li><b>3</b><span>보험 — 종신·연금보험의 계약자·수익자 변경과 해약환급금을 정리합니다.</span></li>
 <li><b>4</b><span>채무 — 주택담보대출, 자녀 관련 대출의 명의와 실제 상환 주체를 확인합니다.</span></li>
 <li><b>5</b><span>상속 예정 재산 — 아직 발생하지 않은 상속은 분할 대상이 아닙니다. 혼동하지 마십시오.</span></li>
 <li><b>6</b><span>건강보험·의료비 — 이혼 후 피부양자 자격 상실에 따른 부담을 미리 계산합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>결혼 32년, 반포 아파트 한 채와 남편 연금</h3><p>의뢰인: 저는 평생 전업주부였는데 얼마나 받을 수 있을까요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>결혼 32년, 반포 아파트 한 채와 남편 연금</h3><p>의뢰인: 저는 평생 전업주부였는데 얼마나 받을 수 있을까요?</p>
 <p>변호사: 장기혼 전업주부의 기여도는 실무상 상당히 높게 인정됩니다. 소득 유무가 기준이 아닙니다.</p>
 <p>의뢰인: 남편이 연금은 자기 것이라고 합니다.</p>
 <p>변호사: 혼인 기간에 해당하는 부분은 분할 대상입니다. 국민연금은 별도 청구 절차가 있고, 퇴직연금은 재산분할에 포함됩니다. 두 가지를 모두 챙겨야 합니다.</p>
 <p>의뢰인: 집이 재건축 예정이라 복잡합니다.</p>
 <p>변호사: 조합원 지위와 분담금 부담을 협의서에 명확히 넣어야 합니다. 나중에 가장 자주 분쟁이 되는 항목입니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">반포·잠원 지역 사건의 실무 포인트</h2><table class="tbl"><tbody><tr><th>재건축 단지</th><td>조합원 지위 승계, 이주비 대출 명의, 추가분담금 부담 주체를 특정해야 합니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">황혼이혼에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;연금은 자동으로 나눠진다&#x27;</th><td>분할연금은 본인이 직접 청구해야 하며 5년의 청구 기한이 있습니다.</td></tr>
+<tr><th>&#x27;재혼하면 분할연금이 없어진다&#x27;</th><td>수급권은 재혼으로 소멸하지 않는 것이 원칙입니다.</td></tr>
+<tr><th>&#x27;평생 전업주부였으니 적게 받는다&#x27;</th><td>장기혼일수록 가사 기여가 크게 평가되고 특유재산도 분할 대상에 편입될 가능성이 커집니다.</td></tr>
+<tr><th>&#x27;앞으로 받을 상속도 나눠야 한다&#x27;</th><td>아직 발생하지 않은 상속은 분할 대상이 아닙니다.</td></tr>
+<tr><th>&#x27;나이가 많으면 이혼이 어렵다&#x27;</th><td>연령은 요건이 아닙니다. 다만 부양적 재산분할이 함께 고려됩니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">반포·잠원 지역 사건의 실무 포인트</h2><table class="tbl"><tbody><tr><th>재건축 단지</th><td>조합원 지위 승계, 이주비 대출 명의, 추가분담금 부담 주체를 특정해야 합니다.</td></tr>
 <tr><th>장기 보유 아파트</th><td>취득 시기가 혼인 전이어도 장기 유지·증식 기여로 분할 대상에 포함될 수 있습니다.</td></tr>
 <tr><th>전세보증금</th><td>임대 중이라면 보증금 반환 시점과 정산 방법을 정해야 합니다.</td></tr>
 <tr><th>의료·요양</th><td>고령 배우자의 부양 필요성은 부양적 재산분할 판단에 반영됩니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>연금부터 확인하십시오</h2><p>국민연금·퇴직연금·개인연금은 각각 절차가 다릅니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

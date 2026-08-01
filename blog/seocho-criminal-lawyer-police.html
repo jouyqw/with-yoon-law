@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초형사전문변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 형사</div><h1>서초형사전문변호사 — 서초경찰서 첫 조사, 준비 시간은 이틀이면 충분합니다</h1><p class="desc">서초형사전문변호사가 정리한 첫 경찰조사 대응법. 출석요구 문자를 받은 직후 48시간 안에 해야 할 일과 피의자신문조서에서 가장 많이 실수하는 표현을 짚었습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.01</span><span><b>키워드</b> 서초형사전문변호사</span><span><b>지역</b> 서울 서초구(서초경찰서·방배경찰서 관할)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초형사전문변호사가 정리한 첫 경찰조사 대응법.</li><li>출석 일정을 무조건 그대로 받지 마십시오.</li><li>담당 수사관에게 죄명과 고소인 여부를 확인하십시오.</li><li>사건 당일 기준 전후 24시간의 동선을 시간 순으로 적으십시오.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">출석요구 문자는 수사의 시작이 아니라 중반입니다</a></li><li><a href="#s2">연락 받은 뒤 48시간 안에 할 일</a></li><li><a href="#s3">피의자신문조서에서 갈리는 지점</a></li><li><a href="#s4">서초형사전문변호사가 실제로 하는 준비</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초 인근에서 자주 접수되는 형사사건 유형</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">출석요구 문자는 수사의 시작이 아니라 중반입니다</a></li><li><a href="#s2">연락 받은 뒤 48시간 안에 할 일</a></li><li><a href="#s3">출석요구부터 송치까지 실제 흐름</a></li><li><a href="#s4">피의자신문조서에서 갈리는 지점</a></li><li><a href="#s5">서초형사전문변호사가 실제로 하는 준비</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">경찰조사에 대한 흔한 오해</a></li><li><a href="#s8">서초 인근에서 자주 접수되는 형사사건 유형</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">출석요구 문자는 수사의 시작이 아니라 중반입니다</h2>
 <p class="a-text">많은 분들이 경찰서 연락을 받은 시점을 &#x27;이제 시작&#x27;이라고 생각합니다. 실제로는 그 반대입니다. 고소장이 접수되고, 고소인 조사가 끝나고, 기초 자료 확보가 어느 정도 진행된 뒤에야 피의자에게 연락이 갑니다.</p>
 <p class="a-text">즉 상대방은 이미 자기 이야기를 정리해 제출한 상태이고, 수사관의 머릿속에는 하나의 그림이 그려져 있습니다. 서초형사전문변호사의 첫 업무는 그 그림이 무엇인지 역으로 추정하는 일입니다.</p>
@@ -86,25 +153,36 @@
 <li><b>4</b><span>상대방과 주고받은 메시지를 삭제하지 말고 전체 백업하십시오. 유리한 부분만 남기면 오히려 신뢰를 잃습니다.</span></li>
 <li><b>5</b><span>CCTV가 있는 장소라면 보존요청을 서두르십시오. 상업시설 영상은 통상 2주 내외에 자동 삭제됩니다.</span></li>
 <li><b>6</b><span>혐의를 인정할지 다툴지 결정하기 전에 성립요건부터 확인하십시오. 사실을 인정하는 것과 죄를 인정하는 것은 다릅니다.</span></li></ul>
-<div class="divider"></div><div class="label">RECORD</div><h2 class="title" id="s3">피의자신문조서에서 갈리는 지점</h2><table class="tbl"><tbody><tr><th>추측성 답변</th><td>&#x27;그랬던 것 같습니다&#x27;는 인정으로 정리되기 쉽습니다. 기억나는 것과 확인되지 않는 것을 구분해 말해야 합니다.</td></tr>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">출석요구부터 송치까지 실제 흐름</h2><table class="tbl"><tbody><tr><th>D-7 ~ D-2</th><td>일정 조율, 혐의명 확인, 사실관계 시간표 작성, 증거 보전(CCTV 보존요청·메시지 백업).</td></tr>
+<tr><th>D-1</th><td>예상 질문 답변 정리, 인정·부인 기준선 확정, 지참 자료 목록 작성.</td></tr>
+<tr><th>D-Day</th><td>조사 1~4시간. 조서 열람 후 어감이 다른 문장은 반드시 수정 요구.</td></tr>
+<tr><th>D+3 ~ D+14</th><td>조서 열람·등사 신청, 필요 시 보완 진술서와 변호인의견서 제출.</td></tr>
+<tr><th>D+30 ~ D+90</th><td>경찰의 송치 또는 불송치 결정. 불송치 시 고소인 이의신청 가능성도 함께 대비.</td></tr>
+<tr><th>송치 이후</th><td>서울중앙지검에서 불기소·기소유예·약식·구공판 중 처분이 정해집니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">RECORD</div><h2 class="title" id="s4">피의자신문조서에서 갈리는 지점</h2><table class="tbl"><tbody><tr><th>추측성 답변</th><td>&#x27;그랬던 것 같습니다&#x27;는 인정으로 정리되기 쉽습니다. 기억나는 것과 확인되지 않는 것을 구분해 말해야 합니다.</td></tr>
 <tr><th>감정적 해명</th><td>&#x27;억울합니다&#x27;만 반복하면 조서에는 아무 사실도 남지 않습니다. 반박은 사실과 자료로 해야 합니다.</td></tr>
 <tr><th>과잉 진술</th><td>묻지 않은 사실까지 설명하다 별건 혐의가 생기는 경우가 실제로 있습니다.</td></tr>
 <tr><th>고의 관련 질문</th><td>&#x27;왜 그랬나요&#x27;는 고의를 확인하는 질문입니다. 동기 설명이 곧 자백이 되지 않도록 표현을 정리해야 합니다.</td></tr>
 <tr><th>열람·수정</th><td>조서 마지막에 반드시 전체를 읽고, 어감이 다른 문장은 수정 요구하십시오. 서명 후에는 되돌리기 어렵습니다.</td></tr>
 <tr><th>진술거부권</th><td>특정 질문에 대해 진술을 거부해도 불이익 추정은 금지됩니다. 다만 전면 거부는 전략적으로 신중해야 합니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">서초형사전문변호사가 실제로 하는 준비</h2><ul class="list"><li><b>1</b><span>고소장 취지를 역추정해 예상 질문 30개 내외를 뽑고 답변을 문장 단위로 정리합니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">서초형사전문변호사가 실제로 하는 준비</h2><ul class="list"><li><b>1</b><span>고소장 취지를 역추정해 예상 질문 30개 내외를 뽑고 답변을 문장 단위로 정리합니다.</span></li>
 <li><b>2</b><span>사실관계 시간표와 증거목록을 A4 1~2장으로 만들어 조사 당일 지참하게 합니다.</span></li>
 <li><b>3</b><span>인정할 사실, 다툴 사실, 모르는 사실을 세 칸으로 나눠 진술 기준선을 고정합니다.</span></li>
 <li><b>4</b><span>필요 시 조사 전 변호인의견서를 미리 제출해 수사 방향 자체를 조정합니다.</span></li>
 <li><b>5</b><span>조사 동석 시 유도신문·전제가 잘못된 질문에 이의를 제기하고 조서 문구를 확인합니다.</span></li>
 <li><b>6</b><span>조사 직후 기억이 남아 있을 때 진술 내용을 복기해 다음 절차를 설계합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>서초경찰서 조사 하루 전 걸려온 전화</h3><p>의뢰인: 내일이 조사인데 지금 상담해도 의미가 있나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>서초경찰서 조사 하루 전 걸려온 전화</h3><p>의뢰인: 내일이 조사인데 지금 상담해도 의미가 있나요?</p>
 <p>변호사: 있습니다. 하루면 인정·부인 기준선을 세우고 예상 질문 답변을 만들 수 있습니다. 그것만으로도 조서 내용이 달라집니다.</p>
 <p>의뢰인: 그냥 솔직하게 다 말하면 안 되나요?</p>
 <p>변호사: 솔직함과 정확함은 다릅니다. 기억이 흐린 부분까지 추측으로 채우면 그게 조서에 사실처럼 남습니다.</p>
 <p>의뢰인: 변호사가 동석하면 수사관이 더 안 좋게 보지 않나요?</p>
 <p>변호사: 실무에서는 반대인 경우가 많습니다. 쟁점이 정리되어 조사가 빨리 끝나기 때문입니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초 인근에서 자주 접수되는 형사사건 유형</h2><table class="tbl"><tbody><tr><th>서초동·교대역 일대</th><td>회식·술자리 시비로 인한 폭행·상해, 업무방해</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">경찰조사에 대한 흔한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;출석요구를 미루면 불리하다&#x27;</th><td>정당한 사유로 1~2회 조율하는 것은 불이익이 아닙니다. 무응답으로 일관할 때 체포영장이 검토됩니다.</td></tr>
+<tr><th>&#x27;변호사가 오면 괘씸죄가 있다&#x27;</th><td>실무상 쟁점이 정리되어 조사가 빨리 끝나는 경우가 많습니다. 불이익 추정은 법으로 금지됩니다.</td></tr>
+<tr><th>&#x27;솔직히 다 말하면 선처받는다&#x27;</th><td>솔직함과 정확함은 다릅니다. 기억이 흐린 부분을 추측으로 채우면 그 추측이 사실처럼 조서에 남습니다.</td></tr>
+<tr><th>&#x27;조서는 나중에 고칠 수 있다&#x27;</th><td>서명·날인 후에는 사실상 되돌리기 어렵습니다. 읽고 수정할 마지막 기회는 조사 당일뿐입니다.</td></tr>
+<tr><th>&#x27;진술거부하면 자백으로 본다&#x27;</th><td>헌법상 권리이며 불이익 추정은 금지됩니다. 다만 전면 거부는 전략적 판단이 필요합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초 인근에서 자주 접수되는 형사사건 유형</h2><table class="tbl"><tbody><tr><th>서초동·교대역 일대</th><td>회식·술자리 시비로 인한 폭행·상해, 업무방해</td></tr>
 <tr><th>강남역·신논현 인접 상권</th><td>강제추행, 준강간, 불법촬영 등 성범죄 신고 다수</td></tr>
 <tr><th>방배·이수·사당</th><td>주거지 인근 주거침입, 스토킹, 재물손괴</td></tr>
 <tr><th>양재·내곡</th><td>경부고속도로·양재IC 인접 음주운전, 교통사고 특례법 위반</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>조사 전 48시간이 승부처입니다</h2><p>출석요구 문자를 받으셨다면 오늘 사실관계 정리부터 시작하십시오.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

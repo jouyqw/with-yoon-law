@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초스토킹변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 스토킹</div><h1>서초스토킹변호사 — 긴급응급조치 통보받았다면 시계는 이미 돌아갔습니다</h1><p class="desc">서초스토킹변호사가 정리한 스토킹처벌법 대응. 긴급응급조치와 잠정조치의 차이, 이의신청 기한, 위반 시 처벌까지 절차 순서대로 설명합니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.02</span><span><b>키워드</b> 서초스토킹변호사</span><span><b>지역</b> 서울 서초구(서초경찰서 관할)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초스토킹변호사가 정리한 스토킹처벌법 대응.</li><li>해명하려고 상대방에게 연락하는 행위.</li><li>제3자(친구·가족·직장동료)를 통해 메시지를 전달하는 행위.</li><li>SNS 계정으로 상대방 게시물에 반응하는 행위.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">스토킹 사건은 형사절차와 보호조치가 동시에 굴러갑니다</a></li><li><a href="#s2">조치 단계별 차이</a></li><li><a href="#s3">통보를 받은 직후 절대 하면 안 되는 것</a></li><li><a href="#s4">서초스토킹변호사의 방어 축은 세 가지입니다</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초·인접 지역 스토킹 신고의 실제 양상</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">스토킹 사건은 형사절차와 보호조치가 동시에 굴러갑니다</a></li><li><a href="#s2">조치 단계별 차이</a></li><li><a href="#s3">신고부터 본안 처분까지</a></li><li><a href="#s4">통보를 받은 직후 절대 하면 안 되는 것</a></li><li><a href="#s5">서초스토킹변호사의 방어 축은 세 가지입니다</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">스토킹 조치에 대한 오해</a></li><li><a href="#s8">서초·인접 지역 스토킹 신고의 실제 양상</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">스토킹 사건은 형사절차와 보호조치가 동시에 굴러갑니다</h2>
 <p class="a-text">스토킹범죄의 처벌 등에 관한 법률은 2021년 시행 이후 여러 차례 개정되며 대응 속도가 크게 빨라졌습니다. 신고가 접수되면 경찰은 즉시 응급조치를 하고, 필요하면 긴급응급조치를, 이후 법원 결정으로 잠정조치를 할 수 있습니다.</p>
 <p class="a-text">즉 기소도 되기 전에 접근금지와 통신금지가 먼저 부과됩니다. 많은 분들이 &#x27;아직 조사도 안 받았는데 왜 연락하지 말라는 통보가 오느냐&#x27;고 묻는 이유입니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>이의신청</th><td>긴급응급조치에 대해서는 통지받은 날부터 1주일 이내에 관할 지방법원에 이의를 신청할 수 있습니다.</td></tr>
 <tr><th>위반 시</th><td>잠정조치를 위반하면 별도의 형사처벌 대상이 됩니다. 유치 결정으로 이어지는 실질적 구속 위험도 있습니다.</td></tr>
 <tr><th>본안 처벌</th><td>스토킹범죄는 3년 이하 징역 또는 3천만원 이하 벌금, 흉기 등 휴대 시 5년 이하 징역 또는 5천만원 이하 벌금입니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">DO NOT</div><h2 class="title" id="s3">통보를 받은 직후 절대 하면 안 되는 것</h2><ul class="list"><li><b>1</b><span>해명하려고 상대방에게 연락하는 행위. 통신금지 위반이자 스토킹행위의 추가 반복으로 기록됩니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">신고부터 본안 처분까지</h2><table class="tbl"><tbody><tr><th>신고 당일</th><td>경찰 응급조치(제지·경고·분리). 필요 시 긴급응급조치가 즉시 부과됩니다.</td></tr>
+<tr><th>D+1 ~ D+7</th><td>긴급응급조치 이의신청 기한. 이 1주일을 놓치면 다투기가 급격히 어려워집니다.</td></tr>
+<tr><th>사후 승인</th><td>경찰의 긴급응급조치는 지방법원 판사의 사후 승인을 받습니다.</td></tr>
+<tr><th>잠정조치 청구</th><td>검사가 청구하고 법원이 결정합니다. 서면경고부터 유치까지 단계가 나뉩니다.</td></tr>
+<tr><th>본안 수사</th><td>1~3개월. 반의사불벌 규정이 삭제되어 처벌불원만으로 종결되지 않습니다.</td></tr>
+<tr><th>재판</th><td>3년 이하 징역 또는 3천만원 이하 벌금. 흉기 휴대 시 5년 이하로 상향됩니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">DO NOT</div><h2 class="title" id="s4">통보를 받은 직후 절대 하면 안 되는 것</h2><ul class="list"><li><b>1</b><span>해명하려고 상대방에게 연락하는 행위. 통신금지 위반이자 스토킹행위의 추가 반복으로 기록됩니다.</span></li>
 <li><b>2</b><span>제3자(친구·가족·직장동료)를 통해 메시지를 전달하는 행위. 우회 연락도 위반으로 평가될 수 있습니다.</span></li>
 <li><b>3</b><span>SNS 계정으로 상대방 게시물에 반응하는 행위. 좋아요·댓글·조회도 접근으로 해석된 사례가 있습니다.</span></li>
 <li><b>4</b><span>우연을 가장해 주거지·직장 근처에 가는 행위. 위치기록이 그대로 증거가 됩니다.</span></li>
 <li><b>5</b><span>대화 내용을 편집해 유리한 부분만 제출하는 행위. 전체 대화가 확보되면 신빙성이 무너집니다.</span></li>
 <li><b>6</b><span>조치를 무시하고 기다리는 태도. 잠정조치 위반은 구속 사유가 됩니다.</span></li></ul>
-<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s4">서초스토킹변호사의 방어 축은 세 가지입니다</h2><ul class="list"><li><b>1</b><span>지속성·반복성 다투기: 단발성 연락이나 업무·채권 관계에 따른 정당한 사유가 있는 연락인지 시간표로 정리합니다.</span></li>
+<div class="divider"></div><div class="label">STRATEGY</div><h2 class="title" id="s5">서초스토킹변호사의 방어 축은 세 가지입니다</h2><ul class="list"><li><b>1</b><span>지속성·반복성 다투기: 단발성 연락이나 업무·채권 관계에 따른 정당한 사유가 있는 연락인지 시간표로 정리합니다.</span></li>
 <li><b>2</b><span>&#x27;상대방 의사에 반해&#x27; 요건 다투기: 상대가 먼저 연락한 이력, 쌍방 대화 기록으로 의사에 반하지 않았음을 입증합니다.</span></li>
 <li><b>3</b><span>이의신청 기한 준수: 긴급응급조치는 통지 후 1주일이라는 짧은 기간이 있습니다. 놓치면 다투기 어려워집니다.</span></li>
 <li><b>4</b><span>잠정조치 심문 대비: 유치 결정을 막기 위해 주거·직업·재범 위험 관련 소명자료를 준비합니다.</span></li>
 <li><b>5</b><span>재범방지 소명: 심리상담 이수, 연락처 차단, 이사 등 실제 조치를 자료로 남깁니다.</span></li>
 <li><b>6</b><span>본안 대비: 조치 대응과 별개로 스토킹범죄 자체의 성립요건을 처음부터 다퉈야 합니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>헤어진 뒤 연락했다가 통보를 받은 경우</h3><p>의뢰인: 사귀던 사이였고 물건 돌려달라고 연락한 게 전부입니다.</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>헤어진 뒤 연락했다가 통보를 받은 경우</h3><p>의뢰인: 사귀던 사이였고 물건 돌려달라고 연락한 게 전부입니다.</p>
 <p>변호사: 목적이 정당해도 횟수와 시간대가 문제됩니다. 새벽에 반복 발신한 기록이 있으면 정당한 사유 주장이 약해집니다.</p>
 <p>의뢰인: 오해라고 설명만 하면 안 될까요?</p>
 <p>변호사: 직접 설명하는 순간 통신금지 위반입니다. 설명은 수사기관과 법원에 서면으로 해야 합니다.</p>
 <p>의뢰인: 이의신청은 언제까지 해야 하나요?</p>
 <p>변호사: 긴급응급조치는 통지받은 날부터 1주일입니다. 자료를 모으면서 기한을 넘기는 경우가 가장 아깝습니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초·인접 지역 스토킹 신고의 실제 양상</h2><table class="tbl"><tbody><tr><th>서초동·교대역</th><td>직장 관계에서 시작된 반복 연락 사건이 많습니다.</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">스토킹 조치에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;조사도 안 받았는데 왜 접근금지냐&#x27;</th><td>스토킹처벌법은 형사절차와 별개로 피해자 보호조치를 먼저 부과하도록 설계되어 있습니다.</td></tr>
+<tr><th>&#x27;해명하려고 연락하는 건 괜찮다&#x27;</th><td>통신금지 위반이자 스토킹행위의 추가 반복으로 기록됩니다. 가장 흔한 실패 패턴입니다.</td></tr>
+<tr><th>&#x27;합의하면 끝난다&#x27;</th><td>2023년 개정으로 반의사불벌이 삭제됐습니다. 합의는 양형 요소일 뿐 종결 사유가 아닙니다.</td></tr>
+<tr><th>&#x27;가족을 통해 전하면 된다&#x27;</th><td>제3자 경유 연락도 접근 행위로 평가된 사례가 있습니다.</td></tr>
+<tr><th>&#x27;조치를 어겨도 경고에 그친다&#x27;</th><td>잠정조치 위반은 별도 처벌 대상이며 유치 결정으로 이어질 수 있습니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초·인접 지역 스토킹 신고의 실제 양상</h2><table class="tbl"><tbody><tr><th>서초동·교대역</th><td>직장 관계에서 시작된 반복 연락 사건이 많습니다.</td></tr>
 <tr><th>방배동·사당</th><td>주거지 인근 대기·기다리기 유형 신고가 잦습니다.</td></tr>
 <tr><th>반포·잠원 아파트</th><td>공동현관·주차장 출입 기록이 핵심 증거가 됩니다.</td></tr>
 <tr><th>역삼·논현</th><td>온라인 메신저·SNS 반복 연락 유형이 많습니다.</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>통보 후 1주일, 기한이 짧습니다</h2><p>이의신청과 잠정조치 심문 대비는 자료 준비 시간이 필요합니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

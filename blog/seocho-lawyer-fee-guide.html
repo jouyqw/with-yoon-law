@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 변호사 선임</div><h1>서초변호사 선임료 총정리 — 견적서에서 이 항목들을 확인하십시오</h1><p class="desc">서초변호사 선임료의 구성과 사건 유형별 범위를 정리했습니다. 착수금·성공보수의 법적 한계, 심급별 재계약, 실비 항목, 계약서에서 반드시 확인할 조항을 짚었습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.10</span><span><b>키워드</b> 서초변호사</span><span><b>지역</b> 서울 서초구 전역 및 인접 강남·동작권</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초변호사 선임료의 구성과 사건 유형별 범위를 정리했습니다.</li><li>사건의 복잡성.</li><li>조사 동석 횟수.</li><li>합의 진행 여부.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">비싼 변호사보다 무서운 것은 범위가 불명확한 계약입니다</a></li><li><a href="#s2">선임료는 이렇게 구성됩니다</a></li><li><a href="#s3">금액을 결정하는 실제 변수</a></li><li><a href="#s4">계약서에서 반드시 확인할 조항</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초구 법률상담 이용 안내</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">비싼 변호사보다 무서운 것은 범위가 불명확한 계약입니다</a></li><li><a href="#s2">선임료는 이렇게 구성됩니다</a></li><li><a href="#s3">상담부터 계약까지</a></li><li><a href="#s4">금액을 결정하는 실제 변수</a></li><li><a href="#s5">계약서에서 반드시 확인할 조항</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">선임료에 대한 오해</a></li><li><a href="#s8">서초구 법률상담 이용 안내</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">비싼 변호사보다 무서운 것은 범위가 불명확한 계약입니다</h2>
 <p class="a-text">선임료 상담에서 가장 자주 생기는 분쟁은 금액이 아니라 범위입니다. 얼마인지는 처음에 듣지만, 그 금액에 무엇이 포함되는지는 나중에 알게 되는 경우가 많기 때문입니다.</p>
 <p class="a-text">경찰 조사 동석이 몇 회까지인지, 검찰 송치 후에도 같은 계약인지, 1심 판결 후 항소는 별도인지. 이 세 가지만 계약서에서 확인해도 대부분의 분쟁은 사라집니다.</p>
@@ -86,26 +153,37 @@
 <tr><th>심급별 계약</th><td>1심·항소심·상고심은 별개 사건으로 각각 계약하는 것이 일반적입니다.</td></tr>
 <tr><th>실비</th><td>인지·송달료, 기록 등사비, 감정료, 출장비 등 실제 지출 비용입니다.</td></tr>
 <tr><th>부가세</th><td>별도인지 포함인지 반드시 명시해야 합니다. 10% 차이가 작지 않습니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">VARIABLE</div><h2 class="title" id="s3">금액을 결정하는 실제 변수</h2><ul class="list"><li><b>1</b><span>사건의 복잡성 — 공범 수, 혐의 개수, 기록 분량이 업무량을 직접 좌우합니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">상담부터 계약까지</h2><table class="tbl"><tbody><tr><th>초회 상담</th><td>사건 단계 진단과 다음에 할 일 정리. 서류 검토까지 함께 진행합니다.</td></tr>
+<tr><th>업무 범위 산정</th><td>조사 동석 횟수, 합의 진행 여부, 감정·사실조회 필요성을 확인합니다.</td></tr>
+<tr><th>견적</th><td>범위가 정해져야 금액이 정해집니다. 순서가 반대면 나중에 분쟁이 생깁니다.</td></tr>
+<tr><th>계약</th><td>수임 범위·담당 변호사·실비·부가세를 서면으로 특정합니다.</td></tr>
+<tr><th>진행</th><td>단계별 진행 상황과 제출 서면을 공유합니다.</td></tr>
+<tr><th>심급 종료</th><td>1심 종료 시 항소 여부와 추가 비용 범위를 다시 협의합니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">VARIABLE</div><h2 class="title" id="s4">금액을 결정하는 실제 변수</h2><ul class="list"><li><b>1</b><span>사건의 복잡성 — 공범 수, 혐의 개수, 기록 분량이 업무량을 직접 좌우합니다.</span></li>
 <li><b>2</b><span>조사 동석 횟수 — 경찰 조사가 여러 차례인 사건은 그만큼 비용이 올라갑니다.</span></li>
 <li><b>3</b><span>합의 진행 여부 — 변호사가 직접 피해자와 접촉해 합의를 진행하는지에 따라 다릅니다.</span></li>
 <li><b>4</b><span>감정·사실조회 필요성 — 재산분할, 비상장주식 평가 등은 별도 비용이 발생합니다.</span></li>
 <li><b>5</b><span>긴급성 — 영장실질심사처럼 하루 안에 대응해야 하는 사건은 별도로 산정됩니다.</span></li>
 <li><b>6</b><span>심급 범위 — 항소심까지 포함하는 계약과 1심만의 계약은 총액이 다릅니다.</span></li></ul>
-<div class="divider"></div><div class="label">CONTRACT</div><h2 class="title" id="s4">계약서에서 반드시 확인할 조항</h2><ul class="list"><li><b>1</b><span>수임 범위 — 어느 단계(경찰/검찰/1심)까지 포함되는지 문장으로 특정되어 있는지 확인하십시오.</span></li>
+<div class="divider"></div><div class="label">CONTRACT</div><h2 class="title" id="s5">계약서에서 반드시 확인할 조항</h2><ul class="list"><li><b>1</b><span>수임 범위 — 어느 단계(경찰/검찰/1심)까지 포함되는지 문장으로 특정되어 있는지 확인하십시오.</span></li>
 <li><b>2</b><span>담당 변호사 — 실제 수행 변호사의 성명이 기재되어 있는지 확인하십시오.</span></li>
 <li><b>3</b><span>조사 동석 — 포함 횟수와 초과 시 비용이 명시되어 있는지 확인하십시오.</span></li>
 <li><b>4</b><span>중도 해지 — 해지 시 정산 기준이 있는지 확인하십시오. 없으면 분쟁이 생깁니다.</span></li>
 <li><b>5</b><span>실비 정산 — 실비의 범위와 정산 방법, 상한이 있는지 확인하십시오.</span></li>
 <li><b>6</b><span>부가세 — 표시 금액이 부가세 포함인지 별도인지 반드시 확인하십시오.</span></li></ul>
 <div class="info">법률사무소 위드윤은 상담 단계에서 사건 단계와 예상 업무 범위를 먼저 설명한 뒤 견적을 산정합니다. 계약서에 수임 범위와 담당 변호사를 명시하며, 예상되는 추가 비용은 계약 전에 안내합니다.</div>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>세 군데를 비교 상담한 의뢰인</h3><p>의뢰인: A는 300, B는 500, C는 800이라는데 왜 이렇게 차이가 나나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>세 군데를 비교 상담한 의뢰인</h3><p>의뢰인: A는 300, B는 500, C는 800이라는데 왜 이렇게 차이가 나나요?</p>
 <p>변호사: 포함 범위를 물어보십시오. 300이 경찰 단계까지고 800이 1심까지라면 실제로는 비슷할 수 있습니다.</p>
 <p>의뢰인: 결과가 안 좋으면 돌려받을 수 있나요?</p>
 <p>변호사: 착수금은 원칙적으로 반환되지 않습니다. 다만 수임 범위의 업무가 이루어지지 않았다면 정산 문제가 생깁니다. 그래서 범위 특정이 중요합니다.</p>
 <p>의뢰인: 분할 납부도 되나요?</p>
 <p>변호사: 사무소마다 다릅니다. 계약 전에 협의하고 서면에 남기십시오.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초구 법률상담 이용 안내</h2><table class="tbl"><tbody><tr><th>위치</th><td>서울 서초구 서초대로 270 서보빌딩 602호 (2·3호선 교대역, 2호선 서초역 인근)</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">선임료에 대한 오해</h2><table class="tbl"><tbody><tr><th>&#x27;형사도 성공보수를 줄 수 있다&#x27;</th><td>형사사건 성공보수 약정은 무효입니다(대법원 2015다200111 전원합의체).</td></tr>
+<tr><th>&#x27;착수금은 결과가 나쁘면 돌려받는다&#x27;</th><td>원칙적으로 반환되지 않습니다. 그래서 수임 범위 특정이 중요합니다.</td></tr>
+<tr><th>&#x27;견적은 총액만 비교하면 된다&#x27;</th><td>같은 조건에서의 총액을 비교해야 의미가 있습니다. 포함 단계가 다르면 비교 자체가 성립하지 않습니다.</td></tr>
+<tr><th>&#x27;항소심도 같은 계약에 포함된다&#x27;</th><td>심급별로 별개 사건입니다. 계약서에 명시되지 않았다면 별도 계약이 원칙입니다.</td></tr>
+<tr><th>&#x27;상담만 받으면 실익이 없다&#x27;</th><td>사건 단계 진단과 우선순위 정리만으로도 다음 대응이 달라집니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초구 법률상담 이용 안내</h2><table class="tbl"><tbody><tr><th>위치</th><td>서울 서초구 서초대로 270 서보빌딩 602호 (2·3호선 교대역, 2호선 서초역 인근)</td></tr>
 <tr><th>상담 권역</th><td>서초동·방배동·잠원동·반포동·양재동·내곡동, 강남구 역삼·논현·삼성, 동작구 사당·이수, 관악구 일대</td></tr>
 <tr><th>대응 기관</th><td>서초·방배·강남경찰서, 서울중앙지방검찰청, 서울중앙지방법원, 서울가정법원</td></tr>
 <tr><th>취급 분야</th><td>형사, 성범죄, 스토킹, 이혼, 재산분할, 상간소송</td></tr>
@@ -132,5 +210,6 @@
 <div class="cta"><div><h2>먼저 사건 단계를 진단받으십시오</h2><p>무엇이 필요한지 정해져야 비용도 정확해집니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>

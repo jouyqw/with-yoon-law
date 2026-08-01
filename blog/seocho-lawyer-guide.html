@@ -64,17 +64,84 @@
 .rel-card span{display:block;margin-top:9px;font-size:12px;color:#98a2b3}
 @media(max-width:720px){.toc ol,.rel-grid{grid-template-columns:1fr}.tldr,.toc{padding:20px 18px}.author{padding:20px 18px;gap:14px}.author .av{flex:0 0 44px;height:44px;font-size:16px}}
 
+
+/* ── 모바일 최적화 ───────────────────────────── */
+.lg{display:inline}.sm{display:none}
+.mcta{display:none}
+@media(max-width:760px){
+  /* 헤더: 2줄 깨짐 방지 + 높이 축소 */
+  .top-in{min-height:54px;padding:0 13px;gap:8px}
+  .brand{min-width:0;gap:9px}
+  .brand>div{min-width:0}
+  .mark{width:31px;height:31px;font-size:14px;flex:0 0 31px}
+  .brand strong{font-size:10px;letter-spacing:.8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand span{font-size:10.5px;white-space:nowrap}
+  .top-actions{gap:6px;flex:0 0 auto}
+  .btn{padding:8px 11px;font-size:12px;white-space:nowrap;border-radius:5px}
+  .lg{display:none}.sm{display:inline}
+
+  /* 본문 여백·타이포 */
+  .page{padding:20px 12px 96px}
+  .crumb{font-size:12px;margin-bottom:14px}
+  .head{padding:26px 18px 22px}
+  .body{padding:26px 18px 34px}
+  h1{font-size:25px;line-height:1.38}
+  .desc{font-size:15px;margin-top:12px}
+  .meta{gap:5px 14px;font-size:12.5px;margin-top:15px}
+  .a-text{font-size:15.5px;line-height:1.92}
+  .title{font-size:19px;padding-bottom:10px;margin-bottom:16px}
+  .divider{margin:34px 0}
+
+  /* 표: 라벨-내용 세로 스택 (좁은 th 줄바꿈 방지) */
+  .tbl{border:1px solid var(--line);border-bottom:none}
+  .tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl tr{border-bottom:1px solid var(--line);background:#fff}
+  .tbl tr:nth-child(odd){background:#fcfcfd}
+  .tbl th{width:auto;border:none;background:transparent;padding:14px 15px 0;
+          font-size:11.5px;font-weight:900;letter-spacing:1.2px;color:#9a7b2e}
+  .tbl td{border:none;padding:5px 15px 15px;font-size:15px;line-height:1.85}
+
+  /* 리스트·인용·요약 */
+  .list li{padding:15px 14px;gap:11px}
+  .list b{flex:0 0 26px;height:26px;font-size:13px}
+  .list span{font-size:15px}
+  .info{padding:15px 16px;font-size:14.5px}
+  .quote{padding:22px 18px;margin:24px 0}
+  .quote p{font-size:16px}
+  .dark{padding:20px 17px}
+  .dark p{font-size:14.5px;line-height:1.9}
+  .faq details{padding:15px 16px}
+  .faq summary{font-size:15px;line-height:1.5}
+  .faq p{font-size:14.5px}
+  .tldr li{font-size:15px}
+  .toc li{font-size:14.5px}
+  .rel-card p{font-size:15px}
+
+  /* 하단 고정 상담 바 */
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:200;
+        box-shadow:0 -6px 20px rgba(17,24,39,.16)}
+  .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+          height:56px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+  .mcta a.tel{background:var(--navy);color:#fff}
+  .mcta a.kko{background:var(--green);color:#111}
+}
+@media(max-width:380px){
+  .brand strong{display:none}
+  .brand span{font-size:12px;font-weight:700;color:var(--navy)}
+  h1{font-size:23px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ 긴급상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡</a></div></div></nav>
+<nav class="top"><div class="top-in"><a class="brand" href="/index.html"><div class="mark">W</div><div><strong>LAW OFFICE WITH YOON</strong><span>법률사무소 위드윤</span></div></a><div class="top-actions"><a class="btn primary" href="/board.html?type=law">법률칼럼</a><a class="btn gold" href="tel:010-9491-1567">☎ <span class="lg">긴급</span>상담</a><a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener"><span class="lg">카카오톡</span><span class="sm">카톡</span></a></div></div></nav>
 <main class="page">
 <nav class="crumb"><a href="/index.html">홈</a><span>›</span><a href="/board.html?type=law">법률칼럼</a><span>›</span><span>서초변호사</span></nav>
 <article class="article">
 <header class="head"><div class="cat">서초 법률칼럼 · 변호사 선임</div><h1>서초변호사 선임 기준 — 법원 앞 사무소가 유리한 진짜 이유</h1><p class="desc">서초변호사를 찾는다면 간판보다 사건 단계와 관할을 먼저 봐야 합니다. 서초동 법조타운의 구조, 직접 상담 여부, 선임 시점 판단 기준을 정리했습니다.</p><div class="meta"><span><b>작성자</b> 윤성호 변호사 · 법률사무소 위드윤</span><span><b>작성일</b> 2026.08.01</span><span><b>키워드</b> 서초변호사</span><span><b>지역</b> 서울 서초구 서초동(교대역·서초역 법조타운)</span></div></header>
 <div class="body">
 <div class="tldr"><h2>이 글의 핵심</h2><ul><li>서초변호사를 찾는다면 간판보다 사건 단계와 관할을 먼저 봐야 합니다.</li><li>상담하는 변호사와 실제 사건을 수행하는 변호사가 같은 사람인지 확인하십시오.</li><li>내 사건의 혐의명과 적용 법조를 정확히 말해줄 수 있는지 확인하십시오.</li><li>경찰 조사 동석 여부와 횟수가 선임료에 포함되는지 서면으로 확인하십시오.</li></ul></div>
-<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">서초변호사를 찾는 사람은 이미 급한 상태입니다</a></li><li><a href="#s2">사건 단계별로 서초변호사가 하는 일이 다릅니다</a></li><li><a href="#s3">서초변호사 상담 전 반드시 확인할 6가지</a></li><li><a href="#s4">이런 상담은 피하십시오</a></li><li><a href="#s5">상담예시</a></li><li><a href="#s6">서초 인근 지역별 주요 관할</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
+<nav class="toc"><strong>목차</strong><ol><li><a href="#s1">서초변호사를 찾는 사람은 이미 급한 상태입니다</a></li><li><a href="#s2">사건 단계별로 서초변호사가 하는 일이 다릅니다</a></li><li><a href="#s3">사건 유형별 실제 소요 기간</a></li><li><a href="#s4">서초변호사 상담 전 반드시 확인할 6가지</a></li><li><a href="#s5">이런 상담은 피하십시오</a></li><li><a href="#s6">상담예시</a></li><li><a href="#s7">자주 듣는 오해와 실제</a></li><li><a href="#s8">서초 인근 지역별 주요 관할</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#loc">상담·오시는 길</a></li></ol></nav>
 <div class="label">OVERVIEW</div><h2 class="title" id="s1">서초변호사를 찾는 사람은 이미 급한 상태입니다</h2>
 <p class="a-text">서초변호사를 검색하는 분들의 상황은 대체로 비슷합니다. 경찰서에서 출석요구 문자를 받았거나, 법원에서 소장이 도착했거나, 배우자가 이혼 서류를 언급한 직후입니다. 공통점은 &#x27;내일 당장 무엇을 해야 하는지&#x27;를 모른다는 것입니다.</p>
 <p class="a-text">서울 서초구 서초동은 서울중앙지방법원과 서울중앙지방검찰청이 자리한 대한민국 최대의 법조타운입니다. 교대역(2·3호선)과 서초역(2호선)을 중심으로 수천 개의 법률사무소가 밀집해 있습니다. 선택지가 많다는 것은 곧 잘못 고르기도 쉽다는 뜻입니다.</p>
@@ -86,25 +153,36 @@
 <tr><th>검찰 송치 후</th><td>불기소·기소유예를 목표로 한 의견서와 합의·양형 자료가 중심입니다.</td></tr>
 <tr><th>기소 이후</th><td>증거기록 등사, 증인신문 준비, 양형 자료 정리로 실형을 피하는 전략이 필요합니다.</td></tr>
 <tr><th>민사·가사</th><td>소장 접수 전 증거 확보가 승패를 좌우합니다. 감정·사실조회 신청 시점도 미리 설계해야 합니다.</td></tr></tbody></table>
-<div class="divider"></div><div class="label">CHECKPOINT</div><h2 class="title" id="s3">서초변호사 상담 전 반드시 확인할 6가지</h2><ul class="list"><li><b>1</b><span>상담하는 변호사와 실제 사건을 수행하는 변호사가 같은 사람인지 확인하십시오. 상담은 대표변호사가, 수행은 다른 사람이 하는 구조는 흔합니다.</span></li>
+<div class="divider"></div><div class="label">TIMELINE</div><h2 class="title" id="s3">사건 유형별 실제 소요 기간</h2><table class="tbl"><tbody><tr><th>경찰 단계</th><td>고소 접수부터 송치까지 통상 2~4개월. 성범죄·다수 공범 사건은 6개월을 넘기기도 합니다.</td></tr>
+<tr><th>검찰 단계</th><td>송치 후 처분까지 1~3개월. 보완수사요구가 들어가면 추가로 1~2개월 늘어납니다.</td></tr>
+<tr><th>1심 재판</th><td>기소 후 선고까지 4~8개월. 증인신문이 여러 차례면 1년을 넘길 수 있습니다.</td></tr>
+<tr><th>협의이혼</th><td>숙려기간 포함 1~4개월. 미성년 자녀가 있으면 3개월이 원칙입니다.</td></tr>
+<tr><th>재판이혼</th><td>조정에서 끝나면 4~6개월, 본안 판결까지 가면 1년 내외입니다.</td></tr>
+<tr><th>상간소송</th><td>소장 접수부터 조정·판결까지 6~10개월이 일반적입니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">CHECKPOINT</div><h2 class="title" id="s4">서초변호사 상담 전 반드시 확인할 6가지</h2><ul class="list"><li><b>1</b><span>상담하는 변호사와 실제 사건을 수행하는 변호사가 같은 사람인지 확인하십시오. 상담은 대표변호사가, 수행은 다른 사람이 하는 구조는 흔합니다.</span></li>
 <li><b>2</b><span>내 사건의 혐의명과 적용 법조를 정확히 말해줄 수 있는지 확인하십시오. &#x27;잘 해결해 드리겠다&#x27;는 말은 정보가 아닙니다.</span></li>
 <li><b>3</b><span>경찰 조사 동석 여부와 횟수가 선임료에 포함되는지 서면으로 확인하십시오.</span></li>
 <li><b>4</b><span>목표 처분을 현실적으로 제시하는지 보십시오. 증거가 명확한 사건에 무혐의를 장담하는 것은 위험 신호입니다.</span></li>
 <li><b>5</b><span>검찰 송치 이후, 1심 이후에 추가 비용이 발생하는 범위를 미리 확인하십시오.</span></li>
 <li><b>6</b><span>합의가 필요한 사건이라면 합의 진행을 변호사가 직접 하는지, 의뢰인에게 맡기는지 확인하십시오.</span></li></ul>
-<div class="divider"></div><div class="label">WARNING</div><h2 class="title" id="s4">이런 상담은 피하십시오</h2><ul class="list"><li><b>1</b><span>사건 내용을 5분도 듣지 않고 선임료부터 말하는 경우</span></li>
+<div class="divider"></div><div class="label">WARNING</div><h2 class="title" id="s5">이런 상담은 피하십시오</h2><ul class="list"><li><b>1</b><span>사건 내용을 5분도 듣지 않고 선임료부터 말하는 경우</span></li>
 <li><b>2</b><span>&#x27;검사와 아는 사이&#x27;, &#x27;판사 출신이라 다르다&#x27;는 식의 인맥을 앞세우는 경우</span></li>
 <li><b>3</b><span>무조건 무혐의·집행유예를 장담하며 확답을 주는 경우</span></li>
 <li><b>4</b><span>증거 목록도 보지 않고 합의금 액수를 특정하는 경우</span></li>
 <li><b>5</b><span>계약서 없이 구두로 진행하자고 하는 경우</span></li></ul>
 <div class="info">변호사법상 성공보수 약정은 형사사건에서 무효입니다(대법원 2015다200111 전원합의체). 형사사건에서 &#x27;이기면 얼마&#x27;라는 구조를 제안받았다면 그 자체가 확인이 필요한 신호입니다.</div>
-<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s5">상담예시</h2><div class="dark"><h3>서초동에서 가장 많이 받는 첫 질문</h3><p>의뢰인: 서초변호사가 너무 많은데 무슨 기준으로 고르나요?</p>
+<div class="divider"></div><div class="label">CONSULTATION</div><h2 class="title" id="s6">상담예시</h2><div class="dark"><h3>서초동에서 가장 많이 받는 첫 질문</h3><p>의뢰인: 서초변호사가 너무 많은데 무슨 기준으로 고르나요?</p>
 <p>변호사: 분야 표시보다 &#x27;내 사건 단계에서 지금 뭘 해야 하는지&#x27;를 구체적으로 말해주는 곳을 고르십시오. 그 설명이 곧 실력입니다.</p>
 <p>의뢰인: 조사가 모레인데 지금 선임해도 늦지 않나요?</p>
 <p>변호사: 늦지 않습니다. 다만 이틀이면 진술 방향 정리와 자료 목록 작성까지가 현실적인 범위입니다. 하루라도 빠를수록 선택지가 넓어집니다.</p>
 <p>의뢰인: 사무실이 법원 근처면 정말 유리한가요?</p>
 <p>변호사: 인맥 때문이 아니라 물리적 속도 때문에 유리합니다. 기록 등사, 서류 접수, 긴급 신청이 하루 안에 끝나는 것과 며칠 걸리는 것은 결과가 다릅니다.</p></div>
-<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s6">서초 인근 지역별 주요 관할</h2><table class="tbl"><tbody><tr><th>서초동·잠원동·반포동</th><td>서초경찰서 → 서울중앙지검 → 서울중앙지법</td></tr>
+<div class="divider"></div><div class="label">MYTH &amp; FACT</div><h2 class="title" id="s7">자주 듣는 오해와 실제</h2><table class="tbl"><tbody><tr><th>&#x27;변호사는 재판 때만 필요하다&#x27;</th><td>실제로는 경찰 첫 조사 전이 가장 중요합니다. 그때 남긴 진술이 재판까지 그대로 따라갑니다.</td></tr>
+<tr><th>&#x27;법원 근처면 인맥이 있다&#x27;</th><td>인맥은 사건에 영향을 주지 않습니다. 다만 기록 등사·긴급 접수가 당일 처리되는 속도 차이는 실재합니다.</td></tr>
+<tr><th>&#x27;전문 표시가 있으면 안심이다&#x27;</th><td>분야 등록은 참고 지표일 뿐입니다. 사건 단계별 대응 계획을 구체적으로 설명하는지가 실질 기준입니다.</td></tr>
+<tr><th>&#x27;선임료가 비싸면 잘한다&#x27;</th><td>금액보다 수임 범위가 중요합니다. 300만원이 경찰 단계까지, 800만원이 1심까지라면 실질은 비슷합니다.</td></tr>
+<tr><th>&#x27;무조건 부인하는 게 유리하다&#x27;</th><td>객관 증거가 있는 사실을 부인하면 나머지 진술의 신빙성까지 무너집니다.</td></tr></tbody></table>
+<div class="divider"></div><div class="label">AREA</div><h2 class="title" id="s8">서초 인근 지역별 주요 관할</h2><table class="tbl"><tbody><tr><th>서초동·잠원동·반포동</th><td>서초경찰서 → 서울중앙지검 → 서울중앙지법</td></tr>
 <tr><th>방배동·사당·이수</th><td>방배경찰서 → 서울중앙지검 → 서울중앙지법</td></tr>
 <tr><th>양재동·내곡동</th><td>서초경찰서 관할, 이혼·상간소송은 양재동 서울가정법원</td></tr>
 <tr><th>역삼동·논현동·삼성동</th><td>강남경찰서 → 서울중앙지검 → 서울중앙지법</td></tr>
@@ -131,5 +209,6 @@
 <div class="cta"><div><h2>서초동 법조타운에서 바로 상담하십시오</h2><p>출석요구서나 소장을 받으셨다면 오늘 사실관계부터 정리해야 합니다.</p></div><div><a class="btn gold" href="tel:010-9491-1567">☎ 010-9491-1567</a> <a class="btn green" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div></div>
 </article>
 </main>
+<div class="mcta"><a class="tel" href="tel:010-9491-1567">☎ 전화상담</a><a class="kko" href="https://pf.kakao.com/_CNtxjX" target="_blank" rel="noopener">카카오톡 상담</a></div>
 <footer class="foot"><strong>법률사무소 위드윤</strong> · 서울 서초구 서초대로 270 서보빌딩 602호<br>직통 상담: <a href="tel:010-9491-1567">010-9491-1567</a> · 사무실: <a href="tel:02-2038-7241">02-2038-7241</a><br>© 2026 Law Office With Yoon. All rights reserved.</footer>
 </body></html>
