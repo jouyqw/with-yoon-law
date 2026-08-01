@@ -406,6 +406,26 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     return 'board_detail.html?'+p.toString();
   }
 
+  /* 작성일 문자열을 정렬 가능한 8자리 숫자로 변환
+     '2026.08.10' → 20260810 / '2026.08' → 20260801 / '2026' → 20260101 */
+  function dateKey(d){
+    var s = String(d||'').replace(/[^0-9]/g, '');
+    if(s.length >= 8) return parseInt(s.slice(0,8), 10);
+    if(s.length === 6) return parseInt(s + '01', 10);
+    if(s.length === 4) return parseInt(s + '0101', 10);
+    return 0;
+  }
+
+  /* 최신글이 위로 오도록 작성일 내림차순 정렬 (같은 날짜는 등록 역순 유지) */
+  function sortByDateDesc(items){
+    return items.map(function(it, idx){ return {it:it, idx:idx}; })
+      .sort(function(a, b){
+        var diff = dateKey(b.it.date) - dateKey(a.it.date);
+        return diff !== 0 ? diff : (b.idx - a.idx);
+      })
+      .map(function(w){ return w.it; });
+  }
+
   function render(seeds, apiItems){
     var titleMap = {case:'성공사례', law:'법률칼럼', press:'언론'};
     document.getElementById('boardTitle').textContent = titleMap[current]||'칼럼';
@@ -418,7 +438,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       return;
     }
     var html = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div>';
-    all.slice().reverse().forEach(function(item, i){
+    sortByDateDesc(all).forEach(function(item, i){
       var url = detailUrl(current, item);
       var cat = categoryOf(item);
       html += '<a class="row" data-cat="'+cat.key+'" data-text="'+esc((item.title||'')+' '+((item.tags||[]).join(' ')))+'" target="_blank" rel="noopener" href="'+esc(url)+'">'
