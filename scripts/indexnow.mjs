@@ -24,9 +24,12 @@ const KEY = process.env.INDEXNOW_KEY || '';
 const SITEMAP = 'sitemap.xml';
 
 // IndexNow 수신 엔드포인트. 네이버는 별도 서버, 나머지는 공용 허브가 상호 전파한다.
+// 공식 호스트는 searchadvisor.naver.com (api. 서브도메인은 존재하지 않아 DNS 실패한다).
+// api.indexnow.org 는 참여 검색엔진 전체(Bing·Yandex·Seznam·Naver·Yep 등)로 전파하므로
+// 네이버 직행 요청이 실패해도 허브 경로로 한 번 더 들어간다. 이중화 목적으로 둘 다 호출한다.
 const ENDPOINTS = [
-  { name: '네이버',   url: 'https://api.searchadvisor.naver.com/indexnow' },
-  { name: 'IndexNow', url: 'https://api.indexnow.org/indexnow' }, // Bing / Yandex / Seznam
+  { name: '네이버',   url: 'https://searchadvisor.naver.com/indexnow' },
+  { name: 'IndexNow', url: 'https://api.indexnow.org/indexnow' },
 ];
 
 const args = process.argv.slice(2);
@@ -87,6 +90,8 @@ async function submit(endpoint, urls) {
     urlList: urls,
   });
 
+  // Node 의 fetch 는 기본 타임아웃이 없다. 색인 엔드포인트가 응답을 붙잡고 있으면
+  // 워크플로가 6시간 한도까지 매달리므로 반드시 명시적으로 끊어준다.
   const res = await fetch(endpoint.url, {
     method: 'POST',
     headers: {
@@ -94,6 +99,7 @@ async function submit(endpoint, urls) {
       'User-Agent': 'with-yoon-law-indexnow/1.0',
     },
     body,
+    signal: AbortSignal.timeout(30000),
   });
 
   // 200 OK / 202 Accepted 는 정상 접수. 그 외는 원인 파악용으로 본문을 남긴다.
@@ -137,7 +143,12 @@ async function main() {
         const ok = await submit(endpoint, chunk);
         if (!ok) allOk = false;
       } catch (e) {
-        console.log(`⚠️  ${endpoint.name}: 전송 실패 — ${e.message}`);
+        // fetch 는 네트워크 오류를 전부 "fetch failed" 로 뭉뚱그린다.
+        // 실제 원인(DNS·TLS·연결거부)은 cause 에 있으므로 함께 찍어야 진단이 된다.
+        const why = e.name === 'TimeoutError'
+          ? '30초 내 응답 없음 (타임아웃)'
+          : `${e.message}${e.cause ? ` (${e.cause.code || e.cause.message})` : ''}`;
+        console.log(`⚠️  ${endpoint.name}: 전송 실패 — ${why}`);
         allOk = false;
       }
     }

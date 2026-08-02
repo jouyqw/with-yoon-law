@@ -55,6 +55,7 @@ async function getAccessToken(sa) {
       grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
       assertion,
     }),
+    signal: AbortSignal.timeout(30000),
   });
 
   const json = await res.json();
@@ -73,6 +74,7 @@ async function inspect(token, url) {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ inspectionUrl: url, siteUrl: SITE_URL, languageCode: 'ko' }),
+    signal: AbortSignal.timeout(30000),
   });
 
   if (res.status === 429) return { url, state: 'QUOTA', detail: '일일 쿼터 초과' };
@@ -102,7 +104,12 @@ async function main() {
 
   const results = [];
   for (const url of targets) {
-    const r = await inspect(token, url);
+    let r;
+    try {
+      r = await inspect(token, url);
+    } catch (e) {
+      r = { url, state: 'ERROR', detail: e.name === 'TimeoutError' ? '응답 타임아웃' : e.message };
+    }
     results.push(r);
     console.log(`${r.state === 'PASS' ? '✅' : '❌'} ${r.state.padEnd(8)} ${r.url}${r.coverage ? ` — ${r.coverage}` : ''}`);
     if (r.state === 'QUOTA') break;
