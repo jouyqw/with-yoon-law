@@ -1,0 +1,47 @@
+name: IndexNow 일괄 색인 요청
+
+# sitemap.xml 의 전체 URL을 네이버·Bing·Yandex 에 한 번에 통보한다.
+# - 최초 도입 시 1회 실행 (기존 99편을 한 번에 밀어넣기)
+# - 사이트 구조를 크게 바꿨을 때
+# - 색인 누락이 의심될 때
+# 평상시 신규/수정분은 "Update search feeds" 워크플로가 자동으로 처리하므로
+# 이 워크플로를 주기적으로 돌릴 필요는 없다. (과다 제출은 오히려 신뢰도를 깎는다)
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "실제 전송 없이 대상만 확인"
+        type: boolean
+        default: false
+
+jobs:
+  bulk-submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 키 파일 접근 확인
+        env:
+          INDEXNOW_KEY: eee764b31941bb288655b49d490b1005
+        run: |
+          URL="https://with-yoon-law.com/${INDEXNOW_KEY}.txt"
+          BODY=$(curl -fsSL "$URL" || echo "__FAIL__")
+          if [ "$BODY" != "$INDEXNOW_KEY" ]; then
+            echo "::error::키 파일이 배포되지 않았거나 내용이 다릅니다 → $URL"
+            echo "받은 값: $BODY"
+            exit 1
+          fi
+          echo "키 파일 정상: $URL"
+
+      - name: 전체 URL 제출
+        env:
+          INDEXNOW_KEY: eee764b31941bb288655b49d490b1005
+          SITE_HOST: with-yoon-law.com
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/indexnow.mjs --all --dry-run
+          else
+            node scripts/indexnow.mjs --all
+          fi

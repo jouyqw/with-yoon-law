@@ -1,0 +1,75 @@
+name: 구글 색인 상태 점검
+
+# 구글은 일반 페이지의 "색인 요청"을 API로 허용하지 않는다.
+# (Indexing API 는 JobPosting / BroadcastEvent 전용 — 일반 페이지에 쓰면 정책 위반)
+# 대신 URL Inspection API 로 색인 여부를 자동 점검하고,
+# 미색인 URL 목록만 이슈로 남겨 사람이 GSC 에서 바로 처리하도록 한다.
+#
+# 사전 준비 (최초 1회, 약 10분)
+#   1. GCP 콘솔에서 프로젝트 생성 후 "Google Search Console API" 사용 설정
+#   2. 서비스 계정 생성 → 키 > 새 키 만들기(JSON) 다운로드
+#   3. GSC 속성 > 설정 > 사용자 및 권한 > 사용자 추가
+#      → 서비스 계정 이메일(...@....iam.gserviceaccount.com)을 "소유자" 권한으로 추가
+#   4. GitHub > Settings > Secrets and variables > Actions
+#      - Secrets  탭:  GSC_SA_JSON    = 다운로드한 JSON 전문 붙여넣기
+#      - Variables 탭:  GSC_SITE_URL   = sc-domain:with-yoon-law.com
+#                       (URL 접두어 속성이라면 https://with-yoon-law.com/ )
+#   시크릿이 없으면 이 워크플로는 조용히 건너뛴다.
+
+on:
+  schedule:
+    - cron: "0 22 * * *"      # 매일 07:00 KST (22:00 UTC)
+  workflow_dispatch:
+    inputs:
+      max_urls:
+        description: "점검할 최대 URL 수 (일일 쿼터 2,000)"
+        type: string
+        default: "120"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      HAS_CREDENTIALS: ${{ secrets.GSC_SA_JSON != '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 자격증명 확인
+        run: |
+          if [ "$HAS_CREDENTIALS" != "true" ]; then
+            echo "::warning::GSC_SA_JSON 시크릿이 없어 건너뜁니다. 이 파일 상단의 준비 절차를 참고하세요."
+          fi
+
+      - name: 색인 상태 조회
+        id: check
+        if: env.HAS_CREDENTIALS == 'true'
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:with-yoon-law.com' }}
+          GSC_MAX_URLS: ${{ inputs.max_urls || '120' }}
+        run: node scripts/gsc-check.mjs
+
+      # 미색인이 있을 때만 보고한다. 매일 새 이슈가 쌓이지 않도록
+      # 열려 있는 기존 이슈가 있으면 댓글로 이어 붙인다.
+      - name: 미색인 URL 보고
+        if: ${{ steps.check.outputs.missing != '' && steps.check.outputs.missing != '0' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MISSING: ${{ steps.check.outputs.missing }}
+          RATE: ${{ steps.check.outputs.rate }}
+        run: |
+          set -e
+          EXISTING=$(gh issue list --state open --search "구글 미색인 in:title" --json number --jq '.[0].number' || echo "")
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file gsc-report.md
+            echo "기존 이슈 #$EXISTING 에 결과를 덧붙였습니다."
+          else
+            gh issue create \
+              --title "구글 미색인 ${MISSING}건 (색인률 ${RATE}%)" \
+              --body-file gsc-report.md
+          fi

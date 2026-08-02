@@ -238,6 +238,14 @@ jobs:
           console.log('Generated llms.txt');
           NODE
 
+      # 커밋 직전에 실행해야 HEAD(직전 커밋)의 sitemap.xml 과 비교해
+      # "새로 추가되거나 lastmod 가 바뀐 URL"만 정확히 골라낼 수 있다.
+      - name: IndexNow 색인 요청 (네이버 · Bing · Yandex)
+        env:
+          INDEXNOW_KEY: eee764b31941bb288655b49d490b1005
+          SITE_HOST: with-yoon-law.com
+        run: node scripts/indexnow.mjs --diff
+
       - name: Commit generated files
         run: |
           if git diff --quiet -- sitemap.xml rss.xml robots.txt llms.txt; then
