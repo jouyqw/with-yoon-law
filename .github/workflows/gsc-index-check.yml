@@ -33,6 +33,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       HAS_CREDENTIALS: ${{ secrets.GSC_SA_JSON != '' }}
     steps:

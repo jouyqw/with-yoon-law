@@ -18,6 +18,7 @@ on:
 jobs:
   bulk-submit:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,7 +28,7 @@ jobs:
           INDEXNOW_KEY: eee764b31941bb288655b49d490b1005
         run: |
           URL="https://with-yoon-law.com/${INDEXNOW_KEY}.txt"
-          BODY=$(curl -fsSL "$URL" || echo "__FAIL__")
+          BODY=$(curl -fsSL --max-time 20 "$URL" || echo "__FAIL__")
           if [ "$BODY" != "$INDEXNOW_KEY" ]; then
             echo "::error::키 파일이 배포되지 않았거나 내용이 다릅니다 → $URL"
             echo "받은 값: $BODY"
