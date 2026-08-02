@@ -20,8 +20,8 @@
              ├→ sitemap/rss/robots/llms 재생성
              ├→ 직전 sitemap 과 비교해 "신규 + lastmod 변경" URL 추출
              └→ IndexNow POST
-                  ├→ 네이버 (api.searchadvisor.naver.com)
-                  └→ IndexNow 허브 (Bing · Yandex · Seznam)
+                  ├→ 네이버 (searchadvisor.naver.com)
+                  └→ IndexNow 허브 (api.indexnow.org → Bing · Yandex · Seznam · Naver · Yep)
 ```
 
 ## 검색엔진별 자동화 가능 범위
