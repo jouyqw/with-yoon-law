@@ -10,6 +10,12 @@
   Cache-Control: public, max-age=300, must-revalidate
   X-Robots-Tag: index, follow
 
+# IndexNow 인증 키 파일. text/plain 으로 서빙되어야 검증을 통과한다.
+/eee764b31941bb288655b49d490b1005.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: noindex
+
 /blog/*
   X-Robots-Tag: index, follow
 
