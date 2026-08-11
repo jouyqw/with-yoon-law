@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 10 Aug 2026 18:40:47 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 16:08:41 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>양육비 산정기준표 보는 법 — 내 경우 얼마가 나오는지 직접 계산해봅니다</title>
+      <link>https://with-yoon-law.com/blog/child-support-calculation</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/child-support-calculation</guid>
+      <description>서울가정법원 양육비 산정기준표의 구조와 적용 순서, 가산·감산 요소, 미지급 시 이행명령·감치·급여 직접지급명령까지 실무 기준으로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 11 Aug 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>쌍방폭행으로 접수됐다면 — 정당방위가 인정되는 경우와 안 되는 경우</title>
+      <link>https://with-yoon-law.com/blog/mutual-assault-response</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/mutual-assault-response</guid>
+      <description>먼저 맞았는데 왜 쌍방으로 입건되는지, 정당방위 인정 요건, 반의사불벌죄인 폭행죄의 합의 실무, 상해로 죄명이 바뀌는 기준을 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 11 Aug 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>음주운전 처벌기준 총정리 — 수치별 형량, 면허 처분, 초범과 재범의 차이</title>
       <link>https://with-yoon-law.com/blog/dui-penalty-standard-guide</link>
@@ -390,22 +406,6 @@
       <description>강간, 폭행 등 5가지 중범죄로 동시 고소당한 의뢰인. 치밀한 사실관계 분석과 증거 수집으로 5개 혐의 모두 불송치 결정을 받은 사례를 소개합니다.</description>
       <category>성공사례</category>
       <pubDate>Fri, 12 Jun 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>원나잇 후 준강간 고소당했다면 — CCTV와 메시지가 관건</title>
-      <link>https://with-yoon-law.com/blog/onenight-sexual-assault</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/onenight-sexual-assault</guid>
-      <description>합의 하에 가진 원나잇이 다음 날 준강간 고소로 돌아올 수 있습니다. 블랙아웃 주장에 맞서는 객관적 증거 수집과 무혐의 입증 전략을 안내합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Fri, 12 Jun 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>구공판 처분 통지서를 받았다면 — 정식 재판 대비 절차</title>
-      <link>https://with-yoon-law.com/blog/gupongpan</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/gupongpan</guid>
-      <description>검찰 단계에서 &apos;구공판&apos; 처분이 내려졌다는 것은 정식 재판에 회부되었다는 뜻입니다. 징역형 위험이 높은 구공판의 의미와 재판 대비 전략을 알아봅니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Thu, 11 Jun 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
