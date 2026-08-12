@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 11 Aug 2026 18:45:06 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 16:06:12 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>전과기록 조회 방법 — 범죄경력회보서와 수사경력자료의 결정적 차이</title>
+      <link>https://with-yoon-law.com/blog/criminal-record-check</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/criminal-record-check</guid>
+      <description>기소유예와 벌금형이 기록에 어떻게 남는지, 범죄경력회보서 발급 방법, 형의 실효 기간, 취업 시 조회 가능한 범위까지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Wed, 12 Aug 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>강제추행 합의금, 얼마가 적정한가 — 액수를 정하는 다섯 가지 변수</title>
+      <link>https://with-yoon-law.com/blog/molestation-settlement-amount</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/molestation-settlement-amount</guid>
+      <description>강제추행 합의금에 정해진 시세는 없습니다. 액수를 좌우하는 변수, 합의 시점별 효과 차이, 형사공탁 활용, 합의서에 반드시 넣어야 할 문구를 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Wed, 12 Aug 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>양육비 산정기준표 보는 법 — 내 경우 얼마가 나오는지 직접 계산해봅니다</title>
       <link>https://with-yoon-law.com/blog/child-support-calculation</link>
@@ -390,22 +406,6 @@
       <description>성범죄는 벌금형만 받아도 신상정보 등록, 취업제한 등 치명적인 보안처분이 뒤따릅니다. 일상을 지키기 위한 보안처분 방어 핵심 전략을 확인하십시오.</description>
       <category>법률칼럼</category>
       <pubDate>Sat, 13 Jun 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>강간죄 수사 — 합의 여부 입증이 재판 결과를 좌우합니다</title>
-      <link>https://with-yoon-law.com/blog/sexual-assault-investigation</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/sexual-assault-investigation</guid>
-      <description>강간 혐의는 폭행·협박의 유무와 항거 불능 상태가 핵심 쟁점입니다. 억울한 강간죄 연루 시 수사 단계에서의 진술 및 입증 전략을 안내합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sat, 13 Jun 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>5개 혐의 동시 고소 — 전부 무혐의(불송치) 방어 성공사례</title>
-      <link>https://with-yoon-law.com/blog/no-charge-5-counts</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/no-charge-5-counts</guid>
-      <description>강간, 폭행 등 5가지 중범죄로 동시 고소당한 의뢰인. 치밀한 사실관계 분석과 증거 수집으로 5개 혐의 모두 불송치 결정을 받은 사례를 소개합니다.</description>
-      <category>성공사례</category>
-      <pubDate>Fri, 12 Jun 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
