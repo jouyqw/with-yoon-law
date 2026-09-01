@@ -1,0 +1,44 @@
+[2026-09-01 13:32:58] ─── 큐 점검 (KST 2026-09-01) ─── 발행 100편 · 대기 0편
+[2026-09-01 13:33:04] ─── 큐 점검 (KST 2026-09-01) ─── 발행 100편 · 대기 0편
+[2026-09-01 13:33:04] 2편 보충 시작 → 2026-09-02 ~ 2026-09-02
+[2026-09-01 13:37:35]   통과 2026-09-02 (special-assault-weapon, injury-charge-diagnosis) — 누적 2/2
+[2026-09-01 13:37:35] ─── 보충 완료 · 2편 추가 (대기 2편, 2026-09-02 까지) ───
+[2026-09-01 13:37:35]    2026-09-02  special-assault-weapon
+[2026-09-01 13:37:35]    2026-09-02  injury-charge-diagnosis
+[2026-09-01 13:38:01] ─── 큐 점검 (KST 2026-09-01) ─── 발행 100편 · 대기 2편
+[2026-09-01 13:38:01] ※ 주제 풀이 부족해 57건만 배정했습니다
+[2026-09-01 13:38:01] 57편 보충 시작 → 2026-09-03 ~ 2026-10-01
+[2026-09-01 13:42:33]   통과 2026-09-03 (business-obstruction-guide, obstruction-public-duty) — 누적 2/57
+[2026-09-01 13:45:54]   통과 2026-09-04 (property-damage-scope, theft-intent-standard) — 누적 4/57
+[2026-09-01 13:49:29]   통과 2026-09-05 (embezzlement-custody, occupational-embezzlement) — 누적 6/57
+[2026-09-01 13:51:53]   !! claude 종료코드 1
+[2026-09-01 13:51:53]   재작성 1회차 — 2026-09-06 (breach-of-trust-guide, private-document-forgery)
+[2026-09-01 13:51:56]   !! claude 종료코드 1
+[2026-09-01 13:51:56]   재작성 2회차 — 2026-09-06 (breach-of-trust-guide, private-document-forgery)
+[2026-09-01 13:51:59]   !! claude 종료코드 1
+[2026-09-01 13:51:59] !! 2026-09-06 (breach-of-trust-guide, private-document-forgery) 배치를 3회 시도했지만 통과하지 못했습니다
+[2026-09-01 13:51:59] 여기까지 6편은 정상 반영됐습니다. 다시 실행하면 이어서 채웁니다.
+[2026-09-01 14:10:00] ─── 큐 점검 (KST 2026-09-01) ─── 발행 100편 · 대기 8편
+[2026-09-01 14:10:01] 원격 변경분 반영 완료
+[2026-09-01 14:10:01] 12편 보충 시작 → 2026-09-06 ~ 2026-09-11
+[2026-09-01 14:14:42]   통과 2026-09-06 (breach-of-trust-guide, private-document-forgery) — 누적 2/12
+[2026-09-01 14:16:32] ─── 큐 점검 (KST 2026-09-01) ─── 발행 100편 · 대기 10편
+[2026-09-01 14:19:30]   통과 2026-09-07 (perjury-memory-standard, evidence-destruction-crime) — 누적 4/12
+[2026-09-01 14:20:44] ─── 큐 점검 (KST 2026-09-01) ─── 발행 100편 · 대기 12편
+[2026-09-01 14:23:15]   통과 2026-09-08 (extortion-crime-guide, coercion-crime-guide) — 누적 6/12
+[2026-09-01 14:27:09]   통과 2026-09-09 (confinement-crime-guide, trespass-residence-guide) — 누적 8/12
+[2026-09-01 14:30:51]   통과 2026-09-10 (gambling-place-opening, drug-first-offense-response) — 누적 10/12
+[2026-09-01 14:34:10]   통과 2026-09-11 (account-lending-crime, voice-phishing-withdrawal) — 누적 12/12
+[2026-09-01 14:34:10] ─── 보충 완료 · 12편 추가 (대기 20편, 2026-09-11 까지) ───
+[2026-09-01 14:34:10]    2026-09-06  breach-of-trust-guide
+[2026-09-01 14:34:10]    2026-09-06  private-document-forgery
+[2026-09-01 14:34:10]    2026-09-07  perjury-memory-standard
+[2026-09-01 14:34:10]    2026-09-07  evidence-destruction-crime
+[2026-09-01 14:34:10]    2026-09-08  extortion-crime-guide
+[2026-09-01 14:34:10]    2026-09-08  coercion-crime-guide
+[2026-09-01 14:34:10]    2026-09-09  confinement-crime-guide
+[2026-09-01 14:34:10]    2026-09-09  trespass-residence-guide
+[2026-09-01 14:34:10]    2026-09-10  gambling-place-opening
+[2026-09-01 14:34:10]    2026-09-10  drug-first-offense-response
+[2026-09-01 14:34:10]    2026-09-11  account-lending-crime
+[2026-09-01 14:34:10]    2026-09-11  voice-phishing-withdrawal
