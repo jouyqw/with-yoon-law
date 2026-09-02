@@ -166,8 +166,15 @@ const git = (args) => execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', s
 function gitPull() {
   try {
     git(['fetch', 'origin', 'main']);
+    // posts.json·scheduled.json 은 발행 워크플로가 원격에서 계속 고친다.
+    // 여기서 중단된 실행이 남긴 로컬 수정이 겹치면 ff-only 병합이 막힌다.
+    // 두 파일은 초안에서 다시 만들 수 있으므로 로컬 것을 버리고 원격을 받은 뒤
+    // enqueue 로 재구성한다. 그러면 큐가 항상 "원격 + 초안" 으로 결정된다.
+    try { git(['checkout', '--', 'blog/posts.json', 'blog/scheduled.json']); } catch { }
     git(['merge', '--ff-only', 'origin/main']);
     log('원격 변경분 반영 완료');
+    node([path.join(HERE, 'enqueue.mjs')]);
+    log('초안 기준으로 큐 재구성 완료');
   } catch (e) {
     fail('로컬과 원격이 갈라져 있어 중단했습니다', String(e.stdout || e.stderr || e.message));
   }
