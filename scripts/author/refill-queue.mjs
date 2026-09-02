@@ -107,6 +107,20 @@ const TOPICS = [
   { slug: 'eviction-lawsuit-guide', topic: '명도소송 점유 이전', category: '민사', hub: null },
   { slug: 'payment-order-objection', topic: '지급명령 이의 절차', category: '민사', hub: null },
   { slug: 'provisional-attachment', topic: '가압류 보전의 필요성', category: '민사', hub: null },
+  { slug: 'loan-claim-evidence', topic: '대여금 청구와 차용증 없는 돈', category: '민사', hub: null },
+  { slug: 'goods-payment-claim', topic: '물품대금 청구와 거래 특정', category: '민사', hub: null },
+  { slug: 'construction-payment-claim', topic: '공사대금 기성고 산정', category: '민사', hub: null },
+  { slug: 'lease-deposit-return', topic: '임대차보증금 반환과 대항력', category: '민사', hub: null },
+  { slug: 'floor-noise-dispute', topic: '층간소음 분쟁의 수인한도', category: '민사', hub: null },
+  { slug: 'defect-repair-claim', topic: '하자보수 청구 기간', category: '민사', hub: null },
+  { slug: 'nominal-trust-property', topic: '명의신탁 부동산의 귀속', category: '민사', hub: null },
+  { slug: 'debt-collection-limits', topic: '채권추심에서 넘지 말아야 할 선', category: '민사', hub: null },
+  { slug: 'small-claims-procedure', topic: '소액사건 심판 절차', category: '민사', hub: null },
+  { slug: 'jury-trial-choice', topic: '국민참여재판을 고를 때', category: '형사', hub: 'criminal' },
+  { slug: 'harboring-criminal-guide', topic: '범인도피와 단순히 말하지 않은 것', category: '형사', hub: 'criminal' },
+  { slug: 'juvenile-under-fourteen', topic: '촉법소년 처리 절차', category: '형사', hub: 'criminal' },
+  { slug: 'summary-judgment-court', topic: '즉결심판과 정식재판', category: '형사', hub: 'criminal' },
+  { slug: 'sentence-suspension-guide', topic: '선고유예의 요건', category: '형사', hub: 'criminal' },
 ];
 
 /* ---------- 로그 ---------- */
