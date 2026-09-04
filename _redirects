@@ -1,0 +1,8 @@
+# 파일명에 " (1)" 처럼 붙어 배포됐던 옛 주소를 정상 슬러그로 넘긴다.
+# 사이트맵에 실려 이미 수집됐을 수 있으므로 301 로 넘겨 색인을 옮긴다.
+# 주의: 여기에 "/* /index.html 200" 같은 포괄 규칙을 넣으면 없는 주소가
+# 다시 홈 화면을 200 으로 돌려주게 되므로 절대 추가하지 않는다.
+
+/blog/arrest-without-warrant%20(3)        /blog/arrest-without-warrant        301
+/blog/recording-evidence-sex-crime%20(1)  /blog/recording-evidence-sex-crime  301
+/blog/police-investigation-guide%20(2)    /blog/police-investigation-preparation  301

@@ -21,3 +21,8 @@
 
 /board*
   X-Robots-Tag: index, follow
+
+# 404 페이지 자체는 색인하지 않는다. 위의 /blog/* 규칙보다 뒤에 두어야
+# 없는 주소로 들어온 요청에 index 가 붙지 않는다.
+/404.html
+  X-Robots-Tag: noindex, follow
