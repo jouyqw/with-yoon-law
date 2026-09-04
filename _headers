@@ -16,13 +16,8 @@
   Cache-Control: public, max-age=3600
   X-Robots-Tag: noindex
 
-/blog/*
-  X-Robots-Tag: index, follow
-
-/board*
-  X-Robots-Tag: index, follow
-
-# 404 페이지 자체는 색인하지 않는다. 위의 /blog/* 규칙보다 뒤에 두어야
-# 없는 주소로 들어온 요청에 index 가 붙지 않는다.
-/404.html
-  X-Robots-Tag: noindex, follow
+# /blog/* 와 /board* 에 X-Robots-Tag: index, follow 를 걸어 두었으나 제거한다.
+# 이 규칙은 요청 경로로 매칭되기 때문에 없는 주소로 들어온 404 응답에까지
+# index 가 붙었다. 색인하지 말라고 404 를 주면서 색인하라는 헤더를 같이
+# 보내는 꼴이었다. 모든 글 페이지가 이미 <meta name="robots"> 를 갖고 있고
+# 헤더가 없어도 크롤러 기본값이 index 이므로 잃는 것은 없다.
