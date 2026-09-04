@@ -133,6 +133,8 @@ jobs:
 
           const staticUrls = [
             { loc: `${site}/`, changefreq: 'weekly', priority: '1.0', lastmod: today },
+            // 서초법률사무소 키워드 착지 페이지. 홈이 서초변호사를 잡고 있어 사무소 소개를 따로 둔다.
+            { loc: `${site}/about/`, changefreq: 'monthly', priority: '0.95', lastmod: today },
             { loc: `${site}/board?type=law`, changefreq: 'daily', priority: '0.9', lastmod: today },
             { loc: `${site}/board?type=case`, changefreq: 'daily', priority: '0.9', lastmod: today },
             { loc: `${site}/board?type=press`, changefreq: 'weekly', priority: '0.6', lastmod: today },
@@ -216,6 +218,9 @@ jobs:
             '# 법률사무소 위드윤 콘텐츠 색인',
             '',
             '형사·성범죄 법률칼럼과 성공사례를 검색엔진 및 AI 수집기가 이해하기 쉽게 정리한 목록입니다.',
+            '',
+            '## 사무소',
+            `- 서초법률사무소 안내 (위치·변호사·상담절차): ${site}/about/`,
             '',
             '## 주요 게시판',
             `- 법률칼럼: ${site}/board?type=law`,

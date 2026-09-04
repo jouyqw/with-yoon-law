@@ -2,6 +2,9 @@
 
 형사·성범죄 법률칼럼과 성공사례를 검색엔진 및 AI 수집기가 이해하기 쉽게 정리한 목록입니다.
 
+## 사무소
+- 서초법률사무소 안내 (위치·변호사·상담절차): https://with-yoon-law.com/about/
+
 ## 주요 게시판
 - 법률칼럼: https://with-yoon-law.com/board?type=law
 - 성공사례: https://with-yoon-law.com/board?type=case
@@ -82,6 +85,7 @@
 - [법률칼럼] 지하철강제추행 무죄방어전략, 억울한 접촉은 이렇게 다퉈야 합니다: https://with-yoon-law.com/blog/subway-molestation-acquittal-defense
 - [성공사례] 지하철 강제추행·공중밀집장소추행 혐의 — 기소유예 방어 성공사례: https://with-yoon-law.com/blog/subway-molestation-deferred-prosecution
 - [법률칼럼] 여청수사팀 연락 받았다면, 성범죄 조사일 가능성이 높습니다: https://with-yoon-law.com/blog/women-juvenile-crime-team-call
+- [법률칼럼] 경찰 조사, 이렇게 준비하세요 — 증거 수집부터 피의자신문조서까지: https://with-yoon-law.com/blog/police-investigation-preparation
 - [법률칼럼] 보이스피싱 전달책 현행범 체포 — 구속 수사 피하는 법: https://with-yoon-law.com/blog/voice-phishing-arrest
 - [법률칼럼] 상간녀·상간남 위자료 청구 소송 — 증거 수집부터 승소까지: https://with-yoon-law.com/blog/sanggan-wijaryo
 - [법률칼럼] 성범죄 보안처분 — 신상정보 등록·취업제한을 막으려면: https://with-yoon-law.com/blog/sex-crime-security-measures
@@ -93,4 +97,3 @@
 - [법률칼럼] 변호사가 알려주는 경찰조사 실전 팁 5가지: https://with-yoon-law.com/blog/lawyer-investigation-tips
 - [법률칼럼] 쌍방 귀책사유 이혼 — 맞바람 피운 부부의 위자료 청구: https://with-yoon-law.com/blog/divorce-mutual-affair-qa
 - [법률칼럼] 마약 범죄 전략적 자수 — 감형을 위한 골든타임: https://with-yoon-law.com/blog/drug-strategic-surrender
-- [성공사례] 음주운전 무죄 판결 — 위법수집증거 배척 실제 사례: https://with-yoon-law.com/blog/drunk-driving-acquittal
