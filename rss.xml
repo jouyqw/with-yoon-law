@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 04 Sep 2026 20:00:01 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 17:16:48 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>배임죄 임무 위배 — 손해를 끼쳤다고 다 죄가 되지는 않습니다</title>
+      <link>https://with-yoon-law.com/blog/breach-of-trust-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/breach-of-trust-guide</guid>
+      <description>배임죄는 타인의 사무를 처리하는 자가 임무에 위배해야 성립합니다. 어떤 관계가 타인의 사무인지, 계약을 어긴 것과 임무를 저버린 것이 어디서 갈리는지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>사문서위조 — 대신 써 준 것과 위조는 작성 권한에서 갈립니다</title>
+      <link>https://with-yoon-law.com/blog/private-document-forgery</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/private-document-forgery</guid>
+      <description>사문서위조는 내용이 거짓인지가 아니라 명의인의 작성 권한이 있었는지에서 갈립니다. 대필과 위조의 경계, 위임 범위를 넘은 서명, 행사죄까지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>횡령죄 보관 관계 — 맡아 둔 것이라야 횡령이 됩니다</title>
       <link>https://with-yoon-law.com/blog/embezzlement-custody</link>
@@ -390,22 +406,6 @@
       <description>서초형사전문변호사가 정리한 첫 경찰조사 대응법. 출석요구 문자를 받은 직후 48시간 안에 해야 할 일과 피의자신문조서에서 가장 많이 실수하는 표현을 짚었습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Fri, 31 Jul 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초변호사 선임 기준 — 법원 앞 사무소가 유리한 진짜 이유</title>
-      <link>https://with-yoon-law.com/blog/seocho-lawyer-guide</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-lawyer-guide</guid>
-      <description>서초변호사를 찾는다면 간판보다 사건 단계와 관할을 먼저 봐야 합니다. 서초동 법조타운의 구조, 직접 상담 여부, 선임 시점 판단 기준을 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Fri, 31 Jul 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>형사조정제도, 합의가 필요한 형사사건에서 어떻게 활용할까</title>
-      <link>https://with-yoon-law.com/blog/criminal-mediation-system-guide</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/criminal-mediation-system-guide</guid>
-      <description>형사조정제도는 피해자와 직접 연락하지 않고 합의를 시도할 수 있는 절차입니다. 성범죄·폭행·사기 사건에서 활용 기준을 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Tue, 30 Jun 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
