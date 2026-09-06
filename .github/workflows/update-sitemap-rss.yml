@@ -137,6 +137,8 @@ jobs:
             { loc: `${site}/about/`, changefreq: 'monthly', priority: '0.95', lastmod: today },
             // 업무분야 허브. 아래 practicePages 는 디렉터리만 훑으므로 여기서 따로 넣는다.
             { loc: `${site}/practice/`, changefreq: 'monthly', priority: '0.95', lastmod: today },
+            // 성공사례 허브. board?type=case 는 쿼리스트링이라 색인이 약하다.
+            { loc: `${site}/cases/`, changefreq: 'weekly', priority: '0.95', lastmod: today },
             { loc: `${site}/board?type=law`, changefreq: 'daily', priority: '0.9', lastmod: today },
             { loc: `${site}/board?type=case`, changefreq: 'daily', priority: '0.9', lastmod: today },
             { loc: `${site}/board?type=press`, changefreq: 'weekly', priority: '0.6', lastmod: today },
