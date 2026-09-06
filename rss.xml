@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 05 Sep 2026 19:40:42 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 17:35:47 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>증거인멸죄 성립 범위 — 내 것을 지운 것과 남의 것을 지운 것은 다릅니다</title>
+      <link>https://with-yoon-law.com/blog/evidence-destruction-crime</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/evidence-destruction-crime</guid>
+      <description>증거인멸죄는 타인의 형사·징계사건 증거를 대상으로 합니다. 자기 사건 자료를 지운 경우, 친족 특례, 위조와 허위진술의 경계를 구분해 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>위증죄 기억에 반한 진술 — 사실과 맞아떨어져도 죄가 될 수 있습니다</title>
+      <link>https://with-yoon-law.com/blog/perjury-memory-standard</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/perjury-memory-standard</guid>
+      <description>위증죄는 진술이 객관적 사실과 다른지가 아니라 증인의 기억에 반하는지로 판단합니다. 선서의 의미, 증언거부권, 확정 전 자백의 효과까지 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>배임죄 임무 위배 — 손해를 끼쳤다고 다 죄가 되지는 않습니다</title>
       <link>https://with-yoon-law.com/blog/breach-of-trust-guide</link>
@@ -390,22 +406,6 @@
       <description>서초성범죄변호사가 정리한 강제추행 고소 초기 대응. 폭행·협박 요건과 기습추행 법리, 술자리 사건에서 진술이 무너지는 지점을 실무 기준으로 설명합니다.</description>
       <category>법률칼럼</category>
       <pubDate>Sat, 01 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초스토킹변호사 — 긴급응급조치 통보받았다면 시계는 이미 돌아갔습니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-stalking-lawyer-measures</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-stalking-lawyer-measures</guid>
-      <description>서초스토킹변호사가 정리한 스토킹처벌법 대응. 긴급응급조치와 잠정조치의 차이, 이의신청 기한, 위반 시 처벌까지 절차 순서대로 설명합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sat, 01 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초형사전문변호사 — 서초경찰서 첫 조사, 준비 시간은 이틀이면 충분합니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-criminal-lawyer-police</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-criminal-lawyer-police</guid>
-      <description>서초형사전문변호사가 정리한 첫 경찰조사 대응법. 출석요구 문자를 받은 직후 48시간 안에 해야 할 일과 피의자신문조서에서 가장 많이 실수하는 표현을 짚었습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Fri, 31 Jul 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
