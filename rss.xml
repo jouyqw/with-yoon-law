@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 06 Sep 2026 19:43:35 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 19:07:01 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>강요죄 의무 없는 일 — 지시와 강요는 수단에서 갈립니다</title>
+      <link>https://with-yoon-law.com/blog/coercion-crime-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/coercion-crime-guide</guid>
+      <description>강요죄는 폭행이나 협박으로 의무 없는 일을 하게 했을 때 성립합니다. 무엇이 의무 없는 일인지, 부탁과 지시와 강요가 어디서 갈리는지 판단 기준을 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Mon, 07 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>공갈죄 — 받을 돈이 있어도 받아내는 방법은 따로 있습니다</title>
+      <link>https://with-yoon-law.com/blog/extortion-crime-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/extortion-crime-guide</guid>
+      <description>빌려준 돈을 돌려받는 일에도 허용되는 수단의 한계가 있습니다. 공갈죄가 성립하는 지점과 정당한 권리행사로 남는 선을 수단·정도·목적으로 나누어 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Mon, 07 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>증거인멸죄 성립 범위 — 내 것을 지운 것과 남의 것을 지운 것은 다릅니다</title>
       <link>https://with-yoon-law.com/blog/evidence-destruction-crime</link>
@@ -390,22 +406,6 @@
       <description>서초이혼전문변호사가 정리한 이혼 절차 선택 기준. 양재동 서울가정법원 기준 협의이혼 숙려기간, 조정전치주의, 재판이혼 사유와 소요기간을 비교했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Sun, 02 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초재산분할변호사 — 아파트 한 채와 퇴직연금, 기여도는 이렇게 계산됩니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-property-division-apartment</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-property-division-apartment</guid>
-      <description>서초재산분할변호사가 정리한 분할 기준. 특유재산과 공동재산의 경계, 반포·잠원 아파트 시가 산정 시점, 퇴직연금·국민연금 분할까지 실무 기준으로 설명합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sun, 02 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초성범죄변호사 — 강제추행 고소, &apos;기억이 안 난다&apos;가 가장 위험합니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-sex-crime-lawyer-molestation</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-sex-crime-lawyer-molestation</guid>
-      <description>서초성범죄변호사가 정리한 강제추행 고소 초기 대응. 폭행·협박 요건과 기습추행 법리, 술자리 사건에서 진술이 무너지는 지점을 실무 기준으로 설명합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sat, 01 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
