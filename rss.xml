@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 07 Sep 2026 20:53:43 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 18:34:17 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>감금죄 — 문을 잠그지 않아도 갇힌 것이 될 수 있습니다</title>
+      <link>https://with-yoon-law.com/blog/confinement-crime-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/confinement-crime-guide</guid>
+      <description>감금죄는 자물쇠가 있어야 성립하는 죄가 아닙니다. 이동의 자유를 어떤 방법으로 얼마나 막았는지가 기준이 됩니다. 성립 범위와 다투는 지점을 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 08 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>주거침입 — 들어간 사실보다 들어간 방식이 기준이 됩니다</title>
+      <link>https://with-yoon-law.com/blog/trespass-residence-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/trespass-residence-guide</guid>
+      <description>주거침입은 거주자가 싫어했다는 이유만으로 성립하지 않습니다. 사실상의 평온을 깼는지, 출입 당시의 겉으로 드러난 방식이 어땠는지가 판단의 축입니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 08 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>강요죄 의무 없는 일 — 지시와 강요는 수단에서 갈립니다</title>
       <link>https://with-yoon-law.com/blog/coercion-crime-guide</link>
@@ -390,22 +406,6 @@
       <description>서초상간소송변호사가 정리한 상간자 위자료 청구 실무. 부정행위 입증 수준, 위법하지 않은 증거 수집 방법, 소멸시효 3년과 청구액 산정 기준을 짚었습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Mon, 03 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초성범죄전문변호사 — 벌금 300만원보다 무서운 것은 취업제한 10년입니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-sex-crime-security-measures</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-sex-crime-security-measures</guid>
-      <description>서초성범죄전문변호사가 정리한 보안처분 실무. 신상정보 등록 기간, 공개·고지 명령, 취업제한 기간과 면제 사유, 이수명령까지 처분별로 구분해 설명합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Mon, 03 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초이혼전문변호사 — 협의이혼과 재판이혼, 갈림길은 &apos;재산&apos;에서 생깁니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-divorce-lawyer-procedure</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-divorce-lawyer-procedure</guid>
-      <description>서초이혼전문변호사가 정리한 이혼 절차 선택 기준. 양재동 서울가정법원 기준 협의이혼 숙려기간, 조정전치주의, 재판이혼 사유와 소요기간을 비교했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sun, 02 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
