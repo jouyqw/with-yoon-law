@@ -1,0 +1,69 @@
+name: 목표 키워드 순위 점검
+
+# 노리는 다섯 키워드(서초법률사무소·서초변호사·서초형사전문변호사·
+# 서초성범죄변호사·서초이혼전문변호사)가 실제로 몇 위에 몇 번 노출되는지
+# 주 단위로 실측해 이슈에 남긴다. 짐작으로 판단하지 않기 위한 장치다.
+#
+# 준비물은 색인 점검 워크플로와 같은 시크릿 하나뿐이다.
+#   Secrets  : GSC_SA_JSON   서비스 계정 키 JSON 전문
+#   Variables: GSC_SITE_URL  sc-domain:with-yoon-law.com
+# 시크릿이 없으면 조용히 건너뛴다.
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"      # 매주 월요일 08:00 KST (일 23:00 UTC)
+  workflow_dispatch:
+    inputs:
+      window:
+        description: "집계 구간 일수"
+        type: string
+        default: "28"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HAS_CREDENTIALS: ${{ secrets.GSC_SA_JSON != '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 자격증명 확인
+        run: |
+          if [ "$HAS_CREDENTIALS" != "true" ]; then
+            echo "::warning::GSC_SA_JSON 시크릿이 없어 건너뜁니다."
+          fi
+
+      - name: 순위 조회
+        id: rank
+        if: env.HAS_CREDENTIALS == 'true'
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:with-yoon-law.com' }}
+          RANK_WINDOW: ${{ inputs.window || '28' }}
+        run: node scripts/rank-check.mjs
+
+      # 주마다 새 이슈를 쌓지 않고 하나에 이어 붙인다. 시간에 따른 변화를
+      # 한 자리에서 보는 편이 순위 추적에 맞다.
+      - name: 결과 보고
+        if: ${{ steps.rank.outcome == 'success' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RANKED: ${{ steps.rank.outputs.ranked }}
+          TOTAL: ${{ steps.rank.outputs.total }}
+        run: |
+          set -e
+          EXISTING=$(gh issue list --state open --search "목표 키워드 순위 추적 in:title" --json number --jq '.[0].number' || echo "")
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file rank-report.md
+            echo "기존 이슈 #$EXISTING 에 이어 붙였습니다."
+          else
+            gh issue create \
+              --title "목표 키워드 순위 추적 (${RANKED}/${TOTAL} 노출 중)" \
+              --body-file rank-report.md
+          fi
