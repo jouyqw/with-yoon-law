@@ -233,8 +233,15 @@ a.case-item:visited .case-charge{color:rgba(255,255,255,.75);}
 .ival{font-size:14px;color:var(--dark);line-height:1.6;}
 .ival a{color:var(--dark);text-decoration:none;}
 .ival a:hover{color:#FFD700;}
-.mapframe{border-radius:8px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);}
+.mapframe{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh);background:#f5f5f5;}
 .mapframe iframe{width:100%;height:340px;border:none;display:block;}
+.map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;}
+.map-pin-label{background:#080808;color:#fff;border:1px solid rgba(255,215,0,.65);box-shadow:0 12px 30px rgba(0,0,0,.22);padding:9px 13px;border-radius:6px;font-size:13px;font-weight:700;line-height:1.35;white-space:nowrap;}
+.map-pin-label span{display:block;color:#FFD700;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:1px;}
+.map-pin-icon{width:42px;height:42px;border-radius:50% 50% 50% 4px;background:#E53935;border:3px solid #fff;box-shadow:0 10px 24px rgba(229,57,53,.35);transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;}
+.map-pin-icon::after{content:'';width:12px;height:12px;border-radius:50%;background:#FFD700;box-shadow:0 0 0 4px rgba(255,215,0,.25);}
+.map-pin-stem{width:2px;height:22px;background:linear-gradient(to bottom,rgba(229,57,53,.7),rgba(229,57,53,0));margin-top:-8px;}
+@media(max-width:640px){.map-pin-label{font-size:12px;padding:8px 11px;}.map-pin-icon{width:36px;height:36px;}.map-pin-stem{height:16px;}}
 .social{background:var(--cream);padding:52px 24px;}
 .social-in{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
 .social-links{display:flex;gap:10px;flex-wrap:wrap;}
@@ -755,6 +762,11 @@ footer{background:#080808;color:rgba(255,255,255,.5);padding:52px 24px 32px;}
       </ul>
       <div class="mapframe rv" style="transition-delay:.15s">
         <iframe src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%84%9C%EC%B4%88%EB%8C%80%EB%A1%9C%20270%20%EC%84%9C%EB%B3%B4%EB%B9%8C%EB%94%A9%20602%ED%98%B8&amp;z=17&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="법률사무소 위드윤 위치"></iframe>
+        <div class="map-pin" aria-hidden="true">
+          <div class="map-pin-label"><span>Location</span>법률사무소 위드윤</div>
+          <div class="map-pin-icon"></div>
+          <div class="map-pin-stem"></div>
+        </div>
       </div>
     </div>
   </div>
