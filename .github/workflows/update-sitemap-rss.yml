@@ -135,9 +135,8 @@ jobs:
             { loc: `${site}/`, changefreq: 'weekly', priority: '1.0', lastmod: today },
             // 서초법률사무소 키워드 착지 페이지. 홈이 서초변호사를 잡고 있어 사무소 소개를 따로 둔다.
             { loc: `${site}/about/`, changefreq: 'monthly', priority: '0.95', lastmod: today },
-            { loc: `${site}/board?type=law`, changefreq: 'daily', priority: '0.9', lastmod: today },
-            { loc: `${site}/board?type=case`, changefreq: 'daily', priority: '0.9', lastmod: today },
-            { loc: `${site}/board?type=press`, changefreq: 'weekly', priority: '0.6', lastmod: today },
+            // 필터 쿼리는 같은 게시판 화면이므로 대표주소 하나만 사이트맵에 싣는다.
+            { loc: `${site}/board`, changefreq: 'daily', priority: '0.9', lastmod: today },
             ...practicePages.map(({ loc, changefreq, priority, lastmod }) => ({ loc, changefreq, priority, lastmod }))
           ];
 
