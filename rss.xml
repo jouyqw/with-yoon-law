@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 10 Sep 2026 13:21:26 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 18:21:12 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>계좌 대여와 전자금융거래법 — 통장을 빌려준 순간부터 따지는 것들</title>
+      <link>https://with-yoon-law.com/blog/account-lending-crime</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/account-lending-crime</guid>
+      <description>고수익 알바나 대출 심사를 이유로 통장과 카드를 넘겼을 때 무엇이 문제가 되는지 정리했습니다. 전자금융거래법이 금지하는 행위, 사기방조로 넘어가는 경계, 금융거래 제한까지 순서대로 설명합니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>보이스피싱 인출책 — 가담인지 아닌지는 이 지점에서 갈립니다</title>
+      <link>https://with-yoon-law.com/blog/voice-phishing-withdrawal</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/voice-phishing-withdrawal</guid>
+      <description>현금을 찾아 건네는 일에 관여했다가 조사를 받게 됐을 때 수사기관이 무엇을 보는지 정리했습니다. 인식의 정도를 따지는 기준, 방조와 공동정범의 차이, 조사 전 준비 순서를 설명합니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>마약 초범 수사 — 감정 결과가 나오기 전까지가 준비 시간입니다</title>
       <link>https://with-yoon-law.com/blog/drug-first-offense-response</link>
@@ -390,22 +406,6 @@
       <description>서초이혼전문변호사가 정리한 양육권·양육비 실무. 서울가정법원 가사조사 절차, 자녀 의사 반영 기준, 양육비 산정기준표 적용과 미지급 시 강제 수단을 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Wed, 05 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초스토킹변호사 — 헤어진 뒤 연락, 어디부터가 스토킹입니까</title>
-      <link>https://with-yoon-law.com/blog/seocho-stalking-lawyer-boundary</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-stalking-lawyer-boundary</guid>
-      <description>서초스토킹변호사가 정리한 경계선. 정당한 이유 있는 연락과 스토킹행위의 구분, 온라인 연락·SNS 반응의 평가, 채권 추심 목적 연락의 한계를 사례로 설명합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 05 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초형사전문변호사 — 구속영장 실질심사, 준비 시간은 하루뿐입니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-criminal-lawyer-arrest-warrant</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-criminal-lawyer-arrest-warrant</guid>
-      <description>서초형사전문변호사가 정리한 영장실질심사 대응. 구속 사유 세 가지, 서울중앙지법 영장전담 심문 진행 순서, 하루 만에 준비해야 할 서류를 실무 기준으로 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Tue, 04 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
