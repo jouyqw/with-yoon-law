@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 11 Sep 2026 01:34:02 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 18:24:44 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>컴퓨터등사용사기 — 속인 사람이 없어도 성립합니다</title>
+      <link>https://with-yoon-law.com/blog/computer-fraud-crime</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/computer-fraud-crime</guid>
+      <description>남의 계정이나 카드 정보로 이체·결제를 했을 때 적용되는 컴퓨터등사용사기죄의 성립 범위와, 절도죄·사기죄와 갈리는 지점 그리고 조사 전 정리할 자료를 짚었습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>장물취득 — &apos;몰랐다&apos;는 말이 어디까지 받아들여집니까</title>
+      <link>https://with-yoon-law.com/blog/stolen-goods-crime</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/stolen-goods-crime</guid>
+      <description>중고 거래로 산 물건이 장물이었다는 연락을 받았을 때, 장물인 줄 알았는지를 수사기관이 무엇으로 판단하는지와 조사 전에 확인해야 할 거래 기록을 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>계좌 대여와 전자금융거래법 — 통장을 빌려준 순간부터 따지는 것들</title>
       <link>https://with-yoon-law.com/blog/account-lending-crime</link>
@@ -390,22 +406,6 @@
       <description>서초상간소송변호사가 정리한 피고 방어 전략. 혼인관계 이미 파탄 항변, 기혼 사실 부지(不知) 주장, 소멸시효 항변과 위자료 감액 요소를 실무 기준으로 설명합니다.</description>
       <category>법률칼럼</category>
       <pubDate>Thu, 06 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초재산분할변호사 — 사업체 지분과 비상장주식, 숨기면 비율이 불리해집니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-property-division-business</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-property-division-business</guid>
-      <description>서초재산분할변호사가 정리한 사업체 재산분할. 비상장주식 평가 방법, 법인 명의 재산의 처리, 소득 축소와 재산 은닉을 밝히는 사실조회·문서제출명령 실무를 설명합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Thu, 06 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초이혼전문변호사 — 양육권은 &apos;누가 더 사랑하느냐&apos;로 정해지지 않습니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-divorce-lawyer-custody</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-divorce-lawyer-custody</guid>
-      <description>서초이혼전문변호사가 정리한 양육권·양육비 실무. 서울가정법원 가사조사 절차, 자녀 의사 반영 기준, 양육비 산정기준표 적용과 미지급 시 강제 수단을 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 05 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
