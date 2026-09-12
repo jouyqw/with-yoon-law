@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 12 Sep 2026 04:56:04 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 17:44:16 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>아동학대 신고가 접수된 뒤 — 72시간 안에 정해지는 것들</title>
+      <link>https://with-yoon-law.com/blog/child-abuse-response</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/child-abuse-response</guid>
+      <description>아동학대 신고 이후 현장조사와 응급조치, 법원의 임시조치, 사건이 나뉘는 갈래까지 순서대로 정리했습니다. 보호자가 각 단계에서 확인해야 할 것을 담았습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sat, 12 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>소년보호사건 1호부터 10호까지 — 처분이 정해지는 자리</title>
+      <link>https://with-yoon-law.com/blog/juvenile-case-procedure</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/juvenile-case-procedure</guid>
+      <description>소년부 송치 이후 조사와 심리, 1호부터 10호까지의 보호처분과 그 효과를 단계별로 정리했습니다. 심리기일 전에 무엇을 준비해야 하는지 함께 담았습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sat, 12 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>컴퓨터등사용사기 — 속인 사람이 없어도 성립합니다</title>
       <link>https://with-yoon-law.com/blog/computer-fraud-crime</link>
@@ -390,22 +406,6 @@
       <description>혈중알코올농도 구간별 형사처벌과 면허 정지·취소 기준, 초범·2회 이상 가중, 사고 동반 시 위험운전치사상까지 한 표로 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Mon, 10 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>벌금 미납하면 어떻게 되나요 — 노역장 유치와 분납·연납 신청법</title>
-      <link>https://with-yoon-law.com/blog/fine-unpaid-labor-detention</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/fine-unpaid-labor-detention</guid>
-      <description>벌금을 못 내면 노역장에 유치됩니다. 1일 환형유치 금액, 납부 기한, 분할납부·납부연기 신청 절차와 지명수배 전 대응 방법을 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Mon, 10 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>서초형사전문변호사 — 검찰 송치 후, 마지막으로 결과를 바꿀 수 있는 구간입니다</title>
-      <link>https://with-yoon-law.com/blog/seocho-criminal-lawyer-prosecution</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/seocho-criminal-lawyer-prosecution</guid>
-      <description>서초형사전문변호사가 정리한 송치 이후 대응. 송치 의견의 의미, 검찰 단계 변호인의견서, 형사조정과 공탁, 약식명령에 대한 정식재판청구까지 순서대로 설명합니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sun, 09 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
