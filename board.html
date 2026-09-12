@@ -16,7 +16,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.min.css" rel="stylesheet">
 <style>
 :root{
   --ink:#111827;--muted:#667085;--line:#e4e7ec;--paper:#fff;--bg:#f6f7f9;
@@ -108,8 +107,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 .chip.active b{opacity:.85;}
 @media(max-width:720px){
   .board-controls{flex-direction:column;align-items:stretch;}
-  .board-search{max-width:none;}
-  .board-cats{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px;-webkit-overflow-scrolling:touch;}
+  .board-search{flex:0 0 auto;max-width:none;}
+  .board-cats{width:100%;max-width:100%;min-width:0;overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px;-webkit-overflow-scrolling:touch;}
   .chip{flex:0 0 auto;}
 }
 </style>
@@ -150,7 +149,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <div class="body">
       <div class="toolbar">
         <div class="count" id="count">총 0건</div>
-        <button class="write" type="button" id="writeBtn">글쓰기</button>
       </div>
       <div class="board-controls">
         <div class="board-search">
@@ -161,19 +159,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       </div>
       <div class="list" id="list"></div>
       <div class="empty" id="boardEmpty" style="display:none;border-bottom:0;">검색 결과가 없습니다. 다른 키워드나 분야를 선택해 보세요.</div>
-      <form class="form" id="form">
-        <h2 id="formTitle">글쓰기</h2>
-        <label for="subject">제목</label>
-        <input id="subject" name="subject" type="text" autocomplete="off" placeholder="제목을 입력하세요">
-        <label>내용</label>
-        <div id="editor-container"><div id="editor"></div></div>
-        <div class="char-count" id="charCount">0자</div>
-        <textarea id="content" name="content" style="display:none"></textarea>
-        <div class="form-actions">
-          <button class="secondary" type="button" id="cancelBtn">취소</button>
-          <button class="submit" type="submit">등록</button>
-        </div>
-      </form>
       <p class="seo-copy"><strong>법률사무소 위드윤</strong>은 형사사건, 성범죄, 스토킹, 불법촬영, 이혼·재산분할 등 실제 상담에서 자주 다뤄지는 쟁점을 중심으로 법률정보를 정리합니다.</p>
     </div>
   </section>
@@ -246,24 +231,25 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <li><a href="/blog/drunk-driving-acquittal" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">음주운전 무죄 판결 — 위법수집증거 배척 실제 사례</a></li>
     <li><a href="/blog/no-charge-5-counts" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">5개 혐의 동시 고소 — 전부 무혐의(불송치) 방어 성공사례</a></li>
     <li><a href="/blog/sexual-crime-case-results" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 실제 해결사례 — 2심 무죄·강제추행 기소유예</a></li>
+    <li><a href="/blog/special-assault-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">특수상해 — 동종 전력에도 기소유예</a></li>
+    <li><a href="/blog/public-official-stalking-no-booking-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무원 스토킹 신고 — 정식 입건 전 종결</a></li>
+    <li><a href="/blog/military-cruelty-non-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">군형법상 가혹행위 — 불송치 각하</a></li>
+    <li><a href="/blog/disabled-quasi-rape-no-charge-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">장애인 유사강간 — 혐의없음 불송치</a></li>
+    <li><a href="/blog/juvenile-molestation-no-hearing-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">소년 강제추행·폭행·협박 — 심리불개시</a></li>
+    <li><a href="/blog/cctv-molestation-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">CCTV 강제추행 — 기소유예</a></li>
   </ul>
 </nav>
 </noscript>
 <!-- ▲ SEO 정적 링크 끝 ▲ -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js"></script>
 <script>
 (function(){
   var labels = { case:'성공사례', law:'법률칼럼', press:'언론' };
-  var API = 'https://with-yoon-api.omd0154.workers.dev';
   var params = new URLSearchParams(location.search);
   var current = labels[params.get('type')] ? params.get('type') : 'case';
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
   var list = document.getElementById('list');
   var count = document.getElementById('count');
-  var form = document.getElementById('form');
-  var titleInput = document.getElementById('subject');
-  var formTitle = document.getElementById('formTitle');
 
   var pressData = [
     {title:'유령 상간남, 월급으로 위자료 받는 법', date:'2026', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/IJ3DZ9BHT4UA', content:''},
@@ -288,10 +274,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     {title:'CCTV가 본 진실, 지하철 폭행 누명 벗었지만…', date:'2026.03.12', source:'로톡뉴스', externalUrl:'https://lawtalknews.co.kr/article/PYI29IY6C8SN', content:''}
   ];
 
-  function today(){
-    var n = new Date();
-    return n.getFullYear()+'.'+String(n.getMonth()+1).padStart(2,'0')+'.'+String(n.getDate()).padStart(2,'0');
-  }
   function esc(s){
     return String(s||'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
   }
@@ -429,12 +411,11 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       .map(function(w){ return w.it; });
   }
 
-  function render(seeds, apiItems){
+  function render(items){
     var titleMap = {case:'성공사례', law:'법률칼럼', press:'언론'};
     document.getElementById('boardTitle').textContent = titleMap[current]||'칼럼';
     tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.type===current); });
-    formTitle.textContent = labels[current]+' 글쓰기';
-    var all = (seeds||[]).concat(apiItems||[]);
+    var all = items || [];
     count.textContent = '총 '+all.length+'건';
     if(!all.length){
       list.innerHTML = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div><div class="empty">등록된 게시글이 없습니다.</div>';
@@ -448,7 +429,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
         +'<div class="cell">'+(all.length-i)+'</div>'
         +'<div class="cell title">'+esc(item.title)
         +(item.source?'<span class="source">'+esc(item.source)+'</span>':'')
-        +(!item._seed&&item.id?' <button class="del" onclick="event.preventDefault();event.stopPropagation();wyDelete('+item.id+')">삭제</button>':'')
         +'</div>'
         +'<div class="cell date">'+esc(item.date)+'</div>'
         +'</a>';
@@ -462,37 +442,13 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     list.innerHTML = '<div class="empty">불러오는 중...</div>';
 
     if(current === 'law'){
-      var lawSeeds = [];
-      var apiDone = false, seedDone = false;
-      var apiItems = [];
-
-      loadLawPosts(function(items){
-        lawSeeds = items;
-        seedDone = true;
-        if(apiDone) render(lawSeeds, apiItems);
-      });
-      fetch(API+'/api/posts?type=law')
-        .then(function(r){ return r.json(); })
-        .then(function(data){ apiItems = Array.isArray(data)?data:[]; apiDone=true; if(seedDone) render(lawSeeds, apiItems); })
-        .catch(function(){ apiDone=true; if(seedDone) render(lawSeeds, []); });
+      loadLawPosts(render);
 
     } else if(current === 'press'){
-      render(pressData, []);
+      render(pressData);
 
     } else {
-      var caseSeeds = [];
-      var caseApiDone = false, caseSeedDone = false;
-      var caseApiItems = [];
-
-      loadCasePosts(function(items){
-        caseSeeds = items;
-        caseSeedDone = true;
-        if(caseApiDone) render(caseSeeds, caseApiItems);
-      });
-      fetch(API+'/api/posts?type='+current)
-        .then(function(r){ return r.json(); })
-        .then(function(data){ caseApiItems = Array.isArray(data)?data:[]; caseApiDone=true; if(caseSeedDone) render(caseSeeds, caseApiItems); })
-        .catch(function(){ caseApiDone=true; if(caseSeedDone) render(caseSeeds, []); });
+      loadCasePosts(render);
     }
   }
 
@@ -500,7 +456,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     tab.addEventListener('click', function(){
       current = tab.dataset.type;
       history.replaceState(null,'','?type='+current);
-      form.classList.remove('open');
       var s = document.getElementById('boardSearch');
       if(s) s.value = '';
       load();
@@ -509,47 +464,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
 
   var searchEl = document.getElementById('boardSearch');
   if(searchEl) searchEl.addEventListener('input', applyFilters);
-
-  document.getElementById('writeBtn').addEventListener('click', function(){
-    titleInput.value = '';
-    if(window._quill) window._quill.setText('');
-    form.classList.add('open');
-    titleInput.focus();
-  });
-  document.getElementById('cancelBtn').addEventListener('click', function(){
-    form.classList.remove('open');
-  });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var title = titleInput.value.trim();
-    var html2 = window._quill?window._quill.root.innerHTML.trim():'';
-    var text = window._quill?window._quill.getText().trim():'';
-    if(!title){alert('제목을 입력하세요.');titleInput.focus();return;}
-    if(!text){alert('내용을 입력하세요.');return;}
-    fetch(API+'/api/posts',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({type:current,title:title,content:html2,is_html:true,date:today()})
-    }).then(function(r){return r.json();})
-      .then(function(){form.classList.remove('open');load();})
-      .catch(function(){alert('저장 실패. 다시 시도해주세요.');});
-  });
-  window.wyDelete = function(id){
-    if(!confirm('이 글을 삭제하시겠습니까?')) return;
-    fetch(API+'/api/posts/'+id,{method:'DELETE'})
-      .then(function(){load();})
-      .catch(function(){alert('삭제 실패.');});
-  };
-
-  window._quill = new Quill('#editor',{
-    theme:'snow',
-    placeholder:'내용을 입력하세요.',
-    modules:{toolbar:[[{header:[2,3,false]}],['bold','italic','underline'],[{color:[]},{background:[]}],[{list:'ordered'},{list:'bullet'}],[{align:[]}],['blockquote'],['clean']]}
-  });
-  window._quill.on('text-change',function(){
-    var len = window._quill.getText().replace(/\n/g,'').length;
-    document.getElementById('charCount').textContent = len.toLocaleString()+'자';
-  });
 
   load();
 })();

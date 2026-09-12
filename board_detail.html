@@ -119,7 +119,6 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,42px);line-height:
   var listUrl = 'board.html' + (labels[type] ? '?type=' + encodeURIComponent(type) : '');
   document.getElementById('listTop').href = listUrl;
 
-  var API = 'https://with-yoon-api.omd0154.workers.dev';
 
   // seedData (board와 동일)
   var seedData = {
@@ -135,18 +134,7 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,42px);line-height:
   };
 
   function getPost(cb){
-    // DB 글 (id 있으면)
-    if(id){
-      fetch(API + '/api/posts?type=' + type)
-        .then(function(r){ return r.json(); })
-        .then(function(data){
-          var found = (data||[]).find(function(p){ return String(p.id) === id; });
-          if(found){ cb(Object.assign({}, found, {typeLabel: labels[type]})); return; }
-          fallback(cb);
-        }).catch(function(){ fallback(cb); });
-    } else {
-      fallback(cb);
-    }
+    fallback(cb);
   }
   function fallback(cb){
     // URL 파라미터로 seed 글 표시
