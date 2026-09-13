@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 12 Sep 2026 19:49:55 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 18:06:50 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>약식명령을 받았다면 — 정식재판을 청구할지 7일 안에 정해야 합니다</title>
+      <link>https://with-yoon-law.com/blog/summary-order-formal-trial</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/summary-order-formal-trial</guid>
+      <description>약식명령을 받은 뒤 정식재판을 청구할지 판단하는 기준과 7일이라는 기한, 청구 후 진행되는 절차와 형종 상향 금지의 범위를 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 13 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>기소유예를 받는다는 것 — 처벌은 없지만 혐의없음과는 다릅니다</title>
+      <link>https://with-yoon-law.com/blog/suspension-indictment-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/suspension-indictment-guide</guid>
+      <description>기소유예는 재판 없이 사건이 끝나는 처분이지만 혐의가 없다는 결론은 아닙니다. 무혐의와의 차이, 남는 기록, 검사가 보는 요소와 불복 방법을 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 13 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>아동학대 신고가 접수된 뒤 — 72시간 안에 정해지는 것들</title>
       <link>https://with-yoon-law.com/blog/child-abuse-response</link>
@@ -390,22 +406,6 @@
       <description>서울가정법원 양육비 산정기준표의 구조와 적용 순서, 가산·감산 요소, 미지급 시 이행명령·감치·급여 직접지급명령까지 실무 기준으로 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Tue, 11 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>쌍방폭행으로 접수됐다면 — 정당방위가 인정되는 경우와 안 되는 경우</title>
-      <link>https://with-yoon-law.com/blog/mutual-assault-response</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/mutual-assault-response</guid>
-      <description>먼저 맞았는데 왜 쌍방으로 입건되는지, 정당방위 인정 요건, 반의사불벌죄인 폭행죄의 합의 실무, 상해로 죄명이 바뀌는 기준을 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Tue, 11 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>음주운전 처벌기준 총정리 — 수치별 형량, 면허 처분, 초범과 재범의 차이</title>
-      <link>https://with-yoon-law.com/blog/dui-penalty-standard-guide</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/dui-penalty-standard-guide</guid>
-      <description>혈중알코올농도 구간별 형사처벌과 면허 정지·취소 기준, 초범·2회 이상 가중, 사고 동반 시 위험운전치사상까지 한 표로 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Mon, 10 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
