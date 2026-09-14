@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 13 Sep 2026 19:58:38 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 19:49:19 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>항소이유서 20일 — 통지서를 받은 날부터 시계가 돌아갑니다</title>
+      <link>https://with-yoon-law.com/blog/appeal-brief-deadline</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/appeal-brief-deadline</guid>
+      <description>형사 항소이유서는 소송기록접수통지를 받은 날부터 20일 안에 내야 합니다. 기간을 세는 방법, 놓쳤을 때 남는 길, 그 안에 무엇을 담아야 하는지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Mon, 14 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>집행유예는 어디에서 갈리는가 — 법원이 실제로 따지는 것들</title>
+      <link>https://with-yoon-law.com/blog/suspended-sentence-standard</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/suspended-sentence-standard</guid>
+      <description>집행유예는 형의 면제가 아니라 집행을 미루는 제도입니다. 선고형의 범위, 법원이 보는 참작 사유, 함께 붙는 명령과 실효·취소 사유를 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Mon, 14 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>약식명령을 받았다면 — 정식재판을 청구할지 7일 안에 정해야 합니다</title>
       <link>https://with-yoon-law.com/blog/summary-order-formal-trial</link>
@@ -390,22 +406,6 @@
       <description>기소유예와 벌금형이 기록에 어떻게 남는지, 범죄경력회보서 발급 방법, 형의 실효 기간, 취업 시 조회 가능한 범위까지 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Wed, 12 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>강제추행 합의금, 얼마가 적정한가 — 액수를 정하는 다섯 가지 변수</title>
-      <link>https://with-yoon-law.com/blog/molestation-settlement-amount</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/molestation-settlement-amount</guid>
-      <description>강제추행 합의금에 정해진 시세는 없습니다. 액수를 좌우하는 변수, 합의 시점별 효과 차이, 형사공탁 활용, 합의서에 반드시 넣어야 할 문구를 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 12 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>양육비 산정기준표 보는 법 — 내 경우 얼마가 나오는지 직접 계산해봅니다</title>
-      <link>https://with-yoon-law.com/blog/child-support-calculation</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/child-support-calculation</guid>
-      <description>서울가정법원 양육비 산정기준표의 구조와 적용 순서, 가산·감산 요소, 미지급 시 이행명령·감치·급여 직접지급명령까지 실무 기준으로 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Tue, 11 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
