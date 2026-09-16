@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 15 Sep 2026 20:36:12 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 18:50:55 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>유사강간 혐의 — 행위의 범위와 동의 여부, 두 곳에서 갈립니다</title>
+      <link>https://with-yoon-law.com/blog/quasi-rape-consent-issue</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/quasi-rape-consent-issue</guid>
+      <description>유사강간은 강제추행이나 준강간과 구성요건이 다릅니다. 어떤 행위가 이 죄명에 해당하는지, 동의 여부는 무엇으로 판단되는지, 조사 전에 정리해 둘 것은 무엇인지 짚었습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>통신매체이용음란 — 보낸 것과 도달한 것, 그리고 목적이 쟁점입니다</title>
+      <link>https://with-yoon-law.com/blog/telecom-obscenity-crime</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/telecom-obscenity-crime</guid>
+      <description>메시지 한 통으로 입건되는 죄명입니다. 어떤 요건이 갖춰져야 성립하는지, 도달과 목적은 무엇으로 판단되는지, 유죄가 되면 무엇이 따라붙는지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>보석 청구 — 구속된 뒤에도 불구속 재판을 다툴 수 있는 자리입니다</title>
       <link>https://with-yoon-law.com/blog/bail-application-guide</link>
@@ -390,22 +406,6 @@
       <description>도주치상·도주치사의 법정형, 사고 후 미조치와의 차이, 도주의 고의를 다투는 방법, 자진 출석의 효과를 실무 기준으로 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Fri, 14 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>공소시효 정리 — 죄명별 기간과 시효가 멈추는 경우</title>
-      <link>https://with-yoon-law.com/blog/statute-of-limitations-guide</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/statute-of-limitations-guide</guid>
-      <description>형사소송법상 공소시효 기간, 정지·중단 사유, 성범죄·아동학대 특례, 해외 체류 시 정지까지 실무 기준으로 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Fri, 14 Aug 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>협의이혼 준비서류와 절차 — 신청부터 신고까지 놓치면 안 되는 기한</title>
-      <link>https://with-yoon-law.com/blog/divorce-documents-guide</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/divorce-documents-guide</guid>
-      <description>서울가정법원 협의이혼 절차의 필요 서류, 숙려기간, 의사확인기일, 확인서 발급 후 3개월 신고 기한, 양육 관련 협의서 작성까지 순서대로 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Thu, 13 Aug 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
