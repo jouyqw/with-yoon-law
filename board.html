@@ -50,6 +50,27 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,44px);line-height:
 .write{border:0;background:var(--navy);color:#fff;border-radius:6px;padding:10px 16px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;}
 .write:hover{background:#1e2a44;}
 .list{border-top:2px solid var(--navy);}
+/* ── 성공사례 카드 ──────────────────────────────
+   표(번호·제목·작성일)로는 사례를 고를 수 없다. 어떤 혐의였고 어떻게 끝났는지가
+   먼저 보여야 한다. 모바일에서는 표의 가로 칸이 무너지지만 카드는 그대로 읽힌다. */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;padding:18px 0;}
+.ccard{display:flex;flex-direction:column;gap:10px;padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s;}
+.ccard:hover{border-color:#c7a44b;box-shadow:0 10px 30px rgba(16,26,48,.08);transform:translateY(-2px);}
+.ccard-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.cbadge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;background:#07603c;color:#fff;font-size:12px;font-weight:900;letter-spacing:-.2px;}
+.cfield{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:#eef2f6;color:#41506b;font-size:12px;font-weight:800;}
+.cdoc{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border-radius:999px;border:1px solid #c7a44b;color:#8a6a1b;font-size:11px;font-weight:800;}
+.cdoc:before{content:"📄";font-size:11px;}
+.ccard-title{margin:0;color:var(--navy);font-size:16px;font-weight:800;line-height:1.5;word-break:keep-all;overflow-wrap:break-word;}
+.ccard-sum{margin:0;color:#5b6577;font-size:14px;line-height:1.72;word-break:keep-all;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.ccard-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;border-top:1px solid #eef1f5;color:#8a94a6;font-size:12px;font-weight:700;}
+.cmore{color:#8a6a1b;}
+@media(max-width:600px){
+  .cards{grid-template-columns:1fr;gap:11px;padding:14px 0;}
+  .ccard{padding:16px 15px;border-radius:12px;}
+  .ccard-title{font-size:15.5px;}
+  .ccard-sum{font-size:13.5px;-webkit-line-clamp:4;}
+}
 .row{display:grid;grid-template-columns:74px 1fr 116px;gap:16px;align-items:center;min-height:62px;border-bottom:1px solid var(--line);cursor:pointer;}
 .row:hover{background:#fafafa;}
 .row.head{min-height:46px;background:#f9fafb;color:#475467;font-size:13px;font-weight:800;cursor:default;}
@@ -221,22 +242,22 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <li><a href="/blog/warrant-hearing-faq-withyoon" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">구속영장 실질심사, 당일 무엇을 어떻게 해야 하나</a></li>
     <li><a href="/blog/workplace-harassment-column" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">직장내성추행 고소 대응전략</a></li>
   </ul>
-  <p style="font-family:sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;color:#7b5d1f;margin:26px 0 16px;">WITH YOON · 성공사례 (8)</p>
+  <p style="font-family:sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;color:#7b5d1f;margin:26px 0 16px;">WITH YOON · 성공사례 (14)</p>
   <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;">
-    <li><a href="/blog/subway-molestation-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">지하철 강제추행·공중밀집장소추행 혐의 — 기소유예 방어 성공사례</a></li>
-    <li><a href="/blog/drunk-groping-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">술에 취해 강제추행 혐의 — 기소유예로 마무리한 실제 사례</a></li>
-    <li><a href="/blog/crowded-place-molestation" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공중밀집장소추행(지하철 성추행) 억울한 연루 대응법</a></li>
-    <li><a href="/blog/case-success-sexual-crime" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">동성 연인 사이 유사강간·불법촬영 혐의 — 경찰 단계 불송치(혐의없음) 성공사례</a></li>
-    <li><a href="/blog/case-threat-execution-obstruction" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무집행방해 및 협박 혐의 — 구속 위기 구제 사례</a></li>
-    <li><a href="/blog/drunk-driving-acquittal" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">음주운전 무죄 판결 — 위법수집증거 배척 실제 사례</a></li>
-    <li><a href="/blog/no-charge-5-counts" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">5개 혐의 동시 고소 — 전부 무혐의(불송치) 방어 성공사례</a></li>
-    <li><a href="/blog/sexual-crime-case-results" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 실제 해결사례 — 2심 무죄·강제추행 기소유예</a></li>
-    <li><a href="/blog/special-assault-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">특수상해 — 동종 전력에도 기소유예</a></li>
-    <li><a href="/blog/public-official-stalking-no-booking-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무원 스토킹 신고 — 정식 입건 전 종결</a></li>
-    <li><a href="/blog/military-cruelty-non-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">군형법상 가혹행위 — 불송치 각하</a></li>
-    <li><a href="/blog/disabled-quasi-rape-no-charge-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">장애인 유사강간 — 혐의없음 불송치</a></li>
-    <li><a href="/blog/juvenile-molestation-no-hearing-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">소년 강제추행·폭행·협박 — 심리불개시</a></li>
-    <li><a href="/blog/cctv-molestation-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">CCTV 강제추행 — 기소유예</a></li>
+    <li><a href="/blog/subway-molestation-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">지하철 강제추행·공중밀집장소추행 혐의 — 기소유예 방어 성공사례 — 기소유예</a></li>
+    <li><a href="/blog/drunk-groping-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">술에 취해 강제추행 혐의 — 기소유예로 마무리한 실제 사례 — 기소유예</a></li>
+    <li><a href="/blog/crowded-place-molestation" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공중밀집장소추행(지하철 성추행) 억울한 연루 대응법 — 기소유예</a></li>
+    <li><a href="/blog/case-success-sexual-crime" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">동성 연인 사이 유사강간·불법촬영 혐의 — 경찰 단계 불송치(혐의없음) 성공사례 — 불송치</a></li>
+    <li><a href="/blog/case-threat-execution-obstruction" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무집행방해 및 협박 혐의 — 구속 위기 구제 사례 — 구속 기각</a></li>
+    <li><a href="/blog/drunk-driving-acquittal" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">음주운전 무죄 판결 — 위법수집증거 배척 실제 사례 — 무죄</a></li>
+    <li><a href="/blog/no-charge-5-counts" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">5개 혐의 동시 고소 — 전부 무혐의(불송치) 방어 성공사례 — 불송치</a></li>
+    <li><a href="/blog/sexual-crime-case-results" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 실제 해결사례 — 2심 무죄·강제추행 기소유예 — 무죄·기소유예</a></li>
+    <li><a href="/blog/special-assault-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">특수상해 기소유예 성공사례｜폭행 전과 2회에도 재판 없이 종결 — 기소유예</a></li>
+    <li><a href="/blog/public-official-stalking-no-booking-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무원 스토킹 불입건 성공사례｜정식 입건 전 사건 종결 — 불입건</a></li>
+    <li><a href="/blog/military-cruelty-non-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">군형법 가혹행위 불송치 성공사례｜군 징계 취소 후 형사사건 각하 — 불송치</a></li>
+    <li><a href="/blog/disabled-quasi-rape-no-charge-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">장애인 유사강간 불송치 성공사례｜채팅 기록으로 강제성 부재 입증 — 불송치</a></li>
+    <li><a href="/blog/juvenile-molestation-no-hearing-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">소년 강제추행 심리불개시 성공사례｜폭행·협박 혐의까지 재판 없이 종결 — 심리불개시</a></li>
+    <li><a href="/blog/cctv-molestation-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">강제추행 기소유예 성공사례｜CCTV 명확한 사건에서 전과 없이 종결 — 기소유예</a></li>
   </ul>
 </nav>
 </noscript>
@@ -318,7 +339,8 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   function applyFilters(){
     var el = document.getElementById('boardSearch');
     var q = (el ? el.value : '').trim().toLowerCase();
-    var rows = Array.prototype.slice.call(list.querySelectorAll('.row')).filter(function(r){ return !r.classList.contains('head'); });
+    /* 성공사례는 .ccard, 나머지는 .row 로 그린다. 둘 다 잡아야 검색·분야 필터가 먹는다. */
+    var rows = Array.prototype.slice.call(list.querySelectorAll('.row, .ccard')).filter(function(r){ return !r.classList.contains('head'); });
     var shown = 0;
     rows.forEach(function(r){
       var cat = r.getAttribute('data-cat') || '';
@@ -374,6 +396,9 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
             blogUrl: '/blog/' + p.slug + '.html',
             content: p.summary,
             tags: p.tags || [],
+            result: p.result || '',
+            field: p.field || '',
+            hasDocument: !!p.hasDocument,
             _seed: true
           };
         });
@@ -421,18 +446,42 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       list.innerHTML = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div><div class="empty">등록된 게시글이 없습니다.</div>';
       return;
     }
-    var html = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div>';
-    sortByDateDesc(all).forEach(function(item, i){
-      var url = detailUrl(current, item);
-      var cat = categoryOf(item);
-      html += '<a class="row" data-cat="'+cat.key+'" data-text="'+esc((item.title||'')+' '+((item.tags||[]).join(' ')))+'" target="_blank" rel="noopener" href="'+esc(url)+'">'
-        +'<div class="cell">'+(all.length-i)+'</div>'
-        +'<div class="cell title">'+esc(item.title)
-        +(item.source?'<span class="source">'+esc(item.source)+'</span>':'')
-        +'</div>'
-        +'<div class="cell date">'+esc(item.date)+'</div>'
-        +'</a>';
-    });
+    /* 성공사례는 카드로 그린다.
+       번호·제목·작성일 표는 사례를 고를 때 쓸모가 없다 — 어떤 혐의였고 어떻게 끝났는지가
+       사람들이 보는 정보다. 그래서 결과 배지·분야·요약을 앞세운다.
+       모바일에서는 표의 가로 칸이 무너지는데 카드는 그대로 읽힌다. */
+    var html = '';
+    if(current === 'case'){
+      html = '<div class="cards">';
+      sortByDateDesc(all).forEach(function(item){
+        var url = detailUrl(current, item);
+        var cat = categoryOf(item);
+        html += '<a class="ccard" data-cat="'+cat.key+'" data-text="'+esc((item.title||'')+' '+((item.tags||[]).join(' ')))+'" target="_blank" rel="noopener" href="'+esc(url)+'">'
+          +'<div class="ccard-top">'
+          + (item.result ? '<span class="cbadge">'+esc(item.result)+'</span>' : '')
+          + (item.field ? '<span class="cfield">'+esc(item.field)+'</span>' : '')
+          + (item.hasDocument ? '<span class="cdoc">판결문 공개</span>' : '')
+          +'</div>'
+          +'<h3 class="ccard-title">'+esc(item.title)+'</h3>'
+          + (item.content ? '<p class="ccard-sum">'+esc(item.content)+'</p>' : '')
+          +'<div class="ccard-foot"><span>'+esc(item.date)+'</span><span class="cmore">사례 보기 →</span></div>'
+          +'</a>';
+      });
+      html += '</div>';
+    } else {
+      html = '<div class="row head"><div class="cell">번호</div><div class="cell">제목</div><div class="cell date">작성일</div></div>';
+      sortByDateDesc(all).forEach(function(item, i){
+        var url = detailUrl(current, item);
+        var cat = categoryOf(item);
+        html += '<a class="row" data-cat="'+cat.key+'" data-text="'+esc((item.title||'')+' '+((item.tags||[]).join(' ')))+'" target="_blank" rel="noopener" href="'+esc(url)+'">'
+          +'<div class="cell">'+(all.length-i)+'</div>'
+          +'<div class="cell title">'+esc(item.title)
+          +(item.source?'<span class="source">'+esc(item.source)+'</span>':'')
+          +'</div>'
+          +'<div class="cell date">'+esc(item.date)+'</div>'
+          +'</a>';
+      });
+    }
     list.innerHTML = html;
     buildCats(all);
     applyFilters();
