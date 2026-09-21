@@ -24,6 +24,10 @@ const IMG_DIR = path.join(ROOT, 'images', 'cases', 'lawtalk');
 const OUT = path.join(ROOT, 'cases.html');
 const SITE = 'https://with-yoon-law.com';
 
+// Cloudflare Pages 는 /cases.html 을 /cases 로 308 리디렉션한다.
+// canonical·og:url·내부링크에 .html 을 쓰면 구글이 '리디렉션이 포함된 페이지' 로 보고 색인에서 뺀다.
+// 실제로 이 사이트가 예전에 같은 문제로 걸렸다. 파일명만 .html 이고 주소는 확장자 없이 쓴다.
+
 // 눈으로 가림 처리를 확인하기 전까지는 검색엔진에 올리지 않는다.
 const PUBLISH = process.env.PUBLISH === '1';
 
@@ -97,9 +101,9 @@ const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta n
 <title>성공사례 판결문 모음 ${cases.length}건 | 법률사무소 위드윤 윤성호 변호사</title>
 <meta name="description" content="법률사무소 위드윤이 직접 수행한 형사·성범죄·마약·가사 사건의 처분 결과 문서 ${cases.length}건을 모았습니다. 기소유예·불송치·무죄 등 실제 결과를 문서로 확인하세요.">
 <meta name="robots" content="${PUBLISH ? 'index,follow,max-image-preview:large' : 'noindex,follow'}">
-<link rel="canonical" href="${SITE}/cases.html">
+<link rel="canonical" href="${SITE}/cases">
 <meta property="og:type" content="website"><meta property="og:title" content="성공사례 판결문 모음 ${cases.length}건 | 법률사무소 위드윤">
-<meta property="og:description" content="실제 수행 사건의 처분 결과 문서를 한자리에서 확인하세요."><meta property="og:url" content="${SITE}/cases.html">
+<meta property="og:description" content="실제 수행 사건의 처분 결과 문서를 한자리에서 확인하세요."><meta property="og:url" content="${SITE}/cases">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/case-article.css">

@@ -26,7 +26,18 @@ const BAK = path.join(ROOT, '.bak-legacy');
 const LOG = path.join(ROOT, 'convert-cases.log');
 
 const TIMEOUT = 20 * 60 * 1000;
-const MAX_BYTES = 12000;        // 템플릿 형식이면 5~8KB 면 충분하다
+/**
+ * 파일 크기 상한.
+ *
+ * 처음에 12,000 으로 잡았다가 절반이 되돌려졌다. 한글은 UTF-8 에서 글자당 3바이트라
+ * 본문 3,900자면 텍스트만 11KB 가 넘는다. 거기에 마크업이 붙으면 13~16KB 가 정상인데,
+ * 12KB 로 조이면 모델이 분량을 쳐내고 그러면 "본문 85% 유지" 검사에 걸려 되돌아간다.
+ * 두 검사가 서로 싸우는 상태였다.
+ *
+ * 애초 목적은 글자를 줄이는 게 아니라 **파일마다 복사돼 있던 CSS 를 걷어내는 것**이다.
+ * 86KB → 20KB 만 돼도 목적은 달성된다.
+ */
+const MAX_BYTES = 20000;
 const KEEP_RATIO = 0.85;        // 본문이 이보다 줄면 내용이 날아간 것으로 본다
 
 const CLAUDE = [
