@@ -71,6 +71,14 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,44px);line-height:
   .ccard-title{font-size:15.5px;}
   .ccard-sum{font-size:13.5px;-webkit-line-clamp:4;}
 }
+.gallery-link{display:flex;align-items:center;gap:13px;margin-bottom:16px;padding:16px 18px;border:1px solid #e0d6b8;border-radius:12px;background:linear-gradient(135deg,#fdfaf1,#fff);transition:border-color .15s,box-shadow .15s}
+.gallery-link:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(201,168,76,.16)}
+.gl-ico{font-size:22px;flex-shrink:0}
+.gl-txt{flex:1;min-width:0}
+.gl-txt b{display:block;color:var(--navy);font-size:15px;font-weight:800}
+.gl-txt small{display:block;margin-top:3px;color:#7b6a45;font-size:12.5px;word-break:keep-all}
+.gl-go{color:var(--gold);font-size:19px;font-weight:900;flex-shrink:0}
+@media(max-width:600px){.gallery-link{padding:14px 15px;gap:11px}.gl-txt b{font-size:14px}.gl-txt small{font-size:12px}}
 .row{display:grid;grid-template-columns:74px 1fr 116px;gap:16px;align-items:center;min-height:62px;border-bottom:1px solid var(--line);cursor:pointer;}
 .row:hover{background:#fafafa;}
 .row.head{min-height:46px;background:#f9fafb;color:#475467;font-size:13px;font-weight:800;cursor:default;}
@@ -168,6 +176,12 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <button class="tab" data-type="press" type="button">언론</button>
     </div>
     <div class="body">
+      <!-- 성공사례 탭에서만 보인다. 판결문 갤러리로 보내는 입구. -->
+      <a class="gallery-link" id="galleryLink" href="/cases.html" style="display:none">
+        <span class="gl-ico">📄</span>
+        <span class="gl-txt"><b>처분 결과 문서 73건 모아보기</b><small>불기소이유통지서·결정문·판결문을 그대로 공개합니다</small></span>
+        <span class="gl-go">→</span>
+      </a>
       <div class="toolbar">
         <div class="count" id="count">총 0건</div>
       </div>
@@ -443,6 +457,7 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     var titleMap = {case:'성공사례', law:'법률칼럼', press:'언론'};
     document.getElementById('boardTitle').textContent = titleMap[current]||'칼럼';
     tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.type===current); });
+    var gl=document.getElementById('galleryLink'); if(gl) gl.style.display = (current==='case') ? 'flex' : 'none';
     var all = items || [];
     count.textContent = '총 '+all.length+'건';
     if(!all.length){

@@ -1,2 +1,5 @@
 refill.log
 .refill.lock
+
+.bak-legacy/
+convert-cases.log
