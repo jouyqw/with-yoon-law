@@ -217,5 +217,54 @@
     "result": "기소유예",
     "field": "성범죄",
     "hasDocument": true
+  },
+  {
+    "slug": "public-official-molestation-appeal-reduction-case",
+    "title": "공무원 강제추행 항소심 감형 성공사례｜벌금 300만원에서 90만원",
+    "date": "2026.09.20",
+    "summary": "1심에서 벌금 300만원을 선고받은 공무원 의뢰인. 항소심에서 신분상 불이익과 양형 사유를 다시 짚어 벌금 90만원으로 감형받은 사례입니다.",
+    "tags": [
+      "강제추행",
+      "공무원",
+      "항소심",
+      "감형",
+      "성범죄",
+      "형사"
+    ],
+    "result": "벌금 감형",
+    "field": "성범죄",
+    "hasDocument": false
+  },
+  {
+    "slug": "minor-victim-molestation-deferred-prosecution-case",
+    "title": "미성년자 강제추행 기소유예 성공사례｜만취 상태 접촉, 재판 없이 종결",
+    "date": "2026.09.20",
+    "summary": "피해자가 미성년이고 CCTV까지 있던 강제추행 사건. 보호자를 통한 신중한 합의와 재발 방지 자료로 기소유예를 받은 사례입니다.",
+    "tags": [
+      "강제추행",
+      "미성년",
+      "기소유예",
+      "성범죄",
+      "형사"
+    ],
+    "result": "기소유예",
+    "field": "성범죄",
+    "hasDocument": false
+  },
+  {
+    "slug": "drug-repeat-purchase-suspended-sentence-case",
+    "title": "마약 22회 구매·투약 집행유예 성공사례｜실형 위기에서 사회 복귀",
+    "date": "2026.09.20",
+    "summary": "22차례 마약류를 구매·투약해 실형이 예상되던 사건. 단약 기간과 치료 경과를 객관적 자료로 증명해 집행유예를 받은 사례입니다.",
+    "tags": [
+      "마약",
+      "마약류관리법",
+      "집행유예",
+      "치료",
+      "형사"
+    ],
+    "result": "집행유예",
+    "field": "마약",
+    "hasDocument": false
   }
 ]
