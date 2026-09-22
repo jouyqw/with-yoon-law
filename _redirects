@@ -6,3 +6,6 @@
 /blog/arrest-without-warrant%20(3)        /blog/arrest-without-warrant        301
 /blog/recording-evidence-sex-crime%20(1)  /blog/recording-evidence-sex-crime  301
 /blog/police-investigation-guide%20(2)    /blog/police-investigation-preparation  301
+# /cases 는 폐지했다. 판결문은 성공사례 안으로 합쳤다.
+/cases /board?type=case 301
+/cases.html /board?type=case 301
