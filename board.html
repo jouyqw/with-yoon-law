@@ -53,11 +53,25 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,44px);line-height:
 /* ── 성공사례 카드 ──────────────────────────────
    표(번호·제목·작성일)로는 사례를 고를 수 없다. 어떤 혐의였고 어떻게 끝났는지가
    먼저 보여야 한다. 모바일에서는 표의 가로 칸이 무너지지만 카드는 그대로 읽힌다. */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;padding:18px 0;}
-.ccard{display:flex;flex-direction:column;gap:10px;padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s;}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;padding:18px 0;}
+.ccard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;transition:border-color .15s,box-shadow .15s,transform .15s;}
 .ccard:hover{border-color:#c7a44b;box-shadow:0 10px 30px rgba(16,26,48,.08);transform:translateY(-2px);}
+.ccard.rec{cursor:default;}
+.ccard.rec:hover{transform:none;}
+/* 처분 결과 문서 썸네일 — 이 사무소가 가진 가장 강한 근거라 목록에서 바로 보여준다 */
+.cshot{display:block;width:100%;padding:0;border:0;border-bottom:1px solid var(--line);background:#eef1f5;cursor:zoom-in;line-height:0;}
+.cshot img{width:100%;height:190px;object-fit:cover;object-position:top center;}
+.cbody{display:flex;flex-direction:column;gap:10px;padding:18px;flex:1;}
 .ccard-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
-.cbadge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;background:#07603c;color:#fff;font-size:12px;font-weight:900;letter-spacing:-.2px;}
+.cbadge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;background:#5b6577;color:#fff;font-size:12px;font-weight:900;letter-spacing:-.2px;}
+.cbadge.clear{background:#0b5d3b;}
+.cbadge.defer{background:#8a6a1b;}
+.cbadge.susp{background:#33507e;}
+/* 문서 확대 */
+.doc-lb{position:fixed;inset:0;z-index:60;display:none;place-items:center;padding:18px;background:rgba(11,15,24,.93);}
+.doc-lb.on{display:grid;}
+.doc-lb img{max-width:100%;max-height:86vh;object-fit:contain;background:#fff;}
+.doc-x{position:absolute;top:13px;right:15px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:23px;line-height:1;cursor:pointer;}
 .cfield{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:#eef2f6;color:#41506b;font-size:12px;font-weight:800;}
 .cdoc{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border-radius:999px;border:1px solid #c7a44b;color:#8a6a1b;font-size:11px;font-weight:800;}
 .cdoc:before{content:"📄";font-size:11px;}
@@ -65,20 +79,16 @@ h1{font-family:'Noto Serif KR',serif;font-size:clamp(28px,4vw,44px);line-height:
 .ccard-sum{margin:0;color:#5b6577;font-size:14px;line-height:1.72;word-break:keep-all;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
 .ccard-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;border-top:1px solid #eef1f5;color:#8a94a6;font-size:12px;font-weight:700;}
 .cmore{color:#8a6a1b;}
+.ccard-sum.open{-webkit-line-clamp:unset;display:block;}
 @media(max-width:600px){
-  .cards{grid-template-columns:1fr;gap:11px;padding:14px 0;}
-  .ccard{padding:16px 15px;border-radius:12px;}
+  .cards{grid-template-columns:1fr;gap:12px;padding:14px 0;}
+  .ccard{border-radius:12px;}
+  .cbody{padding:15px;gap:9px;}
+  .cshot img{height:min(56vw,240px);}
   .ccard-title{font-size:15.5px;}
   .ccard-sum{font-size:13.5px;-webkit-line-clamp:4;}
+  .doc-lb{padding:10px;}
 }
-.gallery-link{display:flex;align-items:center;gap:13px;margin-bottom:16px;padding:16px 18px;border:1px solid #e0d6b8;border-radius:12px;background:linear-gradient(135deg,#fdfaf1,#fff);transition:border-color .15s,box-shadow .15s}
-.gallery-link:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(201,168,76,.16)}
-.gl-ico{font-size:22px;flex-shrink:0}
-.gl-txt{flex:1;min-width:0}
-.gl-txt b{display:block;color:var(--navy);font-size:15px;font-weight:800}
-.gl-txt small{display:block;margin-top:3px;color:#7b6a45;font-size:12.5px;word-break:keep-all}
-.gl-go{color:var(--gold);font-size:19px;font-weight:900;flex-shrink:0}
-@media(max-width:600px){.gallery-link{padding:14px 15px;gap:11px}.gl-txt b{font-size:14px}.gl-txt small{font-size:12px}}
 .row{display:grid;grid-template-columns:74px 1fr 116px;gap:16px;align-items:center;min-height:62px;border-bottom:1px solid var(--line);cursor:pointer;}
 .row:hover{background:#fafafa;}
 .row.head{min-height:46px;background:#f9fafb;color:#475467;font-size:13px;font-weight:800;cursor:default;}
@@ -176,12 +186,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       <button class="tab" data-type="press" type="button">언론</button>
     </div>
     <div class="body">
-      <!-- 성공사례 탭에서만 보인다. 판결문 갤러리로 보내는 입구. -->
-      <a class="gallery-link" id="galleryLink" href="/cases" style="display:none">
-        <span class="gl-ico">📄</span>
-        <span class="gl-txt"><b>처분 결과 문서 73건 모아보기</b><small>불기소이유통지서·결정문·판결문을 그대로 공개합니다</small></span>
-        <span class="gl-go">→</span>
-      </a>
       <div class="toolbar">
         <div class="count" id="count">총 0건</div>
       </div>
@@ -256,25 +260,25 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     <li><a href="/blog/warrant-hearing-faq-withyoon" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">구속영장 실질심사, 당일 무엇을 어떻게 해야 하나</a></li>
     <li><a href="/blog/workplace-harassment-column" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">직장내성추행 고소 대응전략</a></li>
   </ul>
-  <p style="font-family:sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;color:#7b5d1f;margin:26px 0 16px;">WITH YOON · 성공사례 (17)</p>
+  <p style="font-family:sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;color:#7b5d1f;margin:26px 0 16px;">WITH YOON · 성공사례 (해설 17 · 문서 62)</p>
   <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;">
-    <li><a href="/blog/subway-molestation-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">지하철 강제추행·공중밀집장소추행 혐의 — 기소유예 방어 성공사례 — 기소유예</a></li>
-    <li><a href="/blog/drunk-groping-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">술에 취해 강제추행 혐의 — 기소유예로 마무리한 실제 사례 — 기소유예</a></li>
-    <li><a href="/blog/crowded-place-molestation" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공중밀집장소추행(지하철 성추행) 억울한 연루 대응법 — 기소유예</a></li>
-    <li><a href="/blog/case-success-sexual-crime" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">동성 연인 사이 유사강간·불법촬영 혐의 — 경찰 단계 불송치(혐의없음) 성공사례 — 불송치</a></li>
-    <li><a href="/blog/case-threat-execution-obstruction" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무집행방해 및 협박 혐의 — 구속 위기 구제 사례 — 구속 기각</a></li>
-    <li><a href="/blog/drunk-driving-acquittal" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">음주운전 무죄 판결 — 위법수집증거 배척 실제 사례 — 무죄</a></li>
-    <li><a href="/blog/no-charge-5-counts" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">5개 혐의 동시 고소 — 전부 무혐의(불송치) 방어 성공사례 — 불송치</a></li>
-    <li><a href="/blog/sexual-crime-case-results" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 실제 해결사례 — 2심 무죄·강제추행 기소유예 — 무죄·기소유예</a></li>
+    <li><a href="/blog/public-official-molestation-appeal-reduction-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무원 강제추행 항소심 감형 성공사례｜벌금 300만원에서 90만원 — 벌금 감형</a></li>
+    <li><a href="/blog/minor-victim-molestation-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">미성년자 강제추행 기소유예 성공사례｜만취 상태 접촉, 재판 없이 종결 — 기소유예</a></li>
+    <li><a href="/blog/drug-repeat-purchase-suspended-sentence-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">마약 22회 구매·투약 집행유예 성공사례｜실형 위기에서 사회 복귀 — 집행유예</a></li>
     <li><a href="/blog/special-assault-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">특수상해 기소유예 성공사례｜폭행 전과 2회에도 재판 없이 종결 — 기소유예</a></li>
     <li><a href="/blog/public-official-stalking-no-booking-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무원 스토킹 불입건 성공사례｜정식 입건 전 사건 종결 — 불입건</a></li>
     <li><a href="/blog/military-cruelty-non-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">군형법 가혹행위 불송치 성공사례｜군 징계 취소 후 형사사건 각하 — 불송치</a></li>
     <li><a href="/blog/disabled-quasi-rape-no-charge-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">장애인 유사강간 불송치 성공사례｜채팅 기록으로 강제성 부재 입증 — 불송치</a></li>
     <li><a href="/blog/juvenile-molestation-no-hearing-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">소년 강제추행 심리불개시 성공사례｜폭행·협박 혐의까지 재판 없이 종결 — 심리불개시</a></li>
     <li><a href="/blog/cctv-molestation-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">강제추행 기소유예 성공사례｜CCTV 명확한 사건에서 전과 없이 종결 — 기소유예</a></li>
-    <li><a href="/blog/public-official-molestation-appeal-reduction-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무원 강제추행 항소심 감형 성공사례｜벌금 300만원에서 90만원 — 벌금 감형</a></li>
-    <li><a href="/blog/minor-victim-molestation-deferred-prosecution-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">미성년자 강제추행 기소유예 성공사례｜만취 상태 접촉, 재판 없이 종결 — 기소유예</a></li>
-    <li><a href="/blog/drug-repeat-purchase-suspended-sentence-case" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">마약 22회 구매·투약 집행유예 성공사례｜실형 위기에서 사회 복귀 — 집행유예</a></li>
+    <li><a href="/blog/subway-molestation-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">지하철 강제추행·공중밀집장소추행 혐의 — 기소유예 방어 성공사례 — 기소유예</a></li>
+    <li><a href="/blog/no-charge-5-counts" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">5개 혐의 동시 고소 — 전부 무혐의(불송치) 방어 성공사례 — 불송치</a></li>
+    <li><a href="/blog/drunk-driving-acquittal" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">음주운전 무죄 판결 — 위법수집증거 배척 실제 사례 — 무죄</a></li>
+    <li><a href="/blog/crowded-place-molestation" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공중밀집장소추행(지하철 성추행) 억울한 연루 대응법 — 기소유예</a></li>
+    <li><a href="/blog/case-threat-execution-obstruction" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">공무집행방해 및 협박 혐의 — 구속 위기 구제 사례 — 구속 기각</a></li>
+    <li><a href="/blog/drunk-groping-deferred-prosecution" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">술에 취해 강제추행 혐의 — 기소유예로 마무리한 실제 사례 — 기소유예</a></li>
+    <li><a href="/blog/case-success-sexual-crime" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">동성 연인 사이 유사강간·불법촬영 혐의 — 경찰 단계 불송치(혐의없음) 성공사례 — 불송치</a></li>
+    <li><a href="/blog/sexual-crime-case-results" style="color:#111a2e;font-size:15px;font-weight:700;text-decoration:none;">성범죄 실제 해결사례 — 2심 무죄·강제추행 기소유예 — 무죄·기소유예</a></li>
   </ul>
 </nav>
 </noscript>
@@ -402,24 +406,22 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   }
 
   function loadCasePosts(callback){
-    fetch('/blog/cases.json?v=' + Date.now())
+    /* 성공사례는 두 층이다.
+       kind=article — 깊게 쓴 해설 글(개별 페이지 있음)
+       kind=record  — 처분 결과 문서가 있는 수행사례(개별 페이지 없이 여기서 펼쳐 본다)
+       본문이 짧은 수행사례를 개별 페이지로 찍으면 얇은 페이지가 수십 개 생겨 색인에 해롭다. */
+    fetch('/blog/case-index.json?v=' + Date.now())
       .then(function(r){ return r.json(); })
-      .then(function(posts){
-        var items = posts.map(function(p){
+      .then(function(rows){
+        callback(rows.map(function(p){
           return {
-            title: p.title,
-            date: p.date,
-            source: '위드윤 성공사례',
-            blogUrl: '/blog/' + p.slug + '.html',
-            content: p.summary,
-            tags: p.tags || [],
-            result: p.result || '',
-            field: p.field || '',
-            hasDocument: !!p.hasDocument,
-            _seed: true
+            title: p.title, date: p.date, source: '위드윤 성공사례',
+            blogUrl: p.url || '', content: p.summary,
+            tags: [p.field, p.result], result: p.result, resultKind: p.resultKind,
+            field: p.field, image: p.image || '', images: p.images || [],
+            recordOnly: p.kind === 'record', _seed: true
           };
-        });
-        callback(items);
+        }));
       })
       .catch(function(){ callback([]); });
   }
@@ -457,7 +459,6 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     var titleMap = {case:'성공사례', law:'법률칼럼', press:'언론'};
     document.getElementById('boardTitle').textContent = titleMap[current]||'칼럼';
     tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.type===current); });
-    var gl=document.getElementById('galleryLink'); if(gl) gl.style.display = (current==='case') ? 'flex' : 'none';
     var all = items || [];
     count.textContent = '총 '+all.length+'건';
     if(!all.length){
@@ -474,16 +475,32 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
       sortByDateDesc(all).forEach(function(item){
         var url = detailUrl(current, item);
         var cat = categoryOf(item);
-        html += '<a class="ccard" data-cat="'+cat.key+'" data-text="'+esc((item.title||'')+' '+((item.tags||[]).join(' ')))+'" target="_blank" rel="noopener" href="'+esc(url)+'">'
-          +'<div class="ccard-top">'
-          + (item.result ? '<span class="cbadge">'+esc(item.result)+'</span>' : '')
-          + (item.field ? '<span class="cfield">'+esc(item.field)+'</span>' : '')
-          + (item.hasDocument ? '<span class="cdoc">판결문 공개</span>' : '')
-          +'</div>'
-          +'<h3 class="ccard-title">'+esc(item.title)+'</h3>'
-          + (item.content ? '<p class="ccard-sum">'+esc(item.content)+'</p>' : '')
-          +'<div class="ccard-foot"><span>'+esc(item.date)+'</span><span class="cmore">사례 보기 →</span></div>'
-          +'</a>';
+        /* 판결문이 있으면 카드 맨 위에 썸네일을 깔고, 누르면 확대해서 본다.
+           처분 결과 문서는 이 사무소가 가진 가장 강한 근거라 목록에서 바로 보여야 한다. */
+        var shot = item.image
+          ? '<button class="cshot" type="button" data-img="' + esc(item.image) + '" aria-label="처분 결과 문서 크게 보기">'
+            + '<img src="' + esc(item.image) + '" alt="' + esc(item.title) + ' 처분 결과 문서" loading="lazy" decoding="async"></button>'
+          : '';
+        /* 해설 글이 있는 사례는 그 페이지로 보내고, 문서만 있는 사례는 목록에서 펼쳐 읽는다 */
+        var open = item.recordOnly
+          ? '<button class="cmore" type="button">전문 보기</button>'
+          : '<span class="cmore">사례 해설 →</span>';
+        var tag = item.recordOnly ? 'div' : 'a';
+        var href = item.recordOnly ? '' : ' target="_blank" rel="noopener" href="' + esc(url) + '"';
+        html += '<' + tag + ' class="ccard' + (item.recordOnly ? ' rec' : '') + '"'
+          + ' data-cat="' + cat.key + '"'
+          + ' data-text="' + esc((item.title || '') + ' ' + ((item.tags || []).join(' '))) + '"' + href + '>'
+          + shot
+          + '<div class="cbody">'
+          + '<div class="ccard-top">'
+          + (item.result ? '<span class="cbadge ' + (item.resultKind || 'other') + '">' + esc(item.result) + '</span>' : '')
+          + (item.field ? '<span class="cfield">' + esc(item.field) + '</span>' : '')
+          + '</div>'
+          + '<h3 class="ccard-title">' + esc(item.title) + '</h3>'
+          + (item.content ? '<p class="ccard-sum">' + esc(item.content) + '</p>' : '')
+          + '<div class="ccard-foot"><span>' + esc(item.date) + '</span>' + open + '</div>'
+          + '</div>'
+          + '</' + tag + '>';
       });
       html += '</div>';
     } else {
@@ -504,6 +521,37 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
     buildCats(all);
     applyFilters();
   }
+
+  /* 카드 안에서 일어나는 두 가지 — 문서 확대, 요약 펼치기.
+     카드마다 리스너를 달지 않고 목록에 하나만 둔다(카드가 79개라 그게 가볍다). */
+  list.addEventListener('click', function(e){
+    var shot = e.target.closest ? e.target.closest('.cshot') : null;
+    if(shot){
+      e.preventDefault();
+      var lb = document.getElementById('docLightbox');
+      var img = document.getElementById('docLightboxImg');
+      img.src = shot.getAttribute('data-img');
+      img.alt = shot.querySelector('img') ? shot.querySelector('img').alt : '처분 결과 문서';
+      lb.classList.add('on');
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+    var more = e.target.closest ? e.target.closest('.cmore') : null;
+    if(more && more.tagName === 'BUTTON'){
+      e.preventDefault();
+      var p = more.closest('.ccard').querySelector('.ccard-sum');
+      if(!p) return;
+      var open = p.classList.toggle('open');
+      more.textContent = open ? '접기' : '전문 보기';
+    }
+  });
+
+  function closeDoc(){
+    var lb = document.getElementById('docLightbox');
+    if(lb) lb.classList.remove('on');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeDoc(); });
 
   function load(){
     list.innerHTML = '<div class="empty">불러오는 중...</div>';
@@ -533,6 +581,18 @@ input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(20
   if(searchEl) searchEl.addEventListener('input', applyFilters);
 
   load();
+})();
+</script>
+<div class="doc-lb" id="docLightbox">
+  <button class="doc-x" type="button" aria-label="닫기" onclick="this.parentNode.classList.remove('on');document.body.style.overflow='';">×</button>
+  <img id="docLightboxImg" src="" alt="">
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('docLightbox');
+  lb.addEventListener('click', function(e){
+    if(e.target.id !== 'docLightboxImg'){ lb.classList.remove('on'); document.body.style.overflow=''; }
+  });
 })();
 </script>
 </body>
