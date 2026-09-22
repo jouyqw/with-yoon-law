@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 22 Sep 2026 04:38:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 18:48:18 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>기여분 주장 — 모신 세월이 상속분으로 인정되려면</title>
+      <link>https://with-yoon-law.com/blog/contribution-share-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/contribution-share-guide</guid>
+      <description>상속 기여분은 부양하거나 재산을 지킨 사정을 상속분에 반영하는 제도입니다. 인정 기준과 청구하는 자리, 준비해야 할 자료를 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>혼인무효와 혼인취소 — 없던 혼인과 끝난 혼인은 다릅니다</title>
+      <link>https://with-yoon-law.com/blog/marriage-nullity-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/marriage-nullity-guide</guid>
+      <description>혼인무효와 혼인취소는 사유도 효력도 다릅니다. 어떤 경우에 무엇을 구해야 하는지, 기간과 자녀·재산 문제는 어떻게 달라지는지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>유류분 산정의 기초 — 남은 재산만 보고 계산하지 않습니다</title>
       <link>https://with-yoon-law.com/blog/legal-reserve-share</link>
@@ -390,22 +406,6 @@
       <description>업무방해죄에서 말하는 업무의 범위, 위계와 위력의 뜻, 실제로 업무가 중단되지 않아도 성립하는지까지 조문을 기준으로 성립 범위를 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>공무집행방해 — 직무가 적법해야 죄가 됩니다</title>
-      <link>https://with-yoon-law.com/blog/obstruction-public-duty</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/obstruction-public-duty</guid>
-      <description>공무집행방해는 공무원의 직무집행이 적법할 때 성립합니다. 적법성을 가르는 기준과 폭행·협박의 정도, 위계로 방해한 경우까지 다투는 지점을 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>상해죄와 진단서의 무게 — 종이 한 장이 결론이 되지는 않습니다</title>
-      <link>https://with-yoon-law.com/blog/injury-charge-diagnosis</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/injury-charge-diagnosis</guid>
-      <description>상해죄에서 진단서는 출발점이지 결론이 아닙니다. 전치 기간이 뜻하는 것과 진단서를 받아 들었을 때 확인할 항목, 다투는 순서를 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Tue, 01 Sep 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
