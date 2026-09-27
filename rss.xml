@@ -5,8 +5,16 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 26 Sep 2026 20:19:31 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 10:20:22 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>법률 칼럼·성공사례 전체 목록</title>
+      <link>https://with-yoon-law.com/blog/index</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
+      <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 159편의 전체 목록입니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>난폭운전 — 위반 하나가 아니라 이어진 흐름을 봅니다</title>
       <link>https://with-yoon-law.com/blog/reckless-driving-repeat</link>
@@ -398,14 +406,6 @@
       <description>빌려준 돈을 돌려받는 일에도 허용되는 수단의 한계가 있습니다. 공갈죄가 성립하는 지점과 정당한 권리행사로 남는 선을 수단·정도·목적으로 나누어 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Mon, 07 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>증거인멸죄 성립 범위 — 내 것을 지운 것과 남의 것을 지운 것은 다릅니다</title>
-      <link>https://with-yoon-law.com/blog/evidence-destruction-crime</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/evidence-destruction-crime</guid>
-      <description>증거인멸죄는 타인의 형사·징계사건 증거를 대상으로 합니다. 자기 사건 자료를 지운 경우, 친족 특례, 위조와 허위진술의 경계를 구분해 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
