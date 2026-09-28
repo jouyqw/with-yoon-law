@@ -5,8 +5,16 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 27 Sep 2026 20:33:56 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 14:42:19 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>법률 칼럼·성공사례 전체 목록</title>
+      <link>https://with-yoon-law.com/blog/index</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
+      <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 159편의 전체 목록입니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>보복운전 — 차를 어떻게 몰았는지가 죄명을 정합니다</title>
       <link>https://with-yoon-law.com/blog/road-rage-weapon-issue</link>
@@ -22,14 +30,6 @@
       <description>어린이보호구역 사고는 장소만으로 무거워지지 않습니다. 가중 요건 네 가지와 법정형, 실제로 다투어지는 지점, 사고 직후에 해야 할 일을 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>법률 칼럼·성공사례 전체 목록</title>
-      <link>https://with-yoon-law.com/blog/index</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
-      <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 159편의 전체 목록입니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
     </item>
     <item>
       <title>난폭운전 — 위반 하나가 아니라 이어진 흐름을 봅니다</title>
