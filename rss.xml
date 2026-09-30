@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 30 Sep 2026 05:33:53 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 19:56:47 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>대여금 청구 — 차용증이 없는 돈은 무엇으로 증명합니까</title>
+      <link>https://with-yoon-law.com/blog/loan-claim-evidence</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/loan-claim-evidence</guid>
+      <description>차용증 없이 빌려준 돈을 돌려받으려면 이체내역 말고 무엇이 더 필요한지, 증여였다는 반박에 어떻게 대응하고 시효는 언제 끝나는지 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>가압류 보전의 필요성 — 받을 돈이 있다는 것만으로는 부족합니다</title>
+      <link>https://with-yoon-law.com/blog/provisional-attachment</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/provisional-attachment</guid>
+      <description>가압류는 채권이 있다는 사실만으로 나오지 않습니다. 피보전권리와 보전의 필요성, 담보 제공, 결정 이후의 이의와 취소까지 신청 전에 확인할 것을 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>명도소송 — 판결을 받기 전에 점유부터 묶어 두어야 합니다</title>
       <link>https://with-yoon-law.com/blog/eviction-lawsuit-guide</link>
@@ -389,22 +405,6 @@
       <guid isPermaLink="true">https://with-yoon-law.com/blog/gambling-place-opening</guid>
       <description>도박죄와 도박장소개설죄는 법정형부터 다릅니다. 일시오락의 경계, 영리 목적의 판단, 온라인 도박에서 참여자와 운영자가 갈리는 지점을 정리했습니다.</description>
       <category>법률칼럼</category>
-      <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>소년 강제추행 심리불개시 성공사례｜폭행·협박 혐의까지 재판 없이 종결</title>
-      <link>https://with-yoon-law.com/blog/juvenile-molestation-no-hearing-case</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/juvenile-molestation-no-hearing-case</guid>
-      <description>같은 학교 학생에게 강제추행·폭행·협박으로 고소된 소년사건에서 접촉 경위와 증거 부족을 밝혀 심리불개시 결정을 받은 사례입니다.</description>
-      <category>성공사례</category>
-      <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>군형법 가혹행위 불송치 성공사례｜군 징계 취소 후 형사사건 각하</title>
-      <link>https://with-yoon-law.com/blog/military-cruelty-non-prosecution-case</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/military-cruelty-non-prosecution-case</guid>
-      <description>군 징계자료의 사실오인과 증거 부족을 밝혀 징계처분을 취소하고 군형법 위반 고소까지 불송치 각하로 종결한 사례입니다.</description>
-      <category>성공사례</category>
       <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
