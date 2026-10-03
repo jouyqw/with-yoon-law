@@ -17,11 +17,13 @@
 - 서초성범죄전문변호사는 진술보다 증거 흐름을 먼저 봅니다: https://with-yoon-law.com/practice/sex-crime/
 
 ## 최신 콘텐츠
+- [법률칼럼] 하자보수 청구 — 하자가 남아 있어도 기간이 지나면 다툴 수 없습니다: https://with-yoon-law.com/blog/defect-repair-claim
+- [법률칼럼] 명의신탁 부동산 — 등기가 무효라도 되찾는 길은 유형마다 다릅니다: https://with-yoon-law.com/blog/nominal-trust-property
 - [법률칼럼] 층간소음 — 참을 한도를 넘었는지는 소리 크기만으로 정해지지 않습니다: https://with-yoon-law.com/blog/floor-noise-dispute
+- [법률칼럼] 법률 칼럼·성공사례 전체 목록: https://with-yoon-law.com/blog/index
 - [법률칼럼] 임대차보증금 반환 — 대항력은 짐을 빼는 순간 사라질 수 있습니다: https://with-yoon-law.com/blog/lease-deposit-return
 - [법률칼럼] 공사가 중간에 멈췄을 때 — 기성고는 '얼마나 했느냐'로 정해지지 않습니다: https://with-yoon-law.com/blog/construction-payment-claim
 - [법률칼럼] 물품대금 청구 — 금액보다 '어느 거래에서 생긴 돈인지'가 먼저입니다: https://with-yoon-law.com/blog/goods-payment-claim
-- [법률칼럼] 법률 칼럼·성공사례 전체 목록: https://with-yoon-law.com/blog/index
 - [법률칼럼] 대여금 청구 — 차용증이 없는 돈은 무엇으로 증명합니까: https://with-yoon-law.com/blog/loan-claim-evidence
 - [법률칼럼] 가압류 보전의 필요성 — 받을 돈이 있다는 것만으로는 부족합니다: https://with-yoon-law.com/blog/provisional-attachment
 - [법률칼럼] 명도소송 — 판결을 받기 전에 점유부터 묶어 두어야 합니다: https://with-yoon-law.com/blog/eviction-lawsuit-guide
@@ -95,5 +97,3 @@
 - [법률칼럼] 성매매 초범 처벌 — 교육조건부 기소유예를 받으려면: https://with-yoon-law.com/blog/prostitution-first-offense
 - [법률칼럼] 반의사불벌죄와 친고죄 차이 — 합의하면 끝나는 죄, 끝나지 않는 죄: https://with-yoon-law.com/blog/victim-consent-crimes
 - [법률칼럼] 사기죄 성립요건 — 못 갚은 것과 속인 것은 다릅니다: https://with-yoon-law.com/blog/fraud-crime-guide
-- [법률칼럼] 12대 중과실 교통사고 — 보험에 들었는데도 형사처벌을 받는 이유: https://with-yoon-law.com/blog/traffic-12-negligence
-- [법률칼럼] 사실혼 재산분할 — 혼인신고를 안 했어도 받을 수 있는 것과 없는 것: https://with-yoon-law.com/blog/common-law-marriage-division
