@@ -5,8 +5,16 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 07 Oct 2026 22:24:16 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 22:37:14 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>법률 칼럼·성공사례 전체 목록</title>
+      <link>https://with-yoon-law.com/blog/index</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
+      <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 159편의 전체 목록입니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Wed, 07 Oct 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>선고유예 — 2년을 채우면 면소되지만, 들어가는 문이 좁습니다</title>
       <link>https://with-yoon-law.com/blog/sentence-suspension-guide</link>
@@ -14,14 +22,6 @@
       <description>선고유예의 요건을 형의 상한, 개전의 정상, 전과 없음이라는 세 축으로 나누어 정리하고 집행유예·기소유예와의 차이, 유예기간 중 실효되는 경우까지 순서대로 설명합니다.</description>
       <category>법률칼럼</category>
       <pubDate>Wed, 07 Oct 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>법률 칼럼·성공사례 전체 목록</title>
-      <link>https://with-yoon-law.com/blog/index</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
-      <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 159편의 전체 목록입니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Tue, 06 Oct 2026 15:00:00 GMT</pubDate>
     </item>
     <item>
       <title>촉법소년 — 형사처벌이 없다는 말과 사건이 없다는 말은 다릅니다</title>
