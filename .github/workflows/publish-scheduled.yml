@@ -6,7 +6,8 @@ name: Publish scheduled columns
 
 on:
   schedule:
-    - cron: "5 15 * * *"   # 매일 00:05 KST (15:05 UTC)
+    # 15:05 UTC = 다음 날 00:05 KST. KST 평일로 맞추려면 UTC 요일을 하루 당긴다.
+    - cron: "5 15 * * 0-4"   # 평일 00:05 KST
   workflow_dispatch:
 
 permissions:

@@ -121,6 +121,25 @@ const TOPICS = [
   { slug: 'juvenile-under-fourteen', topic: '촉법소년 처리 절차', category: '형사', hub: 'criminal' },
   { slug: 'summary-judgment-court', topic: '즉결심판과 정식재판', category: '형사', hub: 'criminal' },
   { slug: 'sentence-suspension-guide', topic: '선고유예의 요건', category: '형사', hub: 'criminal' },
+
+  /* ---- 2026-10-12 보충 ----
+   * 앞의 74개를 10/03 에 다 쓰고 그날부터 열흘간 "배정할 주제가 남지 않았습니다" 만
+   * 찍히며 조용히 멈춰 있었다(발행 173편 · 대기 0편). 배정표가 마르면 실패가 아니라
+   * "할 일 없음" 으로 끝나 알림이 뜨지 않는다.
+   *
+   * 이번에는 네이버 검색광고 실측 검색량을 보고 골랐다(괄호 안, 2026-10-12 기준).
+   * 기존 183편 제목에 그 말이 이미 들어간 주제는 뺐다.
+   * 큰 검색어는 글 한 편으로 1위를 잡기 어렵지만, 그만큼 롱테일 변형이 딸려 온다.
+   */
+  // 이혼·가사 — 이 사이트에서 가장 큰 수요인데 14편뿐이었다
+  { slug: 'divorce-agreement-procedure', topic: '협의이혼 절차와 숙려기간 (협의이혼절차 11,280회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'divorce-grounds-six', topic: '재판상 이혼사유 여섯 가지 (이혼사유 9,150회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'divorce-documents-list', topic: '이혼에 필요한 서류와 준비 순서 (이혼서류 8,860회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'divorce-property-division-standard', topic: '이혼 재산분할 기여도 산정 (이혼재산분할 8,430회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'divorce-at-fault-spouse', topic: '유책배우자도 이혼을 청구할 수 있나 (유책배우자 7,850회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'de-facto-marriage-division', topic: '사실혼 재산분할의 범위 (사실혼재산분할 6,690회)', category: '이혼·가사', hub: 'divorce' },
+  // 형사 — 사실적시 명예훼손은 상담에서 가장 자주 갈리는 지점이다
+  { slug: 'defamation-true-statement', topic: '사실을 말해도 명예훼손이 되는 경우 (사실적시명예훼손 8,130회)', category: '형사', hub: 'criminal' },
 ];
 
 /* ---------- 로그 ---------- */
@@ -222,9 +241,17 @@ const pool = TOPICS.filter((t) => !known.has(t.slug)).slice(0, need);
 if (!pool.length) fail('배정할 주제가 남지 않았습니다', 'TOPICS 목록을 늘려야 합니다.');
 if (pool.length < need) log(`※ 주제 풀이 부족해 ${pool.length}건만 배정했습니다`);
 
-// 마지막 예약일 다음 날부터 하루 PER_DAY 건씩
+// 마지막 예약일 다음 평일부터 하루 PER_DAY 건씩. 주말은 건너뛴다(2026-10-12).
 const lastAt = queue.reduce((m, q) => (q.publishAt > m ? q.publishAt : m), TODAY);
-pool.forEach((t, i) => { t.date = addDays(lastAt, Math.floor(i / PER_DAY) + 1); });
+const isWeekend = (iso) => [0, 6].includes(new Date(`${iso}T00:00:00Z`).getUTCDay());
+const nextWeekday = (iso) => { let d = addDays(iso, 1); while (isWeekend(d)) d = addDays(d, 1); return d; };
+let day = lastAt;
+let slots = 0;
+pool.forEach((t) => {
+  if (slots === 0 || slots >= PER_DAY) { day = nextWeekday(day); slots = 0; }
+  slots += 1;
+  t.date = day;
+});
 
 fs.writeFileSync(LOCK, stamp());
 log(`${pool.length}편 보충 시작 → ${pool[0].date} ~ ${pool[pool.length - 1].date}`);
