@@ -140,6 +140,22 @@ const TOPICS = [
   { slug: 'de-facto-marriage-division', topic: '사실혼 재산분할의 범위 (사실혼재산분할 6,690회)', category: '이혼·가사', hub: 'divorce' },
   // 형사 — 사실적시 명예훼손은 상담에서 가장 자주 갈리는 지점이다
   { slug: 'defamation-true-statement', topic: '사실을 말해도 명예훼손이 되는 경우 (사실적시명예훼손 8,130회)', category: '형사', hub: 'criminal' },
+
+  /* ---- 2026-10-14 2차 보충 ----
+   * 1차로 7편만 넣어 2주치뿐이었다. 평일 2편이면 열흘이면 또 마른다.
+   * 큰 검색어 중 183편 제목에 아직 안 들어간 것만 골랐다(괄호 안은 실측 월간 검색수).
+   */
+  // 음주·교통 — 183편 중 7편뿐인데 검색 수요는 이 사이트에서 가장 두껍다
+  { slug: 'dui-fine-standard', topic: '음주운전 벌금이 정해지는 기준 (음주운전벌금 16,030회)', category: '음주·교통', hub: 'dui' },
+  { slug: 'dui-punishment-by-level', topic: '음주운전 처벌 수치 구간별 정리 (음주운전처벌 7,510회 · 음주운전수치 4,400회)', category: '음주·교통', hub: 'dui' },
+  { slug: 'traffic-twelve-major-faults', topic: '12대 중과실 — 보험으로 끝나지 않는 사고 (12대중과실 9,780회)', category: '음주·교통', hub: 'dui' },
+  { slug: 'traffic-settlement-amount', topic: '교통사고 합의금 산정 항목 (교통사고합의금 11,500회)', category: '음주·교통', hub: 'dui' },
+  { slug: 'parking-hit-and-run', topic: '주차 뺑소니 — 성립과 처벌 (주차뺑소니처벌 4,120회)', category: '음주·교통', hub: 'dui' },
+  // 성범죄 — 6편뿐이었다. 통매음은 검색이 9,210회인데 한 편도 없었다
+  // 이혼·가사 — 상간 소송은 변형 검색어까지 합치면 2만 회가 넘는다
+  { slug: 'affair-lawsuit-damages', topic: '상간자 소송 위자료가 갈리는 요소 (상간녀소송 8,480회 · 상간소송 8,040회)', category: '이혼·가사', hub: 'affair-lawsuit' },
+  { slug: 'divorce-by-agreement-guide', topic: '합의이혼으로 끝낼 때 빠뜨리는 것 (합의이혼 9,320회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'reserved-portion-claim-suit', topic: '유류분 반환청구 소송 순서 (유류분청구소송 5,270회)', category: '민사', hub: null },
 ];
 
 /* ---------- 로그 ---------- */
