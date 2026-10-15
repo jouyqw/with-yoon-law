@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 15 Oct 2026 03:47:39 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 18:54:18 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>이혼 서류, 어디서 무엇부터 — 발급처별 목록과 준비 순서</title>
+      <link>https://with-yoon-law.com/blog/divorce-documents-list</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/divorce-documents-list</guid>
+      <description>이혼에 필요한 서류를 발급처별로 정리하고, 협의이혼과 재판이혼에서 달라지는 부분, 재산과 양육 관련 자료를 모으는 순서까지 단계별로 설명합니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Thu, 15 Oct 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>이혼 재산분할 기여도 — 비율 하나가 나오기까지 거치는 네 단계</title>
+      <link>https://with-yoon-law.com/blog/divorce-property-division-standard</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/divorce-property-division-standard</guid>
+      <description>이혼 재산분할에서 기여도 비율이 어떻게 정해지는지, 분할 대상 확정부터 기준시점, 가액 평가, 비율 산정까지 네 단계로 나누어 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Thu, 15 Oct 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>협의이혼 절차 — 숙려기간 1개월과 3개월은 이렇게 갈립니다</title>
       <link>https://with-yoon-law.com/blog/divorce-agreement-procedure</link>
@@ -390,22 +406,6 @@
       <description>화장실이나 탈의실 같은 다중이용장소에 성적 목적으로 들어갔다는 혐의는 장소의 성격보다 목적 인정에서 갈립니다. 성립 요건과 수사 단계에서 확인되는 자료를 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Thu, 17 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>유사강간 혐의 — 행위의 범위와 동의 여부, 두 곳에서 갈립니다</title>
-      <link>https://with-yoon-law.com/blog/quasi-rape-consent-issue</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/quasi-rape-consent-issue</guid>
-      <description>유사강간은 강제추행이나 준강간과 구성요건이 다릅니다. 어떤 행위가 이 죄명에 해당하는지, 동의 여부는 무엇으로 판단되는지, 조사 전에 정리해 둘 것은 무엇인지 짚었습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>통신매체이용음란 — 보낸 것과 도달한 것, 그리고 목적이 쟁점입니다</title>
-      <link>https://with-yoon-law.com/blog/telecom-obscenity-crime</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/telecom-obscenity-crime</guid>
-      <description>메시지 한 통으로 입건되는 죄명입니다. 어떤 요건이 갖춰져야 성립하는지, 도달과 목적은 무엇으로 판단되는지, 유죄가 되면 무엇이 따라붙는지 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
