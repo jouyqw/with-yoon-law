@@ -5,8 +5,16 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 25 Oct 2026 15:50:52 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 18:11:37 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>유류분 반환청구 소송 순서 — 내용증명부터 집행까지 거치는 단계</title>
+      <link>https://with-yoon-law.com/blog/reserved-portion-claim-suit</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/reserved-portion-claim-suit</guid>
+      <description>유류분청구소송은 계산보다 순서에서 갈립니다. 기간 확인, 내용증명, 재산 파악, 보전처분, 소 제기, 감정, 집행까지 단계별로 무엇을 해야 하는지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 25 Oct 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>법률 칼럼·성공사례 전체 목록</title>
       <link>https://with-yoon-law.com/blog/index</link>
@@ -398,14 +406,6 @@
       <description>한정승인 신고에 붙이는 상속재산목록을 어떻게 채워야 하는지, 무엇을 빠뜨리면 단순승인으로 넘어가는지, 신고가 수리된 뒤의 청산 절차까지 순서대로 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>상속포기 3개월 — 어느 날부터 세는지가 먼저입니다</title>
-      <link>https://with-yoon-law.com/blog/inheritance-renunciation</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/inheritance-renunciation</guid>
-      <description>상속포기와 한정승인의 3개월 기간이 언제부터 시작되는지, 후순위 상속인은 어떻게 계산하는지, 기간 안에 하면 안 되는 행동은 무엇인지 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sun, 20 Sep 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
