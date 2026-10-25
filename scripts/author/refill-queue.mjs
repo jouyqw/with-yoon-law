@@ -156,6 +156,25 @@ const TOPICS = [
   { slug: 'affair-lawsuit-damages', topic: '상간자 소송 위자료가 갈리는 요소 (상간녀소송 8,480회 · 상간소송 8,040회)', category: '이혼·가사', hub: 'affair-lawsuit' },
   { slug: 'divorce-by-agreement-guide', topic: '합의이혼으로 끝낼 때 빠뜨리는 것 (합의이혼 9,320회)', category: '이혼·가사', hub: 'divorce' },
   { slug: 'reserved-portion-claim-suit', topic: '유류분 반환청구 소송 순서 (유류분청구소송 5,270회)', category: '민사', hub: null },
+
+  /* ---- 2026-10-25 3차 보충 ----
+   * 2차로 넣은 12편도 열흘 만에 다 썼다. 평일 2편이면 그 속도가 맞다.
+   * 이번에는 한 달 치를 넣는다.
+   *
+   * 이번 묶음부터 제목 규칙이 붙었다 — 괄호 안 검색어를 띄어쓰기 없이 제목에 넣는다.
+   * 2차로 넣은 일곱 편이 "음주운전 벌금" 처럼 띄어 쓴 제목으로 나가 정작
+   * 음주운전벌금(16,030회) 검색에는 걸리지 않았다. 검사에서 막게 했다.
+   */
+  { slug: 'payment-order-application', topic: '지급명령 신청서 작성과 절차 (지급명령신청 11,840회 · 지급명령 4,800회)', category: '민사', hub: null },
+  { slug: 'stalking-punishment-act', topic: '스토킹처벌법 성립 요건과 처분 (스토킹처벌법 7,770회)', category: '형사', hub: 'criminal' },
+  { slug: 'molestation-punishment-standard', topic: '성추행 처벌 수위를 가르는 요소 (성추행처벌 4,480회 · 성추행기준 3,230회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'assault-settlement-amount', topic: '폭행 합의금은 어떻게 정해지나 (폭행합의금 3,540회)', category: '형사', hub: 'criminal' },
+  { slug: 'account-seizure-release', topic: '통장이 압류됐을 때 푸는 순서 (압류통장해지 2,030회)', category: '민사', hub: null },
+  { slug: 'sexual-assault-settlement', topic: '성범죄 합의가 처분에 미치는 범위 (성폭행합의금 2,020회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'molestation-complaint-filing', topic: '성추행 고소장을 낼 때 정리할 것 (성추행고소장 2,010회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'grooming-crime-scope', topic: '그루밍 성범죄로 보는 기준 (그루밍성범죄 2,020회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'digital-sex-crime-punishment', topic: '디지털 성범죄 처벌 범위 (디지털성범죄처벌 2,020회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'molestation-causing-injury', topic: '강제추행치상으로 죄명이 올라가는 때 (강제추행치상 2,010회)', category: '성범죄', hub: 'sex-crime' },
 ];
 
 /* ---------- 로그 ---------- */
@@ -292,6 +311,17 @@ ${rows}
 ## 초안 JSON 필드
 slug, category, crumb, date, title, description, keywords[], tldr[], sections[], faqs[], quote[], hub, related[], cta
 
+## 제목 규칙 — 괄호 안의 검색어를 붙여 쓴다
+주제 끝 괄호에 \`(음주운전벌금 16,030회)\` 처럼 적힌 말이 **검색어**다.
+- 그 말을 **띄어쓰기 없이 그대로** 제목에 넣는다.
+  "음주운전 벌금" 처럼 띄우면 "음주운전벌금" 으로 검색한 사람에게 걸리지 않는다.
+  띄어쓰기 하나로 글 한 편이 통째로 헛돈다.
+- 검색어를 제목 앞머리에 두고, 뒤에 그 글에서 실제로 답하는 말을 붙인다.
+    좋은 예: "음주운전벌금, 같은 수치인데 금액이 갈리는 이유"
+    나쁜 예: "음주운전 벌금 기준 안내"
+- 괄호 안 숫자(검색량)는 제목·본문에 쓰지 않는다. 내부 메모다.
+- 검색어가 여럿이면 **가장 큰 하나만** 제목에 쓰고 나머지는 본문 소제목에 흩는다.
+
 ## 통과해야 하는 기준 (scripts/author/verify.mjs 가 검사한다)
 - 본문 1800자 이상
 - sections 5개 이상. 각 section 은 { label, title, blocks[] }
@@ -387,6 +417,19 @@ for (let i = 0; i < pool.length; i += PER_DAY) {
         const d = readJson(f);
         if (d.date !== t.date) miss.push(`${t.slug} date 가 ${d.date} (기대 ${t.date})`);
         if (d.slug !== t.slug) miss.push(`${t.slug} slug 불일치`);
+
+        // 주제 끝 괄호의 검색어가 제목에 붙여 쓰기로 들어갔는지 본다.
+        //
+        // "음주운전 벌금" 처럼 띄우면 "음주운전벌금"(월 16,030회) 검색에 안 걸린다.
+        // 10/14 에 넣은 주제 일곱이 전부 띄어 쓴 제목으로 나가 헛돌았다(2026-10-25 확인).
+        // 괄호 안에는 '검색어 1,234회' 형태가 ' · ' 로 여러 개 올 수 있다.
+        const m = String(t.topic).match(/\(([^)]*회)\)\s*$/);
+        if (m) {
+          const kws = m[1].split('·').map((x) => x.trim().replace(/\s*[\d,]+회$/, '').trim()).filter(Boolean);
+          if (kws.length && !kws.some((k) => String(d.title).includes(k))) {
+            miss.push(`${t.slug} 제목에 검색어가 붙여 쓰기로 없습니다 (${kws.join(' / ')} 중 하나) — 현재: ${d.title}`);
+          }
+        }
       } catch (e) { miss.push(`${t.slug}.json JSON 오류: ${e.message}`); }
     }
     if (miss.length) { note = miss.join('\n'); log('  !! ' + miss.join(' / ')); continue; }
