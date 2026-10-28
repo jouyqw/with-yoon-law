@@ -243,5 +243,19 @@
     "title": "사고 유형이 열두 항목에 닿는지 확인하십시오",
     "sub": "영상이 남아 있는 동안에 해야 하는 일입니다."
   },
-  "dateModified": "2026-10-26"
+  "dateModified": "2026-10-26",
+  "related": [
+    {
+      "href": "/blog/parking-hit-and-run",
+      "label": "주차뺑소니처벌 — 긁고 그냥 갔다면 성립하는가"
+    },
+    {
+      "href": "/blog/traffic-settlement-amount",
+      "label": "교통사고합의금 산정 — 총액이 아니라 항목으로 따져야 합니다"
+    },
+    {
+      "href": "/blog/dui-punishment-by-level",
+      "label": "음주운전처벌 수치 0.03·0.08·0.2 — 구간이 바뀌면 무엇이 달라지는가"
+    }
+  ]
 }

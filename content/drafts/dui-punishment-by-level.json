@@ -254,5 +254,19 @@
     "title": "수치가 어느 구간인지부터 확인하십시오",
     "sub": "측정 시각과 음주 시각을 맞춰 보는 일이 그다음입니다."
   },
-  "dateModified": "2026-10-26"
+  "dateModified": "2026-10-26",
+  "related": [
+    {
+      "href": "/blog/parking-hit-and-run",
+      "label": "주차뺑소니처벌 — 긁고 그냥 갔다면 성립하는가"
+    },
+    {
+      "href": "/blog/traffic-settlement-amount",
+      "label": "교통사고합의금 산정 — 총액이 아니라 항목으로 따져야 합니다"
+    },
+    {
+      "href": "/blog/traffic-twelve-major-faults",
+      "label": "12대중과실 — 항목마다 다투는 지점이 다릅니다"
+    }
+  ]
 }

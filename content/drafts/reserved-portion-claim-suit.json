@@ -296,5 +296,19 @@
     "title": "날짜부터 확인하고 시작하십시오",
     "sub": "등기부와 가족관계서류만 있으면 남은 기간과 청구 가능성을 함께 짚어 보겠습니다."
   },
-  "dateModified": "2026-10-26"
+  "dateModified": "2026-10-26",
+  "related": [
+    {
+      "href": "/blog/payment-order-application",
+      "label": "지급명령신청, 청구취지와 송달 두 곳에서 갈립니다"
+    },
+    {
+      "href": "/blog/debt-collection-limits",
+      "label": "채권추심 — 받을 권리가 있어도 넘어서는 안 되는 선이 있습니다"
+    },
+    {
+      "href": "/blog/small-claims-procedure",
+      "label": "소액사건 심판 — 기일이 한 번뿐이라는 전제로 준비해야 합니다"
+    }
+  ]
 }

@@ -246,5 +246,19 @@
     "title": "혼인신고가 없어도 정산할 범위는 남아 있습니다",
     "sub": "관계의 실체와 재산의 흐름, 두 갈래로 나누어 정리하겠습니다."
   },
-  "dateModified": "2026-10-26"
+  "dateModified": "2026-10-26",
+  "related": [
+    {
+      "href": "/blog/affair-lawsuit-damages",
+      "label": "상간녀소송 위자료 — 어느 요소에서 금액이 갈리는가"
+    },
+    {
+      "href": "/blog/divorce-by-agreement-guide",
+      "label": "합의이혼으로 끝낼 때 빠뜨리는 것 — 신고가 끝나도 남는 항목들"
+    },
+    {
+      "href": "/blog/divorce-at-fault-spouse",
+      "label": "유책배우자도 이혼을 청구할 수 있나 — 막히는 자리와 열리는 자리"
+    }
+  ]
 }

@@ -242,5 +242,19 @@
     "title": "쓴 글이 어느 요건에 걸리는지부터 가려야 합니다",
     "sub": "문장을 함께 나눠 보고 다툴 자리와 정리할 자리를 정하겠습니다."
   },
-  "dateModified": "2026-10-26"
+  "dateModified": "2026-10-26",
+  "related": [
+    {
+      "href": "/blog/assault-settlement-amount",
+      "label": "폭행합의금, 액수보다 먼저 정해지는 것이 있습니다"
+    },
+    {
+      "href": "/blog/stalking-punishment-act",
+      "label": "스토킹처벌법, 한 번의 행위와 범죄 사이에는 거리가 있습니다"
+    },
+    {
+      "href": "/blog/sentence-suspension-guide",
+      "label": "선고유예 — 2년을 채우면 면소되지만, 들어가는 문이 좁습니다"
+    }
+  ]
 }

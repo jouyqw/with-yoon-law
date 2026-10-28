@@ -325,5 +325,19 @@
     "title": "서류를 다 모으기 전에 한 번 점검하십시오",
     "sub": "어느 경로로 갈지부터 정하면 준비할 서류가 절반으로 줄어듭니다."
   },
-  "dateModified": "2026-10-26"
+  "dateModified": "2026-10-26",
+  "related": [
+    {
+      "href": "/blog/affair-lawsuit-damages",
+      "label": "상간녀소송 위자료 — 어느 요소에서 금액이 갈리는가"
+    },
+    {
+      "href": "/blog/divorce-by-agreement-guide",
+      "label": "합의이혼으로 끝낼 때 빠뜨리는 것 — 신고가 끝나도 남는 항목들"
+    },
+    {
+      "href": "/blog/de-facto-marriage-division",
+      "label": "사실혼재산분할의 범위 — 어디까지 들어오고 어디서 끊기는가"
+    }
+  ]
 }

@@ -253,5 +253,19 @@
     "title": "제시받은 금액이 적정한지부터 확인해야 합니다",
     "sub": "항목별 내역을 함께 열어 보고 빠진 자리를 찾겠습니다."
   },
-  "dateModified": "2026-10-26"
+  "dateModified": "2026-10-26",
+  "related": [
+    {
+      "href": "/blog/parking-hit-and-run",
+      "label": "주차뺑소니처벌 — 긁고 그냥 갔다면 성립하는가"
+    },
+    {
+      "href": "/blog/dui-punishment-by-level",
+      "label": "음주운전처벌 수치 0.03·0.08·0.2 — 구간이 바뀌면 무엇이 달라지는가"
+    },
+    {
+      "href": "/blog/traffic-twelve-major-faults",
+      "label": "12대중과실 — 항목마다 다투는 지점이 다릅니다"
+    }
+  ]
 }
