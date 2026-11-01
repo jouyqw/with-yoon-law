@@ -5,15 +5,31 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 31 Oct 2026 20:45:56 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 19:23:04 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>디지털성범죄처벌, 어디까지가 범위이고 무엇으로 형이 갈리는가</title>
+      <link>https://with-yoon-law.com/blog/digital-sex-crime-punishment</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/digital-sex-crime-punishment</guid>
+      <description>디지털성범죄처벌은 하나의 죄명으로 묶이지 않습니다. 촬영·유포·소지·시청·합성물까지 행위마다 적용되는 법조가 다르고, 형의 폭이 달라지는 자리도 따로 있습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 01 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>강제추행치상, 죄명이 한 칸 올라가는 자리는 따로 있습니다</title>
+      <link>https://with-yoon-law.com/blog/molestation-causing-injury</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/molestation-causing-injury</guid>
+      <description>강제추행치상은 추행 사실만으로 붙지 않습니다. 상해로 인정되는 범위, 추행과 결과 사이의 인과관계, 진단서가 놓이는 위치까지 죄명이 갈리는 지점을 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 01 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>법률 칼럼·성공사례 전체 목록</title>
       <link>https://with-yoon-law.com/blog/index</link>
       <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
       <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 197편의 전체 목록입니다.</description>
       <category>법률칼럼</category>
-      <pubDate>Fri, 30 Oct 2026 15:00:00 GMT</pubDate>
+      <pubDate>Sat, 31 Oct 2026 15:00:00 GMT</pubDate>
     </item>
     <item>
       <title>그루밍성범죄, 친밀한 관계와 길들이기는 어디서 갈립니까</title>
@@ -390,22 +406,6 @@
       <description>무면허운전은 면허가 없다는 사실을 알고 운전했을 때 문제가 됩니다. 취소 통지가 도달했는지, 면허 종별을 넘지 않았는지, 인식을 무엇으로 다투는지 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>상간 소송을 당한 쪽 — &apos;몰랐다&apos;는 말은 무엇으로 뒷받침해야 합니까</title>
-      <link>https://with-yoon-law.com/blog/affair-defense-response</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/affair-defense-response</guid>
-      <description>상간 소송의 피고가 되었을 때 다툴 수 있는 지점을 정리했습니다. 기혼 사실의 인식, 파탄 시점, 답변서에 담을 내용과 담지 말아야 할 내용을 순서대로 봅니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>음주측정거부 — 불지 않은 것과 불지 못한 것은 다릅니다</title>
-      <link>https://with-yoon-law.com/blog/dui-refusal-measurement</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/dui-refusal-measurement</guid>
-      <description>음주측정거부가 언제 성립하는지 정리했습니다. 측정 요구가 적법했는지, 거부로 평가되는 행동은 무엇인지, 채혈을 요구한 경우는 어떻게 보는지 순서대로 봅니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
