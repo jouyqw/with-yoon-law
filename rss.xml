@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 03 Nov 2026 14:24:58 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:48:27 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>디지털성범죄 집중단속, 단속 범위는 어디까지 들어오는가</title>
+      <link>https://with-yoon-law.com/blog/cyber-sex-crackdown-scope</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/cyber-sex-crackdown-scope</guid>
+      <description>사이버성폭력 집중단속 기간에 수사 대상으로 묶이는 행위의 범위와, 수사기관이 개인에게 닿는 경로, 연락을 받은 뒤 순서대로 확인할 것을 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 03 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>아동청소년성보호법, 소지·시청만으로 조사를 받는 이유</title>
+      <link>https://with-yoon-law.com/blog/obscene-material-possession-viewing</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/obscene-material-possession-viewing</guid>
+      <description>만들지도 올리지도 않았는데 조사 연락을 받는 경우가 있습니다. 소지와 시청을 처벌하는 구조, 알았는지가 다퉈지는 자리, 기기에 남는 기록까지 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Tue, 03 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>법률 칼럼·성공사례 전체 목록</title>
       <link>https://with-yoon-law.com/blog/index</link>
@@ -390,22 +406,6 @@
       <description>어린이보호구역 사고는 장소만으로 무거워지지 않습니다. 가중 요건 네 가지와 법정형, 실제로 다투어지는 지점, 사고 직후에 해야 할 일을 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>난폭운전 — 위반 하나가 아니라 이어진 흐름을 봅니다</title>
-      <link>https://with-yoon-law.com/blog/reckless-driving-repeat</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/reckless-driving-repeat</guid>
-      <description>난폭운전은 위반 한 건으로 정해지지 않습니다. 법이 정한 행위 유형, 연달아 한 것과 반복한 것의 차이, 보복운전과의 경계, 면허 처분까지 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>무면허운전 — 면허가 없다는 사실을 알았는지부터 따집니다</title>
-      <link>https://with-yoon-law.com/blog/unlicensed-driving-guide</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/unlicensed-driving-guide</guid>
-      <description>무면허운전은 면허가 없다는 사실을 알고 운전했을 때 문제가 됩니다. 취소 통지가 도달했는지, 면허 종별을 넘지 않았는지, 인식을 무엇으로 다투는지 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
