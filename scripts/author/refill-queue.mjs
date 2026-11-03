@@ -77,6 +77,20 @@ const TOPICS = [
   { slug: 'appeal-brief-deadline', topic: '항소이유서 제출 기간', category: '형사', hub: 'criminal' },
   { slug: 'bail-application-guide', topic: '보석 청구 준비', category: '형사', hub: 'criminal' },
   { slug: 'search-seizure-participation', topic: '압수수색 참여권', category: '형사', hub: 'criminal' },
+  /* 2026-11-02 사이버성폭력 집중단속 대응.
+   * 경찰청 국가수사본부가 2024-11 부터 해마다 1년 단위로 집중단속을 이어 왔다.
+   * 2026년 단속(2025-11-17 ~ 2026-10-31) 상반기만 1,446건·1,506명 검거, 87명 구속.
+   * 단속 대상에 "구매·소지·시청" 이 명시돼 있고 위장수사가 전년 대비 246% 늘었다.
+   * 피의자의 70% 이상이 10·20대다 — 자녀 일로 찾아오는 분이 늘 수밖에 없다.
+   * 지금 조사를 받는 사람이 찾는 말이라 뒤로 밀리지 않게 앞에 둔다. */
+  { slug: 'cyber-sex-crackdown-scope', topic: '사이버성폭력 집중단속의 범위 (디지털성범죄 2,200회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'obscene-material-possession-viewing', topic: '소지·시청만으로 조사를 받는 이유', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'camera-photo-crime-response', topic: '카메라등이용촬영죄 조사 대응 (카메라등이용촬영죄 3,370회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'undercover-investigation-evidence', topic: '위장수사로 모은 자료의 범위', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'overseas-sns-account-identified', topic: '해외 SNS 계정이 특정되는 과정', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'teen-digital-sex-crime-parent', topic: '미성년 자녀가 조사 대상이 됐다면 (미성년자성범죄 2,210회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'phone-seizure-first-steps', topic: '휴대전화를 압수당한 뒤의 순서 (경찰조사변호사 2,470회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'sex-crime-side-measures-scope', topic: '유죄가 되면 함께 정해지는 부수처분', category: '성범죄', hub: 'sex-crime' },
   { slug: 'quasi-rape-consent-issue', topic: '유사강간 혐의 대응', category: '성범죄', hub: 'sex-crime' },
   { slug: 'crowded-place-molestation', topic: '공중밀집장소 추행', category: '성범죄', hub: 'sex-crime' },
   { slug: 'telecom-obscenity-crime', topic: '통신매체이용음란', category: '성범죄', hub: 'sex-crime' },
