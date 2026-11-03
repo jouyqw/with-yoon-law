@@ -84,13 +84,13 @@ const TOPICS = [
    * 피의자의 70% 이상이 10·20대다 — 자녀 일로 찾아오는 분이 늘 수밖에 없다.
    * 지금 조사를 받는 사람이 찾는 말이라 뒤로 밀리지 않게 앞에 둔다. */
   { slug: 'cyber-sex-crackdown-scope', topic: '사이버성폭력 집중단속의 범위 (디지털성범죄 2,200회)', category: '성범죄', hub: 'sex-crime' },
-  { slug: 'obscene-material-possession-viewing', topic: '소지·시청만으로 조사를 받는 이유', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'obscene-material-possession-viewing', topic: '소지·시청만으로 조사를 받는 이유 (아동청소년성보호법 2,420회)', category: '성범죄', hub: 'sex-crime' },
   { slug: 'camera-photo-crime-response', topic: '카메라등이용촬영죄 조사 대응 (카메라등이용촬영죄 3,370회)', category: '성범죄', hub: 'sex-crime' },
-  { slug: 'undercover-investigation-evidence', topic: '위장수사로 모은 자료의 범위', category: '성범죄', hub: 'sex-crime' },
-  { slug: 'overseas-sns-account-identified', topic: '해외 SNS 계정이 특정되는 과정', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'undercover-investigation-evidence', topic: '위장수사로 모은 자료의 범위 (압수수색영장 970회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'overseas-sns-account-identified', topic: '해외 SNS 계정이 특정되는 과정 (디지털포렌식 1,450회)', category: '성범죄', hub: 'sex-crime' },
   { slug: 'teen-digital-sex-crime-parent', topic: '미성년 자녀가 조사 대상이 됐다면 (미성년자성범죄 2,210회)', category: '성범죄', hub: 'sex-crime' },
-  { slug: 'phone-seizure-first-steps', topic: '휴대전화를 압수당한 뒤의 순서 (경찰조사변호사 2,470회)', category: '성범죄', hub: 'sex-crime' },
-  { slug: 'sex-crime-side-measures-scope', topic: '유죄가 되면 함께 정해지는 부수처분', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'phone-seizure-first-steps', topic: '휴대전화를 압수당한 뒤의 순서 (핸드폰포렌식 2,410회)', category: '성범죄', hub: 'sex-crime' },
+  { slug: 'sex-crime-side-measures-scope', topic: '유죄가 되면 함께 정해지는 부수처분 (기소유예 9,260회)', category: '성범죄', hub: 'sex-crime' },
   { slug: 'quasi-rape-consent-issue', topic: '유사강간 혐의 대응', category: '성범죄', hub: 'sex-crime' },
   { slug: 'crowded-place-molestation', topic: '공중밀집장소 추행', category: '성범죄', hub: 'sex-crime' },
   { slug: 'telecom-obscenity-crime', topic: '통신매체이용음란', category: '성범죄', hub: 'sex-crime' },
