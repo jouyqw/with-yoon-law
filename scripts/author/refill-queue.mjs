@@ -47,6 +47,33 @@ const CLAUDE = [
  * hub 가 있으면 분야 안내 페이지로 연결된다(practice 아래 실제 존재하는 것만).
  */
 const TOPICS = [
+  /* 2026-11-02 주변지역 — 지역+분야 변호사.
+   *
+   * 사무소는 서초대로다. 그런데 사건은 구 경계를 안 따른다. 실측해 보니
+   * 서초 밖 수요가 서초보다 크다.
+   *   서울변호사 7,330 · 송파변호사 4,660 · 강남변호사 3,020 · 서초변호사 2,510
+   *   서초구변호사 1,950 · 서초동변호사 1,690 · 강동구변호사 1,290
+   *   용산변호사 400 · 동작구변호사 325 · 과천변호사 275 · 관악구변호사 100
+   *
+   * 두 가지가 보인다.
+   * 하나, '지역+변호사' 가 '지역+분야변호사' 보다 훨씬 크다 — 사람들은 분야를
+   * 좁히기 전에 지역으로 먼저 찾는다. 그래서 분야 없는 형태를 먼저 둔다.
+   * 둘, 동 단위도 작지 않다(서초동변호사 1,690 · 서초동이혼변호사 1,760).
+   * 구가 아니라 동으로 검색하는 사람이 있다는 뜻이라 그 형태도 같이 둔다.
+   *
+   * 제목 규칙상 괄호 안 검색어가 제목에 붙여 쓰기로 들어가야 한다. */
+  { slug: 'songpa-lawyer-first-consult', topic: '송파에서 사건을 맡길 때 확인할 것 (송파변호사 4,660회)', category: '형사', hub: 'criminal' },
+  { slug: 'gangnam-criminal-investigation', topic: '강남 사건의 수사 대응 순서 (강남변호사 3,020회)', category: '형사', hub: 'criminal' },
+  { slug: 'seocho-gu-lawyer-guide', topic: '서초구에서 상담을 준비하는 방법 (서초구변호사 1,950회)', category: '형사', hub: 'criminal' },
+  { slug: 'seochodong-lawyer-office', topic: '서초동 사무소를 찾아오시는 길과 상담 (서초동변호사 1,690회)', category: '형사', hub: 'criminal' },
+  { slug: 'seochodong-divorce-consult', topic: '서초동에서 이혼 상담을 받기 전에 (서초동이혼변호사 1,760회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'gangdong-gu-lawyer-guide', topic: '강동구 사건의 관할과 상담 (강동구변호사 1,290회)', category: '형사', hub: 'criminal' },
+  { slug: 'seoul-lawyer-case-entrust', topic: '서울에서 사건을 맡길 때 보는 것 (서울변호사 7,330회)', category: '형사', hub: 'criminal' },
+  { slug: 'seocho-divorce-property', topic: '서초 이혼 사건의 재산분할 쟁점 (서초이혼변호사 1,980회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'yongsan-lawyer-guide', topic: '용산 사건 상담 준비 (용산변호사 400회)', category: '형사', hub: 'criminal' },
+  { slug: 'dongjak-gu-lawyer-guide', topic: '동작구 사건의 관할 법원 (동작구변호사 325회)', category: '형사', hub: 'criminal' },
+  { slug: 'gwacheon-lawyer-guide', topic: '과천 사건은 어디로 가나 (과천변호사 275회)', category: '형사', hub: 'criminal' },
+
   { slug: 'special-assault-weapon', topic: '특수폭행 — 위험한 물건 휴대', category: '형사', hub: 'criminal' },
   { slug: 'injury-charge-diagnosis', topic: '상해죄와 진단서의 무게', category: '형사', hub: 'criminal' },
   { slug: 'business-obstruction-guide', topic: '업무방해죄 성립 범위', category: '형사', hub: 'criminal' },
