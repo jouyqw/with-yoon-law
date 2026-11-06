@@ -5,8 +5,16 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 05 Nov 2026 22:59:45 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 22:29:30 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>법률 칼럼·성공사례 전체 목록</title>
+      <link>https://with-yoon-law.com/blog/index</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
+      <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 197편의 전체 목록입니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Thu, 05 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>디지털포렌식, 해외 SNS 계정은 이렇게 특정됩니다</title>
       <link>https://with-yoon-law.com/blog/overseas-sns-account-identified</link>
@@ -28,14 +36,6 @@
       <link>https://with-yoon-law.com/blog/camera-photo-crime-response</link>
       <guid isPermaLink="true">https://with-yoon-law.com/blog/camera-photo-crime-response</guid>
       <description>카메라등이용촬영죄 조사에서 수사기관이 실제로 확인하는 순서를 정리했습니다. 기기 제출 범위, 포렌식 결과가 나오기까지의 준비, 반포 여부로 달라지는 구간까지 짚었습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 04 Nov 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>법률 칼럼·성공사례 전체 목록</title>
-      <link>https://with-yoon-law.com/blog/index</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/index</guid>
-      <description>법률사무소 위드윤 유성호 변호사가 작성한 형사·성범죄·마약·음주운전·가사 사건 칼럼과 성공사례 197편의 전체 목록입니다.</description>
       <category>법률칼럼</category>
       <pubDate>Wed, 04 Nov 2026 15:00:00 GMT</pubDate>
     </item>
