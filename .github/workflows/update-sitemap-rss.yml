@@ -89,6 +89,9 @@ jobs:
           const blogFiles = exists(blogDir)
             ? fs.readdirSync(blogDir)
                 .filter((file) => file.endsWith('.html'))
+                // 목록 페이지는 글이 아니다. 그냥 넣으면 사이트맵에 /blog/index 가 실리는데
+                // 그 페이지의 canonical 은 /blog/ 라서 둘이 어긋난다. 아래 staticUrls 로 따로 싣는다.
+                .filter((file) => file !== 'index.html')
                 .filter((file) => !scheduled.has(file.replace(/\.html$/, '')))
                 .sort()
             : [];
@@ -137,6 +140,8 @@ jobs:
             { loc: `${site}/about/`, changefreq: 'monthly', priority: '0.95', lastmod: today },
             // 필터 쿼리는 같은 게시판 화면이므로 대표주소 하나만 사이트맵에 싣는다.
             { loc: `${site}/board`, changefreq: 'daily', priority: '0.9', lastmod: today },
+            // 칼럼 목록. 그 페이지의 canonical 과 같은 형태(/blog/)로 싣는다.
+            { loc: `${site}/blog/`, changefreq: 'daily', priority: '0.9', lastmod: today },
             ...practicePages.map(({ loc, changefreq, priority, lastmod }) => ({ loc, changefreq, priority, lastmod }))
           ];
 
