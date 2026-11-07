@@ -19,7 +19,6 @@
 - 서울스토킹전문변호사 접근금지부터 경찰조사까지: https://with-yoon-law.com/practice/stalking/
 
 ## 최신 콘텐츠
-- [법률칼럼] 법률 칼럼·성공사례 전체 목록: https://with-yoon-law.com/blog/index
 - [법률칼럼] 디지털포렌식, 해외 SNS 계정은 이렇게 특정됩니다: https://with-yoon-law.com/blog/overseas-sns-account-identified
 - [법률칼럼] 미성년자성범죄, 자녀가 조사 대상이 됐다면 부모가 먼저 할 일: https://with-yoon-law.com/blog/teen-digital-sex-crime-parent
 - [법률칼럼] 카메라등이용촬영죄, 조사에서 먼저 가려지는 것은 촬영 여부가 아닙니다: https://with-yoon-law.com/blog/camera-photo-crime-response
@@ -99,3 +98,4 @@
 - [법률칼럼] 유사강간 혐의 — 행위의 범위와 동의 여부, 두 곳에서 갈립니다: https://with-yoon-law.com/blog/quasi-rape-consent-issue
 - [법률칼럼] 통신매체이용음란 — 보낸 것과 도달한 것, 그리고 목적이 쟁점입니다: https://with-yoon-law.com/blog/telecom-obscenity-crime
 - [법률칼럼] 보석 청구 — 구속된 뒤에도 불구속 재판을 다툴 수 있는 자리입니다: https://with-yoon-law.com/blog/bail-application-guide
+- [법률칼럼] 압수수색 참여권 — 문이 열린 뒤에 할 수 있는 일이 남아 있습니다: https://with-yoon-law.com/blog/search-seizure-participation
