@@ -5,8 +5,16 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 14 Nov 2026 21:47:10 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:54:37 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>계좌이체 내역이 제출된 성매매 사건 — 기소유예 성공사례</title>
+      <link>https://with-yoon-law.com/blog/prostitution-deferred-prosecution-case</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/prostitution-deferred-prosecution-case</guid>
+      <description>상대가 먼저 적발되며 송금 기록이 그대로 수사기관에 넘어간 사건. 다툴 수 없는 부분을 인정하고 반성과 재범 방지를 자료로 보여 교육프로그램 이수조건부 기소유예를 받은 실제 사례입니다.</description>
+      <category>성공사례</category>
+      <pubDate>Thu, 12 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>서초이혼변호사, 재산분할은 금액보다 범위에서 먼저 갈립니다</title>
       <link>https://with-yoon-law.com/blog/seocho-divorce-property</link>
@@ -21,6 +29,14 @@
       <guid isPermaLink="true">https://with-yoon-law.com/blog/seoul-lawyer-case-entrust</guid>
       <description>서울에서 형사사건을 맡길 때 실제로 비교해야 하는 기준을 정리했습니다. 관할과 출석 동선, 수임 범위의 경계, 견적서 항목, 연락 창구까지 상담 자리에서 확인할 순서대로 짚었습니다.</description>
       <category>법률칼럼</category>
+      <pubDate>Thu, 12 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>이혼 소송 중 배우자의 스토킹 고소 — 혐의없음 불기소 성공사례</title>
+      <link>https://with-yoon-law.com/blog/spouse-stalking-no-charge-case</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/spouse-stalking-no-charge-case</guid>
+      <description>집을 나간 배우자가 이혼 소장을 보내오자 몇 차례 연락하고 처가를 찾아간 일이 스토킹으로 고소된 사건. 이별 과정의 연락이 모두 범죄가 되지는 않는다는 점을 수사 단계에서 다퉈 약 한 달 만에 혐의없음을 받은 실제 사례입니다.</description>
+      <category>성공사례</category>
       <pubDate>Thu, 12 Nov 2026 15:00:00 GMT</pubDate>
     </item>
     <item>
@@ -390,22 +406,6 @@
       <description>받을 돈이 맞아도 받아내는 방법에는 선이 있습니다. 금지되는 연락 시간과 횟수, 가족·직장 고지, 추심이 형사사건으로 번지는 지점과 합법적인 회수 경로를 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Sun, 04 Oct 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>소액사건 심판 — 기일이 한 번뿐이라는 전제로 준비해야 합니다</title>
-      <link>https://with-yoon-law.com/blog/small-claims-procedure</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/small-claims-procedure</guid>
-      <description>3,000만원 이하 금전 청구에 적용되는 간이 절차입니다. 대상 사건, 소 제기 방법, 이행권고결정의 2주, 한 번으로 끝나는 변론기일, 판결 뒤 상소 제한까지 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sun, 04 Oct 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>하자보수 청구 — 하자가 남아 있어도 기간이 지나면 다툴 수 없습니다</title>
-      <link>https://with-yoon-law.com/blog/defect-repair-claim</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/defect-repair-claim</guid>
-      <description>하자보수를 청구할 수 있는 기간은 한 종류가 아닙니다. 담보책임기간과 권리 행사 기간, 손해배상 청구권의 시효가 각각 따로 돌아가는 구조와 기산점을 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Sat, 03 Oct 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
