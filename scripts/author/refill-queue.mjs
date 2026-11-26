@@ -47,6 +47,33 @@ const CLAUDE = [
  * hub 가 있으면 분야 안내 페이지로 연결된다(practice 아래 실제 존재하는 것만).
  */
 const TOPICS = [
+  /* 2026-11-17 주제가 바닥나 보충이 "배정할 주제가 남지 않았습니다" 로 멈췄다.
+   * 대기 3편이라 이틀 뒤면 발행이 끊길 상황이었다.
+   *
+   * 이번에는 지역을 빼고 **절차·서식** 쪽을 실측해서 골랐다. 학교폭력에서 본 것과 같다 —
+   * 사람들은 변호사를 찾기 전에 "이제 뭐가 어떻게 되나" 를 먼저 검색한다.
+   *   지급명령신청 13,280 · 형사소송법 12,710 · 피의자 9,910 · 교통사고합의금 9,640 ·
+   *   보험금청구 7,470 · 과태료 6,140 · 공탁금 5,910 · 차용증양식 22,600 ·
+   *   임대차계약서 11,860 · 위임장 10,940
+   *
+   * 서식(차용증·위임장)은 검색량이 크지만 '양식 받으러' 오는 사람이라 상담으로 잘 안 간다.
+   * 그래서 서식 자체가 아니라 **그 서식이 분쟁이 됐을 때**를 다룬다
+   * (차용증이 없을 때 대여금을 어떻게 다투나).
+   *
+   * 법률사무소 위드윤이 실제로 맡는 범위(형사·성범죄·이혼가사·민사) 안에서만 골랐다. */
+  { slug: 'payment-order-application-guide', topic: '지급명령 신청과 이의신청 2주 (지급명령신청 13,280회)', category: '민사', hub: null },
+  { slug: 'suspect-status-what-changes', topic: '참고인에서 피의자로 바뀌면 달라지는 것 (피의자 9,910회)', category: '형사', hub: 'criminal' },
+  { slug: 'traffic-accident-settlement-amount', topic: '교통사고 합의금은 무엇으로 정해지나 (교통사고합의금 9,640회)', category: '음주·교통', hub: 'dui' },
+  { slug: 'deposit-money-criminal-case', topic: '합의가 안 될 때 공탁 (공탁금 5,910회)', category: '형사', hub: 'criminal' },
+  { slug: 'loan-without-iou-dispute', topic: '차용증이 없는 돈을 돌려받으려면 (차용증양식 22,600회)', category: '민사', hub: null },
+  { slug: 'lease-contract-dispute-points', topic: '임대차계약서에서 다툼이 되는 줄 (임대차계약서 11,860회)', category: '민사', hub: null },
+  { slug: 'insurance-claim-rejected-response', topic: '보험금이 거절됐을 때 (보험금청구 7,470회)', category: '민사', hub: null },
+  { slug: 'fine-vs-penalty-difference', topic: '과태료와 벌금은 어떻게 다른가 (과태료 6,140회)', category: '형사', hub: 'criminal' },
+  { slug: 'court-case-lookup-how', topic: '법원 사건조회로 내 사건을 확인하는 법 (법원사건조회 59,500회)', category: '민사', hub: null },
+  { slug: 'noise-complaint-legal-steps', topic: '층간소음 신고 뒤 법으로 갈 수 있는 선 (층간소음신고 12,340회)', category: '민사', hub: null },
+  { slug: 'power-of-attorney-scope', topic: '위임장을 써 줄 때 범위를 어디까지 (위임장 10,940회)', category: '민사', hub: null },
+  { slug: 'criminal-procedure-stages-map', topic: '수사부터 재판까지 단계별로 무엇이 정해지나 (형사소송법 12,710회)', category: '형사', hub: 'criminal' },
+
   /* 2026-11-16 학교폭력 — 절차 쪽이 통째로 비어 있었다.
    *
    * 세 사이트(태앤규·위드윤·울산) 제목을 훑어 보니 아래 말이 한 편도 없었다.
