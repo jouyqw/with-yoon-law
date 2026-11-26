@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 26 Nov 2026 08:19:10 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 08:25:35 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>지급명령신청, 2주 안에 이의가 없으면 집행권원이 됩니다</title>
+      <link>https://with-yoon-law.com/blog/payment-order-application-guide</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/payment-order-application-guide</guid>
+      <description>돈을 받아야 하는 쪽에서 지급명령을 신청할 때의 순서입니다. 신청서에 적는 것, 송달이 되어야 시작되는 2주, 확정과 이의 뒤에 이어지는 절차와 비용을 단계별로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Thu, 19 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>피의자로 바뀌는 순간, 참고인 조사와 달라지는 것들</title>
+      <link>https://with-yoon-law.com/blog/suspect-status-what-changes</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/suspect-status-what-changes</guid>
+      <description>같은 조사실에 앉아 있어도 참고인과 피의자는 고지되는 권리와 남는 기록이 다릅니다. 지위가 바뀌는 신호와 그 자리에서 확인해야 할 것을 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Thu, 19 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>학교폭력심의위원회 조치 1호부터 9호까지, 생활기록부에 남는 범위가 다릅니다</title>
       <link>https://with-yoon-law.com/blog/school-violence-measures-record</link>
@@ -390,22 +406,6 @@
       <description>협의이혼은 법원에 의사확인을 신청하고 숙려기간을 지나 확인기일에 출석하는 절차입니다. 1개월과 3개월이 갈리는 기준, 확인서를 받은 뒤 남는 3개월까지 순서대로 정리했습니다.</description>
       <category>법률칼럼</category>
       <pubDate>Wed, 14 Oct 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>재판상 이혼사유 여섯 가지 — 어느 호로 다툴지부터 정해야 합니다</title>
-      <link>https://with-yoon-law.com/blog/divorce-grounds-six</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/divorce-grounds-six</guid>
-      <description>재판상 이혼은 법이 정한 사유가 있어야 청구할 수 있습니다. 부정한 행위부터 혼인을 계속하기 어려운 중대한 사유까지 여섯 가지를 어떻게 나누고 무엇으로 증명하는지 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 14 Oct 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>고소장 확인방법 — 정보공개청구부터 경찰조사 준비까지</title>
-      <link>https://with-yoon-law.com/blog/complaint-record-information-disclosure</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/complaint-record-information-disclosure</guid>
-      <description>경찰 연락을 받은 피의자가 고소장 내용을 확인하는 방법과 정보공개청구, 경찰조사 및 피의자신문조서 준비 순서를 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Tue, 13 Oct 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
