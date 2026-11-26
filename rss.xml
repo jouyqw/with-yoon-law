@@ -5,8 +5,24 @@
     <link>https://with-yoon-law.com/board?type=law</link>
     <description>법률사무소 위드윤의 형사·성범죄 법률칼럼과 성공사례입니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 26 Nov 2026 08:46:04 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 23:30:58 GMT</lastBuildDate>
     <atom:link href="https://with-yoon-law.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>공탁금, 합의가 되지 않을 때 어디까지 대신할 수 있는가</title>
+      <link>https://with-yoon-law.com/blog/deposit-money-criminal-case</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/deposit-money-criminal-case</guid>
+      <description>피해자가 합의를 거부할 때 공탁을 검토하게 됩니다. 형사공탁 특례로 달라진 점, 금액과 시점을 정하는 기준, 피해자가 받지 않았을 때의 효과까지 순서대로 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 22 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>교통사고합의금, 보험금과 별개로 어디서 금액이 정해지는가</title>
+      <link>https://with-yoon-law.com/blog/traffic-accident-settlement-amount</link>
+      <guid isPermaLink="true">https://with-yoon-law.com/blog/traffic-accident-settlement-amount</guid>
+      <description>교통사고 형사합의금은 보험사가 지급하는 돈과 다릅니다. 상해 정도와 중과실 여부, 합의 시점에 따라 금액이 어떻게 갈리는지와 합의서에 적어 두어야 할 문구를 정리했습니다.</description>
+      <category>법률칼럼</category>
+      <pubDate>Sun, 22 Nov 2026 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>지급명령신청, 2주 안에 이의가 없으면 집행권원이 됩니다</title>
       <link>https://with-yoon-law.com/blog/payment-order-application-guide</link>
@@ -390,22 +406,6 @@
       <description>이혼에 필요한 서류를 발급처별로 정리하고, 협의이혼과 재판이혼에서 달라지는 부분, 재산과 양육 관련 자료를 모으는 순서까지 단계별로 설명합니다.</description>
       <category>법률칼럼</category>
       <pubDate>Thu, 15 Oct 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>이혼재산분할 기여도 — 비율 하나가 나오기까지 거치는 네 단계</title>
-      <link>https://with-yoon-law.com/blog/divorce-property-division-standard</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/divorce-property-division-standard</guid>
-      <description>이혼 재산분할에서 기여도 비율이 어떻게 정해지는지, 분할 대상 확정부터 기준시점, 가액 평가, 비율 산정까지 네 단계로 나누어 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Thu, 15 Oct 2026 15:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>협의이혼절차 — 숙려기간 1개월과 3개월은 이렇게 갈립니다</title>
-      <link>https://with-yoon-law.com/blog/divorce-agreement-procedure</link>
-      <guid isPermaLink="true">https://with-yoon-law.com/blog/divorce-agreement-procedure</guid>
-      <description>협의이혼은 법원에 의사확인을 신청하고 숙려기간을 지나 확인기일에 출석하는 절차입니다. 1개월과 3개월이 갈리는 기준, 확인서를 받은 뒤 남는 3개월까지 순서대로 정리했습니다.</description>
-      <category>법률칼럼</category>
-      <pubDate>Wed, 14 Oct 2026 15:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
