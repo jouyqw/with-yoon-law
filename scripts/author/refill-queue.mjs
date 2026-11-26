@@ -115,6 +115,32 @@ const TOPICS = [
   { slug: 'dongjak-gu-lawyer-guide', topic: '동작구 사건의 관할 법원 (동작구변호사 325회)', category: '형사', hub: 'criminal' },
   { slug: 'gwacheon-lawyer-guide', topic: '과천 사건은 어디로 가나 (과천변호사 275회)', category: '형사', hub: 'criminal' },
 
+  /* 2026-11-26 주변지역 2차 — 경기 남부와 서울 서남권.
+   *
+   * 1차는 서초에 붙은 구만 봤다. 실측해 보니 더 멀리가 더 크다.
+   *   수원변호사 8,010 · 남양주변호사 4,700 · 안양변호사 3,640 · 평택변호사 2,880
+   *   안산변호사 2,740 · 부천변호사 2,030 · 성남변호사 1,900
+   *   강서구변호사 530 · 양천구변호사 340 · 용인변호사 320 · 하남변호사 250
+   *
+   * 멀다고 뺄 이유가 없다. 형사·가사는 ;;법원 관할;;을 따라 움직이는데
+   * 수원지법·안양지원·성남지원은 서초에서 갈 수 있는 거리다.
+   * 그래서 글의 축을 "어느 법원으로 가는가"로 잡는다. 지역명만 갈아끼운
+   * 같은 글을 찍어내면 구글이 하나만 남긴다 — 관할과 절차가 지역마다 다르다.
+   *
+   * 제목 규칙상 괄호 안 검색어가 제목에 붙여 쓰기로 들어가야 한다. */
+  { slug: 'suwon-lawyer-court-guide', topic: '수원지방법원으로 가는 사건과 상담 준비 (수원변호사 8,010회)', category: '형사', hub: 'criminal' },
+  { slug: 'namyangju-lawyer-guide', topic: '남양주 사건의 관할과 첫 상담 (남양주변호사 4,700회)', category: '형사', hub: 'criminal' },
+  { slug: 'anyang-lawyer-court-guide', topic: '안양지원 사건은 어떻게 진행되나 (안양변호사 3,640회)', category: '형사', hub: 'criminal' },
+  { slug: 'pyeongtaek-lawyer-guide', topic: '평택 사건의 관할 법원과 출석 (평택변호사 2,880회)', category: '형사', hub: 'criminal' },
+  { slug: 'ansan-lawyer-guide', topic: '안산 사건을 맡길 때 확인할 것 (안산변호사 2,740회)', category: '형사', hub: 'criminal' },
+  { slug: 'bucheon-lawyer-guide', topic: '부천 사건의 관할과 상담 순서 (부천변호사 2,030회)', category: '형사', hub: 'criminal' },
+  { slug: 'seongnam-lawyer-court-guide', topic: '성남지원 사건의 진행과 준비 (성남변호사 1,900회)', category: '형사', hub: 'criminal' },
+  { slug: 'seongnam-divorce-consult', topic: '성남에서 이혼 상담을 준비하는 법 (성남이혼변호사 520회)', category: '이혼·가사', hub: 'divorce' },
+  { slug: 'gangseo-gu-lawyer-guide', topic: '강서구 사건은 어느 법원으로 가나 (강서구변호사 530회)', category: '형사', hub: 'criminal' },
+  { slug: 'yangcheon-gu-lawyer-guide', topic: '양천구 사건의 관할과 상담 (양천구변호사 340회)', category: '형사', hub: 'criminal' },
+  { slug: 'yongin-lawyer-guide', topic: '용인 사건의 관할 법원 확인 (용인변호사 320회)', category: '형사', hub: 'criminal' },
+  { slug: 'hanam-lawyer-guide', topic: '하남 사건을 맡기기 전에 (하남변호사 250회)', category: '형사', hub: 'criminal' },
+
   { slug: 'special-assault-weapon', topic: '특수폭행 — 위험한 물건 휴대', category: '형사', hub: 'criminal' },
   { slug: 'injury-charge-diagnosis', topic: '상해죄와 진단서의 무게', category: '형사', hub: 'criminal' },
   { slug: 'business-obstruction-guide', topic: '업무방해죄 성립 범위', category: '형사', hub: 'criminal' },
